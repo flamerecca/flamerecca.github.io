@@ -1,3 +1,3 @@
 # gitpage.reccachao.net
 
-[部落格](http://blog.reccachao.net/)
+recca chao 的 gitpage
