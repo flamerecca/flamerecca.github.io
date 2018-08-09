@@ -1,2 +1,3 @@
-# 測試中文
-## 小標題
+# 首頁
+
+[部落格](http://blog.reccachao.net/)
