@@ -9,6 +9,7 @@
 ## 專案紀錄
 * [flamerecca vim](flamerecca-vim.md)
 * [背單字](beiDanTz.md)
+* [circle ci 環境設置](circleci.md)
 
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
