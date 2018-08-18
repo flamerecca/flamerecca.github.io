@@ -15,4 +15,4 @@
 * [php self 和 static 的不同](php-static.md)
 * [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
 * [RFC 1149 - 使用鳥類載體傳遞網路協定數據包（Datagrams）之標準](RFC-1149.md)
-
+* [如何寫出令人混淆的程式碼](unmaintainable-code.md)
