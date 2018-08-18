@@ -89,7 +89,7 @@ typedef struct { int i; } ínt;
 
 如果假設編譯器只能分辨命名的前八個字，那麼就多多利用後方的空間。
 
-比方說程式裡混雜使用`var_unit_update()` 和 `var_unit_setup()`，對編譯器來說，這兩個都是`var_unit`。
+比方說程式裡混雜使用 `var_unit_update()` 和 `var_unit_setup()`，對編譯器來說，這兩個都是`var_unit`。
 
 #### 底線，大家的好朋友
 
@@ -97,7 +97,7 @@ typedef struct { int i; } ínt;
 
 #### 混雜各種語言
 
-Randomly intersperse two languages (human or computer). If your boss insists you use his language, tell him you can organise your thoughts better in your own language, or, if that does not work, allege linguistic discrimination and threaten to sue your employers for a vast sum.
+任意混用人類和電腦的語言。如果你的老闆堅持使用他的語言，告訴他你使用自己的語言時比較好整理思緒。如果這樣沒有用，提出這是語言歧視，並要脅你的老闆要付罰款。
 
 #### 延伸 ASCII
 
@@ -105,7 +105,7 @@ Randomly intersperse two languages (human or computer). If your boss insists you
 
 #### 來自其他語言的命名
 
-使用各種語言來命名變數，比方說用德語的_punkt_來命名_point_。之後的維護者，不像你這麼精通德文，必然會在解讀這些變數命名時享受其文化體驗。
+使用各種語言來命名變數，比方說用德語的 _punkt_ 來命名 _point_ 。之後的維護者，不像你這麼精通德文，必然會在解讀這些變數命名時享受其文化體驗。
 
 #### 來自數學術語的命名
 
@@ -126,6 +126,7 @@ marypoppins = (superman + starship) / god;
 
 #### 重新命名和重複利用
 
+對 Ada，一個許多技巧都無法使用的語言來說，這個技巧特別有效。一開始宣告物件和套件的人都是笨蛋，所以與其說服他們改變命名。不如在自己修改的部分裡面改變名稱就好。記得留下一些地方保留舊名稱，讓不注意的人中計。
 This trick works especially well in Ada, a language immune to many of the standard obfuscation techniques. The people who originally named all the objects and packages you use were morons. Rather than try to convince them to change, just use renames and subtypes to rename everything to names of your own devising. Make sure to leave a few references to the old names in, as a trap for the unwary.
 
 #### 使用 i 的時機
