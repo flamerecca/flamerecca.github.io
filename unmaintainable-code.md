@@ -22,7 +22,7 @@
 > _Quidquid latine dictum sit, altum sonatur._
 > _- 無論什麼話用拉丁語說，聽起來都很深奧_
 
-要阻礙之後維護的工程師，你需要知己知彼，理解他的想法。他收到你的程式碼，他沒有時間全部讀過一遍，更別提理解了。他想要改快找到需要修改的部分，然後改完，期間不影響其他的功能。
+要阻礙之後維護的工程師，你需要知己知彼，理解他的想法。他收到你的程式碼，他沒有時間全部讀過一遍，更別提理解了。他想要趕快找到需要修改的部分，然後改完，期間不影響其他的功能。
 
 他彷彿以管窺天一般，只能看到你程式碼的一小部分。你要確保他這樣做時永遠搞不清楚你的程式碼全貌。你要讓他非常難找到應該修改的部分，更重要得是，你要確保他**忽視**任何東西時，事情就會變得越奇怪越好。
 
@@ -49,7 +49,7 @@
 
 #### 有創意的拼字錯誤
 
-如果你一定要使用有意義的變數和韓式名稱，那就拼錯字。藉由在某些地方拼錯字，其他類似的函示又使用拼對字來命名（像是`SetPintleOpening` 和 `SetPintalClosing`），我們保證其他工程師無法用搜尋或 grep 來找到應該處理的程式碼。這種方法效果十分顯著。另外，我們也可以透過在不同的 theatres/theaters（美式拼法） 裡面，使用_tory_ 或 _tori_拼法來加入一點國際觀。
+如果你一定要使用有意義的變數和函式名稱，那就拼錯字。藉由在某些地方拼錯字，其他類似的函式又拼對字來命名（像是`SetPintleOpening` 和 `SetPintalClosing`），我們保證其他工程師無法用搜尋或 grep 來找到應該處理的程式碼。這種方法效果十分顯著。另外，我們也可以透過在不同的 theatres/theaters（美式拼法） 裡面，使用_tory_ 或 _tori_拼法來加入一點國際觀。
 
 #### 抽象
 
@@ -61,11 +61,11 @@
 
 #### 同義字替換法
 
-為了不無聊，用同義字典來為同一行為找出盡可能多的單字。比方說 _display_ 也可以寫成 _show_， _present_。當兩個函式行為一模一樣時，用不同的字暗示他們有些微不同。但是，當兩個函式有重要的不同點時，用相同的單字隱藏其不同處（比方說，一個是印東西在紙上，一個是印東西在螢幕上，都使用 _print_ 來命名）。任何情況下，絕不建立單字表文件說明每個單字明確的用法。這種不專業的文件違背了_資訊隱藏_的設計原則。
+為了不無聊，用同義字典來為同一行為找出盡可能多的單字。比方說 _display_ 也可以寫成 _show_， _present_。當兩個函式行為一模一樣時，用不同的字暗示他們有些微不同。但是，當兩個函式有重要的不同點時，用相同的單字隱藏其不同處（比方說，一個是印東西在紙上，一個是印東西在螢幕上，都使用 _print_ 來命名）。任何情況下，絕不建立單字表文件說明每個單字明確的用法。這種不專業的文件違背了 _資訊隱藏_ 的設計原則。
 
 #### 使用其他語言的複數形式
 
-一個 VMS 系統可以用來監測不同「Vaxen」（如果用中世紀英文規則下「Vax」的複數）回傳的「statii」（如果用拉丁文規則的話「status」的複數）。世界語，[克林貢語](http://www.kli.org/) 和 [哈比語](http://www.chriswetherell.com/hobbit) 的文法均適用。對類世界語單字的複數型態，使用世界語文法，在字尾加上-oj。這樣做是在幫世界和平盡一份力。
+一個 VMS 系統可以用來監測不同「Vaxen」（如果用中世紀英文規則下「Vax」的複數）回傳的「statii」（如果用拉丁文規則的話「status」的複數）。世界語，[克林貢語](https://www.kli.org/) 和哈比語的文法均適用。對類世界語單字的複數型態，使用世界語文法，在字尾加上-oj。這樣做是在幫世界和平盡一份力。
 
 #### 大寫
 
@@ -83,13 +83,13 @@
 typedef struct { int i; } ínt;
 ```
 
-第二個 ínt 上面的 í 其實是**重音 i**。如果只用一般的文字編輯器，幾乎不可能看出i上面的一點變斜了這點不同。
+第二個 ínt 上面的 í 其實是**重音 i**。如果只用一般的文字編輯器，幾乎不可能看出 i 上面的一點變斜了這點不同。
 
 #### 利用編譯器長度限制
 
 如果假設編譯器只能分辨命名的前八個字，那麼就多多利用後方的空間。
 
-比方說程式裡混雜使用 `var_unit_update()` 和 `var_unit_setup()`，對編譯器來說，這兩個都是`var_unit`。
+比方說程式裡混雜使用 `var_unit_update()` 和 `var_unit_setup()`，對編譯器來說，這兩個都是 `var_unit`。
 
 #### 底線，大家的好朋友
 
@@ -127,13 +127,12 @@ marypoppins = (superman + starship) / god;
 #### 重新命名和重複利用
 
 對 Ada，一個許多技巧都無法使用的語言來說，這個技巧特別有效。一開始宣告物件和套件的人都是笨蛋，所以與其說服他們改變命名。不如在自己修改的部分裡面改變名稱就好。記得留下一些地方保留舊名稱，讓不注意的人中計。
-This trick works especially well in Ada, a language immune to many of the standard obfuscation techniques. The people who originally named all the objects and packages you use were morons. Rather than try to convince them to change, just use renames and subtypes to rename everything to names of your own devising. Make sure to leave a few references to the old names in, as a trap for the unwary.
 
 #### 使用 i 的時機
 
-絕不在傳統使用 `i` 的地方，也就是最裡面 for 迴圈的 index 時，使用 `i` 命名變數，特別是在非整數的變數下使用。
+絕不在傳統使用 `i` 的地方，也就是最裡面 for 迴圈的 index 時，使用 `i` 命名變數。特別是在非整數的變數下使用 `i` 效果更好。
 
-相同的，使用`n`當作迴圈的 index 命名。
+使用 `n` 當作迴圈的 index 變數命名。
 
 #### 慣例
 
@@ -141,27 +140,29 @@ This trick works especially well in Ada, a language immune to many of the standa
 
 #### 小寫 l 看起來像是數字 1
 
-用小寫 l 代表長的常數。比方說，比起 `10L`，`10l`更容易被誤認為是 `101`。不使用任何可以輕易辨認出`uvw`, `wW`, `gq9`, `2z`, `5s`, `il17|!j`, `oO08`, `` `'" ``, `;,.`, `m nn rn`, and `{[()]}`的字體。發揮創意。
+用小寫 l 代表長的常數。比方說，比起 `10L`，`10l`更容易被誤認為是 `101`。不使用任何可以輕易辨認出`uvw`, `wW`, `gq9`, `2z`, `5s`, `il17|!j`, `oO08`, `` `'" ``, `;,.`, `m nn rn`, 和 `{[()]}`的字體。發揮創意。
 
 #### 重複利用全域變數，變成私有變數
 
-在模組 A 裡面宣告一個全域變數，在模組B裡面也宣告一個同名的私有變數，讓人誤以為模組 B 是使用模組 A 裡面宣告的變數。在任何文件和註解裡面絕不說明這重複利用的情況。
+在模組 A 裡面宣告一個全域變數，在模組 B 裡面也宣告一個同名的私有變數，讓人誤以為模組 B 是使用模組 A 裡面宣告的變數。在任何文件和註解裡面絕不說明這重複利用的情況。
 
 #### 再看重複利用
 
-Use scoping as confusingly as possible by recycling variable names in contradictory ways. For example, suppose you have global variables `A` and `B`, and functions `foo` and `bar`. If you know that variable `A` will be regularly passed to `foo` and `B` to `bar`, make sure to define the functions as `function foo(B)` and `function bar(A)` so that inside the functions `A` will always be referred to as `B` and vice versa. With more functions and globals, you can create vast confusing webs of mutually contradictory uses of the same names.
+用違背直覺的方式重複使用變數。比方說，你有全域變數 `A` 和 `B`，函式 `foo` 和 `bar`。然後你知道 `A` 常常傳給 `foo`，`B` 常常傳給 `bar`，那麼就宣告`function foo(B)` 和 `function bar(A)`，這樣在函式裡面 `A` 和 `B` 就常常會被搞混。隨著函式和全域變數變多，你可以編織出巨大的混亂網，裡面充斥著各種同名的函式和變數。
 
 #### 重複使用你的變數
 
-Wherever scope rules permit, reuse existing unrelated variable names. Similarly, use the same temporary variable for two unrelated purposes (purporting to save stack slots). For a fiendish variant, morph the variable, for example, assign a value to a variable at the top of a very long method, and then somewhere in the middle, change the meaning of the variable in a subtle way, such as converting it from a 0-based coordinate to a 1-based coordinate. Be certain not to document this change in meaning.
+只要能運作，盡可能重複使用不相關的變數名稱。
+
+使用相同的暫時變數來處理不同的用途。更進一步，在程式裡面修改這個變數。舉例來說，在一個很長的函式裡，開頭宣告一個變數，中間進行很小的修改，比方說從零開始改成從一開始。確保所有的文件裡都不會提到這個修改。
 
 #### Cd wrttn wtht vwls s mch trsr（沒有母音的程式更珍貴）
 
-When using abbreviations inside variable or method names, break the boredom with several variants for the same word, and even spell it out longhand once in while. This helps defeat those lazy bums who use text search to understand only some aspect of your program. Consider variant spellings as a variant on the ploy, e.g. mixing International _colour_, with American _color_ and dude-speak _kulerz_. If you spell out names in full, there is only one possible way to spell each name. These are too easy for the maintenance programmer to remember. Because there are so many different ways to abbreviate a word, with abbreviations, you can have several different variables that all have the same apparent purpose. As an added bonus, the maintenance programmer might not even notice they are separate variables.
+對變數和函式使用縮寫時，同一個字使用各種縮寫法法以免無聊。甚至可以時不時不用縮寫，把全名拼出來。這樣可以免得之後的懶惰鬼用搜尋的方式，只需要了解你的部分程式就知道怎麼處理問題。針對同一個字，可以考慮使用不同拼法，比方說對顏色，混用國際的拼法 _colour_，美式的拼法 _color_ 以及俗俚拼法 _kulerz_。如果你總是固定用全名，那麼每個名稱就只有一種可能拼法，這對之後維護的工程師來說太好記了。因為一個字有許多縮寫的方式，使用縮寫的話，我們可以對一個目標有數個不同的變數。另外，之後維護的工程師可能根本沒注意到他們是不同的變數。
 
 #### 誤導的名稱
 
-Make sure that every method does a little bit more (or less) than its name suggests. As a simple example, a method named `isValid(x)` should as a side effect convert `x` to binary and store the result in a database.
+確保每個函式都比名稱顯示的多做（或少做）一點事情。舉個簡單的例子，`isValid(x)` 除了檢查 `x` 是不是合法的之外，可以順便將 `x` 轉成二進位，並存進資料庫裡面。
 
 #### m_
 
@@ -169,44 +170,45 @@ C++ 曾經有個命名慣例是使用`m_`開頭的字代表成員（member）變
 
 #### o_apple obj_apple
 
-Use an "o" or "obj" prefix for each instance of the class to show that you're thinking of the big, polymorphic picture.
+使用 `o` 或 `obj` 前綴代表所有物件（object），代表你有看到多型結構的大局。
+
 
 #### 匈牙利命名法
 
-Hungarian Notation is the tactical nuclear weapon of source code obfuscation techniques; use it! Due to the sheer volume of source code contaminated by this idiom nothing can kill a maintenance engineer faster than a well planned Hungarian Notation attack. The following tips will help you corrupt the original intent of Hungarian Notation:
+匈牙利命名法是混淆程式碼的戰術核子武器，用！光只是這個技法可以污染的程式碼範圍，沒有什麼比起良好設計的匈牙利命名法，能更快地殺害之後維護的工程師。以下技巧可以保證你毀掉原本匈牙利命名法的初衷：
 
- - Insist on using "c" for const in C++ and other languages that directly enforce the const-ness of a variable.
+ - 即使你使用 C++ 等能直接宣告常數的語言，堅持使用 `c` 前綴代表常數，
 
- - Seek out and use Hungarian warts that have meaning in languages other than your current language. For example insist on the PowerBuilder `l_` and `a_` {local and argument} scoping prefixes and always use the VB-esque style of having a Hungarian wart for every control type when coding to C++. Try to stay ignorant of the fact that megs of plainly visible MFC source code does not use Hungarian warts for control types.
+ - 使用和你現在用的語言無關的匈牙利命名法綴詞。比方說，堅持 PowerBuilder 的 `l_` 和 `a_`（本地（local）和參數（argument））前綴。寫 C++ 時，堅持使用 VB 類語言會使用的 control type 前綴，忽略連微軟的 MFC 類別庫程式碼都沒有 control type 前綴這個事實。
 
  - Always violate the Hungarian principle that the most commonly used variables should carry the least extra information around with them. Achieve this end through the techniques outlined above and by insisting that each class type have a custom wart prefix. Never allow anyone to remind you that **no** wart tells you that something **is** a class. The importance of this rule cannot be overstated if you fail to adhere to its principles the source code may become flooded with shorter variable names that have a higher vowel/consonant ratio. In the worst case scenario this can lead to a full collapse of obfuscation and the spontaneous reappearance of English Notation in code!
 
- - Flagrantly violate the Hungarian-esque concept that function parameters and other high visibility symbols must be given meaningful names, but that Hungarian type warts all by themselves make excellent temporary variable names.
+ - 違背匈牙利命名原則內要求所有符號都要以有意義的方式命名這個原則。單單匈牙利綴詞的組合就足以作為一個很充份的變數名稱了。
 
- - Insist on carrying outright orthogonal information in your Hungarian warts. Consider this real world example `a_crszkvc30LastNameCol`. It took a team of maintenance engineers nearly 3 days to figure out that this whopper variable name described a const, reference, function argument that was holding information from a database column of type Varchar[30] named "LastName" which was part of the table's primary key. When properly combined with the principle that "all variables should be public" this technique has the power to render thousands of lines of source code obsolete instantly!
+ - 堅持在匈牙利命名法綴詞裡面包含所有獨立的資訊。參考這個真實世界的變數名稱 `a_crszkvc30LastNameCol`。花費一整個團隊的維護工程師大概三天的時間，才搞清楚這個變數是一個常數（`c`），參考（`reference`），函式的引數（`a_`），null 結尾字串（`sz`），某個資料庫欄位（`Col`）裡面名為 `LastName` 的資料，資料長度是 Varchar[30]（`vc30`），而且是某個表的 primary key 裡面的一部分（`k`）。 搭配「所有變數都是公開的」原則，這個技巧可以讓數千行程式碼直接廢掉！
 
- - Use to your advantage the principle that the human brain can only hold 7 pieces of information concurrently. For example code written to the above standard has the following properties:
+ - 善加利用人腦一次只能同時處理七件事情的原則。舉例來說，良好運用上面原則，可以寫出具有以下特點的程式碼：
 
-    * a single assignment statement carries 14 pieces of type and name information.
-    * a single function call that passes three parameters and assigns a result carries 29 pieces of type and name information.
+    * 一行帶有 14 個型態和意義資訊的宣告。
+    * 呼叫一個函式，傳入三個參數，回傳帶有 29 個型態和名稱資訊的值。
     * Seek to improve this excellent, but far too concise, standard. Impress management and coworkers by recommending a 5 letter day of the week prefix to help isolate code written on `Monam` and `FriPM`.
     * It is easy to overwhelm the short term memory with even a moderately complex nesting structure, **especially** when the maintenance programmer can't see the start and end of each block on screen simultaneously.
 
 #### 再看匈牙利命名法
 
-One followon trick in the Hungarian notation is "change the type of a variable but leave the variable name unchanged". This is almost invariably done in windows apps with the migration from Win16:
+匈牙利命名法的一個技巧是「改變變數型態，但是不改變變數名稱」。這種技巧常見於將程式碼從 Win16：
 
 ```c
 WndProc(HWND hW, WORD wMsg, WORD wParam, LONG lParam)
 ```
 
-to Win32
+更新到 Win32：
 
 ```c
 WndProc(HWND hW, UINT wMsg, WPARAM wParam, LPARAM lParam)
 ```
 
-where the `w` values hint that they are words, but they really refer to longs. The real value of this approach comes clear with the Win64 migration, when the parameters will be 64 bits wide, but the old `w` and `l` prefixes will remain forever.
+`w` 代表這些變數是 WORD，但是他們其實都是 LONG。The real value of this approach comes clear with the Win64 migration, when the parameters will be 64 bits wide, but the old `w` and `l` prefixes will remain forever.
 
 #### Reduce, Reuse, Recycle
 
@@ -214,7 +216,7 @@ If you have to define a structure to hold data for callbacks, always call the st
 
 #### 隱晦的電影引用
 
-Use constant names like `LancelotsFavouriteColour` instead of `blue` and assign it hex value of `$0204FB`. The color looks identical to pure blue on the screen, and a maintenance programmer would have to work out `0204FB` (or use some graphic tool) to know what it looks like. Only someone intimately familiar with Monty Python and the Holy Grail would know that Lancelot's favorite color was blue. If a maintenance programmer can't quote entire Monty Python movies from memory, he or she has no business being a programmer.
+使用 `LancelotsFavouriteColour` 這種變數名稱儲存 `#0204FB` 的 RGB 色碼，不要用 `blue`。這個顏色和正藍色看起來幾乎一樣，但是你之後的維護者必須要想辦法弄清楚 `0204FB` 到底是什麼，可能還會用上繪圖工具。只有特別喜歡 "Monty Python and the Holy Grail" 這部電影的人才會知道 Lancelot 最喜歡的顏色是藍色。畢竟，如果一個工程師沒法直接回想這部電影的細節，那麼他根本就不適合當工程師。
 
 ## 偽裝
 
@@ -224,7 +226,7 @@ Much of the skill in writing unmaintainable code is the art of camouflage, hidin
 
 #### 偽裝成註解的程式碼（反之亦然）
 
-Include sections of code that are commented out but at first glance do not appear to be.
+包含看起來像是程式碼，但是其實是註解的段落：
 
 ```js
 for(j=0; j<array_len; j+ =8)
@@ -240,7 +242,7 @@ total += array[j+7 ];
 }
 ```
 
-Without the colour coding would you notice that three lines of code are commented out?
+沒有上色的話，你會知道中間三行被註解掉了嗎？
 
 #### namespaces
 
@@ -267,7 +269,7 @@ Hide macro definitions in amongst rubbish comments. The programmer will get bore
 #define a=b a=0-b
 ```
 
-#### Look Busy
+#### 裝忙
 
 Use `define` statements to make made up functions that simply comment out their arguments, e.g.:
 
@@ -279,13 +281,13 @@ fastcopy(array1, array2, size); /* does nothing */
 
 #### Use Continuation to hide variables
 
-Instead of using
+如果你想寫
 
 ```c
 #define local_var xy_z
 ```
 
-break up `xy_z` onto two lines:
+將 `xy_z` 分成兩行，改成：
 
 ```c
 #define local_var xy\
@@ -326,7 +328,7 @@ These defs should be scattered through different include-files. They are especia
 
 Use very long variable names or class names that differ from each other by only one character, or only in upper/lower case. An ideal variable name pair is `swimmer` and `swimner`. Exploit the failure of most fonts to clearly discriminate between `ilI1|` or `oO08` with identifier pairs like `parselnt` and `parseInt` or `D0Calc` and `DOCalc`. `l` is an exceptionally fine choice for a variable name since it will, to the casual glance, masquerade as the constant `1`. In many fonts rn looks like an m. So how about a variable `swirnrner`. Create variable names that differ from each other only in case e.g. `HashTable` and `Hashtable`.
 
-#### Similar-Sounding Similar-Looking Variable Names
+#### 唸起來相似或看起來相似的變數名稱
 
 Variables that resemble others except for capitalization and underlines have the advantage of confounding those who like remembering names by sound or letter-spelling, rather than by exact representations.
 
@@ -387,9 +389,9 @@ Compiler directives were designed with the express purpose of making the same co
 
 Since the computer ignores comments and documentation, you can lie outrageously and do everything in your power to befuddle the poor maintenance programmer.
 
-#### 載著解裡說謊
+#### 在註解裡說謊
 
-You don't have to actively lie, just fail to keep comments as up to date with the code.
+你不需要特別做什麼，只要不維護註解，隨著程式碼改變，註解自然而然就會說謊了。
 
 #### 為顯而易見的東西寫文件
 
@@ -414,13 +416,13 @@ In fact, the design doc should break the algorithm down into a hierarchy of stru
 
 1.2.4.6.3.13 - Display all impacts for activity where selected mitigations can apply (short pseudocode omitted).
 
-**then**... (and this is the kicker) when you write the code, for each of these paragraphs you write a corresponding global function named:
+**然後**⋯⋯ （精彩的部分來了）當你寫程式碼時，針對每個段落，你對應的函式名稱為：
 
 ```c
 Act1_2_4_6_3_13()
 ```
 
-Do not document these functions. After all, that's what the design document is for!
+函式本身不用再註解了，畢竟設計文件已經寫了！
 
 Since the design doc is auto-numbered, it will be extremely difficult to keep it up to date with changes in the code (because the function names, of course, are static, not auto-numbered.) This isn't a problem for you because you will not try to keep the document up to date. In fact, do everything you can to destroy all traces of the document.
 
@@ -615,7 +617,7 @@ Global variables save you from having to specify arguments in functions. Take fu
 
 #### 副作用
 
-In C, functions are supposed to be idempotent, (without side effects). I hope that hint is sufficient.
+在 C 裡面，所有的函式都應該是 idempotent（沒有任何副作用）。我希望這邊的提示已經夠了。
 
 #### Backing Out
 
@@ -633,7 +635,7 @@ These usually have the form keyword=value. The values are loaded into Java varia
 
 To ensure your classes are bounded in the most obtuse way possible, make sure you include peripheral, obscure methods and attributes in every class. For example, a class that defines astrophysical orbit geometry really should have a method that computes ocean tide schedules and attributes that comprise a Crane weather model. Not only does this over-define the class, it makes finding these methods in the general system code like looking for a guitar pick in a landfill.
 
-#### Subclass With Abandon
+#### 沈溺在 Subclass 中
 
 Object oriented programming is a godsend for writing unmaintainable code. If you have a class with 10 properties (member/method) in it, consider a base class with only one property and subclassing it 9 levels deep so that each descendant adds one property. By the time you get to the last descendant class, you'll have all 10 properties. If possible, put each class declaration in a separate file. This has the added effect of bloating your `INCLUDE` or `USES` statements, and forces the maintainer to open that many more files in his or her editor. Make sure you create at least one instance of each subclass.
 
@@ -763,9 +765,9 @@ I am going to let you in on a little-known coding secret. Exceptions are a pain 
 
 Use exceptions for non-exceptional conditions. Routinely terminate loops with an `ArrayIndexOutOfBoundsException`. Pass return standard results from a method in an exception.
 
-#### Use threads With Abandon
+#### 沈溺在使用線程（thread）內
 
-title says it all.
+標題說明一切。
 
 #### 律師程式碼
 
@@ -1039,12 +1041,12 @@ Everyone knows that debugging your dynamic storage is complicated and time consu
 
 ## 特異語言的各種技巧
 
-> _Programming in Basic causes brain damage._
+> _用 Basic 寫程式會造成大腦損傷_
 > - Edsger Wybe Dijkstra
 
 #### SQL Aliasing
 
-Alias table names to one or two letters. Better still alias them to the names of other unrelated existing tables.
+將資料表名稱 `AS` 成一個到兩個字母的單字。更好的做法是將名稱 `AS`  成其他完全無關的資料表名稱。
 
 #### SQL Outer Join
 
@@ -1056,7 +1058,7 @@ Mix the various flavours of outer join syntax just to keep everyone on their toe
 
 #### Visual Basic 宣告
 
-Instead of:
+如果原本是：
 
 ```vbnet
 dim Count_num as string
@@ -1064,7 +1066,7 @@ dim Color_var as string
 dim counter as integer
 ```
 
-use:
+改成：
 
 ```vbnet
 Dim Count_num$, Color_var$, counter%
@@ -1082,13 +1084,13 @@ Mid,14,24 = "withoutanys"
 and left,5 = "without"
 ```
 
-#### Delphi/Pascal Only
+#### Delphi/Pascal 專屬技巧
 
 Don't use functions and procedures. Use the label/goto statements then jump around a lot inside your code using this. It'll drive 'em mad trying to trace through this. Another idea, is just to use this for the hang of it and scramble your code up jumping to and fro in some haphazard fashion.
 
 #### Perl
 
-Use trailing if's and unless's especially at the end of really long lines.
+特別是在很長的一行裡面，使用末端 if 或者末端 unless 宣告方式。
 
 #### Lisp
 
@@ -1139,12 +1141,12 @@ ENDIF
 
 ## 其他技巧
 
-> _If you give someone a program, you will frustrate them for a day; if you teach them how to program, you will frustrate them for a lifetime._
+> _如果你給人一個程式，他會挫折一天；如果你教他怎麼寫程式，他會挫折一生。_
 > - 匿名
 
 #### 不重新編譯
 
-Let's start off with probably the most fiendish technique ever devised: Compile the code to an executable. If it works, then just make one or two small little changes in the source code...in each module. **But don't bother recompiling these.** You can do that later when you have more time, and when there's time for debugging. When the hapless maintenance programmer years later makes a change and the code no longer works, she will erroneously assume it must be something she recently changed. You will send her off on a wild goose chase that will keep her busy for weeks.
+我們從設計最好，最有敵意的技巧開始講起。寫完程式，編譯成執行檔，如果成功了之後，我們做一些小修改⋯⋯對每個模組都做，**但是不重新編譯**。畢竟只是小修改，編譯可以晚一點我們有空除錯時再處理。這時候，當下一個倒霉鬼接手你的程式，修改之後編譯出的執行檔有問題，他一定會誤以為是他剛剛改的東西出錯了。這可以花他好幾週的時間除錯才能找到問題。
 
 #### Foiling Debuggers
 
@@ -1156,13 +1158,13 @@ In engineering work there are two ways to code. One is to convert all inputs to 
 
 #### CANI
 
-**C**onstant **A**nd **N**ever-ending **I**mprovement. Make "improvements" to your code often, and force users to upgrade often - after all, no one wants to be running an outdated version. Just because they think they're happy with the program as it is, just think how much happier they will be after you've "fixed" it! Don't tell anyone what the differences between versions are unless you are forced to - after all, why tell someone about bugs in the old version they might never have noticed otherwise?
+經常且不斷改進（**C**onstant **A**nd **N**ever-ending **I**mprovement）。 Make "improvements" to your code often, and force users to upgrade often - after all, no one wants to be running an outdated version. Just because they think they're happy with the program as it is, just think how much happier they will be after you've "fixed" it! Don't tell anyone what the differences between versions are unless you are forced to - after all, why tell someone about bugs in the old version they might never have noticed otherwise?
 
 #### About Box
 
 The About Box should contain only the name of the program, the names of the coders and a copyright notice written in legalese. Ideally it should link to several megs of code that produce an entertaining animated display. However, it should **never** contain a description of what the program is for, its minor version number, or the date of the most recent code revision, or the website where to get the updates, or the author's email address. This way all the users will soon all be running on different versions, and will attempt to install version N+2 before installing version N+1.
 
-#### ㄍㄍㄍ改變
+#### 改變改變改變
 
 The more changes you can make between versions the better, you don't want users to become bored with the same old API or user interface year after year. Finally, if you can make this change without the users noticing, this is better still - it will keep them on their toes, and keep them from becoming complacent.
 
@@ -1232,7 +1234,7 @@ Put all the code in the makefile. Your successors will be really impressed how y
 
 #### 繞過公司的程式碼撰寫標準
 
-Some companies have a strict policy of no numeric literals; you must use named constants. It is fairly easy to foil the intent of this policy. For example, one clever C++ programmer wrote:
+有些公司嚴格規範不能出現數字作為常值，你一定得用命名之後的常數。這個規範非常好繞過，舉例來說，一個聰明的 C++ 工程師寫過：
 
 ```cpp
 #define K_ONE 1
@@ -1276,9 +1278,9 @@ Incorporate a scripting command language into your client/server apps that is by
 
 If you discover a bug in your compiler or interpreter, be sure to make that behaviour essential for your code to work properly. After all you don't use another compiler, and neither should anyone else!
 
-#### A Real Life Example
+#### 真實案例
 
-Here's a real life example written by a master. Let's look at all the different techniques he packed into this single C function.
+這是某位大師所撰寫的真實範例。我們來看看他如何在一個 C 的函式裡合併使用各種技巧：
 
 ```c
 void* Realocate(void*buf, int os, int ns)
@@ -1294,9 +1296,9 @@ void* Realocate(void*buf, int os, int ns)
 }
 ```
 
-*   Reinvent simple functions which are part of the standard libraries.
-*   The word _Realocate_ is not spelled correctly. Never underestimate the power of creative spelling.
-*   Make a temporary copy of input buffer for no real reason.
+*   重新發明標準函式庫裡面已經有的簡單函式。
+*   _Realocate_ 拼錯。千萬別小看創意拼字的力量。
+*   毫無理由的建立 `temp` 來儲存輸入。
 *   Cast things for no reason. `memcpy()` takes `(void*)`, so cast our pointers even though they're already `(void*)`. Bonus for the fact that you could pass anything anyway.
 *   Never bothered to free temp. This will cause a slow memory leak, that may not show up until the program has been running for days.
 *   Copy more than necessary from the buffer just in case. This will only cause a core dump on Unix, not Windows.
@@ -1305,7 +1307,7 @@ void* Realocate(void*buf, int os, int ns)
 
 #### 如何修正未使用變數的錯誤
 
-If your compiler issues "unused local variable" warnings, don't get rid of the variable. Instead, just find a clever way to use it. My favorite is...
+如果你的編譯器會警告「未使用的本地變數」，不要直接刪掉這個變數。找個聰明的方法使用變數就好。我最喜歡的方法是：
 
 ```java
 i = i;
