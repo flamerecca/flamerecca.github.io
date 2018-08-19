@@ -181,7 +181,7 @@ C++ 曾經有個命名慣例是使用`m_`開頭的字代表成員（member）變
 
  - 使用和你現在用的語言無關的匈牙利命名法綴詞。比方說，堅持 PowerBuilder 的 `l_` 和 `a_`（本地（local）和參數（argument））前綴。寫 C++ 時，堅持使用 VB 類語言會使用的 control type 前綴，忽略連微軟的 MFC 類別庫程式碼都沒有 control type 前綴這個事實。
 
- - Always violate the Hungarian principle that the most commonly used variables should carry the least extra information around with them. Achieve this end through the techniques outlined above and by insisting that each class type have a custom wart prefix. Never allow anyone to remind you that **no** wart tells you that something **is** a class. The importance of this rule cannot be overstated if you fail to adhere to its principles the source code may become flooded with shorter variable names that have a higher vowel/consonant ratio. In the worst case scenario this can lead to a full collapse of obfuscation and the spontaneous reappearance of English Notation in code!
+ - 違背匈牙利命名法內常用的變數應該要攜帶較少其他資訊的原則。要達到這點，可以堅持每個類別都應該有自己的前綴，不讓別人提醒你針對什麼**是**類別這件事情，根本**不存在**匈牙利命名法前綴。這個原則非常重要，如果沒有遵守，那程式碼可能會充斥許多簡短的，母音/子音比例變高的變數名稱。最差的狀況甚至可能導致整個混淆的努力失效，程式碼裡面出現用英文就可以看懂的段落！
 
  - 違背匈牙利命名原則內要求所有符號都要以有意義的方式命名這個原則。單單匈牙利綴詞的組合就足以作為一個很充份的變數名稱了。
 
@@ -191,8 +191,8 @@ C++ 曾經有個命名慣例是使用`m_`開頭的字代表成員（member）變
 
     * 一行帶有 14 個型態和意義資訊的宣告。
     * 呼叫一個函式，傳入三個參數，回傳帶有 29 個型態和名稱資訊的值。
-    * Seek to improve this excellent, but far too concise, standard. Impress management and coworkers by recommending a 5 letter day of the week prefix to help isolate code written on `Monam` and `FriPM`.
-    * It is easy to overwhelm the short term memory with even a moderately complex nesting structure, **especially** when the maintenance programmer can't see the start and end of each block on screen simultaneously.
+    * 繼續改善這個優秀但是稍嫌簡潔的標準，建議使用五個字母標注程式碼撰寫的時間點，像是 `Monam` 和`FriPM`，讓你的同事驚訝一下。
+    * 即使只使用有一點複雜的巢狀結構，也可以輕易擊垮其他人的短期記憶。**特別是** 當這段程式碼無法在螢幕上同時看到開頭和結尾時。
 
 #### 再看匈牙利命名法
 
@@ -208,7 +208,7 @@ WndProc(HWND hW, WORD wMsg, WORD wParam, LONG lParam)
 WndProc(HWND hW, UINT wMsg, WPARAM wParam, LPARAM lParam)
 ```
 
-`w` 代表這些變數是 WORD，但是他們其實都是 LONG。The real value of this approach comes clear with the Win64 migration, when the parameters will be 64 bits wide, but the old `w` and `l` prefixes will remain forever.
+`w` 代表這些變數是 WORD，但是他們其實都是 LONG。這在搬移到 Win64 時會更看出其價值。全部的參數都是 64 bits，但是 `w` 和 `l` 的前綴會永遠留下。
 
 #### Reduce, Reuse, Recycle
 
@@ -220,9 +220,9 @@ If you have to define a structure to hold data for callbacks, always call the st
 
 ## 偽裝
 
-> _The longer it takes for a bug to surface, the harder it is to find._ - Roedy Green
+> _當錯誤浮現的時間越長，那錯誤就越難找_ - Roedy Green
 
-Much of the skill in writing unmaintainable code is the art of camouflage, hiding things, or making things appear to be what they are not. Many depend on the fact the compiler is more capable at making fine distinctions than either the human eye or the text editor. Here are some of the best camouflaging techniques.
+撰寫難以維護的程式碼上面，許多技巧來自於偽裝的藝術。將東西隱藏起來，或者讓東西看起來的樣子不是真實情況。許多技巧依賴編譯器比起人類或者文字編輯器更能詳細區分細節這件事情。以下是一些偽裝的技巧：
 
 #### 偽裝成註解的程式碼（反之亦然）
 
@@ -246,7 +246,7 @@ total += array[j+7 ];
 
 #### namespaces
 
-Struct/union and typedef struct/union are different name spaces in C (not in C++). Use the same name in both name spaces for structures or unions. Make them, if possible, nearly compatible.
+在 C 裡面，struct/union 和 typedef struct/union 是不同的東西。你可以先定義一個 struct/union，然後定義同名的 typedef struct/union。如果可以的話，讓這兩個 struct/union 結構幾乎一樣。
 
 ```c
 typedef struct {
@@ -260,10 +260,11 @@ char* pTr;
 size_t lEn;
 } A;
 ```
+> 譯註：個人認為這個範例相當優秀，光看著就覺得自己得了不治之症
 
 #### 隱藏巨集定義
 
-Hide macro definitions in amongst rubbish comments. The programmer will get bored and not finish reading the comments thus never discover the macro. Ensure that the macro replaces what looks like a perfectly legitimate assignment with some bizarre operation, a simple example:
+在一堆沒用的註解裡面隱藏聚集的定義。之後維護的工程師閱讀註解到一半就會無聊而放棄，永遠找不到你所定義的巨集。確保你的巨集將原本合理的行為替換成某種奇怪的操作，比方說：
 
 ```c
 #define a=b a=0-b
@@ -276,7 +277,7 @@ Use `define` statements to make made up functions that simply comment out their 
 ```c
 #define fastcopy(x,y,z) /*xyz*/
 // ...
-fastcopy(array1, array2, size); /* does nothing */
+fastcopy(array1, array2, size); /* 什麼都不會做 */
 ```
 
 #### Use Continuation to hide variables
@@ -409,9 +410,10 @@ If, for example, you were writing an airline reservation system, make sure there
 
 Consider function documentation prototypes used to allow automated documentation of the code. These prototypes should be copied from one function (or method or class) to another, but never fill in the fields. If for some reason you are forced to fill in the fields make sure that all parameters are named the same for all functions, and all cautions are the same but of course not related to the current function at all.
 
-#### On the Proper Use of Design Documents
+####  設計文件的正確用法
 
-When implementing a very complicated algorithm, use the classic software engineering principles of doing a sound design before beginning coding. Write an extremely detailed design document that describes each step in a very complicated algorithm. The more detailed this document is, the better.
+實作一個非常複雜的演算法時，參照傳統軟體開發的原則，先想出完整設計過後，再開始寫程式。針對該演算法的每一步驟寫出非常詳細的文件，文件詳細程度越高越好。
+
 In fact, the design doc should break the algorithm down into a hierarchy of structured steps, described in a hierarchy of auto-numbered individual paragraphs in the document. Use headings at least 5 deep. Make sure that when you are done, you have broken the structure down so completely that there are over 500 such auto-numbered paragraphs. For example, one paragraph might be(this is a real example)
 
 1.2.4.6.3.13 - Display all impacts for activity where selected mitigations can apply (short pseudocode omitted).
@@ -422,7 +424,7 @@ In fact, the design doc should break the algorithm down into a hierarchy of stru
 Act1_2_4_6_3_13()
 ```
 
-函式本身不用再註解了，畢竟設計文件已經寫了！
+函式本身不用再註解了，畢竟設計文件已經寫過了！
 
 Since the design doc is auto-numbered, it will be extremely difficult to keep it up to date with changes in the code (because the function names, of course, are static, not auto-numbered.) This isn't a problem for you because you will not try to keep the document up to date. In fact, do everything you can to destroy all traces of the document.
 
@@ -489,9 +491,9 @@ Unfortunately the popularity of the ++ operator makes it harder to get away with
 swimmer = swimner + 1;
 ```
 
-#### Never Validate
+#### 從不驗證
 
-Never check input data for any kind of correctness or discrepancies. It will demonstrate that you absolutely trust the company's equipment as well as that you are a perfect team player who trusts all project partners and system operators. Always return reasonable values even when data inputs are questionable or erroneous.
+絕不檢查輸入的格式是否正確或者有差異。這表示了你絕對相信公司，也代表你是團隊的好成員，絕對相信團隊的所有夥伴和用戶。即使輸入的資料看起來很奇怪或有錯，總是輸出看起來有道理的回傳值。
 
 #### 有禮貌，從不斷言
 
@@ -503,7 +505,7 @@ In the interests of efficiency, avoid encapsulation. Callers of a method need al
 
 #### Clone & Modify
 
-In the name of efficiency, use cut/paste/clone/modify. This works much faster than using many small reusable modules. This is especially useful in shops that measure your progress by the number of lines of code you've written.
+以效率的名義，剪貼別人的程式碼然後修改。這樣比起寫很多小的，可重複使用的模組要快很多。這個技巧在以程式碼行數判斷工程師效率的公司裡面特別有效。
 
 #### 使用靜態陣列
 
@@ -1319,23 +1321,23 @@ It almost goes without saying that the larger a function is, the better it is. A
 
 #### 一張圖片包含千言萬語; 一個函式也包含千言萬語
 
-Make the body of every method as long as possible - hopefully you never write any methods or functions with fewer than a thousand lines of code, deeply nested, of course.
+每個函式都越長越好，最好不要低於一千行。當然，要寫成很深的巢狀。
 
 #### 少一個檔案
 
-Make sure that one or more critical files is missing. This is best done with includes of includes. For example, in your main module, you have
+確保一個或者多個重要檔案不見了。要達成這件事最好使用多重 include。比方說，在你的模組裡，有：
 
 ```c
 #include <stdcode.h>
 ```
 
-`stdcode.h` is available. But in stdcode.h, there's a reference to
+`stdcode.h` 是存在的，但是在 stdcode.h 裡面，又有：
 
 ```c
 #include "a:\\refcode.h"
 ```
 
-and `refcode.h` is no where to be found.
+然後 `refcode.h` 不見了，到處都找不到。
 
 #### 到處寫，讀不到
 
