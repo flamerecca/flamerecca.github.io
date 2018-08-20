@@ -51,7 +51,7 @@
 軟體測試反模式列表
 
 * [僅有單元測試，沒有整合測試](having-unit-tests-without-integration-tests.md)
-* 僅有整合測試，沒有單元測試
+* [僅有整合測試，沒有單元測試](having-integration-tests-without-unit-tests.md)
 * 測試種類錯誤
 * 測試錯誤功能
 * 測試內部實作
