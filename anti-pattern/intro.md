@@ -53,7 +53,7 @@
 * [僅有單元測試，沒有整合測試](having-unit-tests-without-integration-tests.md)
 * [僅有整合測試，沒有單元測試](having-integration-tests-without-unit-tests.md)
 * [測試種類錯誤](having-the-wrong-kind-of-tests.md)
-* 測試錯誤功能
+* [測試錯誤功能](testing-the-wrong-functionality.md)
 * 測試內部實作
 * 過度關注測試覆蓋率
 * 離譜或緩慢的測試
