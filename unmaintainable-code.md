@@ -272,7 +272,7 @@ size_t lEn;
 
 #### 裝忙
 
-Use `define` statements to make made up functions that simply comment out their arguments, e.g.:
+用 `define` 定義將全部輸入以註解處理的函式。像是：
 
 ```c
 #define fastcopy(x,y,z) /*xyz*/
@@ -280,7 +280,7 @@ Use `define` statements to make made up functions that simply comment out their 
 fastcopy(array1, array2, size); /* 什麼都不會做 */
 ```
 
-#### Use Continuation to hide variables
+#### 使用換行來隱藏變數
 
 如果你想寫
 
@@ -295,15 +295,15 @@ fastcopy(array1, array2, size); /* 什麼都不會做 */
 _z // local_var OK
 ```
 
-That way a global search for `xy_z` will come up with nothing for that file. To the C preprocessor, the `\` at the end of the line means glue this line to the next one.
+這樣一來，搜尋 `xy_z` 完全找不到這個變數，但是對 C 前置處理器來說，末端的 `\` 代表將兩行合併，所以可以編譯出 `xy_z` 這個變數。
 
 #### Arbitrary Names That Masquerade as Keywords
 
 When documenting, and you need an arbitrary name to represent a filename use _"file"_. Never use an obviously arbitrary name like _"Charlie.dat"_ or _"Frodo.txt"_. In general, in your examples, use arbitrary names that sound as much like reserved keywords as possible. For example, good names for parameters or variables would be `bank`, `blank`, `class`, `const`, `constant`, `input`, `key`, `keyword`, `kind`, `output`, `parameter`, `parm`, `system`, `type`, `value`, `var` and `variable`. If you use actual reserved words for your arbitrary names, which would be rejected by your command processor or compiler, so much the better. If you do this well, the users will be hopelessly confused between reserved keywords and arbitrary names in your example, but you can look innocent, claiming you did it to help them associate the appropriate purpose with each variable.
 
-#### Code Names Must Not Match Screen Names
+#### 程式碼內名稱絕不和畫面名稱相同
 
-Choose your variable names to have absolutely no relation to the labels used when such variables are displayed on the screen. E.g. on the screen label the field "Postal Code" but in the code call the associated variable `zip`.
+選擇和程式畫面上對應的資料一點關係都沒有的名稱來命名你的變數。比方說，畫面顯示「郵遞區號（Postal Code）」的資料，程式碼內對應的變數是 `zip`。
 
 #### Don't Change Names
 
