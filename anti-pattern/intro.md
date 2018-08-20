@@ -14,7 +14,7 @@
 # 術語
 很不幸的，測試的術語尚未取得全面的共識。問一百位開發者整合測試（integration test），部件測試（component test）和 E2E 測試（end-to-end test）的差異是什麼，很可能會得到一百種不同的答案。在這篇文章內我們使用測試金字塔的定義，如下圖：
 
-The Testing pyramid
+![測試金字塔](/assets/testing-pyramid.png)
 
 如果你不知道什麼是測試金字塔，我建議你先稍微理解它之後再往下閱讀。一些不錯的文章有：
 
