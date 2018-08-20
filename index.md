@@ -11,6 +11,9 @@
 * [背單字](beiDanTz.md)
 * [circle ci 環境設置](circleci.md)
 
+## 測試
+* [軟體測試反模式-引言](anti-pattern/intro.md)
+
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
 * [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
