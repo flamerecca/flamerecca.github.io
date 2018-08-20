@@ -2,7 +2,7 @@
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 測試種類錯誤
+## 測試種類錯誤
 
 根據前面兩篇反模式討論（[僅有單元測試，沒有整合測試](having-unit-tests-without-integration-tests.md) 和 [僅有整合測試，沒有單元測試](having-integration-tests-without-unit-tests.md)）我們知道應該兩種測試要同時存在了。現在我們要決定每一種分別需要多少測試。
 
