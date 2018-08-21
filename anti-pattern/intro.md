@@ -58,8 +58,8 @@
 * 過度關注測試覆蓋率
 * 離譜或緩慢的測試
 * 手動測試
-* 將測試視為次等公民
-* 沒有將正式錯誤列入測試
+* [將測試視為次等公民](treating-test-code-as-a-second-class-citizen.md)
+* [沒有將正式錯誤列入測試](not-converting-production-bugs-to-tests.md)
 * 將測試驅動開發視為信仰
 * 沒有讀文件就開始測試
 * 因無知而對測試有偏見
