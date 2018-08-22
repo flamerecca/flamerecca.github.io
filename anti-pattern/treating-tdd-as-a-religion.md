@@ -36,8 +36,3 @@ TDD 崇拜者這種無論怎樣都一定要先寫測試的狂熱，已經對正�
 簡單說，TDD 是個好想法，但是不用永遠遵守。如果你在前五百大公司工作，身邊圍繞著商業分析師，每個實作項目都有清楚規格的話，那麼 TDD 可能有幫助。
 
 反過來說，如果你只是週末在家裡試試新的框架，看看框架怎麼運作，那麼當然可以不用遵守 TDD。
-In summary, TDD is a good idea but you don’t have to follow it all the time. If you work in a fortune 500 company, surrounded by business analysts and getting clear specs on what you need to implement, then TDD might be helpful.
-
-On the other hand if you are just playing with a new framework at your house during the weekend and want to understand how it works, then feel free to not follow TDD.
-
-
