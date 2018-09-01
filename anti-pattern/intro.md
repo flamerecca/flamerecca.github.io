@@ -60,7 +60,7 @@
 * 手動測試
 * [將測試視為次等公民](treating-test-code-as-a-second-class-citizen.md)
 * [沒有將正式錯誤列入測試](not-converting-production-bugs-to-tests.md)
-* 將測試驅動開發視為信仰
-* 沒有讀文件就開始測試
-* 因無知而對測試有偏見
+* [將測試驅動開發視為信仰](treating-tdd-as-a-religion.md)
+* [沒有讀文件就開始測試](writing-tests-without-reading-documentation-first.md)
+* [因無知而對測試有偏見](giving-testing-a-bad-reputation-out-of-ignorance.md)
 
