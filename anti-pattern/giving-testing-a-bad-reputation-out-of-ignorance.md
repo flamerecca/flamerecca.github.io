@@ -1,3 +1,7 @@
+原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-13---giving-testing-a-bad-reputation-out-of-ignorance](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-13---giving-testing-a-bad-reputation-out-of-ignorance)
+
+歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
+
 # 因無知而對測試有偏見
 
 雖然這是最後提到的反模式，但是這個模式是這篇文章出現的真正原因。當我看到有人在研討會或聚會上驕傲的宣稱測試是浪費時間，他們的專案不需要測試也運作得很好時，總是覺得很失望。另一個更常見的情況是遇到反對某種測試（通常是單元測試或者整合測試其中一種）的人，就像我們在反模式 1 和 反模式 2 看到的一樣。
