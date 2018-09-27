@@ -297,17 +297,19 @@ _z // local_var OK
 
 這樣一來，搜尋 `xy_z` 完全找不到這個變數，但是對 C 前置處理器來說，末端的 `\` 代表將兩行合併，所以可以編譯出 `xy_z` 這個變數。
 
-#### Arbitrary Names That Masquerade as Keywords
+#### 偽裝成保留字的任意命名
 
-When documenting, and you need an arbitrary name to represent a filename use _"file"_. Never use an obviously arbitrary name like _"Charlie.dat"_ or _"Frodo.txt"_. In general, in your examples, use arbitrary names that sound as much like reserved keywords as possible. For example, good names for parameters or variables would be `bank`, `blank`, `class`, `const`, `constant`, `input`, `key`, `keyword`, `kind`, `output`, `parameter`, `parm`, `system`, `type`, `value`, `var` and `variable`. If you use actual reserved words for your arbitrary names, which would be rejected by your command processor or compiler, so much the better. If you do this well, the users will be hopelessly confused between reserved keywords and arbitrary names in your example, but you can look innocent, claiming you did it to help them associate the appropriate purpose with each variable.
+在文件撰寫時，如果你需要一個名稱，比方說代表某個可能的輸入檔案時，絕不使用好理解的任意命名，比方說  _"Charlie.dat"_ 或 _"Frodo.txt"_。基本上，在文件的範例裡，名稱越像保留關鍵字越好。比方說，你可以將變數或者參數命名為 `bank`，`blank`，`class`，`const`，`constant`，`input`，`key`，`keyword`，`kind`，`output`，`parameter`，`parm`，`system`，`type`，`value`，`var` 和 `variable`。
+
+如果你使用該語言真正的保留關鍵字，也就是該段範例碼如果嘗試編譯或運作會出錯的話，那就更好了。做得好的話，可以讓之後的用戶完全搞不懂哪段是程式需要的保留字，哪些又是你設定的名稱。如果有人問起，你可以無辜的看著他，宣稱這是為了幫助大家更好地理解這些變數的意義。
 
 #### 程式碼內名稱絕不和畫面名稱相同
 
 選擇和程式畫面上對應的資料一點關係都沒有的名稱來命名你的變數。比方說，畫面顯示「郵遞區號（Postal Code）」的資料，程式碼內對應的變數是 `zip`。
 
-#### Don't Change Names
+#### 絕不改名
 
-Instead of globally renaming to bring two sections of code into sync, use multiple TYPEDEFs of the same symbol.
+與其要到處找名稱不同的地方修改讓兩個功能合併，不如用多個 TYPEDEF 來同步程式。
 
 #### How to Hide Forbidden Globals
 
@@ -396,15 +398,15 @@ Since the computer ignores comments and documentation, you can lie outrageously 
 
 #### 為顯而易見的東西寫文件
 
-Pepper the code with comments like `/* add 1 to i */` however, never document wooly stuff like the overall purpose of the package or method.
+在程式碼裡散佈像是 `/* i 加上 1*/` 這樣的註解。不過絕對不對這段程式碼實際在做什麼這種模糊的事加上註解。
 
 #### 紀錄怎麼做的，而不是為什麼這麼做
 
-Document only the details of what a program does, not what it is attempting to accomplish. That way, if there is a bug, the fixer will have no clue what the code should be doing.
+只紀錄程式碼做了什麼事情的細節，但是不描述這段程式碼的功能。這樣一來，如果出錯，負責改的人完全不知道這段程式應該要做什麼事情。
 
 #### 避免為了「顯而易見」的東西寫文件
 
-If, for example, you were writing an airline reservation system, make sure there are at least 25 places in the code that need to be modified if you were to add another airline. Never document where they are. People who come after you have no business modifying your code without thoroughly understanding every line of it.
+假如你在為一個飛機定位系統撰寫文件。確保假設加入一條新的航線，程式碼至少要改 25 個地方以上。確定沒有文件如果加入航線到底要注意哪些地方。後面的維護者沒有看過你的每一行程式之前，完全沒有辦法更新任何商業流程。
 
 #### On the Proper Use Of Documentation Templates
 
@@ -414,9 +416,12 @@ Consider function documentation prototypes used to allow automated documentation
 
 實作一個非常複雜的演算法時，參照傳統軟體開發的原則，先想出完整設計過後，再開始寫程式。針對該演算法的每一步驟寫出非常詳細的文件，文件詳細程度越高越好。
 
+文件要將整個演算法拆解成詳細的結構化步驟，每個段落解釋一個步驟內的實作方式。拆分的詳細程度至少要達到五層標題。
 In fact, the design doc should break the algorithm down into a hierarchy of structured steps, described in a hierarchy of auto-numbered individual paragraphs in the document. Use headings at least 5 deep. Make sure that when you are done, you have broken the structure down so completely that there are over 500 such auto-numbered paragraphs. For example, one paragraph might be(this is a real example)
 
-1.2.4.6.3.13 - Display all impacts for activity where selected mitigations can apply (short pseudocode omitted).
+1.2.4.6.3.13 - 選擇的緩解方式
+
+Display all impacts for activity where selected mitigations can apply (short pseudocode omitted).
 
 **然後**⋯⋯ （精彩的部分來了）當你寫程式碼時，針對每個段落，你對應的函式名稱為：
 
