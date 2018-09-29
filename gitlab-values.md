@@ -80,21 +80,21 @@ people. We try to hire people who think work is a great way to express themselve
 
 ## 迭代
 
-We do the [smallest thing possible and get it out as quickly as possible](/2017/01/04/behind-the-scenes-how-we-built-review-apps/). If you make suggestions that can be excluded from the first iteration turn them into a separate issue that you link. Don't write a large plan, only write the first step. Trust that you'll know better how to proceed after something is released. You're doing it right if you're slightly embarrassed by the minimal feature set shipped in the first iteration. This value is the one people underestimate when they join GitLab, the impact both on your work process and on how much you achieve is greater than anticipated. In the beginning it hurts to make decisions fast and to see that things are changed with less consultation. But frequently the simplest version turns out to be the best one.
+我們做[盡可能小的事情，並且盡可能快推出](/2017/01/04/behind-the-scenes-how-we-built-review-apps/)。如果你有個提案在第一次迭代中可以排除在外，並且可以變成單獨的 Issue ，則不要寫成一個巨大的提案，只要寫第一步即可。相信你在東西推出之後，會更知道如何進行下一步。如果你在第一次迭代中，覺得你推出的功能太小因而感到羞恥，那你就做對了。這個價值是人們剛加入 GitLab 時最常低估的，你工作過程和產出的影響力會比你原先預期的大。快速做決策，並看事情在很少討論之下改變，在一開始會感到十分痛苦。但頻繁推出最簡單的版本，最終結果會是最好的。
 
-People that join GitLab all say they already practice this iteration. But this is the value that they have the hardest time adopting. People are trained that if you don't deliver a perfect or polished thing you get dinged for it. If you do just one piece of something you have to come back to it. Doing the whole thing seems more efficient, even though it isn't. If the complete picture is not clear your work might not be perceived as you want it to be perceived. It seems better to make a comprehensive product. They see other people in the GitLab organization being really effective with iteration but don't know how to make the transition.
+加入 GitLab 的人們都會說他們已經在實踐這樣的迭代方式，但這個價值是所有價值中最難採納的。人們已訓練成如果事情沒十全十美交付，就會被盯。如果你有件事情做了一點點，之後還要繼續做。做完整件事情似乎更有效率（即使實際上並沒有）。如果成品的遠景還不明確，人們對你成品的理解，可能不會是你想要成品被理解的樣子。因此似乎做個包山包海的成品比較好。他們會覺得 GitLab 組織的其他人在迭代很有效率，但不知道怎麼做轉移。
 
-The way to resolve this is to write down only what you can do with the time you have for this project right now. That might be 5 minutes or 2 hours. Think of what you can complete in that time that would improve the current situation. Iteration feels uncomfortable, and people might ask why something was not perfect. In that case mention that it was an iteration, you spent only x amount of time on it, and that the next iteration will contain y and be ready on z.
+要解決這樣的問題，必須寫下來「現在你給這個專案的時間，你只能做些什麼」。這個時間可能是 5 分鐘或 2 小時。想想你在那段時間能做些什麼，來改善現狀。迭代感覺起來不舒服，而且人們可能會問為什麼某某東西不完美。在這樣的情況下，解釋那是迭代，你只花了 x 部分的時間在那上面，在下個迭代會包含 y 而且在 z 會完成。
 
-1. **Reduce cycle time** Short iterations reduce [our cycle time](/features/cycle-analytics/).
-1. **Work as part of the community** Small iterations make it easier to work with the wider community. Their work looks more like our work and our work is quicker to give feedback too.
-1. **Minimum Viable Change (MVC)** Always look to make the quickest change possible to improve the outcome. If you think it is better than what is there now do it. No need to wait for something polished. [More information is in the product handbook](/handbook/product/#the-minimally-viable-change) but it applies to everything we do in all functions.
-1. **Make a proposal** If you need to decide something as a team make a proposal instead of calling a meeting to get everyone's input. Having a proposal will be a much more effective use of everyone's time. The people that receive the proposal should not feel left out, the person making it should not feel bad if a completely different proposal is implemented. Don't let your ego to be involved early or to see your solution implemented stand in the way of getting to the best outcome.
-1. **Everything is in draft** At GitLab we rarely put draft on any content or proposals. Everything is always in draft and subject to change.
-1. **Under construction** As we get more users they will ask for stability, especially in our UX. We should always optimize for the long term. This means that users will be inconvenienced in the short term, but current and future users will enjoy a better product in the end.
-1. **Low level of shame** When we talked to Nat Friedman he said: "A low level of shame is intrinsic to your culture.". This captures the pain we feel by shipping something that isn't where we want it to be yet.
-1. **Do things that don't scale** First optimize for speed and results, when it is a success figure out how to scale it. Great example are in [this article by Paul Graham](http://paulgraham.com/ds.html).
-1. **Don't wait for a two way door** Most decisions are easy to reverse, have the [directly responsible individual](/handbook/people-operations/directly-responsible-individuals/) make them without approval. As [Jeff Bezos describes](http://minimumviablestrategy.com/lessons/leadership/one-way-and-two-way-door-decisions/) only when you can't reverse them there should be a decision process.
+1. **減少週期** 短的迭代減少[我們的週期](/features/cycle-analytics/)
+1. **和社群一起工作** 小的迭代促進與更廣泛的社群協作。他們的工作會看起來更像我們的工作，而且我們的工作也會更快給出回饋。
+1. **最小可行更新 Minimum Viable Change (MVC)** 永遠找尋更快可能的改變來改善成果。如果你覺得做某事會比現況更好，就做。不需要等某事更完美一些再做。[更多的資訊在產品手冊有提到](/handbook/product/#the-minimally-viable-change)，但這個原則在我們所有部門都適用。
+1. **寫下提案** 如果你需要團隊決定某事，與其召開會議，不如直接寫下提案，來得到所有人的意見。有個提案會更有效地使用所有人的時間。如果最後是實作完全不一樣的提案，收到提案的人不該覺得被排擠，提出提案的人也不該覺得難過。別讓你的自我，或是想要看見自己的解決方案被實現的心情，阻礙產出最佳成果。
+1. **每件事都是草稿** 在 Gitlab 的任何內容或提案很少有草稿。每件事都是草稿，而且隨時都有可能改變。
+1. **施工中** 當我們得到更多使用者時，他們會要求穩定性，特別是針對使用者體驗。我們應該永遠對長遠做優化。這代表我們的使用者在短期會感受到不方便，但現在和未來的使用者最終會享有更好的產品。
+1. **低度羞恥感** Nat Friedman 曾和我們說：「保有低度羞恥感是你們文化的一部分」。我們東西未達心中期望就推出，心中的痛苦感被這句話準確表達出來。
+1. **做那些不會規模化的事情** 優先優化速度與產出，產出成功再來講究如何規模化。 [Paul Graham 的文章](http://paulgraham.com/ds.html) 有良好範例。
+1. **不要為了雙向門等待** 大多數的決策都是可逆的，讓[直接負責人（Directly Responsible Individual）](https://about.gitlab.com/handbook/people-operations/directly-responsible-individuals/) 不須核准就去做決策。如 [Jeff Bezos 所說](http://minimumviablestrategy.com/lessons/leadership/one-way-and-two-way-door-decisions/)，只有不可逆的決策，才需要決策流程。
 
 ## 透明
 
