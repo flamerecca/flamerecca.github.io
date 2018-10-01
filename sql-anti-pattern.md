@@ -30,20 +30,24 @@
 使用 json 檔案紀錄
 
 ```json
-{
-    id: 1,
-    content: 'aaa',
-    children: [
-        id: 3,
-        content: 'ccc',
-        children: []
-    ],
-},
-{
-    id: 2,
-    content: 'bbb',
-    children: []
-}
+[
+    {
+        "id": 1,
+        "content": "aaa",
+        "children": [
+            {
+                "id": 3,
+                "content": "ccc",
+                "children": []
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "content": "bbb",
+        "children": []
+    }
+]
 ```
 ## Dynamic table creation
 
