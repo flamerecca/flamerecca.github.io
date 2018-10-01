@@ -1,6 +1,6 @@
 # CREDIT
 
-GitLab 的六個價值是合作（Collaboration），結果（Results），效率（Efficiency），多元（Diversity），迭代（Iteration）和透明（Transparency）。這六個字拼成 CREDIT and together they spell the CREDIT we give each other by assuming good intent. Our values are interlinked and work with one another to protect our culture. They are made actionable below.
+GitLab 的六個價值是合作（Collaboration），結果（Results），效率（Efficiency），多元（Diversity），迭代（Iteration）和透明（Transparency）。這六個字拼成 CREDIT 這六個字拼成 CREDIT 作為我們送給各位的禮物。這些價值觀是相互關聯的，彼此之間互相合作以保護我們公司的文化。下面逐一解釋這些價值觀的操作方式：
 
 ## Collaboration
 
