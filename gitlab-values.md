@@ -7,11 +7,11 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 即使對目標沒有立即性的幫助，幫助別人應該是首要項目。相同的，你可以依靠別人的協助與意見 - 事實上你也應該要這樣。
 每個人，包含不在 gitlab 公司工作的人，都可以對任何專案提意見。對專案負責的人決定專案要怎麼做，但是他應該要認真看待其他人的意見，並解釋為什麼之前有或者沒有這麼做。
 
-1. **和藹** 我們很重視互相照顧這件事。互相關心協助建立一個能直接互相挑戰與提供回饋環境。我們不同意有的公司說的 [精準的評估別人，而不是「和藹的」](https://inside.bwater.com/publications/principles_excerpt). 我們支持精準的評估，但是這必須要以親切的方式進行。盡可能公開的給予彼此正向的回應。
+1. **和藹** 我們很重視互相照顧這件事。互相關心協助建立一個能直接互相挑戰與提供意見的環境。我們不同意有的公司說的 [精準的評估別人，而不是「和藹的」](https://inside.bwater.com/publications/principles_excerpt). 我們支持精準的評估，但是這必須要以親切的方式進行。盡可能公開的給予彼此正向的回應。
 1. **分享** GitLab 有一些文化，比方說極度的透明化，對其他人或者新進員工來說是很不直覺的。要努力在其他人身上花時間，並參與公開的對話。舉例來說，可以盡量將私下的議題公開討論，所以其他人都能從這些議題的經驗中學習。
 1. **負面訊息要一對一** 越少人看到負面訊息越好。建議可以用一對一的視訊。
 1. **說謝謝** 公開對幫助過你的人道謝，比方說在我們的 [#thanks chat channel](/handbook/communication/#internal-communication) 裡面。
-1. **有效地給予回饋** 給予回饋是很難的，但是有效地給予回饋非常重要。給予回饋時，要注意對事不對人，針對事情本身的影響而不要針對人本身。 提供意見時注意至少要給一個近期明確的例子。如果一個人正在遭遇難關，給予回饋時要將這件事情考量在內。提供正面誇獎的一個好例子是我們的[thanks chat channel](/handbook/communication/#internal-communication)。對經理來說，記得員工對負面批評的反應強度是正面誇獎的[六倍之多](https://hbr.org/2013/03/the-delicate-art-of-giving-fee)。要記得，如果一個錯誤出現的機會非常罕見，給予批評沒有什麼好處的話，那麼不如把意見藏在心裡。在需要給予負面批評時，記得這些意見的真正目的：要讓員工的工作效率提升。大方地公開給予稱讚， and often to [generate more engagement](http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=SA&subtype=WH&htmlfid=LOW14298USEN) from your team.
+1. **有效地給予回饋** 給予回饋是很難的，但是有效地給予回饋非常重要。給予回饋時，要注意對事不對人，針對事情本身的影響而不要針對人本身。 提供意見時注意至少要給一個近期明確的例子。如果一個人正在遭遇難關，給予回饋時要將這件事情考量在內。提供正面誇獎的一個好例子是我們的[thanks chat channel](/handbook/communication/#internal-communication)。對經理來說，記得員工對負面批評的反應強度是正面誇獎的[六倍之多](https://hbr.org/2013/03/the-delicate-art-of-giving-fee)。要記得，如果一個錯誤出現的機會非常罕見，給予批評沒有什麼好處的話，那麼不如把意見藏在心裡。在需要給予負面批評時，記得這些意見的真正目的：要讓員工的工作效率提升。大方地公開給予稱讚，並時常提升[團隊的參與度](http://www-01.ibm.com/common/ssi/cgi-bin/ssialias?infotype=SA&subtype=WH&htmlfid=LOW14298USEN)。
 1. **認識彼此** 現在我們使用大量的文字溝通，一旦你認識文字背後的人，就比較容易避免衝突。鼓勵同事們互相彼此認識，像是透過 [company calls](/handbook/communication/#company-call)，[virtual coffee breaks](/culture/remote-only/#coffee-break-calls)，以及透過[高峰會](/culture/summits/).
 1. **不要拿階級說話** 如果你必須提醒某人你在公司的職位，那一定有哪邊出錯了。大家已經知道我們的決策過程。解釋你做出決定的原因，並且無論對方在公司的職位如何，尊重每個人的看法。
 1. **標記行為，但不貼標籤**  [這篇文章](http://bobsutton.typepad.com/my_weblog/2006/10/the_no_asshole_.html) 裡面提到很多不讓怪人（jerk）加入團隊的好處，但我們相信**怪人**是針對行為的標籤，而不是針對人的。我們要避免對人的分類。
@@ -21,7 +21,7 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 1. **人與事要分開** 針對工作提出建議，不是針對人。比方說，將「你都不聽人說話」改成「你沒有回應我對設計提出的回饋」。受到批評的時候，要記得這些批評是進步的作家動力，而且大家希望看到你成功。
 1. **自己動手做** 合作的目的是在對方有問題，需要批評或協助時提供幫助。 不是在可以自己動手做時一起腦力激盪，等待其他人贊同，或者[兩者皆是](https://www.inc.com/geoffrey-james/collaboration-is-the-enemy-of-innovation.html)。
 1. **無責難的解決問題** Investigate mistakes in a way that focuses on the situational aspects of a failure’s mechanism and the decision-making process that led to the failure rather than cast blame on a person or team. We hold blameless [post-mortems](https://codeascraft.com/2012/05/22/blameless-postmortems/) and [retrospectives](handbook/engineering/management/team-retrospectives/) for stakeholders to speak up without fear of punishment or retribution.
-1. **用自己的產品** 我們[用我們自己的產品](https://en.wikipedia.org/wiki/Eating_your_own_dog_food)。開發 GitLab CE 和 EE 專案時，我們使用 GitLab.com 來管理整個 DevOps 週期。 Our entire company uses GitLab to collaborate on this handbook. We also capture other content and processes in Git repos and manage them with GitLab.
+1. **用自己的產品** 我們[用我們自己的產品](https://en.wikipedia.org/wiki/Eating_your_own_dog_food)。開發 GitLab CE 和 EE 專案時，我們使用 GitLab.com 來管理整個產品的 DevOps 週期。這本手冊是用 GitLab 協作完成的。另外我們也將其他內容和流程透過 Git repos 處理並使用 GitLab 進行管理。
 
 ## 結果
 
@@ -175,16 +175,16 @@ Whatever behavior you reward will become your values. We reinforce our values th
 1. By what behavior we compliment.
 1. By what criteria we use to let people go.
 
-# Permission to play
+# 准許參與
 
-From our values we excluded some behaviors that are obvious, we call them our permission to play behavior:
+在我們的價值觀裡，我們有一些明顯要遵守的行為沒有列入。這些我們稱為准許參與（permission to play）的行為
 
-- Be truthful and honest.
-- Be dependable, reliable, fair, and respectful.
-- Be committed, creative, inspiring, and passionate.
-- Be deserving of the trust of our users and customers.
-- Act in the best interest of the company, our team members, our customers, users, and investors.
-- Act in accordance with the law.
+- 說實話
+- 要可靠，確實，公平，尊重。
+- 要投入，有創意，激勵人心，有熱情。
+- 要對得起用戶和客戶的信任。
+- 做對公司、團隊成員、客戶、用戶、投資者最有利的事情
+- 做事要合法
 
 # Question from new team members
 
