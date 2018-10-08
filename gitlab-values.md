@@ -20,7 +20,7 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 1. **看見他人的成功** 一個和 GitLab 裡面很多人談過的候選人提到，與其他的公司相比，這間公司有個地方特別突出：這裡每個人都提到希望能看見其他人成功。
 1. **人與事要分開** 針對工作提出建議，不是針對人。比方說，將「你都不聽人說話」改成「你沒有回應我對設計提出的回饋」。受到批評的時候，要記得這些批評是進步的作家動力，而且大家希望看到你成功。
 1. **自己動手做** 合作的目的是在對方有問題，需要批評或協助時提供幫助。 不是在可以自己動手做時一起腦力激盪，等待其他人贊同，或者[兩者皆是](https://www.inc.com/geoffrey-james/collaboration-is-the-enemy-of-innovation.html)。
-1. **無責難的解決問題** 不要用責難團隊成員的方式討論問題，而是用針對機制在哪種場景下會失效的角度探討問題。 We hold blameless [post-mortems](https://codeascraft.com/2012/05/22/blameless-postmortems/) and [retrospectives](handbook/engineering/management/team-retrospectives/) for stakeholders to speak up without fear of punishment or retribution.
+1. **無責難的解決問題** 檢討問題時需將焦點放在情境本身，應聚焦在產生錯誤的機制，以及影響做出問題決策的過程，而不要一昧的責怪別人或團隊。我們相信因為有[免責的檢討](https://codeascraft.com/2012/05/22/blameless-postmortems/)和[回顧](handbook/engineering/management/team-retrospectives/)，利害關係者會提供看法和意見，而不必擔心受到懲處或報應。
 1. **用自己的產品** 我們[用我們自己的產品](https://en.wikipedia.org/wiki/Eating_your_own_dog_food)。開發 GitLab CE 和 EE 專案時，我們使用 GitLab.com 來管理整個產品的 DevOps 週期。這本手冊是用 GitLab 協作完成的。另外我們也將其他內容和流程透過 Git repos 處理並使用 GitLab 進行管理。
 
 ## 結果
