@@ -25,18 +25,17 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 
 ## 結果
 
-We do what we promised to each other, customers, users, and investors.
+我們履行對彼此，客戶，使用者以及投資者的承諾。
 
-1. **Measure results not hours** We care about what you achieve; the code you shipped, the user you made happy, and the team member you helped. Someone who took the afternoon
-off shouldn't feel like they did something wrong. You don't have to defend how you spend your day. We trust team members to do the right thing instead of having rigid rules. Do not incite competition by proclaiming how many hours you worked yesterday. If you are working too long hours talk to your manager to discuss solutions.
-1. **Write promises down** Agree in writing on measurable goals. Within the company we use [public OKRs](/okrs/) for that.
+1. **以結果論，不用時間** 我們只關心你做了什麼：你完成的程式碼，你滿足的使用者，以及你協助過的同仁。如果有人下午休息，不應該覺得自己好像做了什麼壞事。你不需要為你今天做了什麼辯護。 We trust team members to do the right thing instead of having rigid rules. 不要宣稱你昨天工作多少小時來引起工時的競爭。如果你的工時過長，和你的經理討論一下解決方法。
+1. **寫下承諾** 寫下可以測量的目標。在公司內要達成這件事情，我們使用[公開的目標和關鍵成果]。
 1. **Growth mindset** You don't always get results and this will result in criticism from yourself and/or others. We believe our talents can be developed through hard work, good strategies, and input from others. We try to hire people based on [their trajectory, not their pedigree](https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means).
 1. **Global optimization** This name comes from the [quick guide to Stripe's culture](https://stripe.com/us/jobs/candidate-info?a=1#culture). Our definition of global optimization is that you do what is best for the organization as a whole. Don't optimize for the goals of your team when it negatively impacts the goals of other teams, our users, and/or the company. Those goals are also your problem and your job. Keep your team as lean as possible, and help other teams achieve their goals.
-1. **Tenacity** We refer to this as "persistence of purpose". As talked about in [The Influence Blog](https://www.learntoinfluence.com/developing-tenacity-when-facing-opposition/) tenacity is the ability to display commitment to what you believe in. You keep picking yourself up, dusting yourself off, and quickly get going again having learned a little more.
-1. **Ownership** We expect team members to complete tasks that they are assigned. Having a task means you are responsible for anticipating and solving problems. As an owner you are responsible for overcoming challenges, not suppliers, or other team members. Take initiative and pro-actively inform stakeholders when there is something you might not be able to solve.
-1. **Sense of urgency** At an exponentially scaling startup time gained or lost has compounding effects. Try to get the results as fast as possible so the compounding of results can begin and we can focus on the next improvement.
-1. **Ambitious** While we iterate with small changes, we strive for large, ambitious results.
-1. **Bias for Action** It's important that we keep our focus on action, and don't fall into the trap of analysis paralysis or sticking to a slow, quiet path without risk. Decisions should be thoughtful, but delivering fast results requires the fearless acceptance of occasionally making mistakes; our bias for action also allows us to course correct quickly.
+1. **韌性** We refer to this as "persistence of purpose". As talked about in [The Influence Blog](https://www.learntoinfluence.com/developing-tenacity-when-facing-opposition/) tenacity is the ability to display commitment to what you believe in. You keep picking yourself up, dusting yourself off, and quickly get going again having learned a little more.
+1. **所有權** We expect team members to complete tasks that they are assigned. Having a task means you are responsible for anticipating and solving problems. As an owner you are responsible for overcoming challenges, not suppliers, or other team members. Take initiative and pro-actively inform stakeholders when there is something you might not be able to solve.
+1. **急迫感** At an exponentially scaling startup time gained or lost has compounding effects. Try to get the results as fast as possible so the compounding of results can begin and we can focus on the next improvement.
+1. **野心** While we iterate with small changes, we strive for large, ambitious results.
+1. **對行動的偏見** It's important that we keep our focus on action, and don't fall into the trap of analysis paralysis or sticking to a slow, quiet path without risk. Decisions should be thoughtful, but delivering fast results requires the fearless acceptance of occasionally making mistakes; our bias for action also allows us to course correct quickly.
 
 ## 效率
 
