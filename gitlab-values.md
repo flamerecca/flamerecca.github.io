@@ -25,10 +25,9 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 
 ## 結果
 
-We do what we promised to each other, customers, users, and investors.
+我們旅行對彼此，客戶，使用者以及投資者的承諾。
 
-1. **以結果論，不用時間** We care about what you achieve; the code you shipped, the user you made happy, and the team member you helped. Someone who took the afternoon
-off shouldn't feel like they did something wrong. You don't have to defend how you spend your day. We trust team members to do the right thing instead of having rigid rules. Do not incite competition by proclaiming how many hours you worked yesterday. If you are working too long hours talk to your manager to discuss solutions.
+1. **以結果論，不用時間** 我們只關心你做了什麼：你完成的程式碼，你滿足的使用者，以及你協助過的同仁。如果有人下午休息，不應該覺得自己好像做了什麼壞事。你不需要為你今天做了什麼辯護。 We trust team members to do the right thing instead of having rigid rules. Do not incite competition by proclaiming how many hours you worked yesterday. 如果你的工時過長，和你的經理討論一下解決方法。
 1. **寫下承諾** Agree in writing on measurable goals. Within the company we use [public OKRs](/okrs/) for that.
 1. **Growth mindset** You don't always get results and this will result in criticism from yourself and/or others. We believe our talents can be developed through hard work, good strategies, and input from others. We try to hire people based on [their trajectory, not their pedigree](https://hbr.org/2016/01/what-having-a-growth-mindset-actually-means).
 1. **Global optimization** This name comes from the [quick guide to Stripe's culture](https://stripe.com/us/jobs/candidate-info?a=1#culture). Our definition of global optimization is that you do what is best for the organization as a whole. Don't optimize for the goals of your team when it negatively impacts the goals of other teams, our users, and/or the company. Those goals are also your problem and your job. Keep your team as lean as possible, and help other teams achieve their goals.
