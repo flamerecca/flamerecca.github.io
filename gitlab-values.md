@@ -34,7 +34,7 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 1. **韌性** 我們將這個特性稱之為「對目標的堅持度」。如同 [The Influence Blog](https://www.learntoinfluence.com/developing-tenacity-when-facing-opposition/) 裡面提到的，韌性就是你對相信的東西所展現的承諾。你不停地重新站起來，整理好心情，然後趕快再多學一點東西。
 1. **所有權** We expect team members to complete tasks that they are assigned. Having a task means you are responsible for anticipating and solving problems. As an owner you are responsible for overcoming challenges, not suppliers, or other team members. Take initiative and pro-actively inform stakeholders when there is something you might not be able to solve.
 1. **急迫感** At an exponentially scaling startup time gained or lost has compounding effects. Try to get the results as fast as possible so the compounding of results can begin and we can focus on the next improvement.
-1. **野心** While we iterate with small changes, we strive for large, ambitious results.
+1. **野心** 雖然我們以最小的改變迭代進行，但是我們都渴望大的，有野心的結果。
 1. **對行動的偏見** It's important that we keep our focus on action, and don't fall into the trap of analysis paralysis or sticking to a slow, quiet path without risk. Decisions should be thoughtful, but delivering fast results requires the fearless acceptance of occasionally making mistakes; our bias for action also allows us to course correct quickly.
 
 ## 效率
