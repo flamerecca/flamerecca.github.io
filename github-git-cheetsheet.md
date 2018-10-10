@@ -10,7 +10,7 @@ Git 全平台版
 http://git-scm.com
 
 # 配置工具
-對所有本地倉庫的用戶信息進行配置
+設定所有本地倉庫的用戶資料
 ```
 $ git config --global user.name "[name]"
 ```
@@ -20,7 +20,7 @@ $ git config --global user.email "[email address]"
 ```
 對你的commit操作設置關聯的郵箱地址
 
-# 創建倉庫
+# 創建倉庫（repository）
 創建一個新的倉庫或者從一個現有的鏈接獲取倉庫
 ```
 $ git init [project-name]
@@ -75,7 +75,7 @@ $ git checkout [branch-name]
 ```
 $ git merge [branch-name]
 ```
-合並特定分支的歷史到當前分支
+合併特定分支的歷史到當前分支
 ```
 $ git branch -d [branch-name]
 ```
