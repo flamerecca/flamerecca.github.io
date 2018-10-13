@@ -311,8 +311,9 @@ _z // local_var OK
 
 與其要到處找名稱不同的地方修改讓兩個功能合併，不如用多個 TYPEDEF 來同步程式。
 
-#### How to Hide Forbidden Globals
+#### 如何隱藏被禁止的全域變數
 
+因為全域變數是「邪惡的」，所以我們改用一個
 Since global variables are "evil", define a structure to hold all the things you'd put in globals. Call it something clever like `EverythingYoullEverNeed`. Make all functions take a pointer to this structure (call it `handle` to confuse things more). This gives the impression that you're not using global variables, you're accessing everything through a "handle". Then declare one statically so that all the code is using the same copy anyway.
 
 #### Hide Instances With Synonyms
@@ -470,7 +471,7 @@ Always refuse to accept advances in the development environment arena, especiall
 
 #### Monty Python 式註解
 
-On a method called makeSnafucated insert only the JavaDoc `/* make snafucated */`. Never define what _snafucated_ means **anywhere**. Only a fool does not already know, with complete certainty, what _snafucated_ means. For classic examples of this technique, consult the Sun AWT JavaDOC.
+在 makeSnafucated() 函式前面，加上註解 `/* 做 snafucated */`。**絕不**定義 _snafucated_ 到底是什麼意思。Only a fool does not already know, with complete certainty, what _snafucated_ means. For classic examples of this technique, consult the Sun AWT JavaDOC.
 
 ## 程式設計
 
