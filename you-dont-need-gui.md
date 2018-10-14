@@ -26,7 +26,7 @@ It's for noobs :)
 1. [建立新檔案](#建立新檔案)
 1. [建立新資料夾](#建立新資料夾)
 1. [顯示檔案／資料夾大小](#顯示檔案／資料夾大小)
-1. [open a file with the default program](#open-a-file-with-the-default-program)
+1. [開啟檔案](#open-a-file-with-the-default-program)
 1. [壓縮資料夾](#壓縮資料夾)
 1. [解壓縮資料夾](#解壓縮資料夾)
 1. [刪除檔案](#刪除檔案)
@@ -70,7 +70,7 @@ cp -a myMusic myMedia/
 cp -a myMusic/ myMedia/myMusic/
 ```
 
-## duplicate a folder
+## 複製資料夾
 
 **STOP RIGHT CLICK AND DUPLICATE A FOLDER** :-1:
 
@@ -156,7 +156,7 @@ du -sh readme.md
 
 ## 開啟檔案
 
-**STOP DOUBLE CLICKING A FILE** :-1:
+** DOUBLE CLICKING A FILE** :-1:
 
 ```shell
 xdg-open file   # on Linux
@@ -224,7 +224,7 @@ Find all files modified more than 5 days ago
 find my_folder -mtime +5
 ```
 
-## show a calendar
+## 看日曆
 
 **STOP LOOKING UP WHAT THIS MONTH LOOKS LIKE BY CALENDAR WIDGETS** :-1:
 
@@ -234,17 +234,17 @@ Display a text calendar
 cal
 ```
 
-## find a future date
+## 看未來的日期
 
 **STOP USING WEBAPPS TO CALCULATE FUTURE DATES** :-1:
 
-What is todays date?
+ 想看今天的日期？
 
 ```shell
 date +%m/%d/%Y
 ```
 
-What about a week from now?
+那麼，今天往後一週的日期呢？
 
 ```shell
 date -d "+7 days"                                          # on Linux
