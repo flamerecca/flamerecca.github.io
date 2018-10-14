@@ -1323,7 +1323,7 @@ i = i;
 
 #### 數大便是美
 
-It almost goes without saying that the larger a function is, the better it is. And the more jumps and GOTOs the better. That way, any change must be analysed through many scenarios. It snarls the maintenance programmer in the spaghettiness of it all. And if the function is truly gargantuan, it becomes the Godzilla of the maintenance programmers, stomping them mercilessly to the ground before they have an idea of what's happened.
+顯然，函式是越大越好。然後，越多 GOTO 越好。這樣一來，任何修改都必須仔細檢查所有可能狀況。It snarls the maintenance programmer in the spaghettiness of it all. And if the function is truly gargantuan, it becomes the Godzilla of the maintenance programmers, stomping them mercilessly to the ground before they have an idea of what's happened.
 
 #### 一張圖片包含千言萬語; 一個函式也包含千言萬語
 
@@ -1345,9 +1345,9 @@ It almost goes without saying that the larger a function is, the better it is. A
 
 然後 `refcode.h` 不見了，到處都找不到。
 
-#### 到處寫，讀不到
+#### 到處寫，不讀取
 
-At least one variable should be set everywhere and used almost nowhere. Unfortunately, modern compilers usually stop you from doing the reverse, read everywhere, write nowhere, but you can still do it in C or C++.
+至少有一個變數到處都會設值，但是程式裡面幾乎不會使用該變數。不幸的是，目前的編譯器通常會阻止你使用相反的技巧：某個到處都讀取的變數卻沒有設值。不過 C  和 C++ 裡面還是可以用這個方式。
 
 ## 哲學
 
