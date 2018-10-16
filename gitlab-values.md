@@ -42,8 +42,8 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 我們關心的是知道是否朝正確的方向前進，不做多餘的事，並且避免工作重複。這將能幫助我們取得更多進展，工作變得充實有意義。
 
 1. **無聊的解法** 使用最簡單，最無聊枯燥的解法去解決問題，並記住，[「無聊」和「不好的」不應混為一談。](http://mcfunley.com/choose-boring-technology) 迄今為止，複雜性隨著時間不斷累積，會影響組織和產品創新的速度。因此，每一個能降低複雜度的步驟都很重要。不要為了讓你的工作更有趣，所以選擇有趣的技術。選擇使用成熟的，常見的流行技術，讓你和其他貢獻者開發體驗更穩定，更熟悉。
-1. **針對特定群體量身打造效率策略** 為GitLab廣大的開發者社群優化全球解決方案。為一個人或一小群人建立有效的流程，不代表亦能推動整個GitLab社群在效率上的成功。例如，在面對選擇時，建議選擇可能讓你的做事效率略微降低，但是能夠為數千名用戶效率大幅提升的方式。舉例：你可以選擇替換掉原來需要1,000個用戶每人花費2個小時的更新過程，取而代之的是僅需要每人花60秒的更新過程，即便這可能會讓每月內部報告的效率降低！In a decision, ask yourself "for whom does this need to be most efficient?"  Quite often, the answer may be your users, contributors, customers, or team members that are dependent upon your decision.
-1. **Be respectful of others' time** Consider the time investment you are asking others to make with meetings and a permission process. Try to avoid meetings, and if one is necessary, try to make attendance optional for as many people as possible. Any meeting should have an agenda linked from the invite, and you should document the outcome. Instead of having people ask permission, trust their judgment and offer a consultation process if they have questions.
+1. **針對特定群體量身打造效率策略** 為GitLab廣大的開發者社群優化全球解決方案。為一個人或一小群人建立有效的流程，不代表亦能推動整個GitLab社群在效率上的成功。例如，在面對選擇時，建議選擇可能讓你的做事效率略微降低，但是能夠為數千名用戶效率大幅提升的方式。舉例：你可以選擇替換掉原來需要1,000個用戶每人花費2個小時的更新過程，取而代之的是僅需要每人花60秒的更新過程，即便這可能會讓每月內部報告的效率降低！在做決定之前，你可以問問自己，「這件事需要對誰最有效率？」通常，這個人可能是你的用戶、貢獻者、客戶，或是仰賴你的決定的團隊成員。
+1. **尊重別人的時間** 想想你要求每個人在會議上，以及徵求同意的過程中，投入多少時間。盡量避免開會，如果有必要，讓越多人可以選擇不出席越好。任何會議都應該要有議程附在會議邀請函中，並且你應該記錄會議結果。不需要徵求別人的同意，反而是相信他們的判斷，並在他們有疑問時提供諮詢。
 1. **花公司的錢，要像花自己的錢** 我們花的每一塊錢都必須賺回來。對於公司資金的運用，要像你會對自己的錢一樣節儉使用。
 1. **行事節儉** [亞馬遜說得好](http://www.amazon.jobs/principles)：「用更少的錢來做更多的事。節儉可以孕育出足智多謀、自給自足和創新。增加人力、預算以及固定支出，並不會為你額外加分。」
 1. **對話式開發** 我們依照[對話式開發](http://conversationaldevelopment.com/)的原則工作。
