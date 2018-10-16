@@ -50,10 +50,10 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 1. **自由** 你應該有明確的目標，並且可以自由地朝著目標前進。
 1. **簡短扼要的口頭答覆** 口頭答覆應簡短，才會讓對方有機會提出更多問題，或往下一個話題前進。
 1. **網路會議應簡短** 並且就如[這一期哈佛商業評論雜誌的研究](https://hbr.org/2016/09/bad-writing-is-destroying-your-companys-productivity)指出，一對多的書面溝通應力求簡明扼要：「大多數人說他們所讀的書面訊息，由於內容太過冗長，文章結構鬆散，論述不清楚，充滿行話，且遣詞不夠精確，溝通效果經常是大打折扣。」
-1. **Managers of one** We want team members to be [a manager of one](https://signalvnoise.com/posts/1430-hire-managers-of-one) who doesn't need daily check-ins to achieve their goals.
-1. **Responsibility over rigidity** When possible we give people the responsibility to make a decision and hold them accountable for that instead of imposing rules and approval processes.
-1. **Accept mistakes** Not every problem should lead to a new process to prevent them. Additional processes make all actions more inefficient, a mistake only affects one.
-1. **Move fast by shipping the minimum viable change** We value constant improvement by iterating quickly, month after month. If a task is too big to deliver in one month, cut scope.
+1. **自動自發的團隊** 我們希望打造出[自動自發的團隊](https://signalvnoise.com/posts/1430-hire-managers-of-one)，不需要別人每天催促，就能達到想要實現的目標。
+1. **強調擔負責任，擺脫僵化** 我們盡可能地賦予團隊做決策的責任，並且成員都背負決策責任，而不是強加規則和批准的程序。
+1. **接受錯誤** 每個問題的背後，並非都需要用創造新的流程的方式來避免錯誤。額外添加的流程可能導致操作效率降低，而一個錯誤只影響一個操作。
+1. **部署最小可行性修改，快速應變** 我們藉每月快速迭代持續改進。如果任務太大，無法在一個月內完成，請縮小範圍。
 
 ## 多元
 
