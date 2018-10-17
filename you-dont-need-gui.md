@@ -187,7 +187,7 @@ unzip archive_name.zip
 rm my_useless_file
 ```
 
-IMPORTANT: The rm command deletes my_useless_file permanently, which is equivalent to move my_useless_file to Recycle Bin and hit Empty Recycle Bin.
+重要：The rm command deletes my_useless_file permanently, which is equivalent to move my_useless_file to Recycle Bin and hit Empty Recycle Bin.
 
 ## 移除資料夾
 
@@ -214,11 +214,11 @@ tree                                                       # on Linux
 find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'     # on MacOS
 ```
 
-## find a stale file
+## 找舊檔案
 
 **STOP USING YOUR FILE EXPLORER TO FIND A FILE** :-1:
 
-Find all files modified more than 5 days ago
+找出超過五天沒有修改的檔案
 
 ```shell
 find my_folder -mtime +5
@@ -227,8 +227,7 @@ find my_folder -mtime +5
 ## 看日曆
 
 **STOP LOOKING UP WHAT THIS MONTH LOOKS LIKE BY CALENDAR WIDGETS** :-1:
-
-Display a text calendar
+顯示文字版的日曆
 
 ```shell
 cal
@@ -261,13 +260,13 @@ Want to use a calculator?
 bc
 ```
 
-## force quit a program
+## 強制關閉程式
 
-**STOP FORCE QUIT A PROGRAM USING GUI** :-1:
+**不要再用 GUI 強制關閉程式了** :-1:
 
 ```shell
 killall program_name
 ```
 
 ---
-_Remember, you can always google or `man` the commands you are not familiar with._
+_請記得，你可以 google 或者 `man` 你不熟悉的指令_
