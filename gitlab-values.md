@@ -55,9 +55,9 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 1. **接受錯誤** 每個問題的背後，並非都需要用創造新的流程的方式來避免錯誤。額外添加的流程可能導致操作效率降低，而一個錯誤只影響一個操作。
 1. **部署最小可行性修改，快速應變** 我們藉每月快速迭代持續改進。如果任務太大，無法在一個月內完成，請縮小範圍。
 
-## 多元
+## 多元化
 
-The community consists of people from all over the world, with different backgrounds and opinions. We hire globally and encourage hiring in a diverse set of countries. We work to make everyone feel welcome and to increase the participation of underrepresented minorities and nationalities in our community and company. For example our sponsorship of [diversity events](/2016/03/24/sponsorship-update/) and a [double referral bonus](/handbook/incentives/#referral-bonuses).
+來自世界各地的社群成員，他們有不同背景和多元觀點。我們招聘全球人才，並鼓勵聘用具有不同國家背景的人，深化團隊的多元化。我們致力讓每個人都感到自己是受到歡迎的，並增加代表不足的少數族裔和國籍在我們的社群和公司中的參與。例如，贊助舉辦[多元化活動](https://about.gitlab.com/2016/03/24/sponsorship-update/)，以及提供[雙倍的員工推薦獎金](https://about.gitlab.com/handbook/incentives/#referral-bonuses)。
 
 1. **Culture fit is a bad excuse** We don't hire based on culture or select candidates because we'd like to have a drink with them. We hire and reward employees based on our shared values as detailed on this page. If they are measured against our shared values, they will already be a fit.
 We want cultural diversity instead of cultural conformity, for example, a [brogrammer](https://en.wikipedia.org/wiki/Brogrammer) atmosphere. Said differently: ["culture add" > "culture fit"](https://twitter.com/Una/status/846808949672366080) or "hire for culture contribution" since our [mission is everyone can contribute](/strategy/#mission).
