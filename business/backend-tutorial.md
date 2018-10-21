@@ -40,6 +40,10 @@
 
 [SQL anti pattern](https://www.slideshare.net/gleicon/nosql-and-sql-anti-patterns/)
 
+## mongoDB
+
+[MongoDB Tutorials](https://docs.mongodb.com/manual/tutorial/)
+
 ## 索引
 
 [How to Design Indexes, Really](https://www.slideshare.net/billkarwin/how-to-design-indexes-really)
@@ -55,6 +59,14 @@
 使用 swagger 進行維護
 
 [https://swagger.io/specification/](https://swagger.io/specification/)
+
+# 測試
+
+使用 phpunit 進行測試，採取先做系統，之後針對 bug 補充測試的策略
+
+[Mocks vs Stubs in PHPUnit](https://stackoverflow.com/questions/45965699/mocks-vs-stubs-in-phpunit)
+
+[Anti-Pattern 11 - Treating TDD as a religion](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-11---treating-tdd-as-a-religion)
 
 # 主機架構
 
@@ -72,9 +84,7 @@
 
 [GitHub Flow 及 Git Flow 流程使用時機](https://blog.wu-boy.com/2017/12/github-flow-vs-git-flow/comment-page-1/)
 
-
 # 資訊安全
-
 
 [HITCON 2016 投影片 - Bug Bounty 獎金獵人甘苦談 那些年我回報過的漏洞](https://blog.orange.tw/2016/07/hitcon-2016-slides-bug-bounty-hunter.html)
 
