@@ -88,4 +88,4 @@
 
 [HITCON 2016 投影片 - Bug Bounty 獎金獵人甘苦談 那些年我回報過的漏洞](https://blog.orange.tw/2016/07/hitcon-2016-slides-bug-bounty-hunter.html)
 
-[OWASP TOP 10](OWASP TOP 10)
+[OWASP TOP 10](https://www.owasp.org/index.php/Top_10-2017_Top_10)
