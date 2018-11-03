@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 這一段的處理，在 `vendor/tcg/voyager/VoyagerServiceProvider.php` 裡面
 
-```
+```php
         $loader = AliasLoader::getInstance();
         $loader->alias('Voyager', VoyagerFacade::class);
 
@@ -72,7 +72,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 VoyagerFacade 裡面則是
 
-```
+```php
 <?php
 
 namespace TCG\Voyager\Facades;
