@@ -1,4 +1,4 @@
-[![codewar](https://www.codewars.com/users/flamerecca/badges/large)]
+[![codewar](https://www.codewars.com/users/flamerecca/badges/large)](https://www.codewars.com/users/flamerecca)
 # 自傳 
 
 自己是個求知慾望很高，興趣很廣泛的人，求學階段除了學校教的內容，也喜歡接觸不同的知識和行業。在學期間看到很多學有專精，但是對資訊不熟悉的人，無法讓更多的人接觸到他的專業。所以當初就決定之後要投身到網頁開發的領域上，希望可以透過開發網頁認識這些人並幫助到他們。
