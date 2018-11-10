@@ -88,7 +88,7 @@ cp -a myMusic myMedia/
 mv readme.txt documents/
 ```
 
-**Always** use a trailing slash when moving files, [for this reason](http://unix.stackexchange.com/a/50533).
+移動檔案時**一定要** 在目標位置後面加上斜線，[原因在此](http://unix.stackexchange.com/a/50533).
 
 ## 重新命名檔案
 
