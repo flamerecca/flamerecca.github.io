@@ -147,7 +147,9 @@ Values are a framework for distributed decision making, they allow you to determ
 
 # 價值觀更新
 
-Our values are updated continually when needed. Everyone is welcome to make a suggestion to improve them. To update: make a merge request and assign it to the CEO. If you're a [team member](/team/) or in the [core team](/core-team/) please post a link to the MR in the #values channel. If you're not part of those groups please send a direct Twitter message to [@sytses](https://twitter.com/sytses).
+我們的價值觀會隨著需要持續更新，所有人都歡迎提供建議。要提供建議的話，可以開一個 merge request 並且分配給 CEO。
+
+如果你是[團隊成員](/team/)或者在[核心團隊](/core-team/)裡面，請透過 #values 頻道 轉貼連接給 MR。如果你不是團隊成員，請傳 Twitter 訊息給[@sytses](https://twitter.com/sytses).
 
 # 如何加強我們的價值觀
 
