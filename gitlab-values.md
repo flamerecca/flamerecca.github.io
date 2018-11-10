@@ -149,17 +149,17 @@ Values are a framework for distributed decision making, they allow you to determ
 
 Our values are updated continually when needed. Everyone is welcome to make a suggestion to improve them. To update: make a merge request and assign it to the CEO. If you're a [team member](/team/) or in the [core team](/core-team/) please post a link to the MR in the #values channel. If you're not part of those groups please send a direct Twitter message to [@sytses](https://twitter.com/sytses).
 
-# How do we reinforce our values
+# 如何加強我們的價值觀
 
-Whatever behavior you reward will become your values. We reinforce our values through the following actions:
+你所獎勵的項目就會成為你團隊追求的價值觀。我們透過以下行為讓我們的價值觀生根在團隊內：
 
-1. By what we do, especially what the leadership does.
-1. By what we select for during hiring.
-1. By what we emphasize during on-boarding.
-1. By what criteria we use for promotions
-1. By what criteria we use for bonuses.
-1. By what behavior we compliment.
-1. By what criteria we use to let people go.
+1. 由我們做事的方法，特別是領導人做事的方法
+1. 由應徵時的選人
+1. 由新人開始工作時我們的強調
+1. 由我們升遷時所看的項目
+1. 由我們分紅利時所看的項目
+1. 由我們稱讚的行為
+1. 由我們辭退對方時所看的項目
 
 # 准許參與
 
@@ -176,6 +176,6 @@ Whatever behavior you reward will become your values. We reinforce our values th
 
 During every [GitLab 101 session with new hires](/culture/gitlab-101/) we discuss our values. We document the questions and answers to [Frequently Asked Questions about the GitLab Culture](/culture/gitlab-101/#frequently-asked-questions-about-the-gitlab-culture).
 
-# Mission
+# 理念
 
 Our [mission](/strategy/#mission) guides our path, during this path live our values.
