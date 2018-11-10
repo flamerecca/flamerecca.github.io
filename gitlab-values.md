@@ -121,27 +121,27 @@ Values are a framework for distributed decision making, they allow you to determ
 
 # 架構
 
-Occasionally, values can contradict each other. For instance, transparency would dictate we publish all security vulnerabilities the moment they are found, but this would jeopardize our users. It's useful to keep in mind this hierarchy to resolve confusion about what to do in a specific circumstance, while remaining consistent with our core values.
+有些時候，價值觀之間會彼此衝突。舉例來說，依據透明這個價值觀，我們找到系統安全漏洞時應該要立刻公開，但是這會危害我們的使用者。It's useful to keep in mind this hierarchy to resolve confusion about what to do in a specific circumstance, while remaining consistent with our core values.
 
 <table style="text-align:center; border-collapse:separate;">
   <tr>
     <td colspan="2" style="border:0;">&nbsp;</td>
-    <td colspan="2" style="border:1px solid;"><strong>R</strong>esults</td>
+    <td colspan="2" style="border:1px solid;">結果</td>
     <td colspan="2" style="border:0;">&nbsp;</td>
-    <td style="border:0; text-align:left;">It is most important to focus on results.</td>
+    <td style="border:0; text-align:left;">專注結果是最重要的事情</td>
   </tr>
   <tr>
     <td style="border:0;">&nbsp;</td>
-    <td colspan="2" style="border:1px solid"><strong>I</strong>teration</td>
-    <td colspan="2" style="border:1px solid"><strong>T</strong>ransparency</td>
+    <td colspan="2" style="border:1px solid">迭代</td>
+    <td colspan="2" style="border:1px solid">透明</td>
     <td style="border:0;">&nbsp;</td>
-    <td style="border:0; text-align:left;">We trust these values will lead to results.</td>
+    <td style="border:0; text-align:left;">我們相信這些價值觀對結果有幫助</td>
   </tr>
   <tr>
-    <td colspan="2" style="border:1px solid;"><strong>C</strong>ollaboration</td>
-    <td colspan="2" style="border:1px solid;"><strong>D</strong>iversity</td>
-    <td colspan="2" style="border:1px solid;"><strong>E</strong>fficiency</td>
-    <td style="border:0; text-align:left;">Distinguish us from other companies.</td>
+    <td colspan="2" style="border:1px solid;">合作</td>
+    <td colspan="2" style="border:1px solid;">多元化</td>
+    <td colspan="2" style="border:1px solid;">效率</td>
+    <td style="border:0; text-align:left;">我們和其他公司不同之處</td>
   </tr>
 </table>
 
