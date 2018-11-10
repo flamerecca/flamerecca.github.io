@@ -101,26 +101,25 @@ GitLab 的六個價值是合作（Collaboration），結果（Results），效�
 
 # 五種功能障礙
 
-Our values help us to prevent the [五種功能障礙](https://en.wikipedia.org/wiki/The_Five_Dysfunctions_of_a_Team#Summary).
+我們的價值觀幫我們避免 [五種功能障礙](https://en.wikipedia.org/wiki/The_Five_Dysfunctions_of_a_Team#Summary).
 
-1. **Absence of trust** Unwilling to be vulnerable within the group => _prevented by collaboration, specifically kindness_
-1. **避免衝突** Seeking artificial harmony over constructive passionate debate => _prevented by transparency, specifically directness_
-1. **缺乏信賴** 假裝支持團體的承諾，會在整個集團之中創造分歧 buy-in for group decisions creates ambiguity throughout the organization => _prevented by transparency, specifically directness_
-1. **Avoidance of accountability** Ducking the responsibility to call peers on counterproductive behavior which sets low standards => _prevented by results, iteration, and transparency_
-1. **Inattention to results** Focusing on personal success, status and ego before team success => _prevented by results_
+1. **無法信任** 不願意當團隊中的弱者 => _透過「合作」避免，特別是和藹的部分_
+1. **避免衝突** 追求虛假的和諧，避免有建設性的熱情辯論 => _透過「透明」避免，特別是直接的部分_
+1. **缺乏承諾** 假裝支持團體的承諾，會在整個集團之中創造分歧意見 => _透過「透明」避免，特別是直接的部分_
+1. **避免咎責** 逃避點出同儕效率差的做法，因此導致標準降低 => _透過「結果」「迭代」「透明」避免_
+1. **無視結果** 專注於個人的成功，狀態和自信。忽略了團隊的成功 => _透過「結果」避免_
 
-Some dysfunctions are not addressed directly by our values, for example trust is not one of our values.
-Similar to happiness, trust is something that is an outcome, not something you can strive for directly.
-We hope that the way we work and our values will instill trust, instead of mandating it from people; trust is earned, not given.
+有的功能障礙並沒有直接在我們的價值觀內點出，比方說信任並不是價值觀之一。
+就像快樂一樣，信任是屬於結果，不是你可以直接獲得的。與其直接規範要大家互相信任，我們希望透過我們工作上的方式和價值觀，可以取得彼此的信任；信任要努力去贏取，而不要寄望平白無故獲得。
 
-# Why have values
+# 為什麼要建立價值觀
 
 Our values should give guidelines on how to behave and must be actionable.
 They help us describe the type of behavior that we expect from people we hire.
 They help us to know how to behave in the organization and what to expect from others.
 Values are a framework for distributed decision making, they allow you to determine what to do without asking your manager.
 
-# Hierarchy
+# 架構
 
 Occasionally, values can contradict each other. For instance, transparency would dictate we publish all security vulnerabilities the moment they are found, but this would jeopardize our users. It's useful to keep in mind this hierarchy to resolve confusion about what to do in a specific circumstance, while remaining consistent with our core values.
 
@@ -146,7 +145,7 @@ Occasionally, values can contradict each other. For instance, transparency would
   </tr>
 </table>
 
-# Updating our values
+# 價值觀更新
 
 Our values are updated continually when needed. Everyone is welcome to make a suggestion to improve them. To update: make a merge request and assign it to the CEO. If you're a [team member](/team/) or in the [core team](/core-team/) please post a link to the MR in the #values channel. If you're not part of those groups please send a direct Twitter message to [@sytses](https://twitter.com/sytses).
 
