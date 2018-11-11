@@ -11,7 +11,10 @@
 public function recordStudentScore($request) {
     // 取得學生 ID
     $studentName = $request->route('studentName');
-    $student = Student::where('name', $studentName)->first();
+    $student = Student::where('name', $studentName)
+        ->where('status', Student::ACTIVE)
+        ->where('payment_status', Student::PAID)
+        ->first();
     
     if (!$student) {
         throw new InvalidException('學生姓名錯誤');
@@ -25,8 +28,6 @@ public function recordStudentScore($request) {
 
 這三段的重構相對容易，只要將各自功能的段落移出 `recordStudentScore()`
 
-```php
-```
 
 不過，如果要移動的段落與其他地方有互動，那就比較麻煩了。
 
@@ -37,6 +38,29 @@ public function recordStudentScore($request) {
 比方說上面的例子裡面
 
 ```php
+$studentName = $request->route('studentName');
+$student = Student::where('name', $studentName)
+    ->where('status', Student::ACTIVE)
+    ->where('payment_status', Student::PAID)
+    ->first();
+    
+if (!$student) {
+    throw new InvalidException('學生姓名錯誤');
+}
+```
+
+偵測有沒有學生的這個段落，如果希望可以拆分出來，
+
+雖然這麼說，但是相信其實很容易看出來，我們只要將這個變數當作函式參數傳進去就可以了：
+
+```php
+public function ($student): void
+{
+    if (!$student) {
+        throw new InvalidException('學生姓名錯誤');
+    }
+    return;
+}
 ```
 
 ## 段落內有更動其他變數
@@ -58,7 +82,9 @@ public function recordStudentScore($request) {
 
 另外一個心結，是有時候我們在拆分函式的時候，會覺得「這一段真的有需要拆分出來嗎？會不會拆分得太細了？」
 
-針對這個部分，我自己的答案是：如果函式內部有一個段落，需要用單行註解去說明這段的行為時，那麼就代表這一段的邏輯值得用一個函式包起來，並以函式的名稱來說明這段落的行為是什麼。有時候這種段落會非常短，只有兩三行，甚至只有一行。即使如此，只要這一個段落值得用註解來說明，那麼就應該值得改用函式名稱來說明。
+針對這個部分，我自己的答案是：如果函式內部有一個段落，需要用單行註解去說明這段的行為時，那麼就代表這一段的邏輯值得用一個函式包起來，並以函式的名稱來說明這段落的行為是什麼。
+
+有時候這種段落會非常短，只有兩三行，甚至只有一行。即使如此，只要這一個段落值得用註解來說明，那麼就應該值得改用函式名稱來說明。
 
 比方說 laravel 框架裡面
 
