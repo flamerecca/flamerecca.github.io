@@ -8,13 +8,25 @@
 
 ```php
 
-public function recordLoginDate() {
+public function recordStudentScore($request) {
+    // 取得學生 ID
+    $studentName = $request->route('studentName');
+    $student = Student::where('name', $studentName)->first();
+    
+    if (!$student) {
+        throw new InvalidException('學生姓名錯誤');
+    }
+    // 計算學生成績
+    // 寫入學生成績紀錄
     
 }
 
 ```
 
-這段的重構相對容易，只要將
+這三段的重構相對容易，只要將各自功能的段落移出 `recordStudentScore()`
+
+```php
+```
 
 不過，如果要移動的段落與其他地方有互動，那就比較麻煩了。
 
@@ -22,7 +34,7 @@ public function recordLoginDate() {
 
 第一種狀況，是這個段落有取用其他的變數。
 
-比方說
+比方說上面的例子裡面
 
 ```php
 ```
