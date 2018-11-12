@@ -1,0 +1,6 @@
+[2018-11-12 09:50:56] log.INFO: select * from `tags` where `tags`.`id` = ? limit 1 [] []
+[2018-11-12 09:50:56] log.INFO: 1 [] []
+[2018-11-12 09:50:56] log.INFO: 12.18 [] []
+[2018-11-12 09:50:56] log.INFO: select `articles`.*, `article_tag`.`tag_id` as `pivot_tag_id`, `article_tag`.`article_id` as `pivot_article_id` from `articles` inner join `article_tag` on `articles`.`id` = `article_tag`.`article_id` where `article_tag`.`tag_id` = ? [] []
+[2018-11-12 09:50:56] log.INFO: 1 [] []
+[2018-11-12 09:50:56] log.INFO: 2.73 [] []
