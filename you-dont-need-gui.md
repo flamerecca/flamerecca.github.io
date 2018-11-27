@@ -70,7 +70,7 @@ cp -a myMusic myMedia/
 cp -a myMusic/ myMedia/myMusic/
 ```
 
-## 複製資料夾
+## 備份資料夾
 
 **STOP RIGHT CLICK AND DUPLICATE A FOLDER** :-1:
 
