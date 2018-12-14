@@ -14,10 +14,10 @@
 書裡提到對應的解決方案有：
 
 - [萃取函式（Extract Method）](method/extract_method.md)
-- [上移函式（Pull Up Method）](pull_up_method.md)
-- [建立模板函式（Form Template Method）](form_template_method.md)
-- [替換演算法（Substitude Algorithm）](substitude_algorithm.md)
-- [萃取類別（Extract Class）](extract_class.md)
+- [上移函式（Pull Up Method）](method/pull_up_method.md)
+- [建立模板函式（Form Template Method）](method/form_template_method.md)
+- [替換演算法（Substitude Algorithm）](method/substitude_algorithm.md)
+- [萃取類別（Extract Class）](method/extract_class.md)
 
 # 過長函式
 另一個很容易發現的問題，就是很大的函式。因為在撰寫的時候，通常會把功能的實作都寫在一起。隨著開發時間，越寫函式就越來越長，
@@ -26,9 +26,9 @@
 
 書裡提到對應的解決方案有：
 
-- [萃取函式（Extract Method）](extract_method.md)
-- [以查詢替換暫時變數（Replace Temp with Query）](replace_temp_with_query.md)
-- [引入參數物件（Introduce Parameter Object）](introduce_parameter_object.md)
+- [萃取函式（Extract Method）](method/extract_method.md)
+- [以查詢替換暫時變數（Replace Temp with Query）](method/replace_temp_with_query.md)
+- [引入參數物件（Introduce Parameter Object）](method/introduce_parameter_object.md)
 
 # 過大類別
 另一個常常發生的事情，就是類別太大。
