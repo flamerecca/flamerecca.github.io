@@ -13,7 +13,7 @@
 
 書裡提到對應的解決方案有：
 
-- [萃取函式（Extract Method）](extract_method.md)
+- [萃取函式（Extract Method）](method/extract_method.md)
 - [上移函式（Pull Up Method）](pull_up_method.md)
 - [建立模板函式（Form Template Method）](form_template_method.md)
 - [替換演算法（Substitude Algorithm）](substitude_algorithm.md)
