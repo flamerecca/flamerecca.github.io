@@ -20,7 +20,7 @@
 - [萃取類別（Extract Class）](method/extract_class.md)
 
 # 過長函式
-另一個很容易發現的問題，就是很大的函式。因為在撰寫的時候，通常會把功能的實作都寫在一起。隨著開發時間，越寫函式就越來越長，
+另一個很容易發現的問題，就是很大的函式。因為在撰寫的時候，通常會把功能的實作都寫在一起。隨著開發時間，越寫函式就越來越長。
 
 ## 解決方案
 
@@ -29,13 +29,21 @@
 - [萃取函式（Extract Method）](method/extract_method.md)
 - [以查詢替換暫時變數（Replace Temp with Query）](method/replace_temp_with_query.md)
 - [引入參數物件（Introduce Parameter Object）](method/introduce_parameter_object.md)
+- [保留完整物件（Preserve Whole Object）](method/preserve_whole_object.md)
+- [以函式物件替換函式（Replace Method with Method Object）](method/replace_method_with_method_object.md)
+- [分解條件式（Decompose Conditional）](method/decompose_conditional.md)
 
 # 過大類別
 另一個常常發生的事情，就是類別太大。
 
-在網頁開發上面，如果有使用 MVC 框架的話，這種狀況比較容易出現在 Controller 身上。因為每次需要功能的時候，直覺會想要在既有的 Controller 裡面加入新的函式，並
+在網頁開發上面，如果有使用 MVC 框架的話，這種狀況比較容易出現在 Controller 身上。因為每次需要功能的時候，直覺會想要在既有的 Controller 裡面加入新的函式，並在裡面實作邏輯。久而久之，類別自然就會越來越大。
 
 ## 解決方案
+
+書裡提到對應的解決方案有：
+
+- [萃取類別（Extract Class）](method/extract_class.md)
+- [萃取子類別（Extract Subclass）](method/extract_subclass.md)
 
 # 過長參數列
 
