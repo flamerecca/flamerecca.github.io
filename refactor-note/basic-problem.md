@@ -44,14 +44,27 @@
 
 - [萃取類別（Extract Class）](method/extract_class.md)
 - [萃取子類別（Extract Subclass）](method/extract_subclass.md)
-
+- [萃取介面（Extract Interface）](method/extract_interface.md)
+- [複製「被監視資料」（Duplicate Observed Data）](method/duplicate_observed_data.md)
 # 過長參數列
 
 ## 解決方案
 
+書裡提到對應的解決方案有：
+
+- [以函式替換參數（Replace Parameter with Method）](method/replace_parameter_with_method.md)
+- [保留完整物件（Preserve Whole Object）](method/preserve_whole_object.md)
+- [引入參數物件（Introduce Parameter Object）](method/introduce_parameter_object.md)
+
 # 註解太多（Comment）
 一般來說，開發遇到的問題其實都是註解太少。不過隨著重構的過程，各種說明性註解也就會越來越多。
 
-當註解多到一定程度時，就會開始變成問題。
+註解雖然並不是壞味道，甚至很多時候可以說是一種香味，不過當註解多到一定程度時，就會開始變成問題。
+
+所以雖然這個壞味道被放在書裡的最後一種，但是我將這個壞味道放在「基礎問題」裡面。
 
 ## 解決方案
+
+- [萃取函式（Extract Method）](method/extract_method.md)
+- [重新命名函式（Rename Method）](method/rename_method.md)
+- [引入斷言（Introduce Assertion）](method/introduce_assertion.md)
