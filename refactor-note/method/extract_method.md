@@ -20,13 +20,21 @@ public function recordStudentScore($request) {
         throw new InvalidException('學生姓名錯誤');
     }
     // 計算學生成績
-    // 寫入學生成績紀錄
     
+    // 寫入學生成績紀錄
+    StudentScore::create([
+        'student_id' => $student->id,
+        'score' => $score,
+    ]);
 }
 
 ```
 
-這三段的重構相對容易，只要將各自功能的段落移出 `recordStudentScore()`
+這邊有幾段的重構相對容易，只要將各自功能的段落移出 `recordStudentScore()` 就好了
+
+```php
+
+```
 
 
 不過，如果要移動的段落與其他地方有互動，那就比較麻煩了。
@@ -49,9 +57,9 @@ if (!$student) {
 }
 ```
 
-偵測有沒有學生的這個段落，如果希望可以拆分出來，
+偵測有沒有學生的這個段落，如果希望可以拆分出來，就不能直接用移出的方式進行。
 
-雖然這麼說，但是相信其實很容易看出來，我們只要將這個變數當作函式參數傳進去就可以了：
+雖然這麼說，但是相信其實很容易看出來，其實我們只要將 `$student` 這個變數當作函式參數傳進去就可以了：
 
 ```php
 public function ($student): void
