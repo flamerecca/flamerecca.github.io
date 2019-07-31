@@ -24,6 +24,12 @@
 
 [php-the-right-way](http://laravel-taiwan.github.io/php-the-right-way/)
 
+## Static Analysis Tool
+
+[https://github.com/phpstan/phpstan](https://github.com/phpstan/phpstan)
+
+使用起來很簡易，但是背後卻有很多學問的工具
+
 ## 其他規範
 
 參考 cleancode 
