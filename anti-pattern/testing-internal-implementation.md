@@ -7,8 +7,10 @@
 
 浪費開發時間
 
-They waste precious development time the first time they are written
-They waste even more time when they need to be refactored (when a new feature is added)
+* They waste precious development time the first time they are written
+* They waste even more time when they need to be refactored (when a new feature is added)
+
+嚴格來說，測試程式碼和其他的程式碼一樣。為了逐步改善它你總會在某個時間點進行重構。但是，如果你發現自己總是
 Strictly speaking, test code is like any other type of code. You will need to refactor it at some point in order to improve it in a gradual way. But if you find yourself routinely changing existing tests just to make them pass when a new feature is added then your tests are not testing what they should be testing.
 
 I have seen several companies that started new projects and thinking that they will get it right this time, they started writing a big number of tests to cover the functionality of the application. After a while, a new feature got added and several existing tests needed to change in order to make them pass again. Then another new feature was added and more tests needed to be updated. Soon the amount of effort spent refactoring/fixing the existing tests was actually larger than the time needed to implement the feature itself.
