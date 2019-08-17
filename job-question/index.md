@@ -6,6 +6,7 @@
 * [Find_the_non-duplicate_number](Find_the_non-duplicate_number.md)
 * [First_and_Last_Indices_of_an_Element_in_a_Sorted_Array](First_and_Last_Indices_of_an_Element_in_a_Sorted_Array.md)
 * [Floor_and_Ceiling_of_a_Binary_Search_Tree](Floor_and_Ceiling_of_a_Binary_Search_Tree.md)
+* [Intersection_of_Linked_Lists](Intersection_of_Linked_Lists.md)
 * [Invert_a_Binary_Tree](Invert_a_Binary_Tree.md)
 * [Longest_Palindromic_Substring](Longest_Palindromic_Substring.md)
 * [Longest_Sequence_with_Two_Unique_Numbers](Longest_Sequence_with_Two_Unique_Numbers.md)
