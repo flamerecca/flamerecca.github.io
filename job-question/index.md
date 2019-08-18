@@ -1,6 +1,7 @@
 * [Add_two_numbers_as_a_linked_list](Add_two_numbers_as_a_linked_list.md)
 * [Create_a_Simple_Calculator](Create_a_Simple_Calculator.md)
 * [Edit_Distance](Edit_Distance.md)
+* [Falling_Dominoes](Falling_Dominoes.md)
 * [Find_Cycles_in_a_Graph](Find_Cycles_in_a_Graph.md)
 * [Find_Pythagorean_Triplets](Find_Pythagorean_Triplets.md)
 * [Find_the_non-duplicate_number](Find_the_non-duplicate_number.md)
