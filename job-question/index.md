@@ -16,6 +16,7 @@
 * [Minimum_Size_Subarray_Sum](Minimum_Size_Subarray_Sum.md)
 * [Non-decreasing_Array_with_Single_Modification](Non-decreasing_Array_with_Single_Modification.md)
 * [Number_of_Ways_to_Climb_Stairs](Number_of_Ways_to_Climb_Stairs.md)
+* [Remove_Consecutive_Nodes_that_Sum_to_0](Remove_Consecutive_Nodes_that_Sum_to_0.md)
 * [Reverse_a_Linked_List](Reverse_a_Linked_List.md)
 * [Sorting_a_list_with_3_unique_numbers](Sorting_a_list_with_3_unique_numbers.md)
 * [Two-Sum](Two-Sum.md)
