@@ -23,5 +23,6 @@
 * [Two-Sum](Two-Sum.md)
 * [Validate_Balanced_Parentheses](Validate_Balanced_Parentheses.md)
 * [Ways_to_Traverse_a_Grid](Ways_to_Traverse_a_Grid.md)
+* [Witness_of_The_Tall_People](Witness_of_The_Tall_People.md)
 * [Word_Search](Word_Search.md)
 * [index](index.md)
