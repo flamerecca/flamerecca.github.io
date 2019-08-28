@@ -17,6 +17,7 @@
 * [Longest_Sequence_with_Two_Unique_Numbers](Longest_Sequence_with_Two_Unique_Numbers.md)
 * [Longest_Substring_Without_Repeating_Characters](Longest_Substring_Without_Repeating_Characters.md)
 * [Maximum_In_A_Stack](Maximum_In_A_Stack.md)
+* [Maximum_Profit_From_Stocks](Maximum_Profit_From_Stocks.md)
 * [Minimum_Size_Subarray_Sum](Minimum_Size_Subarray_Sum.md)
 * [Move_Zeros](Move_Zeros.md)
 * [Non-decreasing_Array_with_Single_Modification](Non-decreasing_Array_with_Single_Modification.md)
