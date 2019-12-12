@@ -1,8 +1,8 @@
 來源 https://gist.github.com/MohamedAlaa/2961058
 
-# tmux shortcuts & cheatsheet
+# tmux 備忘單
 
-start new:
+開啟：
 
     tmux
 
