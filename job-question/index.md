@@ -72,9 +72,8 @@
 * [Lowest_Common_Ancestor_of_2_Nodes_in_Binary_Tree](Lowest_Common_Ancestor_of_2_Nodes_in_Binary_Tree.md)
 * [Majority_Element](Majority_Element.md)
 * [Make_the_Largest_Number](Make_the_Largest_Number.md)
-* [Making_Change
-Making_a_Height_Balanced_Binary_Search_Tree](Making_Change
-Making_a_Height_Balanced_Binary_Search_Tree.md)
+* [Making_Change](Making_Change.md)
+* [Making_a_Height_Balanced_Binary_Search_Tree](Making_a_Height_Balanced_Binary_Search_Tree.md)
 * [Max_and_Min_with_Limited_Comparisons](Max_and_Min_with_Limited_Comparisons.md)
 * [Maximum_In_A_Stack](Maximum_In_A_Stack.md)
 * [Maximum_Non_Adjacent_Sum](Maximum_Non_Adjacent_Sum.md)
