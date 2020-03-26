@@ -77,9 +77,8 @@
 * [Max_and_Min_with_Limited_Comparisons](Max_and_Min_with_Limited_Comparisons.md)
 * [Maximum_In_A_Stack](Maximum_In_A_Stack.md)
 * [Maximum_Non_Adjacent_Sum](Maximum_Non_Adjacent_Sum.md)
-* [Maximum_Path_Sum_in_Binary_
-Merge_K_Sorted_Linked_Lists](Maximum_Path_Sum_in_Binary_
-Merge_K_Sorted_Linked_Lists.md)
+* [Maximum_Path_Sum_in_Binary](Maximum_Path_Sum_in_Binary.md)
+* [Merge_K_Sorted_Linked_Lists](Merge_K_Sorted_Linked_Lists.md)
 * [Merge_List_Of_Number_Into_Ranges](Merge_List_Of_Number_Into_Ranges.md)
 * [Min_Range_Needed_to_Sort](Min_Range_Needed_to_Sort.md)
 * [Minimum_Depth_of_Binary_Tree](Minimum_Depth_of_Binary_Tree.md)
