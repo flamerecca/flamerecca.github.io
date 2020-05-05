@@ -2,7 +2,7 @@
 
 ----
 
-isp: Good News, Bad News, How to Win Big
+# Lisp：好消息，壞消息，如何大贏
 
 Richard P. Gabriel
 
@@ -10,9 +10,9 @@ Lucid, Inc
 
 本文章初次發表於 1991 年
 
-大綱
+## 大綱
 
-Lisp has done quite well over the last ten years: becoming nearly standardized, forming the basis of a commercial sector, achieving excellent performance, having good environments, able to deliver applications. Yet the Lisp community has failed to do as well as it could have. In this paper I look at the successes, the failures, and what to do next.
+Lisp 在過去十年做得還不錯： becoming nearly standardized, forming the basis of a commercial sector, achieving excellent performance, having good environments, able to deliver applications. Yet the Lisp community has failed to do as well as it could have. In this paper I look at the successes, the failures, and what to do next.
 
 The Lisp world is in great shape: Ten years ago there was no standard Lisp; the most standard Lisp was InterLisp, which ran on PDP-10s and Xerox Lisp machines (some said it ran on Vaxes, but I think they exaggerated); the second most standard Lisp was MacLisp, which ran only on PDP-10s, but under the three most popular operating systems for that machine; the third most standard Lisp was Portable Standard Lisp, which ran on many machines, but very few people wanted to use it; the fourth most standard Lisp was Zetalisp, which ran on two varieties of Lisp machine; and the fifth most standard Lisp was Scheme, which ran on a few different kinds of machine, but very few people wanted to use it. By today’s standards, each of these had poor or just barely acceptable performance, nonexistent or just barely satisfactory environments, nonexistent or poor integration with other languages and software, poor portability, poor acceptance, and poor commercial prospects.
 
@@ -32,10 +32,10 @@ It seems a pity for the Lisp business to take a bump partly because Julie though
 
 But, there are some real successes for Lisp, some problems, and some ways out of those problems.
 
-1 Lisp’s Successes
+## 1 Lisp’s Successes
 As I mentioned, Lisp is in better shape today than it ever has been. I want to review some Lisp success stories.
 
-1.1 Standardization
+### 1.1 Standardization
 A major success is that there is a standard Lisp -- Common Lisp. Many observers today wish there were a simpler, smaller, cleaner Lisp that could be standardized, but the Lisp that we have today that is ready for standardization is Common Lisp. This isn’t to say that a better Lisp could not be standardized later, and certainly there should be. Furthermore, like any language, Common Lisp should be improved and changed as needs change.
 
 Common Lisp started as a grassroots effort in 1981 after an ARPA-sponsored meeting held at SRI to determine the future of Lisp. At that time there were a number of Lisps in the US being defined and implemented by former MIT folks: Greenblatt (LMI), Moon and Weinreb (Symbolics), Fahlman and Steele (CMU), White (MIT), and Gabriel and Steele (LLNL). The core of the Common Lisp committee came from this group. That core was Fahlman, Gabriel, Moon, Steele, and Weinreb, and Common Lisp was a coalescence of the Lisps these people cared about.
@@ -60,7 +60,7 @@ Currently, X3J13 is less than a year away from a draft standard for ANSI Common 
 
 Common Lisp is in use internationally, and serves at least as a de facto standard until the always contentious Lisp community agrees to work together.
 
-1.2 Good Performance
+### 1.2 Good Performance
 Common Lisp performs well. Most current implementations use modern compiler technology, in contrast to older Lisps, which used very primitive compiler techniques, even for the time. In terms of performance, anyone using a Common Lisp today on almost any computer can expect better performance than could be obtained on single-user PDP-10s or on single-user Lisp machines of mid-1980s vintage. Many Common Lisp implementations have multitasking and non-intrusive garbage collection -- both regarded as impossible features on stock hardware ten years ago.
 
 In fact, Common Lisp performs well on benchmarks compared to C. The following table shows the ratio of Lisp time and code size to C time and code size for three benchmarks.
@@ -80,7 +80,7 @@ Tak is a Gabriel benchmark that measures function calling and fixnum arithmetic.
 
 These benchmarks were run on a Sun 3 in 1987 using the standard Sun C compiler using full optimization. The Lisp was not running a non-intrusive garbage collector.
 
-1.3 Good Environments
+### 1.3 Good Environments
 It is arguable that modern programming environments come from the Lisp and AI tradition. The first bit-mapped terminals (Stanford/MIT), the mouse pointing device (SRI), full-screen text editors (Stanford/MIT), and windowed environments (Xerox PARC) all came from laboratories engaged in AI research. Even today one can argue that the Symbolics programming environment represents the state of the art.
 
 It is also arguable that the following development environment features originated in the Lisp world:
@@ -95,12 +95,12 @@ Symbolic stack backtraces
 Structure editors
 Today’s Lisp environments are equal to the very best Lisp machine environments in the 1970s. Windowing, fancy editing, and good debugging are all commonplace. In some Lisp systems, significant attention has been paid to the software lifecycle through the use of source control facilities, automatic cross-referencing, and automatic testing.
 
-1.4 Good Integration
+### 1.4 Good Integration
 Today Lisp code can coexist with C, Pascal, Fortran, etc. These languages can be invoked from Lisp and in general, these languages can then re-invoke Lisp. Such interfaces allow the programmer to pass Lisp data to foreign code, to pass foreign data to Lisp code, to manipulate foreign data from Lisp code, to manipulate Lisp data from foreign code, to dynamically load foreign programs, and to freely mix foreign and Lisp functions.
 
 The facilities for this functionality are quite extensive and provide a means for mixing several different languages at once.
 
-1.5 Object-oriented Programming
+### 1.5 Object-oriented Programming
 Lisp has the most powerful, comprehensive, and pervasively object-oriented extensions of any language. CLOS embodies features not found in any other object-oriented language. These include the following:
 
 Multiple inheritance
@@ -114,12 +114,12 @@ Metaobject protocol
 Integration with Lisp types
 It is likely that Common Lisp (with CLOS) will be the first standardized object-oriented programming language.
 
-1.6 Delivery
+### 1.6 Delivery
 It is possible to deliver applications written in Lisp. The currently available tools are good but are not yet ideal. These solutions include from removing unused code and data from application, building up applications using only the code and data needed, and producing .o files from Lisp code.
 
 Delivery tools are commercially provided by Lucid, Franz, and Ibuki.
 
-2 Lisp’s Apparent Failures
+## 2 Lisp’s Apparent Failures
 Too many teardrops for one heart to be crying.
 Too many teardrops for one heart to carry on.
 You’re way on top now, since you left me,
@@ -129,7 +129,7 @@ Always laughing, way down at me.
 
 This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. The key problem with Lisp today stems from the tension between two opposing software philosophies. The two philosophies are called The Right Thing and Worse is Better.
 
-2.1 The Rise of Worse is Better
+### 2.1 The Rise of Worse is Better
 I and just about every designer of Common Lisp and CLOS has had extreme exposure to the MIT/Stanford style of design. The essence of this style can be captured by the phrase the right thing. To such a designer it is important to get all of the following characteristics right:
 
 Simplicity -- the design must be simple, both in implementation and interface. It is more important for the interface to be simple than the implementation.
@@ -194,10 +194,10 @@ A wrong lesson is to take the parable literally and to conclude that C is the ri
 
 But, one can conclude only that the Lisp community needs to seriously rethink its position on Lisp design. I will say more about this later.
 
-2.2 Good Lisp Programming is Hard
+### 2.2 Good Lisp Programming is Hard
 Many Lisp enthusiasts believe that Lisp programming is easy. This is true up to a point. When real applications need to be delivered, the code needs to perform well. With C, programming is always difficult because the compiler requires so much description and there are so few data types. In Lisp it is very easy to write programs that perform very poorly; in C it is almost impossible to do that. The following examples of badly performing Lisp programs were all written by competent Lisp programmers while writing real applications that were intended for deployment. I find these quite sad.
 
-2.2.1 Bad Declarations
+#### 2.2.1 Bad Declarations
 This example is a mistake that is easy to make. The programmer here did not declare his arrays as fully as he could have. Therefore, each array access was about as slow as a function call when it should have been a few instructions. The original declaration was as follows:
 
     (proclaim '(type (array fixnum *) *ar1* *ar2* *ar3*))
@@ -231,7 +231,7 @@ The implementation happens to optimize multiple-value-prog1 for up to three retu
       (values x1 x2 x3 x4 x5))
 There is no reason that a programmer should know that this rewrite is needed. On the other hand, finding that performance was not as expected should not have led the manager of the programmer in question to conclude, as he did, that Lisp was the wrong language.
 
-2.2.3 Use of FORTRAN Idioms
+#### 2.2.3 Use of FORTRAN Idioms
 Some Common Lisp compilers do not optimize the same way as others. The following expression is sometimes used:
 
     (* -1 <form>)
@@ -241,7 +241,7 @@ when compilers often produce better code for this variant:
 Of course, the first is the Lisp analog of the FORTRAN idiom:
 
     - -1*<form>
-2.2.4 Totally Inappropriate Data Structures
+#### 2.2.4 Totally Inappropriate Data Structures
 Some might find this example hard to believe. This really occurred in some code I’ve seen:
 
     (defun make-matrix (n m)
@@ -262,14 +262,14 @@ What’s worse is that in the particular application, the matrices were all fixe
 
 This example is bitterly sad: The code is absolutely beautiful, but it adds matrices slowly. Therefore it is excellent prototype code and lousy production code. You know, you cannot write production code as bad as this in C.
 
-2.3 Integration is God
+### 2.3 Integration is God
 In the worse-is-better world, integration is linking your .o files together, freely intercalling functions, and using the same basic data representations. You don’t have a foreign loader, you don’t coerce types across function-call boundaries, you don’t make one language dominant, and you don’t make the woes of your implementation technology impact the entire system.
 
 The very best Lisp foreign functionality is simply a joke when faced with the above reality. Every item on the list can be addressed in a Lisp implementation. This is just not the way Lisp implementations have been done in the right thing world.
 
 The virus lives while the complex organism is stillborn. Lisp must adapt, not the other way around. The right thing and 2 shillings will get you a cup of tea.
 
-2.4 Non-Lisp Environments are Catching Up
+### 2.4 Non-Lisp Environments are Catching Up
 This is hard to face up to. For example, most C environments -- initially imitative of Lisp environments -- are now pretty good. Current best C environments have the following:
 
 Symbolic debuggers
@@ -297,7 +297,7 @@ Seventh, environments are not multi-user when almost all interesting software is
 
 The real problem has been that almost no progress in Lisp environments has been made in the last 10 years.
 
-3 How Lisp Can Win Big
+## 3 How Lisp Can Win Big
 When the sun comes up, I’ll be on top.
 You’re right down there looking up.
 On my way to come up here,
@@ -309,7 +309,7 @@ I know now that I’m gonna get there.
 
 The gloomy interlude can have a happy ending.
 
-3.1 Continue Standardization Progress
+### 3.1 Continue Standardization Progress
 We need to bury our differences at the ISO level and realize that there is a short term need, which must be Common Lisp, and a long term need, which must address all the issues for practical applications.
 
 We’ve seen that the right thing attitude has brought us a very large, complex-to-understand, and complex-to-implement Lisp -- Common Lisp that solves way too many problems. We need to move beyond Common Lisp for the future, but that does not imply giving up on Common Lisp now. We’ve seen it is possible to do delivery of applications, and I think it is possible to provide tools that make it easier to write applications for deployment. A lot of work has gone into getting Common Lisp to the point of a right thing in many ways, and there are viable commercial implementations. But we need to solve the delivery and integration problems in spades.
@@ -326,22 +326,22 @@ On the other hand, there should be a strong effort towards the next generation o
 
 All interested parties must step forward for the longer-term effort.
 
-3.2 Retain the High Ground in Environments
+### 3.2 Retain the High Ground in Environments
 I think there is a mistake in following an environment path that creates monolithic environments. It should be possible to use a variety of tools in an environment, and it should be possible for those who create new tools to be able to integrate them into the environment.
 
 I believe that it is possible to build a tightly integrated environment that is built on an open architecture in which all tools, including language processors, are protocol-driven. I believe it is possible to create an environment that is multi-lingual and addresses the software lifecycle problem without imposing a particular software methodology on its users.
 
 Our environments should not discriminate against non-Lisp programmers the way existing environments do. Lisp is not the center of the world.
 
-3.3 Implement Correctly
+### 3.3 Implement Correctly
 Even though Common Lisp is not structured as a kernel plus libraries, it can be implemented that way. The kernel and library routines can be in the form of .o files for easy linking with other, possibly non-Lisp, modules; the implementation must make it possible to write, for example, small utility programs. It is also possible to piggyback on existing compilers, especially those that use common back ends. It is also possible to implement Lisp so that standard debuggers, possibly with extensions, can be made to work on Lisp code.
 
 It might take time for developers of standard tools to agree to extend their tools to Lisp, but it certainly won’t happen until our (exceptional) language is implemented more like ordinary ones.
 
-3.4 Achieve Total Integration
+### 3.4 Achieve Total Integration
 I believe it is possible to implement a Lisp and surrounding environment which has no discrimination for or against any other language. It is possible using multi-lingual environments, clever representations of Lisp data, conservative garbage collection, and conventional calling protocols to make a completely integrated Lisp that has no demerits.
 
-3.5 Make Lisp the Premier Prototyping Language
+### 3.5 Make Lisp the Premier Prototyping Language
 Lisp is still the best prototyping language. We need to push this forward. A multi-lingual environment could form the basis or infrastructure for a multi-lingual prototyping system. This means doing more research to find new ways to exploit Lisp’s strengths and to introduce new ones.
 
 Prototyping is the act of producing an initial implementation of a complex system. A prototype can be easily instrumented, monitored, and altered. Prototypes are often built from disparate parts that have been adapted to a new purpose. Descriptions of the construction of a prototype often involve statements about modifying the behavioral characteristics of an existing program. For example, suppose there exists a tree traversal program. The description of a prototype using this program might start out by saying something like
@@ -353,7 +353,7 @@ Subsequent statements might manipulate the correspondence and use f. Once the de
 
 A language that describes the modification and control of an existing program can be termed a program language. Program languages be built on one or several underlying programming languages, and in fact can be implemented as part of the functionality of the prototyping environment. This view is built on the insight that an environment is a mechanism to assist a programmer in creating a working program, including preparing the source text. There is no necessary requirement that an environment be limited to working only with raw source text. As another example, some systems comprise several processes communicating through channels. The creation of this part of the system can be visual, with the final result produced by the environment being a set of source code in several languages, build scripts, link directives, and operating system calls. Because no single programming language encompasses the program language, one could call such a language an epi-language.
 
-3.6 The Next Lisp
+### 3.6 The Next Lisp
 I think there will be a next Lisp. This Lisp must be carefully designed, using the principles for success we saw in worse-is-better.
 
 There should be a simple, easily implementable kernel to the Lisp. That kernel should be both more than Scheme -- modules and macros -- and less than Scheme -- continuations remain an ugly stain on the otherwise clean manuscript of Scheme.
@@ -392,12 +392,12 @@ In fact, the area of function-function interfaces should be re-examined to see w
 
 Finally, note that it might be that every layer 2 capability could be provided in a layer 1 implementation by an environment.
 
-3.7 Help Application Writers Win
+### 3.7 Help Application Writers Win
 The Lisp community has too few application writers. The Lisp vendors need to make sure these application writers win. To do this requires that the parties involved be open about their problems and not adversarial. For example, when an expert system shell company finds problems, it should open up its source code to the Lisp vendor so that both can work towards the common goal of making a faster, smaller, more deliverable product. And the Lisp vendors should do the same.
 
 The business leadership of the AI community seems to have adopted the worst caricature-like traits of business practice: secrecy, mistrust, run-up-the-score competitiveness. We are an industry that has enough common competitors without searching for them among our own ranks.
 
 Sometimes the sun also rises.
 
-References
+## References
 [1] ? & the Mysterians, 96 Tears, Pa-go-go Records 1966, re-released on Cameo Records, September 1966.
