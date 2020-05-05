@@ -17,8 +17,8 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
 
 # 內容
 
-- [背景](#background)
-  - [雜湊 vs 加密](#hashing-vs-encryption)
+- [背景](#背景)
+  - [雜湊 vs 加密](#雜湊-vs-加密)
   - [攻擊者如何破解密碼雜湊](#how-attackers-crack-password-hashes)
 - [雜湊概念](#hashing-concepts)
   - [Salting](#salting)
@@ -37,9 +37,9 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
   - [更新古老的雜湊](#upgrading-legacy-hashes)
   - [自定義演算法](#custom-algorithms)
 
-# Background
+# 背景
 
-## Hashing vs Encryption
+## 雜湊 vs 加密
 
 Hashing and encryption are two terms that are often confused or used incorrectly. The key difference between them is that hashing is a **one way** function (i.e, it is not possible to "decrypt" a hash and obtain the original value), whereas encryption is a two-way function.
 
@@ -54,7 +54,7 @@ The ability to decrypt passwords represents a serious security risk, so it shoul
 
 This Cheat Sheet is focused on password hashing - for further guidance on encrypting passwords see the [Cryptographic Storage Cheat Sheet](Cryptographic_Storage_Cheat_Sheet.md).
 
-## How Attackers Crack Password Hashes
+## 攻擊者如何破解密碼雜湊
 
 Although it is not possible to "decrypt" password hashes to obtain the original passwords, in some circumstances it is possible to "crack" the hashes. The basic steps are:
 
