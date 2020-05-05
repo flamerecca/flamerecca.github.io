@@ -6,11 +6,13 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 # 簡介
 
-As the majority of users will re-use passwords between different applications, it is important to store passwords in a way that prevents them from being obtained by an attacker, even if the application or database is compromised. As with most areas of cryptography, there are many different factors that need to be considered, but fortunately, the majority of modern languages and frameworks provide built-in functionality to help store passwords, which handles much of the complexity.
+因為多數使用者都會在不同的服務裡用相同的密碼，用即使服務本身或者資料庫被攻擊者破解，密碼也不會外流的方式儲存密碼，就變得非常重要。如同密碼學裡面的許多領域一樣，要做到這件事情需要考慮非常多的因素。幸運的是，多數現代的程式語言和框架都提供了內建的方式來儲存密碼，將複雜度減少了很多。
 
-This Cheat Sheet provides guidance on the various areas that need to be considered related to storing passwords. In short:
+這份 cheatsheet 提供了儲存密碼上，所需要考慮各個不同面向的指引。
 
-- **除非你有很好的理由，不然就用 [crypt](#modern-algorithms)**
+簡而言之：
+
+- **除非你有很好的理由，不然就用 [bcrypt](#現代演算法)**
 - **設置一個合理的 [work factor](#work-factors)**
 - **加 [salt](#salting)（現在演算法預設都會加上了）**
 - **要更加安全，可以考慮加上 [pepper](#peppering)**
@@ -27,15 +29,15 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
   - [Work Factors](#work-factors)
     - [升級 Work Factor](#升級-Work-Factor)
   - [最長密碼長度](#最長密碼長度)
-    - [Pre-Hashing Passwords](#pre-hashing-passwords)
-- [密碼雜湊演算法](#password-hashing-algorithms)
-  - [現代演算法](#modern-algorithms)
+    - [預先雜湊密碼](#預先雜湊密碼)
+- [密碼雜湊演算法](#密碼雜湊演算法)
+  - [現代演算法](#現代演算法)
     - [Argon2id](#argon2id)
     - [PBKDF2](#pbkdf2)
     - [Bcrypt](#bcrypt)
-  - [古老的演算法](#legacy-algorithms)
-  - [更新古老的雜湊](#upgrading-legacy-hashes)
-  - [自定義演算法](#custom-algorithms)
+  - [古老的演算法](#古老的演算法)
+  - [更新古老的雜湊](#更新古老的雜湊)
+  - [自定義演算法](#自定義演算法)
 
 # 背景
 
@@ -125,7 +127,7 @@ When choosing a work factor, a balance needs to be struck between security and p
 
 There is no golden rule for the ideal work factor - it will depend on the performance of the server and the number of users on the application. Determining the optimal work factor will require experimentation on the specific server(s) used by the application. As a general rule, calculating a hash should take less than one second, although on higher traffic sites it should be significantly less than this.
 
-### Upgrading the Work Factor
+### 升級 Work Factor
 
 One key advantage of having a work factor is that it can be increased over time as hardware becomes more powerful and cheaper. Taking Moore's Law (i.e, that computational power at a given price point doubles every eighteen months) as a rough approximation, this means that the work factor should be increased by 1 every eighteen months.
 
@@ -153,9 +155,9 @@ Finally, when using pre-hashing ensure that the output for the first hashing alg
 
 As such, the preferred option should generally be to limit the maximum password length. Pre-hashing of passwords should only be performed where there is a specific requirement to do so, and appropriate steps have been taking to mitigate the issues discussed above.
 
-# Password Hashing Algorithms
+# 密碼雜湊演算法
 
-## Modern Algorithms
+## 現代演算法
 
 There are a number of modern hashing algorithms that have been specifically designed for securely storing passwords. This means that they should be slow (unlike algorithms such as MD5 and SHA-1 which were designed to be fast), and how slow they are can be configured by changing the [work factor](#work-factors).
 
@@ -181,7 +183,7 @@ The work factor for PBKDF2 is implemented through the iteration count, which sho
 
 The default work factor for Bcrypt is 10, and this should generally be raised to 12 unless operating on older or lower-powered systems.
 
-## Legacy Algorithms
+## 古老的演算法
 
 In some circumstances it is not possible to use [modern hashing algorithms](#modern-algorithms), usually due to the use of legacy language or environments. Where possible, third party libraries should be used to provide these algorithms. However, if the only algorithms available are legacy ones such as MD5 and SHA-1, then there are a number of steps that can be taken to improve the security of stored passwords.
 
@@ -192,7 +194,7 @@ In some circumstances it is not possible to use [modern hashing algorithms](#mod
 
 It should be emphasised that these steps **are not as good as using a modern hashing algorithm**, and that this approach should only be taken where no other options are available.
 
-## Upgrading Legacy Hashes
+## 更新古老的雜湊
 
 For older applications that were built using less secure hashing algorithms such as MD5 or SHA-1, these hashes should be upgraded to more modern and secure ones. When the user next enters their password (usually by authenticating on the application), it should be re-hashed using the new algorithm. It would also be good practice to expire the users' current password and require them to enter a new one, so that any older (less secure) hashes of their password are no longer useful to an attacker.
 
@@ -202,7 +204,7 @@ One method is to expire and delete the password hashes of users who have been in
 
 An alternative approach is to use the existing password hashes as inputs for a more secure algorithm. For example if the application originally stored passwords as `md5($password)`, this could be easily upgraded to `bcrypt(md5($password))`. Layering the hashes in this manner avoids the need to known the original password, however it can make the hashes easier to crack, as discussed in the [Pre-Hashing](#pre-hashing) section. As such, these hashes should be replaced with direct hashes of the users' passwords next time the users login.
 
-## 客製化演算法
+## 自定義演算法
 
 Writing custom cryptographic code such as a hashing algorithm is **really hard** and should **never be done** outside of an academic exercise. Any potential benefit that you might have from using an unknown or bespoke algorithm will be vastly overshadowed by the weaknesses that exist in it.
 
