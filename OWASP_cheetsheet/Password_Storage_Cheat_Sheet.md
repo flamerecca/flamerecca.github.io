@@ -1,4 +1,7 @@
-翻譯自 https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Storage_Cheat_Sheet.md
+翻譯自 
+
+https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Storage_Cheat_Sheet.md
+
 ----
 
 # 簡介
@@ -12,18 +15,18 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
 - **加 [salt](#salting)（現在演算法預設都會加上了）**
 - **要更加安全，可以考慮加上 [pepper](#peppering)**
 
-# Contents
+# 內容
 
-- [Background](#background)
-  - [Hashing vs Encryption](#hashing-vs-encryption)
-  - [How Attackers Crack Password Hashes](#how-attackers-crack-password-hashes)
-- [Hashing Concepts](#hashing-concepts)
+- [背景](#background)
+  - [雜湊 vs 加密](#hashing-vs-encryption)
+  - [攻擊者如何破解密碼雜湊](#how-attackers-crack-password-hashes)
+- [雜湊概念](#hashing-concepts)
   - [Salting](#salting)
   - [Peppering](#peppering)
-    - [Disadvantages](#disadvantages)
+    - [缺點](#disadvantages)
   - [Work Factors](#work-factors)
-    - [Upgrading the Work Factor](#upgrading-the-work-factor)
-  - [Maximum Password Lengths](#maximum-password-lengths)
+    - [升級 Work Factor](#upgrading-the-work-factor)
+  - [最長密碼長度](#maximum-password-lengths)
     - [Pre-Hashing Passwords](#pre-hashing-passwords)
 - [Password Hashing Algorithms](#password-hashing-algorithms)
   - [Modern Algorithms](#modern-algorithms)
