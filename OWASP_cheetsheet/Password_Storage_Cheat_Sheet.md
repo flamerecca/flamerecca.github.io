@@ -28,14 +28,14 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
     - [升級 Work Factor](#upgrading-the-work-factor)
   - [最長密碼長度](#maximum-password-lengths)
     - [Pre-Hashing Passwords](#pre-hashing-passwords)
-- [Password Hashing Algorithms](#password-hashing-algorithms)
-  - [Modern Algorithms](#modern-algorithms)
+- [密碼雜湊演算法](#password-hashing-algorithms)
+  - [現代演算法](#modern-algorithms)
     - [Argon2id](#argon2id)
     - [PBKDF2](#pbkdf2)
     - [Bcrypt](#bcrypt)
-  - [Legacy Algorithms](#legacy-algorithms)
-  - [Upgrading Legacy Hashes](#upgrading-legacy-hashes)
-  - [Custom Algorithms](#custom-algorithms)
+  - [古老的演算法](#legacy-algorithms)
+  - [更新古老的雜湊](#upgrading-legacy-hashes)
+  - [自定義演算法](#custom-algorithms)
 
 # Background
 
