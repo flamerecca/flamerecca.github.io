@@ -8,7 +8,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 因為多數使用者都會在不同的服務裡用相同的密碼，用即使服務本身或者資料庫被攻擊者破解，密碼也不會外流的方式儲存密碼，就變得非常重要。如同密碼學裡面的許多領域一樣，要做到這件事情需要考慮非常多的因素。幸運的是，多數現代的程式語言和框架都提供了內建的方式來儲存密碼，將複雜度減少了很多。
 
-這份 cheatsheet 提供了儲存密碼上，所需要考慮各個不同面向的指引。
+這份小抄提供了儲存密碼上，所需要考慮各個不同面向的指引。
 
 簡而言之：
 
@@ -43,18 +43,20 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 ## 雜湊 vs 加密
 
-Hashing and encryption are two terms that are often confused or used incorrectly. The key difference between them is that hashing is a **one way** function (i.e, it is not possible to "decrypt" a hash and obtain the original value), whereas encryption is a two-way function.
+雜湊和加密是常常被混淆或者誤用的兩個詞彙。這兩個詞彙關鍵的不同點是，雜湊是**單向**函數（或者說，不可能從雜湊「解密」出原本的值），而加密則是雙向函數。
 
-In almost all circumstances, passwords should be hashed rather than encrypted, as this makes it difficult or impossible for an attacker to obtain the original passwords from the hashes.
+幾乎所有的情況下，密碼都不應該被加密，而是應該被雜湊。因為，這樣攻擊者幾近不可能從雜湊後的結果逆推出原本的密碼。
 
-Encryption should only be used in edge cases where it is necessary to be able to obtain the original password. Some examples of where this might be necessary are:
+只有在非常罕見的情況下，因為你必須保有原本的密碼，所以才必須使用加密的方式。
 
-- If the application needs to use the password to authenticate against an external legacy system that doesn't support SSO.
-- If it is necessary to retrieve individual characters from the password.
+必須保有原本密碼的情況可能有：
 
-The ability to decrypt passwords represents a serious security risk, so it should be fully risk assessed. Where possible, an alternative architecture should be used to avoid the need to store passwords in an encrypted form.
+- 如果該應用程式必須透過密碼，和不支援 SSO（single sign-on）的外部老舊系統進行溝通
+- 必須要從密碼取出個別字母時
 
-This Cheat Sheet is focused on password hashing - for further guidance on encrypting passwords see the [Cryptographic Storage Cheat Sheet](Cryptographic_Storage_Cheat_Sheet.md).
+有可能解密出密碼是一件非常嚴重的資安風險，所以必須要全面評估過風險。如果可能的話，應該盡量選用其他架構，來避免將密碼以加密的形式進行儲存。
+
+這份小抄主要針對密碼雜湊，對加密後的資料儲存可以參考[加密儲存資料的小抄](Cryptographic_Storage_Cheat_Sheet.md)。
 
 ## 攻擊者如何破解密碼雜湊
 
