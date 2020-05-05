@@ -1,18 +1,24 @@
 翻譯自 [http://dreamsongs.com/WIB.html](http://dreamsongs.com/WIB.html)
 
-isp: Good News, Bad News, How to Win Big
-Richard P. Gabriel
-Lucid, Inc
-This article was originally published in 1991.
+----
 
-Abstract
+isp: Good News, Bad News, How to Win Big
+
+Richard P. Gabriel
+
+Lucid, Inc
+
+本文章初次發表於 1991 年
+
+大綱
+
 Lisp has done quite well over the last ten years: becoming nearly standardized, forming the basis of a commercial sector, achieving excellent performance, having good environments, able to deliver applications. Yet the Lisp community has failed to do as well as it could have. In this paper I look at the successes, the failures, and what to do next.
 
 The Lisp world is in great shape: Ten years ago there was no standard Lisp; the most standard Lisp was InterLisp, which ran on PDP-10s and Xerox Lisp machines (some said it ran on Vaxes, but I think they exaggerated); the second most standard Lisp was MacLisp, which ran only on PDP-10s, but under the three most popular operating systems for that machine; the third most standard Lisp was Portable Standard Lisp, which ran on many machines, but very few people wanted to use it; the fourth most standard Lisp was Zetalisp, which ran on two varieties of Lisp machine; and the fifth most standard Lisp was Scheme, which ran on a few different kinds of machine, but very few people wanted to use it. By today’s standards, each of these had poor or just barely acceptable performance, nonexistent or just barely satisfactory environments, nonexistent or poor integration with other languages and software, poor portability, poor acceptance, and poor commercial prospects.
 
 Today there is Common Lisp (CL), which runs on all major machines, all major operating systems, and virtually in every country. Common Lisp is about to be standardized by ANSI, has good performance, is surrounded with good environments, and has good integration with other languages and software.
 
-But, as a business, Lisp is considered to be in ill health. There are persistent and sometimes true rumors about the abandonment of Lisp as a vehicle for delivery of practical applications.
+然而，從商業角度看，as a business, Lisp is considered to be in ill health. There are persistent and sometimes true rumors about the abandonment of Lisp as a vehicle for delivery of practical applications.
 
 To some extent the problem is one of perception -- there are simply better Lisp delivery solutions than are generally believed to exist and to a disturbing extent the problem is one of unplaced or misplaced resources, of projects not undertaken, and of implementation strategies not activated.
 
