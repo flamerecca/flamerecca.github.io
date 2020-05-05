@@ -19,14 +19,14 @@ This Cheat Sheet provides guidance on the various areas that need to be consider
 
 - [背景](#背景)
   - [雜湊 vs 加密](#雜湊-vs-加密)
-  - [攻擊者如何破解密碼雜湊](#how-attackers-crack-password-hashes)
-- [雜湊概念](#hashing-concepts)
+  - [攻擊者如何破解密碼雜湊](#攻擊者如何破解密碼雜湊)
+- [雜湊概念](#雜湊概念)
   - [Salting](#salting)
   - [Peppering](#peppering)
-    - [缺點](#disadvantages)
+    - [缺點](#缺點)
   - [Work Factors](#work-factors)
-    - [升級 Work Factor](#upgrading-the-work-factor)
-  - [最長密碼長度](#maximum-password-lengths)
+    - [升級 Work Factor](#升級-Work-Factor)
+  - [最長密碼長度](#最長密碼長度)
     - [Pre-Hashing Passwords](#pre-hashing-passwords)
 - [密碼雜湊演算法](#password-hashing-algorithms)
   - [現代演算法](#modern-algorithms)
@@ -78,7 +78,7 @@ The cracking process is not guaranteed to be successful, and the success rate wi
 
 Strong passwords stored with modern hashing algorithms should be effectively impossible for an attacker to crack.
 
-# Hashing Concepts
+# 雜湊概念
 
 ## Salting
 
@@ -111,7 +111,7 @@ The pepper is traditionally used in a similar way to a salt by concatenating it 
 
 An alternative approach is to hash the passwords as usual and then encrypt the hashes with a symmetrical encryption key before storing them in the database, with the key acting as the pepper. This avoids some of the issues with the traditional approach to peppering, and it allows for much easier rotation of the pepper if it is believed to be compromised.
 
-### Disadvantages
+### 缺點
 
 The main issues with peppers is their long term maintenance. Changing the pepper in use will invalidate all of the existing passwords stored in the database, which means that it can't easily be changed in the event of the pepper being compromised.
 
@@ -133,7 +133,7 @@ The most common approach to upgrading the work factor is to wait until the user 
 
 In some cases, it may be possible to increase the work factor of the hashes without the original password, although this is not supported by common hashing algorithms such as Bcrypt and PBKDF2.
 
-## Maximum Password Lengths
+## 最長密碼長度
 
 Some hashing algorithms such as Bcrypt have a maximum length for the input, which is 72 characters for most implementations (there are some [reports](https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length) that other implementations have lower maximum lengths, but none have been identified at the time of writing). Where Bcrypt is used, a maximum length of 64 characters should be enforced on the input, as this provides a sufficiently high limit, while still allowing for string termination issues and not revealing that the application uses Bcrypt.
 
