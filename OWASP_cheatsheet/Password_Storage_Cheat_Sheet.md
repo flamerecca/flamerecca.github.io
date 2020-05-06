@@ -66,8 +66,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 - 計算該密碼的雜湊
 - 將計算後的雜湊與原本的雜湊比較看看是否相同
 
-
-This process is then repeated for a large number of potential candidate passwords until a match is found. There are a large number of different methods that can be used to select candidate passwords, including:
+之後可以針對大量可能的密碼重複這幾個步驟，直到找出對應的雜湊。有很多方法可以找出可能的密碼，比方說：
 
 - 暴力破解（嘗試所有的可能）
 - 字典或常用密碼列表
@@ -75,38 +74,41 @@ This process is then repeated for a large number of potential candidate password
 - 比較複雜的演算法，像是 [Markov chains](https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/MARKOV) 或 [PRINCE](https://github.com/hashcat/princeprocessor)
 - 樣式或者遮罩（比方說「一個大寫字母，六個小寫字母，一個數字」）
 
-The cracking process is not guaranteed to be successful, and the success rate will depend on a number of factors:
+破解的過程並不保證會成功，成功率取決於以下幾個因素：
 
-- The strength of the password.
-- The speed of the algorithm (or work factor for modern algorithms).
-- The number of passwords being targeted (assuming they have unique salts).
+- 密碼的強度
+- 計算雜湊所需要花費的時間（或者現代演算法所說的 work factor）
+- 被視為目標的密碼數量（假設每個密碼都有獨立的 salt）
 
-Strong passwords stored with modern hashing algorithms should be effectively impossible for an attacker to crack.
+用現代演算法雜湊過的強密碼，對攻擊者來說應該是實際上不可能破解的。
 
 # 雜湊概念
 
 ## Salting
 
+salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，
 A salt is a unique, randomly generated string that is added to each password as part of the hashing process. As the salt is unique for every user, an attacker has to crack hashes one at a time using the respective salt, rather than being able to calculate a hash once and compare it against every stored hash. This makes cracking large numbers of hashes significantly harder, as the time required grows in direct proportion to the number of hashes.
 
-Salting also provides protection against an attacker pre-computing hashes using rainbow tables or database-based lookups. Finally, salting means that it is not possible to determine whether two users have the same password without cracking the hashes, as the different salts will result in different hashes even if the passwords are the same.
+Salting also provides protection against an attacker pre-computing hashes using rainbow tables or database-based lookups. 
 
-[Modern hashing algorithms](#modern-algorithms) such as Argon2 or Bcrypt automatically salt the passwords, so no additional steps are required when using them. However, if you are using a [legacy password hashing algorithm](#legacy-algorithms) then salting needs to be implemented manually. The basic steps to perform this are:
+最後，salt 也可以避免兩個使用者使用相同密碼時被攻擊者發現，除非攻擊者破解其雜湊。因為使用者所帶不同的 salt 可以保證其雜湊結果也不相同。
 
-- Generate a salt using a [cryptographically secure function](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation).
-  - The salt should be at least 16 characters long.
-  - Encode the salt into a safe character set such as hexadecimal or Base64.
-- Combine the salt with the password.
-  - This can be done using simple concatenation, or a construct such as a HMAC.
-- Hash the combined password and salt.
-- Store the salt and the password hash.
+[現代的雜湊演算法](#現代演算法)像是 Argon2 或者 Bcrypt 會自動在密碼上加 salt，所以不需要再進行額外的處理。However, if you are using a [legacy password hashing algorithm](#legacy-algorithms) then salting needs to be implemented manually. The basic steps to perform this are:
+
+- 使用[密碼學上安全的函數](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation)產生 salt
+  - salt 至少要 16 個字
+  - 將 salt 轉譯成安全的字母集合，像是十六進位或者 base64
+- 合併 salt 與密碼
+  - 可以簡單的做字串連接，或者以 HMAC 之類的結構進行合併
+- 對合併後結果進行雜湊
+- 儲存雜湊後的結果
 
 ## Peppering
 
 A [pepper](https://en.wikipedia.org/wiki/Pepper_%28cryptography%29) can be used in addition to salting to provide an additional layer of protection. It is similar to a salt but has two key differences:
 
-- The pepper is shared between all stored passwords, rather than being unique like a salt.
-- The pepper is **not stored in the database**, unlike the salts.
+- pepper 和 salt 不同，同一服務裡面的每個密碼都是一樣的 pepper
+- pepper 和 salt 不同，**不會存在資料庫裡**。
 
 The purpose of the pepper is to prevent an attacker from being able to crack any of the hashes if they only have access to the database, for example if they have exploited a SQL injection vulnerability or obtained a backup of the database.
 
@@ -118,7 +120,7 @@ An alternative approach is to hash the passwords as usual and then encrypt the h
 
 ### 缺點
 
-peppers 主要的問題之一是長期維護上的困難。更換使用中的 pepper 會導致in use will invalidate all of the existing passwords stored in the database, which means that it can't easily be changed in the event of the pepper being compromised.
+pepper 主要的問題之一是長期維護上的困難。更換使用中的 pepper 會導致所有資料庫中的密碼失效，所以即使 pepper 被攻擊者取得了也很難簡單的更換掉。
 
 One solution to this is to store the ID of the pepper in the database alongside the associated password hashes. When the pepper needs to be updated, this ID can updated for hashes using the new pepper. Although the application will need to store all of the peppers that are currently in use, this does provide a way to replace a compromised pepper.
 
