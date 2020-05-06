@@ -21,7 +21,7 @@ Passwords should not be stored using reversible encryption - secure password has
     + [Where to Perform Encryption](#where-to-perform-encryption)
     + [Minimise the Storage of Sensitive Information](#minimise-the-storage-of-sensitive-information)
   * [Algorithms](#algorithms)
-    + [Custom Algorithms](#custom-algorithms)
+    + [自定義演算法](#自定義演算法)
     + [Cipher Modes](#cipher-modes)
     + [Secure Random Number Generation](#secure-random-number-generation)
       - [UUIDs and GUIDs](#uuids-and-guids)
@@ -75,9 +75,9 @@ Many other symmetric and asymmetric algorithms are available which have their ow
 
 In some cases there may be regulatory requirements that limit the algorithms that can be used, such as [FIPS 140-2](https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf) or [PCI DSS](https://www.pcisecuritystandards.org/pci_security/glossary#Strong%20Cryptography).
 
-### Custom Algorithms
+### 自定義演算法
 
-Don't do this.
+不要這麼做
 
 ### Cipher Modes
 
