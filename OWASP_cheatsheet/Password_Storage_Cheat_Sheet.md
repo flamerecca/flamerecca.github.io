@@ -94,7 +94,7 @@ Salting also provides protection against an attacker pre-computing hashes using 
 
 最後，salt 也可以避免兩個使用者使用相同密碼時被攻擊者發現，除非攻擊者破解其雜湊。因為使用者所帶不同的 salt 可以保證其雜湊結果也不相同。
 
-[現代的雜湊演算法](#現代演算法)像是 Argon2 或者 Bcrypt 會自動在密碼上加 salt，所以不需要再進行額外的處理。However, if you are using a [legacy password hashing algorithm](#legacy-algorithms) then salting needs to be implemented manually. The basic steps to perform this are:
+[現代的雜湊演算法](#現代演算法)像是 Argon2 或者 Bcrypt 會自動在密碼上加 salt，所以不需要再進行額外的處理。不過，如果是使用[古老的演算法](#古老的演算法)那麼就需要手動加上 salt。自己加上 salt 的流程有：
 
 - 使用[密碼學上安全的函數](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation)產生 salt
   - salt 至少要 16 個字
@@ -113,11 +113,9 @@ Salting also provides protection against an attacker pre-computing hashes using 
 
 pepper 的用意是保證如果攻擊者只拿到了資料庫的內容，那麼該攻擊者不可能破解任何的密碼。舉例來說，攻擊者可能是透過 SQL injection 的攻擊取得了資料庫的備份。
 
-pepper 應該是隨機產生，並至少有 32 個字。
+pepper 應該是隨機產生，並至少有 32 個字。pepper 要儲存在應用的設定檔內，以適當的檔案權限保護，使用作業系統提供的安全 API 進行存取或放在硬體安全模組（HSM）裡面。
 
-The pepper should be at least 32 characters long and should be randomly generated. It should be stored in an application configuration file (protected with appropriate permissions) using the secure storage APIs provided by the operating system, or in a Hardware Security Module (HSM).
-
-The pepper is traditionally used in a similar way to a salt by concatenating it with the password prior to hashing, using a construct such as `hash($pepper . $password)`.
+傳統上 pepper 和 salt 一樣都是用字串連接的方式，在進行雜湊前和密碼組合在一起，像是 `hash($pepper . $password)` 的結構
 
 另一種方法是將密碼用一般的方式算出雜湊值，然後用對稱式加密法加密該雜湊後，再儲存到資料庫內。該加密的金鑰就等同於 pepper 的效果。這種方式避免了傳統 pepper 的一些問題，並且讓汰換原本 pepper 的流程變得比較簡單。
 
@@ -125,9 +123,11 @@ The pepper is traditionally used in a similar way to a salt by concatenating it 
 
 pepper 主要的問題之一是長期維護上的困難。更換使用中的 pepper 會導致所有資料庫中的密碼失效，所以即使 pepper 被攻擊者取得了也很難簡單的更換掉。
 
-One solution to this is to store the ID of the pepper in the database alongside the associated password hashes. When the pepper needs to be updated, this ID can updated for hashes using the new pepper. Although the application will need to store all of the peppers that are currently in use, this does provide a way to replace a compromised pepper.
+其中一個解決方式是將 pepper 的 ID 和加密的密碼儲存在一起。當 pepper 更新時，使用新的 pepper 加密的密碼可以一併更新所儲存的 pepper ID。雖然這代表專案內需要儲存所有正在使用中的 pepper，不過這確實提供了當 pepper 不再安全時可以替換的方法。
 
 ## Work Factors
+
+work factor 大致上是雜湊加密
 
 The work factor is essentially the number of iterations of the hashing algorithm that are performed for each password (usually it's actually `2^work` iterations). The purpose of the work factor is to make calculating the hash more computationally expensive, which in turn reduces the speed at which an attacker can attempt to crack the password hash. The work factor is typically stored in the hash output.
 
@@ -195,9 +195,9 @@ Bcrypt 預設的 work factor 是 10，除非系統老舊或者是低耗能系統
 
 In some circumstances it is not possible to use [modern hashing algorithms](#modern-algorithms), usually due to the use of legacy language or environments. Where possible, third party libraries should be used to provide these algorithms. However, if the only algorithms available are legacy ones such as MD5 and SHA-1, then there are a number of steps that can be taken to improve the security of stored passwords.
 
-- Use the strongest algorithm available (SHA-512 > SHA-256 > SHA-1 > MD5).
-- Use a [pepper](#peppering).
-- Use a unique [salt](#salting) for each password, generated using a [cryptographically secure random number generator](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation).
+- Use the strongest algorithm available（SHA-512 > SHA-256 > SHA-1 > MD5）
+- 加上 [pepper](#peppering).
+- 密碼個別加上獨立的 [salt](#salting)。generated using a [密碼學上安全的亂數產生器 secure random number generator](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation).
 - Use a very large number of iterations of the algorithm (at least 10,000, and possibly significantly more depending on the speed of the hardware).
 
 It should be emphasised that these steps **are not as good as using a modern hashing algorithm**, and that this approach should only be taken where no other options are available.
