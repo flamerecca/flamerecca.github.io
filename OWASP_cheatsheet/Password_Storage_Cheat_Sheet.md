@@ -86,8 +86,9 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 ## Salting
 
-salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，攻擊者破解密碼時，就不能計算一次雜湊值，直接和所有的密碼雜湊比較，而是必須針對不同的 salt 個別計算出雜湊值並進行比較。
-A salt is a unique, randomly generated string that is added to each password as part of the hashing process. As the salt is unique for every user, an attacker has to crack hashes one at a time using the respective salt, rather than being able to calculate a hash once and compare it against every stored hash. This makes cracking large numbers of hashes significantly harder, as the time required grows in direct proportion to the number of hashes.
+salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，攻擊者破解密碼時，就不能只計算一次雜湊值，直接和所有的密碼雜湊比較，而是必須針對不同的 salt 個別計算出雜湊值並進行比較。這讓破解大量的密碼所要消耗的時間顯著的提升。
+
+
 
 Salting also provides protection against an attacker pre-computing hashes using rainbow tables or database-based lookups. 
 
@@ -105,18 +106,20 @@ Salting also provides protection against an attacker pre-computing hashes using 
 
 ## Peppering
 
-A [pepper](https://en.wikipedia.org/wiki/Pepper_%28cryptography%29) can be used in addition to salting to provide an additional layer of protection. It is similar to a salt but has two key differences:
+[pepper](https://en.wikipedia.org/wiki/Pepper_%28cryptography%29)（加胡椒）可以在 salt 以外多加上一層保護。pepper 和 salt 很像，不過有兩個關鍵的不同點：
 
 - pepper 和 salt 不同，同一服務裡面的每個密碼都是一樣的 pepper
 - pepper 和 salt 不同，**不會存在資料庫裡**。
 
-The purpose of the pepper is to prevent an attacker from being able to crack any of the hashes if they only have access to the database, for example if they have exploited a SQL injection vulnerability or obtained a backup of the database.
+pepper 的用意是保證如果攻擊者只拿到了資料庫的內容，那麼該攻擊者不可能破解任何的密碼。舉例來說，攻擊者可能是透過 SQL injection 的攻擊取得了資料庫的備份。
+
+pepper 應該是隨機產生，並至少有 32 個字。
 
 The pepper should be at least 32 characters long and should be randomly generated. It should be stored in an application configuration file (protected with appropriate permissions) using the secure storage APIs provided by the operating system, or in a Hardware Security Module (HSM).
 
 The pepper is traditionally used in a similar way to a salt by concatenating it with the password prior to hashing, using a construct such as `hash($pepper . $password)`.
 
-An alternative approach is to hash the passwords as usual and then encrypt the hashes with a symmetrical encryption key before storing them in the database, with the key acting as the pepper. This avoids some of the issues with the traditional approach to peppering, and it allows for much easier rotation of the pepper if it is believed to be compromised.
+另一種方法是將密碼用一般的方式算出雜湊值，然後用對稱式加密法加密該雜湊後，再儲存到資料庫內。該加密的金鑰就等同於 pepper 的效果。這種方式避免了傳統 pepper 的一些問題，並且讓汰換原本 pepper 的流程變得比較簡單。
 
 ### 缺點
 
@@ -184,9 +187,9 @@ The work factor for PBKDF2 is implemented through the iteration count, which sho
 
 ### Bcrypt
 
-[Bcrypt](https://en.wikipedia.org/wiki/Bcrypt) is the most widely supported of the algorithms and should be the default choice unless there are specific requirements for PBKDF2, or appropriate knowledge to tune Argon2.
+[Bcrypt](https://en.wikipedia.org/wiki/Bcrypt) 是目前支援度最廣的演算法，並且應該是優先的選擇。除非有特殊的需求必須使用 PBKDF2，或者團隊有專門的知識可以調校 Argon2。
 
-The default work factor for Bcrypt is 10, and this should generally be raised to 12 unless operating on older or lower-powered systems.
+Bcrypt 預設的 work factor 是 10，除非系統老舊或者是低耗能系統，不然一般來說應該要提升到至少 12。
 
 ## 古老的演算法
 
