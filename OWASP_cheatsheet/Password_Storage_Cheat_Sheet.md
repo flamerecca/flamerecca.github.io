@@ -86,13 +86,11 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 ## Salting
 
-salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，攻擊者破解密碼時，就不能只計算一次雜湊值，直接和所有的密碼雜湊比較，而是必須針對不同的 salt 個別計算出雜湊值並進行比較。這讓破解大量的密碼所要消耗的時間顯著的提升。
+salting（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，攻擊者破解密碼時，就不能只計算一次雜湊值，直接和所有的密碼雜湊比較，而是必須針對不同的 salt 個別計算出雜湊值並進行比較。這讓破解大量的密碼所要消耗的時間顯著的提升。
 
+salt 也可以在攻擊者嘗試用 rainbow tables 或基於資料庫的內容預先計算出的雜湊列表進行攻擊時，提供多一層的保護。
 
-
-Salting also provides protection against an attacker pre-computing hashes using rainbow tables or database-based lookups. 
-
-最後，salt 也可以避免兩個使用者使用相同密碼時被攻擊者發現，除非攻擊者破解其雜湊。因為使用者所帶不同的 salt 可以保證其雜湊結果也不相同。
+最後，除非攻擊者破解其雜湊，salt 也可以避免兩個使用者使用相同密碼時被攻擊者發現。因為使用者所帶不同的 salt 可以保證其雜湊結果也不相同。
 
 [現代的雜湊演算法](#現代演算法)像是 Argon2 或者 Bcrypt 會自動在密碼上加 salt，所以不需要再進行額外的處理。不過，如果是使用[古老的演算法](#古老的演算法)那麼就需要手動加上 salt。自己加上 salt 的流程有：
 
@@ -127,17 +125,19 @@ pepper 主要的問題之一是長期維護上的困難。更換使用中的 pep
 
 ## Work Factors
 
-work factor 大致上是雜湊加密
+work factor 基本上是針對一個密碼，雜湊加密重複運作的次數（實際上通常會是 `2^work` 次）。work factor 的意義是讓計算雜湊更花時間，進而提高攻擊者破解的難度。work factor 通常會一併儲存在雜湊後的結果裡面。
 
-The work factor is essentially the number of iterations of the hashing algorithm that are performed for each password (usually it's actually `2^work` iterations). The purpose of the work factor is to make calculating the hash more computationally expensive, which in turn reduces the speed at which an attacker can attempt to crack the password hash. The work factor is typically stored in the hash output.
+調整 work factor 時，要在安全性和效能之間達成一個平衡。提高 work factor 會讓攻擊者更難以破解，但是也會讓驗證使用者更花時間。如果將 work factor 設置得太高，那麼可能會降低系統的效能，另外也可能變成被攻擊者利用，以大量的嘗試登入來消耗伺服器的 CPU 計算能力，達成拒絕服務（denial of service，DoS）攻擊。
 
-When choosing a work factor, a balance needs to be struck between security and performance. Higher work factors will make the hashes more difficult for an attacker to crack, but will also make the process of verifying a login attempt slower. If the work factor is too high, this may degrade the performance of the application, and could also be used by an attacker to carry out a denial of service attack by making a large number of login attempts to exhaust the server's CPU.
+針對 work factor 沒有絕對的準則，這會取決於使用者的數量以及伺服器的效能。通常需要在應用運作的伺服器上實驗看看才能決定 work factor 的大小。
 
-There is no golden rule for the ideal work factor - it will depend on the performance of the server and the number of users on the application. Determining the optimal work factor will require experimentation on the specific server(s) used by the application. As a general rule, calculating a hash should take less than one second, although on higher traffic sites it should be significantly less than this.
+一般來說，計算雜湊的時間應該要小於一秒。當然流量更高的網站計算的時間應該要比一秒左右更少。
 
 ### 升級 Work Factor
 
-One key advantage of having a work factor is that it can be increased over time as hardware becomes more powerful and cheaper. Taking Moore's Law (i.e, that computational power at a given price point doubles every eighteen months) as a rough approximation, this means that the work factor should be increased by 1 every eighteen months.
+有 work factor 一個關鍵的好處，是可以隨著硬體越來越進步和便宜時一起提升運算時間。以摩爾定律（同樣價格下的計算效能每十八個月會翻倍）作為粗略的估計，這代表每十八個月 work factor 應該加一。
+
+升級 work factor 最常見的做法是等到用戶下次登入，並用新的 work factor 計算雜湊。
 
 The most common approach to upgrading the work factor is to wait until the user next authenticates, and then to re-hash their password with the new work factor. This means that different hashes will have different work factors, and may result in hashes never being upgraded if the user doesn't log back in to the application. Depending on the application, it may be appropriate to remove the older password hashes and require users to reset their passwords next time they need to login, in order to avoid storing older and less secure hashes.
 
@@ -147,9 +147,9 @@ The most common approach to upgrading the work factor is to wait until the user 
 
 Some hashing algorithms such as Bcrypt have a maximum length for the input, which is 72 characters for most implementations (there are some [reports](https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length) that other implementations have lower maximum lengths, but none have been identified at the time of writing). Where Bcrypt is used, a maximum length of 64 characters should be enforced on the input, as this provides a sufficiently high limit, while still allowing for string termination issues and not revealing that the application uses Bcrypt.
 
-Additionally, due to how computationally expensive modern hashing functions are, if a user can supply very long passwords then there is a potential denial of service vulnerability, such as the one published in [Django](https://www.djangoproject.com/weblog/2013/sep/15/security/) in 2013.
+另外，由於現代演算法的計算比較消耗計算資源，如果允許用戶使用非常長的密碼，可能會有潛在的拒絕服務（denial of service，DoS）問題，比方說 2013 年[Django](https://www.djangoproject.com/weblog/2013/sep/15/security/)公布的弱點。
 
-In order to protect against both of these issues, a maximum password length should be enforced. This should be 64 characters for Bcrypt (due to limitations in the algorithm and implementations), and between 64 and 128 characters for other algorithms.
+為了要避免上述的兩個問題，應該要限制密碼的最長長度。如果使用 Bcrypt 應該要設置為 64 個字（因為演算法本身以及其實作的限制），其他的演算法則設置為 64 到 128 個字之內。
 
 ### 預先雜湊密碼
 
