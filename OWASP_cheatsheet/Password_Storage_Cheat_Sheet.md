@@ -86,7 +86,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 ## Salting
 
-salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，
+salt（加鹽）是在雜湊過程中，對每個密碼個別再加上一串唯一且隨機的字串。由於每個使用者的 salt 都是不同的，攻擊者破解密碼時，就不能計算一次雜湊值，直接和所有的密碼雜湊比較，而是必須針對不同的 salt 個別計算出雜湊值並進行比較。
 A salt is a unique, randomly generated string that is added to each password as part of the hashing process. As the salt is unique for every user, an attacker has to crack hashes one at a time using the respective salt, rather than being able to calculate a hash once and compare it against every stored hash. This makes cracking large numbers of hashes significantly harder, as the time required grows in direct proportion to the number of hashes.
 
 Salting also provides protection against an attacker pre-computing hashes using rainbow tables or database-based lookups. 
@@ -138,7 +138,7 @@ One key advantage of having a work factor is that it can be increased over time 
 
 The most common approach to upgrading the work factor is to wait until the user next authenticates, and then to re-hash their password with the new work factor. This means that different hashes will have different work factors, and may result in hashes never being upgraded if the user doesn't log back in to the application. Depending on the application, it may be appropriate to remove the older password hashes and require users to reset their passwords next time they need to login, in order to avoid storing older and less secure hashes.
 
-In some cases, it may be possible to increase the work factor of the hashes without the original password, although this is not supported by common hashing algorithms such as Bcrypt and PBKDF2.
+有些狀況下，是可以在不取得原始密碼的狀況下直接升級 work factor 的。不過目前多數的雜湊演算法像是 Bcrypt 和 PBKDF2 都不支援這麼做。
 
 ## 最長密碼長度
 
@@ -211,7 +211,7 @@ An alternative approach is to use the existing password hashes as inputs for a m
 
 ## 自定義演算法
 
-撰寫自定義的密碼學相關程式，比方說雜湊演算法是**非常難的**。因此**絕對不應該**在學術練習之外實際使用。
+撰寫自定義的密碼學相關程式，比方說雜湊演算法，是**非常難的**。因此**絕對不應該**在學術練習之外實際使用。
 
 任何使用未知或者自己撰寫的雜湊演算法能帶來的潛在好處，跟可能帶有的弱點相比，是遠遠不能比較的。
 
