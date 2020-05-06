@@ -60,6 +60,8 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 ## 攻擊者如何破解密碼雜湊
 
+雖然攻擊者不能夠從雜湊之中「解密」出原本的密碼，在某些情況下
+
 Although it is not possible to "decrypt" password hashes to obtain the original passwords, in some circumstances it is possible to "crack" the hashes. The basic steps are:
 
 - Select a likely candidate (such as "password").
