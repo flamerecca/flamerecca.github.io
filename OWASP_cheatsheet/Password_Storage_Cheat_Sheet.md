@@ -167,13 +167,13 @@ As such, the preferred option should generally be to limit the maximum password 
 
 ## 現代演算法
 
-There are a number of modern hashing algorithms that have been specifically designed for securely storing passwords. This means that they should be slow (unlike algorithms such as MD5 and SHA-1 which were designed to be fast), and how slow they are can be configured by changing the [work factor](#work-factors).
+現在已經有許多專門設計來安全儲存密碼的雜湊演算法。不像 MD5 和 SHA-1 這些演算法以快為設計目的，這些現代演算法設計上以耗時為設計目的，並且可以透過調整參數（[work factor](#work-factors)）來決定運算有多耗時。
 
-The main three algorithms that should be considered as listed below.
+下面列出三個主要應該考慮的演算法。
 
 ### Argon2id
 
-[Argon2](https://en.wikipedia.org/wiki/Argon2) is the winner of the 2015 [Password Hashing Competition](https://password-hashing.net). There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
+[Argon2](https://en.wikipedia.org/wiki/Argon2) is the winner of the 2015 [密碼雜湊競賽](https://password-hashing.net). There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
 
 Rather than a simple work factor like other algorithms, Argon2 has three different parameters that can be configured, meaning that it's more complicated to correctly tune for the environment. The specification contains [guidance on choosing appropriate parameters](https://password-hashing.net/argon2-specs.pdf), however, if you're not in a position to properly tune it, then a simpler algorithm such as [Bcrypt](#bcrypt) may be a better choice.
 
@@ -183,7 +183,7 @@ Rather than a simple work factor like other algorithms, Argon2 has three differe
 
 PBKDF2 can be used with HMACs based on a number of different hashing algorithms. HMAC-SHA-256 is widely supported and is recommended by NIST.
 
-The work factor for PBKDF2 is implemented through the iteration count, which should be at least 10,000 (although values of up to 100,000 may be appropriate in higher security environments).
+PBKDF2 的 work factor 代表的是雜湊運算的次數，至少必須設置到 10,000，如果在安全性要求更高的環境上應該設置到 100,000 更為合適。
 
 ### Bcrypt
 
