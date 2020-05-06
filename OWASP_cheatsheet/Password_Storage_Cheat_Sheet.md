@@ -68,11 +68,11 @@ Although it is not possible to "decrypt" password hashes to obtain the original 
 
 This process is then repeated for a large number of potential candidate passwords until a match is found. There are a large number of different methods that can be used to select candidate passwords, including:
 
-- Brute force (trying every possible candidate).
-- Dictionaries or wordlists of common passwords
-- Lists of passwords obtained from other compromised sites.
-- More sophisticated algorithms such as [Markov chains](https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/MARKOV) or [PRINCE](https://github.com/hashcat/princeprocessor)
-- Patterns or masks (such as "1 capital letter, 6 lowercase letters, 1 number").
+- 暴力破解（嘗試所有的可能）
+- 字典或常用密碼列表
+- 從其他被破解網站取得的密碼列表
+- 比較複雜的演算法，像是 [Markov chains](https://github.com/magnumripper/JohnTheRipper/blob/bleeding-jumbo/doc/MARKOV) 或 [PRINCE](https://github.com/hashcat/princeprocessor)
+- 樣式或者遮罩（比方說「一個大寫字母，六個小寫字母，一個數字」）
 
 The cracking process is not guaranteed to be successful, and the success rate will depend on a number of factors:
 
@@ -117,7 +117,7 @@ An alternative approach is to hash the passwords as usual and then encrypt the h
 
 ### 缺點
 
-The main issues with peppers is their long term maintenance. Changing the pepper in use will invalidate all of the existing passwords stored in the database, which means that it can't easily be changed in the event of the pepper being compromised.
+peppers 主要的問題之一是長期維護上的困難。更換使用中的 pepper 會導致in use will invalidate all of the existing passwords stored in the database, which means that it can't easily be changed in the event of the pepper being compromised.
 
 One solution to this is to store the ID of the pepper in the database alongside the associated password hashes. When the pepper needs to be updated, this ID can updated for hashes using the new pepper. Although the application will need to store all of the peppers that are currently in use, this does provide a way to replace a compromised pepper.
 
@@ -145,7 +145,7 @@ Additionally, due to how computationally expensive modern hashing functions are,
 
 In order to protect against both of these issues, a maximum password length should be enforced. This should be 64 characters for Bcrypt (due to limitations in the algorithm and implementations), and between 64 and 128 characters for other algorithms.
 
-### Pre-Hashing Passwords
+### 預先雜湊密碼
 
 An alternative approach is to pre-hash the user-supplied password with a fast algorithm such as SHA-256, and then to hash the resultant hash with a more secure algorithm such as Bcrypt (i.e, `bcrypt(sha256($password))`). While this approach solves the problem of arbitrary length user inputs to slower hashing algorithms, it also introduces some vulnerabilities that could allow attackers to crack hashes more easily.
 
@@ -208,6 +208,8 @@ An alternative approach is to use the existing password hashes as inputs for a m
 
 ## 自定義演算法
 
-Writing custom cryptographic code such as a hashing algorithm is **really hard** and should **never be done** outside of an academic exercise. Any potential benefit that you might have from using an unknown or bespoke algorithm will be vastly overshadowed by the weaknesses that exist in it.
+撰寫自定義的密碼學相關程式，比方說雜湊演算法是**非常難的**。因此**絕對不應該**在學術練習之外實際使用。
+
+任何使用未知或者自己撰寫的雜湊演算法能帶來的潛在好處，跟可能帶有的弱點相比，是遠遠不能比較的。
 
 **不要這麼做**
