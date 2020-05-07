@@ -137,15 +137,15 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 有 work factor 一個關鍵的好處，是可以隨著硬體越來越進步和便宜時一起提升運算時間。以摩爾定律（同樣價格下的計算效能每十八個月會翻倍）作為粗略的估計，這代表每十八個月 work factor 應該加一。
 
-升級 work factor 最常見的做法是等到用戶下次登入，並用新的 work factor 計算雜湊。
-
-The most common approach to upgrading the work factor is to wait until the user next authenticates, and then to re-hash their password with the new work factor. This means that different hashes will have different work factors, and may result in hashes never being upgraded if the user doesn't log back in to the application. Depending on the application, it may be appropriate to remove the older password hashes and require users to reset their passwords next time they need to login, in order to avoid storing older and less secure hashes.
+升級 work factor 最常見的做法是等到用戶下次登入，並用新的 work factor 計算雜湊。這代表不同的雜湊可能是以不同的 work factor 計算出來的，也代表如果用戶遲遲沒有重新登入，密碼雜湊可能一直無法更新。根據應用的屬性不同，可能可以將長期未登入用戶的密碼雜湊刪除，並要求他們下次登入時輸入新的密碼，以避免資料庫內儲存老舊且較不安全的雜湊結果。
 
 有些狀況下，是可以在不取得原始密碼的狀況下直接升級 work factor 的。不過目前多數的雜湊演算法像是 Bcrypt 和 PBKDF2 都不支援這麼做。
 
 ## 最長密碼長度
 
-Some hashing algorithms such as Bcrypt have a maximum length for the input, which is 72 characters for most implementations (there are some [reports](https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length) that other implementations have lower maximum lengths, but none have been identified at the time of writing). Where Bcrypt is used, a maximum length of 64 characters should be enforced on the input, as this provides a sufficiently high limit, while still allowing for string termination issues and not revealing that the application uses Bcrypt.
+有的雜湊演算法，像是 Bcrypt，有輸入最長長度的限制。以 Bcrypt 來說多數的實作是 72 個字。（有一些[報告](https://security.stackexchange.com/questions/39849/does-bcrypt-have-a-maximum-password-length)指出部分實作可能有更短的長度限制，但是在本文撰寫時還沒得到確認）。
+
+使用 Bcrypt 時，應該要加上密碼最長 64 字的限制，這樣既可以允許使用者選擇足夠長的密碼，也可以避免碰觸到演算法長度的限制，同時避免透露出使用的加密是 Bcrypt 這件事情。
 
 另外，由於現代演算法的計算比較消耗計算資源，如果允許用戶使用非常長的密碼，可能會有潛在的拒絕服務（denial of service，DoS）問題，比方說 2013 年[Django](https://www.djangoproject.com/weblog/2013/sep/15/security/)公布的弱點。
 
@@ -153,15 +153,16 @@ Some hashing algorithms such as Bcrypt have a maximum length for the input, whic
 
 ### 預先雜湊密碼
 
+另一個處理密碼最長長度的方式是先用快的雜湊法，像是 SHA-256，預先雜湊使用者所提供的密碼，然後將雜湊的結果使用安全的演算法像是 Bcrypt 再次進行雜湊（`bcrypt(sha256($password))`）
 An alternative approach is to pre-hash the user-supplied password with a fast algorithm such as SHA-256, and then to hash the resultant hash with a more secure algorithm such as Bcrypt (i.e, `bcrypt(sha256($password))`). While this approach solves the problem of arbitrary length user inputs to slower hashing algorithms, it also introduces some vulnerabilities that could allow attackers to crack hashes more easily.
 
 If an attacker is able to obtain password hashes from two different sources, one of which is storing passwords with `bcrypt(sha256($password))` and the other of which is storing them as plain `sha256($password)`, and attacker can use uncracked SHA-256 hashes from the second site as candidate passwords to try and crack the hashes from the first (more secure) site. If passwords are re-used between the two sites, this can effectively allow the attacker to strip off the Bcrypt layer, and to crack the much easier SHA-256 passwords.
 
 Pre-hashing with SHA-256 also means that the keyspace for an attacker to brute-force the hashes is `2^256`, rather than `2^420` for passwords capped at 64 characters (although both of these are big enough to make no practical difference).
 
-Finally, when using pre-hashing ensure that the output for the first hashing algorithm is safely encoded as hexadecimal or base64, as some hashing algorithms such as Bcrypt can behave in undesirable ways if the [input contains null bytes](https://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html).
+Finally, when using pre-hashing ensure that the output for the first hashing algorithm is safely encoded as hexadecimal or base64, as some hashing algorithms such as Bcrypt can behave in undesirable ways if the [輸入包含 null] (https://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html) 的話會出現異常行為。
 
-As such, the preferred option should generally be to limit the maximum password length. Pre-hashing of passwords should only be performed where there is a specific requirement to do so, and appropriate steps have been taking to mitigate the issues discussed above.
+綜上所述，比較好的做法還是限制密碼最長長度，預先雜湊一次的做法只能在特殊的情境下使用，並且必須加上特定的步驟，以避免上述的問題發生。
 
 # 密碼雜湊演算法
 
@@ -173,7 +174,7 @@ As such, the preferred option should generally be to limit the maximum password 
 
 ### Argon2id
 
-[Argon2](https://en.wikipedia.org/wiki/Argon2) is the winner of the 2015 [密碼雜湊競賽](https://password-hashing.net). There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
+[Argon2](https://en.wikipedia.org/wiki/Argon2) 是 2015 [密碼雜湊競賽](https://password-hashing.net)的獲勝者。There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
 
 Rather than a simple work factor like other algorithms, Argon2 has three different parameters that can be configured, meaning that it's more complicated to correctly tune for the environment. The specification contains [guidance on choosing appropriate parameters](https://password-hashing.net/argon2-specs.pdf), however, if you're not in a position to properly tune it, then a simpler algorithm such as [Bcrypt](#bcrypt) may be a better choice.
 
@@ -197,7 +198,7 @@ In some circumstances it is not possible to use [modern hashing algorithms](#mod
 
 - Use the strongest algorithm available（SHA-512 > SHA-256 > SHA-1 > MD5）
 - 加上 [pepper](#peppering).
-- 密碼個別加上獨立的 [salt](#salting)。generated using a [密碼學上安全的亂數產生器 secure random number generator](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation).
+- 密碼個別加上獨立的 [salt](#salting)。以[密碼學上安全的亂數產生器](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation)生成
 - Use a very large number of iterations of the algorithm (at least 10,000, and possibly significantly more depending on the speed of the hardware).
 
 It should be emphasised that these steps **are not as good as using a modern hashing algorithm**, and that this approach should only be taken where no other options are available.
