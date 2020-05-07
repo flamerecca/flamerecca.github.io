@@ -147,7 +147,7 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 使用 Bcrypt 時，應該要加上密碼最長 64 字的限制，這樣既可以允許使用者選擇足夠長的密碼，也可以避免碰觸到演算法長度的限制，同時避免透露出使用的加密是 Bcrypt 這件事情。
 
-另外，由於現代演算法的計算比較消耗計算資源，如果允許用戶使用非常長的密碼，可能會有潛在的拒絕服務（denial of service，DoS）問題，比方說 2013 年[Django](https://www.djangoproject.com/weblog/2013/sep/15/security/)公布的弱點。
+另外，由於現代演算法的計算比較消耗計算資源，如果允許用戶使用非常長的密碼，可能會有潛在的拒絕服務（denial of service，DoS）問題，比方說 2013 年 [Django](https://www.djangoproject.com/weblog/2013/sep/15/security/) 公布的弱點。
 
 為了要避免上述的兩個問題，應該要限制密碼的最長長度。如果使用 Bcrypt 應該要設置為 64 個字（因為演算法本身以及其實作的限制），其他的演算法則設置為 64 到 128 個字之內。
 
@@ -155,9 +155,7 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 另一個處理密碼最長長度的方式是先用快的雜湊法，像是 SHA-256，預先雜湊使用者所提供的密碼，然後將雜湊的結果使用安全的演算法像是 Bcrypt 再次進行雜湊（`bcrypt(sha256($password))`）。這個做法可以解決使用者輸入任意長度密碼的問題，不過也產生了一些弱點，讓攻擊者破解變得比較簡單。
 
-如果攻擊者可以從兩個不同的地方取得密碼，第一個地方是使用 `bcrypt(sha256($password))` 儲存，第二個地方則是使用 `sha256($password)`。
-
-If an attacker is able to obtain password hashes from two different sources, one of which is storing passwords with `bcrypt(sha256($password))` and the other of which is storing them as plain `sha256($password)`, and attacker can use uncracked SHA-256 hashes from the second site as candidate passwords to try and crack the hashes from the first (more secure) site. If passwords are re-used between the two sites, this can effectively allow the attacker to strip off the Bcrypt layer, and to crack the much easier SHA-256 passwords.
+如果攻擊者可以從兩個不同的地方取得密碼，第一個地方是使用 `bcrypt(sha256($password))` 儲存，第二個地方則是使用 `sha256($password)`。那麼，攻擊者可以用第二個地方所取得的 SHA-256 雜湊結果當作候選密碼來嘗試破解（安全性較高）第一個地方的密碼雜湊。如果兩個地方有相同的密碼，那麼攻擊者就可以略過比較難破解的 Bcrypt 這一層，只需要破解較簡單的 SHA-256 雜湊就可以取得密碼。
 
 預先以 SHA-256 雜湊也代表了攻擊者需要暴力破解的次數可以從 64 字密碼的 `2^420` 減少到 SHA-256 所有可能結果的 `2^256` 次，不過這兩個數字都足夠大到不會有任何實質性的危害。
 
@@ -175,7 +173,7 @@ If an attacker is able to obtain password hashes from two different sources, one
 
 ### Argon2id
 
-[Argon2](https://en.wikipedia.org/wiki/Argon2) 是 2015 [密碼雜湊競賽](https://password-hashing.net)的獲勝者。There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
+[Argon2](https://en.wikipedia.org/wiki/Argon2) 是 2015 [密碼雜湊競賽](https://password-hashing.net)的獲勝者。該演算法有三個不同的版本There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
 
 Rather than a simple work factor like other algorithms, Argon2 has three different parameters that can be configured, meaning that it's more complicated to correctly tune for the environment. The specification contains [guidance on choosing appropriate parameters](https://password-hashing.net/argon2-specs.pdf), however, if you're not in a position to properly tune it, then a simpler algorithm such as [Bcrypt](#bcrypt) may be a better choice.
 
