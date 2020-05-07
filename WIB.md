@@ -12,13 +12,15 @@ Lucid, Inc
 
 ## 大綱
 
-Lisp 在過去十年做得還不錯： becoming nearly standardized, forming the basis of a commercial sector, achieving excellent performance, having good environments, able to deliver applications. Yet the Lisp community has failed to do as well as it could have. In this paper I look at the successes, the failures, and what to do next.
+Lisp 在過去十年做得還不錯：幾乎完全標準化，建立了商業部分的基礎，達到很高的效率，有好的環境，也可以成功建立應用。可是 Lisp 的社群發展卻沒有這麼的好。在這份文章內我將探討 Lisp 的成功點，失敗點，以及下一步該怎麼做。
 
-The Lisp world is in great shape: Ten years ago there was no standard Lisp; the most standard Lisp was InterLisp, which ran on PDP-10s and Xerox Lisp machines (some said it ran on Vaxes, but I think they exaggerated); the second most standard Lisp was MacLisp, which ran only on PDP-10s, but under the three most popular operating systems for that machine; the third most standard Lisp was Portable Standard Lisp, which ran on many machines, but very few people wanted to use it; the fourth most standard Lisp was Zetalisp, which ran on two varieties of Lisp machine; and the fifth most standard Lisp was Scheme, which ran on a few different kinds of machine, but very few people wanted to use it. By today’s standards, each of these had poor or just barely acceptable performance, nonexistent or just barely satisfactory environments, nonexistent or poor integration with other languages and software, poor portability, poor acceptance, and poor commercial prospects.
+Lisp 的環境現在非常好：十年之前 Lisp 還沒有一個標準；最標準的 Lisp 是 InterLisp，可以在 PDP-10 和 Xerox Lisp 機器上運作（有些人說可以在 Vax  上運作，我認為他們有點誇大了）；排名第二標準的是 MacLisp，只能在 PDP-10 機器上運作，但是支援該機器上最多人使用的三種作業系統。排名第三的是 Portable Standard Lisp，可以支援很多種機器，但是很少人願意用。排名第四的是 Scheme，可以在不少機器上運作，但是很少人願意用。
 
-Today there is Common Lisp (CL), which runs on all major machines, all major operating systems, and virtually in every country. Common Lisp is about to be standardized by ANSI, has good performance, is surrounded with good environments, and has good integration with other languages and software.
+以今天的標準來看，這些語言只有差或者勉強可接受的效能，幾乎不存在或者勉強可接受的環境，與其他語言或者軟體幾乎不存在或者差勁的整合，差勁的移植性，差勁的接受度，以及差勁的商業前景。
 
-然而，從商業角度看，as a business, Lisp is considered to be in ill health. There are persistent and sometimes true rumors about the abandonment of Lisp as a vehicle for delivery of practical applications.
+現在我們有 Common Lisp（CL），可以在所有主流機器上運作，支援所有主流作業系統，存在於所有國家。Common Lisp 即將被 ANSI 標準化，有著好的效能，環境也非常好，並且和其他語言與軟體都有很好的整合度。
+
+然而，從商業角度看，Lisp 可以說非常不健康。一直都存在有關 Lisp 在實際應用上被放棄的謠言，而且有時候這些說法是真的。 
 
 To some extent the problem is one of perception -- there are simply better Lisp delivery solutions than are generally believed to exist and to a disturbing extent the problem is one of unplaced or misplaced resources, of projects not undertaken, and of implementation strategies not activated.
 
@@ -32,10 +34,10 @@ It seems a pity for the Lisp business to take a bump partly because Julie though
 
 But, there are some real successes for Lisp, some problems, and some ways out of those problems.
 
-## 1 Lisp’s Successes
-As I mentioned, Lisp is in better shape today than it ever has been. I want to review some Lisp success stories.
+## 1 Lisp 的成功點
+如我所說，Lisp 現在的狀態是前所未有的好。我想要回顧一下 Lisp 的成功故事。
 
-### 1.1 Standardization
+### 1.1 標準化
 A major success is that there is a standard Lisp -- Common Lisp. Many observers today wish there were a simpler, smaller, cleaner Lisp that could be standardized, but the Lisp that we have today that is ready for standardization is Common Lisp. This isn’t to say that a better Lisp could not be standardized later, and certainly there should be. Furthermore, like any language, Common Lisp should be improved and changed as needs change.
 
 Common Lisp started as a grassroots effort in 1981 after an ARPA-sponsored meeting held at SRI to determine the future of Lisp. At that time there were a number of Lisps in the US being defined and implemented by former MIT folks: Greenblatt (LMI), Moon and Weinreb (Symbolics), Fahlman and Steele (CMU), White (MIT), and Gabriel and Steele (LLNL). The core of the Common Lisp committee came from this group. That core was Fahlman, Gabriel, Moon, Steele, and Weinreb, and Common Lisp was a coalescence of the Lisps these people cared about.
@@ -60,22 +62,17 @@ Currently, X3J13 is less than a year away from a draft standard for ANSI Common 
 
 Common Lisp is in use internationally, and serves at least as a de facto standard until the always contentious Lisp community agrees to work together.
 
-### 1.2 Good Performance
+### 1.2 效能優異
 Common Lisp performs well. Most current implementations use modern compiler technology, in contrast to older Lisps, which used very primitive compiler techniques, even for the time. In terms of performance, anyone using a Common Lisp today on almost any computer can expect better performance than could be obtained on single-user PDP-10s or on single-user Lisp machines of mid-1980s vintage. Many Common Lisp implementations have multitasking and non-intrusive garbage collection -- both regarded as impossible features on stock hardware ten years ago.
 
 In fact, Common Lisp performs well on benchmarks compared to C. The following table shows the ratio of Lisp time and code size to C time and code size for three benchmarks.
 
-CPU Time
-Code Size
-Tak	
-0.90
-1.21
-Traverse	
-0.98
-1.35
-Lexer	
-1.07
-1.48
+|CPU Time|Code Size
+--|--|
+Tak|0.90|1.21|
+Traverse|0.98|1.35
+Lexer|1.07|1.48
+
 Tak is a Gabriel benchmark that measures function calling and fixnum arithmetic. Traverse is a Gabriel benchmark that measures structure creation and access. Lexer is the tokenizer of a C compiler and measures dispatching and character manipulation.
 
 These benchmarks were run on a Sun 3 in 1987 using the standard Sun C compiler using full optimization. The Lisp was not running a non-intrusive garbage collector.
