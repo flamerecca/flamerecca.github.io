@@ -67,8 +67,8 @@ Common Lisp performs well. Most current implementations use modern compiler tech
 
 In fact, Common Lisp performs well on benchmarks compared to C. The following table shows the ratio of Lisp time and code size to C time and code size for three benchmarks.
 
-|CPU Time|Code Size
---|--|
+||CPU Time|Code Size
+--|--|--
 Tak|0.90|1.21|
 Traverse|0.98|1.35
 Lexer|1.07|1.48
