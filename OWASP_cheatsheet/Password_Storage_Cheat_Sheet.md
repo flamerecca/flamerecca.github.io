@@ -153,14 +153,15 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 ### 預先雜湊密碼
 
-另一個處理密碼最長長度的方式是先用快的雜湊法，像是 SHA-256，預先雜湊使用者所提供的密碼，然後將雜湊的結果使用安全的演算法像是 Bcrypt 再次進行雜湊（`bcrypt(sha256($password))`）
-An alternative approach is to pre-hash the user-supplied password with a fast algorithm such as SHA-256, and then to hash the resultant hash with a more secure algorithm such as Bcrypt (i.e, `bcrypt(sha256($password))`). While this approach solves the problem of arbitrary length user inputs to slower hashing algorithms, it also introduces some vulnerabilities that could allow attackers to crack hashes more easily.
+另一個處理密碼最長長度的方式是先用快的雜湊法，像是 SHA-256，預先雜湊使用者所提供的密碼，然後將雜湊的結果使用安全的演算法像是 Bcrypt 再次進行雜湊（`bcrypt(sha256($password))`）。這個做法可以解決使用者輸入任意長度密碼的問題，不過也產生了一些弱點，讓攻擊者破解變得比較簡單。
+
+如果攻擊者可以從兩個不同的地方取得密碼，第一個地方是使用 `bcrypt(sha256($password))` 儲存，第二個地方則是使用 `sha256($password)`。
 
 If an attacker is able to obtain password hashes from two different sources, one of which is storing passwords with `bcrypt(sha256($password))` and the other of which is storing them as plain `sha256($password)`, and attacker can use uncracked SHA-256 hashes from the second site as candidate passwords to try and crack the hashes from the first (more secure) site. If passwords are re-used between the two sites, this can effectively allow the attacker to strip off the Bcrypt layer, and to crack the much easier SHA-256 passwords.
 
-Pre-hashing with SHA-256 also means that the keyspace for an attacker to brute-force the hashes is `2^256`, rather than `2^420` for passwords capped at 64 characters (although both of these are big enough to make no practical difference).
+預先以 SHA-256 雜湊也代表了攻擊者需要暴力破解的次數可以從 64 字密碼的 `2^420` 減少到 SHA-256 所有可能結果的 `2^256` 次，不過這兩個數字都足夠大到不會有任何實質性的危害。
 
-Finally, when using pre-hashing ensure that the output for the first hashing algorithm is safely encoded as hexadecimal or base64, as some hashing algorithms such as Bcrypt can behave in undesirable ways if the [輸入包含 null] (https://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html) 的話會出現異常行為。
+最後，使用預先雜湊的話要保證第一次雜湊的結果編碼是十六進位或者 base64 編碼，因為有的雜湊演算法像是 Bcrypt [輸入包含 null] (https://blog.ircmaxell.com/2015/03/security-issue-combining-bcrypt-with.html) 的話會出現異常行為。
 
 綜上所述，比較好的做法還是限制密碼最長長度，預先雜湊一次的做法只能在特殊的情境下使用，並且必須加上特定的步驟，以避免上述的問題發生。
 
