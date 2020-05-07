@@ -173,15 +173,16 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 ### Argon2id
 
-[Argon2](https://en.wikipedia.org/wiki/Argon2) 是 2015 [密碼雜湊競賽](https://password-hashing.net)的獲勝者。該演算法有三個不同的版本There are three different versions of the algorithm, and the Argon2**id** variant should be used where available, as it provides a balanced approach to resisting both side channel and GPU-based attacks.
+[Argon2](https://en.wikipedia.org/wiki/Argon2) 是 2015 [密碼雜湊競賽](https://password-hashing.net)的獲勝者。該演算法有三個不同的版本，如果可以的話應該使用 Argon2**id**，因為這個版本可以同時防備旁道攻擊（side channel attack）和 GPU 為基礎的攻擊。
 
-Rather than a simple work factor like other algorithms, Argon2 has three different parameters that can be configured, meaning that it's more complicated to correctly tune for the environment. The specification contains [guidance on choosing appropriate parameters](https://password-hashing.net/argon2-specs.pdf), however, if you're not in a position to properly tune it, then a simpler algorithm such as [Bcrypt](#bcrypt) may be a better choice.
+和其他演算法只要調整 work factor 不同，Argon2 可以調整三個不同的參數。所以要根據環境正確調校參數比較困難。演算法規格內包含了[正確調整參數的指導](https://password-hashing.net/argon2-specs.pdf)。如果你無法準確的調整這些參數，像 [Bcrypt](#bcrypt) 這類比較簡單的演算法會是更好的選擇。
 
 ### PBKDF2
 
-[PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) is recommended by [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecretver) and has FIPS-140 validated implementations. So, it should be the preferred algorithm when these are required. Additionally, it is supported out of the box in the .NET framework, so is commonly used in ASP.NET applications.
+[PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecretver) 建議的演算法，並且有 FIPS140 認證的實作。如果有要求上述條件的話，應該優先選擇此演算法。另外 .NET 框架預設支援此演算法，所以可以看到很多 ASP.NET 的應用使用該演算法。
 
-PBKDF2 can be used with HMACs based on a number of different hashing algorithms. HMAC-SHA-256 is widely supported and is recommended by NIST.
+
+PBKDF2 can be used with HMACs based on a number of different hashing algorithms. HMAC-SHA-256 有非常多系統支援，並且也是 NIST 建議的作法之一。
 
 PBKDF2 的 work factor 代表的是雜湊運算的次數，至少必須設置到 10,000，如果在安全性要求更高的環境上應該設置到 100,000 更為合適。
 
@@ -193,24 +194,26 @@ Bcrypt 預設的 work factor 是 10，除非系統老舊或者是低耗能系統
 
 ## 古老的演算法
 
-In some circumstances it is not possible to use [modern hashing algorithms](#modern-algorithms), usually due to the use of legacy language or environments. Where possible, third party libraries should be used to provide these algorithms. However, if the only algorithms available are legacy ones such as MD5 and SHA-1, then there are a number of steps that can be taken to improve the security of stored passwords.
+有些狀況下，我們無法使用[現代的雜湊演算法](#現代演算法)。這通常是因為使用了老舊的系統或環境。只要可能的話，應該使用提供現代演算法的第三方套件。如果老舊的演算法像是 MD5 和 SHA-1 是僅有選項的話，有一些方式可以提高安全性：
 
-- Use the strongest algorithm available（SHA-512 > SHA-256 > SHA-1 > MD5）
+- 使用選項內最強的演算法（SHA-512 > SHA-256 > SHA-1 > MD5）
 - 加上 [pepper](#peppering).
 - 密碼個別加上獨立的 [salt](#salting)。以[密碼學上安全的亂數產生器](Cryptographic_Storage_Cheat_Sheet.md#secure-random-number-generation)生成
-- Use a very large number of iterations of the algorithm (at least 10,000, and possibly significantly more depending on the speed of the hardware).
+- 跑非常多次的雜湊，至少跑 10,000 次，如果硬體支援應該跑更多次。
 
-It should be emphasised that these steps **are not as good as using a modern hashing algorithm**, and that this approach should only be taken where no other options are available.
+這裡要強調，即使採取了以上這些步驟，古老的演算法還是**不和使用現代演算法一樣安全**。只有在沒有其他選擇時才使用古老演算法。
 
 ## 更新古老的雜湊
 
-For older applications that were built using less secure hashing algorithms such as MD5 or SHA-1, these hashes should be upgraded to more modern and secure ones. When the user next enters their password (usually by authenticating on the application), it should be re-hashed using the new algorithm. It would also be good practice to expire the users' current password and require them to enter a new one, so that any older (less secure) hashes of their password are no longer useful to an attacker.
+對過去使用 MD5 或 SHA-1 等古老演算法雜湊密碼的應用來說，應該要將密碼改用現代且安全的演算法重新處理過以保證安全性。
 
-However, this approach means that old (less secure) password hashes will be stored in the database until the user next logs in and may be stored indefinitely. There are two main approaches that can be taken to solve this.
+當使用者下次輸入正確密碼時（通常是重新登入的時候），應該使用新的現代演算法重新雜湊。將長期未登入的使用者視為過期並移除他們的密碼雜湊，並要求他們輸入新密碼是一個不錯的方式，這樣任何老舊且較不安全的雜湊對攻擊者來說就沒有用處了。
 
-One method is to expire and delete the password hashes of users who have been inactive for a long period, and require them to reset their passwords to login again. Although secure, this approach is not particularly user friendly, and expiring the passwords of a large number of users may cause issues for the support staff, or may be interpreted by users as an indication of a breach. However, if there is a reasonable delay between implementing the password hash upgrade code on login and removing old password hashes, most active users should have changed their passwords already.
+不過這也代表了，老舊且安全性較低的密碼雜湊必須要到使用者下次登入才會更新，如果使用者遲遲不登入，可能會被一直儲存下去。有兩種方法可以解決這個問題。
 
-An alternative approach is to use the existing password hashes as inputs for a more secure algorithm. For example if the application originally stored passwords as `md5($password)`, this could be easily upgraded to `bcrypt(md5($password))`. Layering the hashes in this manner avoids the need to known the original password, however it can make the hashes easier to crack, as discussed in the [Pre-Hashing](#pre-hashing) section. As such, these hashes should be replaced with direct hashes of the users' passwords next time the users login.
+其中一個方法，是將長期未登入的使用者視為過期並移除他們的密碼雜湊，在這些使用者下次登入時，請他們重新輸入密碼。雖然這樣提升了安全性，不過相對使用者比較不友善一些。移除大量用戶的密碼可能會對客服單位造成問題，或者可能被使用者理解為資料庫已經被攻擊者找到漏洞。不過，如果演算法升級和移除舊密碼的時間點有合理的緩衝時間，那麼多數活躍的使用者應該已經更新過密碼了。
+
+另一個方法是使用現有的密碼雜湊，然後將這些雜湊用比較安全的演算法重新處理過一遍。比方說，以前的系統儲存的密碼是 `md5($password)`，那麼更新後的系統可以簡單地用 `bcrypt(md5($password))` 作為新密碼雜湊。這樣重複加密方式可以避免需要取得密碼明文才能更新演算法的問題，不過會延伸出在[預先雜湊](#預先雜湊密碼)裡面討論過的弱點，導致攻擊者可以比較簡單的破解這些雜湊。所以，這些雜湊結果應該更新成直接使用新演算法加密後的結果。
 
 ## 自定義演算法
 
