@@ -127,7 +127,8 @@ Always laughing, way down at me.
 This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. The key problem with Lisp today stems from the tension between two opposing software philosophies. The two philosophies are called The Right Thing and Worse is Better.
 
 ### 2.1 「壞就是好」的崛起
-I and just about every designer of Common Lisp and CLOS has had extreme exposure to the MIT/Stanford style of design. The essence of this style can be captured by the phrase the right thing. To such a designer it is important to get all of the following characteristics right:
+
+Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／史丹佛風格設計的影響。The essence of this style can be captured by the phrase the right thing. To such a designer it is important to get all of the following characteristics right:
 
 * 簡潔 -- 設計在實作上和使用介面要簡潔，另外介面簡潔比起實作簡潔更重要一些
 * 正確 -- 設計在所有考慮到的面向要正確。錯誤的設計是不被允許的
@@ -137,14 +138,14 @@ the design must not be inconsistent. A design is allowed to be slightly less sim
 
 I believe most people would agree that these are good characteristics. I will call the use of this philosophy of design the MIT approach Common Lisp (with CLOS) and Scheme represent the MIT approach to design and implementation.
 
-The worse-is-better philosophy is only slightly different:
+「壞就是好」的哲學則有一點不同：
 
 - 簡潔 -- the design must be simple, both in implementation and interface. It is more important for the implementation to be simple than the interface. Simplicity is the most important consideration in a design.
 - 正確 -- the design must be correct in all observable aspects. It is slightly better to be simple than correct.
 - 一致 -- the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.
 - 完整 -- the design must cover as many important situations as is practical. All reasonably expected cases should be covered. Completeness can be sacrificed in favor of any other quality. In fact, completeness must be sacrificed whenever implementation simplicity is jeopardized. Consistency can be sacrificed to achieve completeness if simplicity is retained; especially worthless is consistency of interface.
 
-Early Unix and C are examples of the use of this school of design, and I will call the use of this design strategy the New Jersey approach I have intentionally caricatured the worse-is-better philosophy to convince you that it is obviously a bad philosophy and that the New Jersey approach is a bad approach.
+Early Unix and C are examples of the use of this school of design, and I will call the use of this design strategy 紐澤西風格的做法。approach I have intentionally caricatured the worse-is-better philosophy to convince you that it is obviously a bad philosophy and that the New Jersey approach is a bad approach.
 
 However, I believe that worse-is-better, even in its strawman form, has better survival characteristics than the-right-thing, and that the New Jersey approach when used for software is a better approach than the MIT approach.
 
@@ -194,10 +195,11 @@ A wrong lesson is to take the parable literally and to conclude that C is the ri
 
 But, one can conclude only that the Lisp community needs to seriously rethink its position on Lisp design. I will say more about this later.
 
-### 2.2 Good Lisp Programming is Hard
+### 2.2 寫好的 Lisp 程式是困難的
+
 Many Lisp enthusiasts believe that Lisp programming is easy. This is true up to a point. When real applications need to be delivered, the code needs to perform well. With C, programming is always difficult because the compiler requires so much description and there are so few data types. In Lisp it is very easy to write programs that perform very poorly; in C it is almost impossible to do that. The following examples of badly performing Lisp programs were all written by competent Lisp programmers while writing real applications that were intended for deployment. I find these quite sad.
 
-#### 2.2.1 Bad Declarations
+#### 2.2.1 不好的宣告
 This example is a mistake that is easy to make. The programmer here did not declare his arrays as fully as he could have. Therefore, each array access was about as slow as a function call when it should have been a few instructions. The original declaration was as follows:
 
     (proclaim '(type (array fixnum *) *ar1* *ar2* *ar3*))
@@ -231,7 +233,8 @@ The implementation happens to optimize multiple-value-prog1 for up to three retu
       (values x1 x2 x3 x4 x5))
 There is no reason that a programmer should know that this rewrite is needed. On the other hand, finding that performance was not as expected should not have led the manager of the programmer in question to conclude, as he did, that Lisp was the wrong language.
 
-#### 2.2.3 Use of FORTRAN Idioms
+#### 2.2.3 FORTRAN 養成的習慣
+
 Some Common Lisp compilers do not optimize the same way as others. The following expression is sometimes used:
 
     (* -1 <form>)
@@ -241,7 +244,8 @@ when compilers often produce better code for this variant:
 Of course, the first is the Lisp analog of the FORTRAN idiom:
 
     - -1*<form>
-#### 2.2.4 Totally Inappropriate Data Structures
+#### 2.2.4 非常不合適的資料結構
+
 Some might find this example hard to believe. This really occurred in some code I’ve seen:
 
     (defun make-matrix (n m)
@@ -272,13 +276,14 @@ The virus lives while the complex organism is stillborn. Lisp must adapt, not th
 ### 2.4 Non-Lisp Environments are Catching Up
 This is hard to face up to. For example, most C environments -- initially imitative of Lisp environments -- are now pretty good. Current best C environments have the following:
 
-Symbolic debuggers
-Data inspectors
-Source code level single stepping
-Help on builtin operators
-Window-based debugging
-Symbolic stack backtraces
-Structure editors
+- Symbolic debuggers
+- Data inspectors
+- Source code level single stepping
+- Help on builtin operators
+- Window-based debugging
+- Symbolic stack backtraces
+- Structure editors
+
 And soon they will have incremental compilation and loading. These environments are easily extendible to other languages, with multi-lingual environments not far behind.
 
 Though still the best, current Lisp environments have several prominent failures. First, they tend to be window-based but not well integrated. That is, related information is not represented so as to convey the relationship. A multitude of windows does not mean integration, and neither does being implemented in the same language and running in the same image. In fact, I believe no currently available Lisp environment has any serious amount of integration.
@@ -297,17 +302,17 @@ Seventh, environments are not multi-user when almost all interesting software is
 
 The real problem has been that almost no progress in Lisp environments has been made in the last 10 years.
 
-## 3 How Lisp Can Win Big
-When the sun comes up, I’ll be on top.
-You’re right down there looking up.
-On my way to come up here,
-I’m gonna see you waiting there.
-I’m on my way to get next to you.
-I know now that I’m gonna get there.
+## 3 Lisp 可以怎樣大贏
+> When the sun comes up, I’ll be on top.
+> You’re right down there looking up.
+> On my way to come up here,
+> I’m gonna see you waiting there.
+> I’m on my way to get next to you.
+> I know now that I’m gonna get there.
 
-? & The Mysterians
+> ? & The Mysterians
 
-The gloomy interlude can have a happy ending.
+這個陰鬱的插曲是可以有幸福結局的。
 
 ### 3.1 Continue Standardization Progress
 We need to bury our differences at the ISO level and realize that there is a short term need, which must be Common Lisp, and a long term need, which must address all the issues for practical applications.
