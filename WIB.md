@@ -97,7 +97,7 @@ Today Lisp code can coexist with C, Pascal, Fortran, etc. These languages can be
 
 The facilities for this functionality are quite extensive and provide a means for mixing several different languages at once.
 
-### 1.5 Object-oriented Programming
+### 1.5 物件導向程式設計
 Lisp has the most powerful, comprehensive, and pervasively object-oriented extensions of any language. CLOS embodies features not found in any other object-oriented language. These include the following:
 
 Multiple inheritance
@@ -128,21 +128,21 @@ This happy story, though, has a sad interlude, an interlude that might be attrib
 
 ### 2.1 「壞就是好」的崛起
 
-Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／史丹佛風格設計的影響。The essence of this style can be captured by the phrase the right thing. To such a designer it is important to get all of the following characteristics right:
+Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／史丹佛風格設計的影響。這個風格的精髓，可以用「做對的事」一句話來概括。對這樣的設計者來說，設計出來的架構一定要同時滿足下面幾點：
 
-* 簡潔 -- 設計在實作上和使用介面要簡潔，另外介面簡潔比起實作簡潔更重要一些
-* 正確 -- 設計在所有考慮到的面向要正確。錯誤的設計是不被允許的
-* 一致 -- 設計分歧是不被允許的。為了維持設計的一致性，系統架構可以有點不簡潔和有點不完整。
-the design must not be inconsistent. A design is allowed to be slightly less simple and less complete to avoid inconsistency. Consistency is as important as correctness.
-* 完整 -- the design must cover as many important situations as is practical. All reasonably expected cases must be covered. Simplicity is not allowed to overly reduce completeness.
+- 簡潔 -- 設計在實作上和使用介面要簡潔，另外介面簡潔比起實作簡潔更重要一些
+- 正確 -- 設計在所有考慮到的面向要正確。錯誤的設計是不被允許的
+- 一致 -- 設計分歧是不被允許的。為了維持設計的一致性，系統架構可以有點不簡潔和有點不完整。一致性和正確性是同等重要的。
+- 完整 -- 設計應該包含實際上會遇到的各種重要情境。所有合理的情況都應該被考慮到，為了簡潔而犧牲完整度是不被接受的。
 
-I believe most people would agree that these are good characteristics. I will call the use of this philosophy of design the MIT approach Common Lisp (with CLOS) and Scheme represent the MIT approach to design and implementation.
+我相信多數人會同意這些特點都是好的。這裡我稱呼這種邏輯為 MIT 的設計哲學，Common Lisp（含 CLOS）以及 Scheme 的設計與實作可以代表這一種哲學。
 
 「壞就是好」的哲學則有一點不同：
 
-- 簡潔 -- the design must be simple, both in implementation and interface. It is more important for the implementation to be simple than the interface. Simplicity is the most important consideration in a design.
-- 正確 -- the design must be correct in all observable aspects. It is slightly better to be simple than correct.
-- 一致 -- the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.
+- 簡潔 -- 設計在實作上和使用介面要簡潔，另外實作簡潔比起使用者介面簡潔要更重要。簡潔是設計中最重要的考量項目。
+- 正確 -- 設計在所有可觀察到的面向上要正確，不過簡單比起正確要重要一點點。
+- 一致 -- 設計不能太不一致，不過為了簡潔，可以犧牲掉一部分的一致性。另外the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.
+- 一致 -- 設計不能太不一致，不過為了簡潔，可以犧牲掉一部分的一致性。the design must not be overly inconsistent. Consistency can be sacrificed for simplicity in some cases, but it is better to drop those parts of the design that deal with less common circumstances than to introduce either implementational complexity or inconsistency.
 - 完整 -- the design must cover as many important situations as is practical. All reasonably expected cases should be covered. Completeness can be sacrificed in favor of any other quality. In fact, completeness must be sacrificed whenever implementation simplicity is jeopardized. Consistency can be sacrificed to achieve completeness if simplicity is retained; especially worthless is consistency of interface.
 
 Early Unix and C are examples of the use of this school of design, and I will call the use of this design strategy 紐澤西風格的做法。approach I have intentionally caricatured the worse-is-better philosophy to convince you that it is obviously a bad philosophy and that the New Jersey approach is a bad approach.
