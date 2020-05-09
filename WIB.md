@@ -82,14 +82,15 @@ It is arguable that modern programming environments come from the Lisp and AI tr
 
 It is also arguable that the following development environment features originated in the Lisp world:
 
-Incremental compilation and loading
-Symbolic debuggers
-Data inspectors
-Source code level single stepping
-Help on builtin operators
-Window-based debugging
-Symbolic stack backtraces
-Structure editors
+- Incremental compilation and loading
+- Symbolic debuggers
+- Data inspectors
+- Source code level single stepping
+- Help on builtin operators
+- Window-based debugging
+- Symbolic stack backtraces
+- Structure editors
+
 Today’s Lisp environments are equal to the very best Lisp machine environments in the 1970s. Windowing, fancy editing, and good debugging are all commonplace. In some Lisp systems, significant attention has been paid to the software lifecycle through the use of source control facilities, automatic cross-referencing, and automatic testing.
 
 ### 1.4 Good Integration
@@ -100,15 +101,16 @@ The facilities for this functionality are quite extensive and provide a means fo
 ### 1.5 物件導向程式設計
 Lisp has the most powerful, comprehensive, and pervasively object-oriented extensions of any language. CLOS embodies features not found in any other object-oriented language. These include the following:
 
-Multiple inheritance
-Generic functions including multi-methods
-First-class classes
-First-class generic functions
-Metaclasses
-Method combination
-Initialization protocols
-Metaobject protocol
-Integration with Lisp types
+- Multiple inheritance
+- Generic functions including multi-methods
+- First-class classes
+- First-class generic functions
+- Metaclasses
+- Method combination
+- Initialization protocols
+- Metaobject protocol
+- Integration with Lisp types
+
 It is likely that Common Lisp (with CLOS) will be the first standardized object-oriented programming language.
 
 ### 1.6 Delivery
@@ -135,23 +137,29 @@ Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／�
 - 一致 -- 設計分歧是不被允許的。為了維持設計的一致性，系統架構可以有點不簡潔和有點不完整。一致性和正確性是同等重要的。
 - 完整 -- 設計應該包含實際上會遇到的各種重要情境。所有合理的情況都應該被考慮到，為了簡潔而犧牲完整度是不被接受的。
 
-我相信多數人會同意這些特點都是好的。這裡我稱呼這種邏輯為 MIT 的設計哲學，Common Lisp（含 CLOS）以及 Scheme 的設計與實作可以代表這一種哲學。
+我相信多數人會同意這些特點都是好的。這裡我稱呼這種邏輯為 MIT 風格的設計哲學，Common Lisp（含 CLOS）以及 Scheme 的設計與實作可以代表這一種哲學。
 
 「壞就是好」的哲學則有一點不同：
 
 - 簡潔 -- 設計在實作上和使用介面要簡潔，另外實作簡潔比起使用者介面簡潔要更重要。簡潔是設計中最重要的考量項目。
 - 正確 -- 設計在所有可觀察到的面向上要正確，不過簡單比起正確要重要一點點。
 - 一致 -- 設計不能太不一致，不過為了簡潔，可以犧牲掉一部分的一致性。另外為了避免提升實作複雜度或者導致設計不一致，可以放棄處理少見的情況。
-- 完整 -- 設計應該包含實際上會遇到的各種重要情境。所有合理的情況都應該被考慮到。如果和上述任何特點衝突，可以犧牲設計的完整性。事實上，如果危害到實作的簡潔度，那麼一定要放棄設計的完整性。如果
-the design must cover as many important situations as is practical. All reasonably expected cases should be covered. Completeness can be sacrificed in favor of any other quality. In fact, completeness must be sacrificed whenever implementation simplicity is jeopardized. Consistency can be sacrificed to achieve completeness if simplicity is retained; especially worthless is consistency of interface.
+- 完整 -- 設計應該包含實際上會遇到的各種重要情境。所有合理的情況都應該被考慮到。如果和上述任何特點衝突，可以犧牲設計的完整性。事實上，如果危害到實作的簡潔度，那麼一定要放棄設計的完整性。如果一樣簡潔，那可以為了完整度犧牲一致性，特別是使用介面的一致性。
 
-Early Unix and C are examples of the use of this school of design, and I will call the use of this design strategy 紐澤西風格的做法。approach I have intentionally caricatured the worse-is-better philosophy to convince you that it is obviously a bad philosophy and that the New Jersey approach is a bad approach.
+早期 Unix 和 C 的設計可以代表這一種哲學。這裡我稱呼這種設計方式是紐澤西風格的做法。我刻意用有點諷刺意味的方式形容「壞就是好」的哲學，來說服各位這顯然是一種不好的做法。
 
-However, I believe that worse-is-better, even in its strawman form, has better survival characteristics than the-right-thing, and that the New Jersey approach when used for software is a better approach than the MIT approach.
+不過，我相信即使是這種稻草人版本的說法，「壞就是好」這個哲學還是比起「做對的事」這種哲學有更好的生存特性。紐澤西風格的做法在軟體上是比起 MIT 風格更容易存活的做法。
 
-Let me start out by retelling a story that shows that the MIT/New-Jersey distinction is valid and that proponents of each philosophy actually believe their philosophy is better.
+這裡我重新講一個故事做開頭，這故事顯示 MIT 風格和紐澤西風格的定義是正確的，並且可以看出每個哲學的擁護者都相信自己的哲學是比較好的。
 
-Two famous people, one from MIT and another from Berkeley (but working on Unix) once met to discuss operating system issues. The person from MIT was knowledgeable about ITS (the MIT AI Lab operating system) and had been reading the Unix sources. He was interested in how Unix solved the PC loser-ing problem. The PC loser-ing problem occurs when a user program invokes a system routine to perform a lengthy operation that might have significant state, such as IO buffers. If an interrupt occurs during the operation, the state of the user program must be saved. Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. The right thing is to back out and restore the user program PC to the instruction that invoked the system routine so that resumption of the user program after the interrupt, for example, re-enters the system routine. It is called PC loser-ing because the PC is being coerced into loser mode, where loser is the affectionate name for user at MIT.
+有兩位名人，一個是從 MIT，另一位則是從柏克萊（正在開發 Unix）來的人。兩人正在討論作業系統的問題。MIT 的人很瞭解 ITS（MIT AI 實驗室的作業系統），而且最近正在閱讀 Unix 的程式碼。
+
+他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem）很有興趣。PC 輸家問題
+
+He was interested in how Unix solved the PC loser-ing problem. The PC loser-ing problem occurs when a user program invokes a system routine to perform a lengthy operation that might have significant state, such as IO buffers. If an interrupt occurs during the operation, the state of the user program must be saved. Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. 
+
+對的處理方式是退出該程式，並
+The right thing is to back out and restore the user program PC to the instruction that invoked the system routine so that resumption of the user program after the interrupt, for example, re-enters the system routine. It is called PC loser-ing because the PC is being coerced into loser mode, where loser is the affectionate name for user at MIT.
 
 The MIT guy did not see any code that handled this case and asked the New Jersey guy how the problem was handled. The New Jersey guy said that the Unix folks were aware of the problem, but the solution was for the system routine to always finish, but sometimes an error code would be returned that signaled that the system routine had failed to complete its action. A correct user program, then, had to check the error code to determine whether to simply try the system routine again. The MIT guy did not like this solution because it was not the right thing.
 
@@ -163,11 +171,13 @@ Now I want to argue that worse-is-better is better. C is a programming language 
 
 Half the computers that exist at any point are worse than median (smaller or slower). Unix and C work fine on them. The worse-is-better philosophy means that implementation simplicity has highest priority, which means Unix and C are easy to port on such machines. Therefore, one expects that if the 50% functionality Unix and C support is satisfactory, they will start to appear everywhere. And they have, haven’t they?
 
-Unix and C are the ultimate computer viruses.
+Unix 和 C 是終極的電腦病毒。
 
 A further benefit of the worse-is-better philosophy is that the programmer is conditioned to sacrifice some safety, convenience, and hassle to get good performance and modest resource use. Programs written using the New Jersey approach will work well both in small machines and large ones, and the code will be portable because it is written on top of a virus.
 
 It is important to remember that the initial virus has to be basically good. If so, the viral spread is assured as long as it is portable. Once the virus has spread, there will be pressure to improve it, possibly by increasing its functionality closer to 90%, but users have already been conditioned to accept worse than the right thing. Therefore, the worse-is-better software first will gain acceptance, second will condition its users to expect less, and third will be improved to a point that is almost the right thing. In concrete terms, even though Lisp compilers in 1987 were about as good as C compilers, there are many more compiler experts who want to make C compilers better than want to make Lisp compilers better.
+
+
 
 The good news is that in 1995 we will have a good operating system and programming language; the bad news is that they will be Unix and C++.
 
