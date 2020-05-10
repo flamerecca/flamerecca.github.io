@@ -118,15 +118,21 @@ It is possible to deliver applications written in Lisp. The currently available 
 
 Delivery tools are commercially provided by Lucid, Franz, and Ibuki.
 
-## 2 Lisp’s Apparent Failures
-Too many teardrops for one heart to be crying.
-Too many teardrops for one heart to carry on.
-You’re way on top now, since you left me,
-Always laughing, way down at me.
+## 2 Lisp 明顯的失敗點
+> Too many teardrops for one heart to be crying.
+> 
+> Too many teardrops for one heart to carry on.
+> 
+> You’re way on top now, since you left me,
+> 
+> Always laughing, way down at me.
+> 
+> ? & The Mysterians
 
-? & The Mysterians
+這個快樂的故事現在卻有著陰鬱的插曲。
+This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. 
 
-This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. The key problem with Lisp today stems from the tension between two opposing software philosophies. The two philosophies are called The Right Thing and Worse is Better.
+Lisp 目前遇到問題的關鍵源自兩個軟體設計上不同哲學的對峙。這兩個哲學分別是「做對的事」和「壞就是好」。
 
 ### 2.1 「壞就是好」的崛起
 
@@ -154,9 +160,11 @@ Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／�
 
 有兩位名人，一個是從 MIT，另一位則是從柏克萊（正在開發 Unix）來的人。兩人正在討論作業系統的問題。MIT 的人很瞭解 ITS（MIT AI 實驗室的作業系統），而且最近正在閱讀 Unix 的程式碼。
 
-他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem）很有興趣。PC 輸家問題
+他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem）很有興趣。PC 輸家問題出現在使用者程式觸發了像是 IO buffers 這類很耗時的系統常駐程式的時候。如果操作過程被中斷了，
 
-He was interested in how Unix solved the PC loser-ing problem. The PC loser-ing problem occurs when a user program invokes a system routine to perform a lengthy operation that might have significant state, such as IO buffers. If an interrupt occurs during the operation, the state of the user program must be saved. Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. 
+He was interested in how Unix solved the PC loser-ing problem. The PC loser-ing problem occurs when a user program invokes a system routine to perform a lengthy operation that might have significant state, such as IO buffers. If an interrupt occurs during the operation, the state of the user program must be saved. 
+
+Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. 
 
 對的處理方式是退出該程式，並
 The right thing is to back out and restore the user program PC to the instruction that invoked the system routine so that resumption of the user program after the interrupt, for example, re-enters the system routine. It is called PC loser-ing because the PC is being coerced into loser mode, where loser is the affectionate name for user at MIT.
@@ -177,10 +185,9 @@ A further benefit of the worse-is-better philosophy is that the programmer is co
 
 It is important to remember that the initial virus has to be basically good. If so, the viral spread is assured as long as it is portable. Once the virus has spread, there will be pressure to improve it, possibly by increasing its functionality closer to 90%, but users have already been conditioned to accept worse than the right thing. Therefore, the worse-is-better software first will gain acceptance, second will condition its users to expect less, and third will be improved to a point that is almost the right thing. In concrete terms, even though Lisp compilers in 1987 were about as good as C compilers, there are many more compiler experts who want to make C compilers better than want to make Lisp compilers better.
 
+好消息是 1995 年時，我們會有好的作業系統和程式語言；壞消息是，這些會是 Unix 和 C++。
 
-
-The good news is that in 1995 we will have a good operating system and programming language; the bad news is that they will be Unix and C++.
-
+「壞就是好」最後的一點好處是，因為紐澤西風格的語言和系統並不足以建立一個巨大複雜的系統，所以大的系統必須常常
 There is a final benefit to worse-is-better. Because a New Jersey language and system are not really powerful enough to build complex monolithic software, large systems must be designed to reuse components. Therefore, a tradition of integration springs up.
 
 How does the right thing stack up? There are two basic scenarios: the big complex system scenario and the diamond-like jewel scenario.
@@ -245,15 +252,20 @@ There is no reason that a programmer should know that this rewrite is needed. On
 
 #### 2.2.3 FORTRAN 養成的習慣
 
-Some Common Lisp compilers do not optimize the same way as others. The following expression is sometimes used:
+有些 Common Lisp 編譯器的最佳化和其他編譯器的不同。有時候我們會在程式內看到下面的寫法：
 
     (* -1 <form>)
-when compilers often produce better code for this variant:
+
+但是編譯器通常從這種寫法能夠編譯出比較好的程式：
 
     (- <form>)
-Of course, the first is the Lisp analog of the FORTRAN idiom:
+
+當然，第一種寫法是從 FORTRAN 的寫法
 
     - -1*<form>
+    
+轉到 Lisp 的結果
+
 #### 2.2.4 非常不合適的資料結構
 
 Some might find this example hard to believe. This really occurred in some code I’ve seen:
@@ -314,12 +326,17 @@ The real problem has been that almost no progress in Lisp environments has been 
 
 ## 3 Lisp 可以怎樣大贏
 > When the sun comes up, I’ll be on top.
+> 
 > You’re right down there looking up.
+> 
 > On my way to come up here,
+> 
 > I’m gonna see you waiting there.
+> 
 > I’m on my way to get next to you.
+> 
 > I know now that I’m gonna get there.
-
+> 
 > ? & The Mysterians
 
 這個陰鬱的插曲是可以有幸福結局的。
