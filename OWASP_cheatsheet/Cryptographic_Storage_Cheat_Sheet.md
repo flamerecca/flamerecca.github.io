@@ -8,15 +8,15 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
 
 ## 簡介
 
-This article provides a simple model to follow when implementing solutions to protect data at rest.
+這篇文章提供以加密保護資料時，該怎麼實作的簡單模型。
 
-Passwords should not be stored using reversible encryption - secure password hashing algorithms should be used instead. The [密碼儲存的小抄](Password_Storage_Cheat_Sheet.md) contains further guidance on storing passwords.
+密碼不應該以可以解密的方式進行儲存，應該使用安全的密碼雜湊演算法。儲存密碼的指引在[密碼儲存的小抄](Password_Storage_Cheat_Sheet.md) 裡面有說明。
 
 ## 內容
 
-- [Cryptographic Storage Cheat Sheet](#cryptographic-storage-cheat-sheet)
-  * [Introduction](#introduction)
-  * [Contents](#contents)
+- [加密儲存資料的小抄](#加密儲存資料的小抄)
+  * [簡介](#簡介)
+  * [內容](#內容)
   * [Architectural Design](#architectural-design)
     + [Where to Perform Encryption](#where-to-perform-encryption)
     + [Minimise the Storage of Sensitive Information](#minimise-the-storage-of-sensitive-information)
@@ -42,14 +42,14 @@ This process should begin with considering the [threat model](Threat_Modeling_Ch
 
 The use of dedicated secret or key management systems can provide an additional layer of security protection, as well as making the management of secrets significantly easier - however it comes at the cost of additional complexity and administrative overhead - so may not be feasible for all applications. Note that many cloud environments provide these services, so these should be taken advantage of where possible.
 
-### Where to Perform Encryption
+### 執行加密的位置
 
 Encryption can be performed on a number of levels in the application stack, such as:
 
-- At the application level.
+- 在應用層進行加密
 - At the database level (e.g, [SQL Server TDE](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15)
 - At the filesystem level (e.g, BitLocker or LUKS)
-- At the hardware level (e.g, encrypted RAID cards or SSDs)
+- At the 硬體 level (e.g, encrypted RAID cards 或 SSD）
 
 Which layer(s) are most appropriate will depend on the threat model. For example, hardware level encryption is effective at protecting against the physical theft of the server, but will provide no protection if an attacker is able to compromise the server remotely.
 
