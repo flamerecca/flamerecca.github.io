@@ -1,6 +1,7 @@
 翻譯自
 
 https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token_Cheat_Sheet_for_Java.md
+
 ----
 
 # 簡介
