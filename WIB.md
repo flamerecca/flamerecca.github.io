@@ -101,7 +101,7 @@ The facilities for this functionality are quite extensive and provide a means fo
 ### 1.5 物件導向程式設計
 Lisp has the most powerful, comprehensive, and pervasively object-oriented extensions of any language. CLOS embodies features not found in any other object-oriented language. These include the following:
 
-- Multiple inheritance
+- 多重繼承
 - Generic functions including multi-methods
 - First-class classes
 - First-class generic functions
@@ -111,7 +111,7 @@ Lisp has the most powerful, comprehensive, and pervasively object-oriented exten
 - Metaobject protocol
 - Integration with Lisp types
 
-It is likely that Common Lisp (with CLOS) will be the first standardized object-oriented programming language.
+看起來 Common Lisp (with CLOS) will be the first standardized object-oriented programming language.
 
 ### 1.6 Delivery
 It is possible to deliver applications written in Lisp. The currently available tools are good but are not yet ideal. These solutions include from removing unused code and data from application, building up applications using only the code and data needed, and producing .o files from Lisp code.
@@ -175,7 +175,11 @@ The New Jersey guy said that the Unix solution was right because the design phil
 
 The MIT guy then muttered that sometimes it takes a tough man to make a tender chicken, but the New Jersey guy didn’t understand (I’m not sure I do either).
 
-Now I want to argue that worse-is-better is better. C is a programming language designed for writing Unix, and it was designed using the New Jersey approach. C is therefore a language for which it is easy to write a decent compiler, and it requires the programmer to write text that is easy for the compiler to interpret. Some have called C a fancy assembly language. Both early Unix and C compilers had simple structures, are easy to port, require few machine resources to run, and provide about 50%-80% of what you want from an operating system and programming language.
+現在我想解釋為什麼「壞就是好」比較好了。C 是一個設計來撰寫 Unix 的程式語言，並且其設計邏輯符合紐澤西風格的做法。因此很容易為 C 這個語言撰寫一個堪用的編譯器，然後要求使用 C 開發的工程師撰寫對編譯器容易理解的程式碼。有的人會稱呼 C 只是一個比較華麗的組語而已。
+
+早期的 Unix 和 C 編譯器都有著很簡單的架構，很容易移植，運作起來不太花費效能，而且能提供差不多五成到八成你希望作業系統和程式語言該做到的事情。
+
+有一半的機器效能是低於平均值的（比較小或者比較慢）。Unix 和 C 在這些機器上面不會有什麼問題。壞就是好的哲學保證了實作的簡潔是比較重要的，這代表這些
 
 Half the computers that exist at any point are worse than median (smaller or slower). Unix and C work fine on them. The worse-is-better philosophy means that implementation simplicity has highest priority, which means Unix and C are easy to port on such machines. Therefore, one expects that if the 50% functionality Unix and C support is satisfactory, they will start to appear everywhere. And they have, haven’t they?
 
