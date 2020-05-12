@@ -111,7 +111,7 @@ Lisp has the most powerful, comprehensive, and pervasively object-oriented exten
 - Metaobject protocol
 - Integration with Lisp types
 
-看起來 Common Lisp (with CLOS) will be the first standardized object-oriented programming language.
+看起來 Common Lisp（含 CLOS）will be the first standardized object-oriented programming language.
 
 ### 1.6 Delivery
 It is possible to deliver applications written in Lisp. The currently available tools are good but are not yet ideal. These solutions include from removing unused code and data from application, building up applications using only the code and data needed, and producing .o files from Lisp code.
@@ -132,7 +132,7 @@ Delivery tools are commercially provided by Lucid, Franz, and Ibuki.
 這個快樂的故事現在卻有著陰鬱的插曲。
 This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. 
 
-Lisp 目前遇到問題的關鍵源自兩個軟體設計上不同哲學的對峙。這兩個哲學分別是「做對的事」和「壞就是好」。
+Lisp 目前遇到問題的關鍵，源自兩個軟體設計上不同哲學的對峙。這兩個哲學分別是「做對的事」和「壞就是好」。
 
 ### 2.1 「壞就是好」的崛起
 
@@ -160,39 +160,41 @@ Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／�
 
 有兩位名人，一個是從 MIT，另一位則是從柏克萊（正在開發 Unix）來的人。兩人正在討論作業系統的問題。MIT 的人很瞭解 ITS（MIT AI 實驗室的作業系統），而且最近正在閱讀 Unix 的程式碼。
 
-他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem）很有興趣。PC 輸家問題出現在使用者程式觸發了像是 IO buffers 這類很耗時的系統常駐程式的時候。如果操作過程被中斷了，
+他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem，或者 Program Counter Lusering problem）很有興趣。PC 輸家問題出現在使用者程式觸發了像是 IO buffers 這類很耗時的系統常駐程式的時候。如果操作過程被中斷了，應該要儲存使用者的程式狀態。
 
-He was interested in how Unix solved the PC loser-ing problem. The PC loser-ing problem occurs when a user program invokes a system routine to perform a lengthy operation that might have significant state, such as IO buffers. If an interrupt occurs during the operation, the state of the user program must be saved. 
-
+因為系統常駐程式的呼叫通常是一條指令，
 Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. 
 
 對的處理方式是退出該程式，並
 The right thing is to back out and restore the user program PC to the instruction that invoked the system routine so that resumption of the user program after the interrupt, for example, re-enters the system routine. It is called PC loser-ing because the PC is being coerced into loser mode, where loser is the affectionate name for user at MIT.
 
-The MIT guy did not see any code that handled this case and asked the New Jersey guy how the problem was handled. The New Jersey guy said that the Unix folks were aware of the problem, but the solution was for the system routine to always finish, but sometimes an error code would be returned that signaled that the system routine had failed to complete its action. A correct user program, then, had to check the error code to determine whether to simply try the system routine again. The MIT guy did not like this solution because it was not the right thing.
+MIT 的人 did not see any code that handled this case and asked the New Jersey guy how the problem was handled. The New Jersey guy said that the Unix folks were aware of the problem, but the solution was for the system routine to always finish, but sometimes an error code would be returned that signaled that the system routine had failed to complete its action. A correct user program, then, had to check the error code to determine whether to simply try the system routine again. 
 
-The New Jersey guy said that the Unix solution was right because the design philosophy of Unix was simplicity and that the right thing was too complex. Besides, programmers could easily insert this extra test and loop. The MIT guy pointed out that the implementation was simple but the interface to the functionality was complex. The New Jersey guy said that the right tradeoff has been selected in Unix -- namely, implementation simplicity was more important than interface simplicity.
+MIT 的人不喜歡這種做法，因為這不是對的處理方式。
 
-The MIT guy then muttered that sometimes it takes a tough man to make a tender chicken, but the New Jersey guy didn’t understand (I’m not sure I do either).
+紐澤西人則說 Unix 的做法是對的，因為 Unix 設計的理念是簡潔，而對的事情則太過複雜了。另外工程師多加一個驗證並重新跑程式並不困難。
+
+MIT 的人點出這樣實作起來確實比較簡單，但是對使用這個系統的工程師來說，介面反而變複雜了。紐澤西人則說這是 Unix 所做出正確的取捨——具體來說，實作的簡潔比起使用者的簡潔要重要得多。
+
+MIT 的人開始嘟囔說需要一個堅強的人才能做出一隻嫩雞（sometimes it takes a tough man to make a tender chicken），不過紐澤西的人沒有理解他的意思（我也不確定我真的理解了）。
 
 現在我想解釋為什麼「壞就是好」比較好了。C 是一個設計來撰寫 Unix 的程式語言，並且其設計邏輯符合紐澤西風格的做法。因此很容易為 C 這個語言撰寫一個堪用的編譯器，然後要求使用 C 開發的工程師撰寫對編譯器容易理解的程式碼。有的人會稱呼 C 只是一個比較華麗的組語而已。
 
 早期的 Unix 和 C 編譯器都有著很簡單的架構，很容易移植，運作起來不太花費效能，而且能提供差不多五成到八成你希望作業系統和程式語言該做到的事情。
 
-有一半的機器效能是低於平均值的（比較小或者比較慢）。Unix 和 C 在這些機器上面不會有什麼問題。壞就是好的哲學保證了實作的簡潔是比較重要的，這代表這些
-
-Half the computers that exist at any point are worse than median (smaller or slower). Unix and C work fine on them. The worse-is-better philosophy means that implementation simplicity has highest priority, which means Unix and C are easy to port on such machines. Therefore, one expects that if the 50% functionality Unix and C support is satisfactory, they will start to appear everywhere. And they have, haven’t they?
+有一半的機器效能是低於平均值的（比較小或者比較慢）。Unix 和 C 在這些機器上面運作不會有什麼問題，壞就是好的哲學保證了實作的簡潔是比較重要的，這代表 Unix 和 C 移植到這些機器上時可以運作得很好。使用者也逐漸覺得 Unix 和 C 能滿足五成左右的功能就很不錯了，結果我們就開始到處看到這些系統。現在確實是這樣，不是嗎？
 
 Unix 和 C 是終極的電腦病毒。
 
-A further benefit of the worse-is-better philosophy is that the programmer is conditioned to sacrifice some safety, convenience, and hassle to get good performance and modest resource use. Programs written using the New Jersey approach will work well both in small machines and large ones, and the code will be portable because it is written on top of a virus.
+壞就是好的另一個好處是工程師犧牲了一些安全性、方便性、和其他麻煩的細節，來得到好效能以及不錯的資源利用率。紐澤西風格的系統在小的機器或者大的機器上都運作的不錯，而用這些系統寫的程式相容性也會很好，因為這些程式是立基於病毒之上的。
 
-It is important to remember that the initial virus has to be basically good. If so, the viral spread is assured as long as it is portable. Once the virus has spread, there will be pressure to improve it, possibly by increasing its functionality closer to 90%, but users have already been conditioned to accept worse than the right thing. Therefore, the worse-is-better software first will gain acceptance, second will condition its users to expect less, and third will be improved to a point that is almost the right thing. In concrete terms, even though Lisp compilers in 1987 were about as good as C compilers, there are many more compiler experts who want to make C compilers better than want to make Lisp compilers better.
+要記得，病毒一開始基本上是好用的。這樣保證了只要可行，這些東西會快速地散播出去。當病毒散播出去之後，就會有改進他們的壓力，大概是把原本只能滿足五成需求的系統改進到可以滿足九成的需求。雖然如此，與對的東西相比，使用者已經接受壞的系統了。因此，「壞就是好」的系統會先取得接受度，然後降低使用者對系統的期待，最後進步到幾乎跟「做對的事」的系統差不多好。
 
-好消息是 1995 年時，我們會有好的作業系統和程式語言；壞消息是，這些會是 Unix 和 C++。
+用實際案例來解釋，即使 1987 年（四年前）的 Lisp 編譯器已經和現在的 C 編譯器一樣好，想改進 C 編譯器的專家還是遠比想改進 Lisp 編譯器的專家要多。
 
-「壞就是好」最後的一點好處是，因為紐澤西風格的語言和系統並不足以建立一個巨大複雜的系統，所以大的系統必須常常
-There is a final benefit to worse-is-better. Because a New Jersey language and system are not really powerful enough to build complex monolithic software, large systems must be designed to reuse components. Therefore, a tradition of integration springs up.
+好消息是 1995 年時，我們會有好的作業系統和程式語言；壞消息是，這些東西會是 Unix 和 C++。
+
+「壞就是好」最後的一點好處是，因為紐澤西風格的語言和系統並不足以建立一個巨大複雜的系統，所以大的系統必須以常常重複使用元件的角度設計。因此，整合的傳統就出現了。
 
 How does the right thing stack up? There are two basic scenarios: the big complex system scenario and the diamond-like jewel scenario.
 
@@ -204,7 +206,7 @@ The diamond-like jewel scenario goes like this:
 
 The right thing takes forever to design, but it is quite small at every point along the way. To implement it to run fast is either impossible or beyond the capabilities of most implementors.
 
-The two scenarios correspond to Common Lisp and Scheme.
+上面兩個場景分別對應 Common Lisp 和 Scheme。
 
 The first scenario is also the scenario for classic artificial intelligence software.
 
@@ -292,14 +294,15 @@ What’s worse is that in the particular application, the matrices were all fixe
 
 This example is bitterly sad: The code is absolutely beautiful, but it adds matrices slowly. Therefore it is excellent prototype code and lousy production code. You know, you cannot write production code as bad as this in C.
 
-### 2.3 Integration is God
+### 2.3 整合就是上帝
+
 In the worse-is-better world, integration is linking your .o files together, freely intercalling functions, and using the same basic data representations. You don’t have a foreign loader, you don’t coerce types across function-call boundaries, you don’t make one language dominant, and you don’t make the woes of your implementation technology impact the entire system.
 
 The very best Lisp foreign functionality is simply a joke when faced with the above reality. Every item on the list can be addressed in a Lisp implementation. This is just not the way Lisp implementations have been done in the right thing world.
 
 The virus lives while the complex organism is stillborn. Lisp must adapt, not the other way around. The right thing and 2 shillings will get you a cup of tea.
 
-### 2.4 Non-Lisp Environments are Catching Up
+### 2.4 非 Lisp 的環境正在迎頭趕上
 This is hard to face up to. For example, most C environments -- initially imitative of Lisp environments -- are now pretty good. Current best C environments have the following:
 
 - Symbolic debuggers
@@ -345,7 +348,7 @@ The real problem has been that almost no progress in Lisp environments has been 
 
 這個陰鬱的插曲是可以有幸福結局的。
 
-### 3.1 Continue Standardization Progress
+### 3.1 繼續標準化程序
 We need to bury our differences at the ISO level and realize that there is a short term need, which must be Common Lisp, and a long term need, which must address all the issues for practical applications.
 
 We’ve seen that the right thing attitude has brought us a very large, complex-to-understand, and complex-to-implement Lisp -- Common Lisp that solves way too many problems. We need to move beyond Common Lisp for the future, but that does not imply giving up on Common Lisp now. We’ve seen it is possible to do delivery of applications, and I think it is possible to provide tools that make it easier to write applications for deployment. A lot of work has gone into getting Common Lisp to the point of a right thing in many ways, and there are viable commercial implementations. But we need to solve the delivery and integration problems in spades.
@@ -369,12 +372,12 @@ I believe that it is possible to build a tightly integrated environment that is 
 
 Our environments should not discriminate against non-Lisp programmers the way existing environments do. Lisp is not the center of the world.
 
-### 3.3 Implement Correctly
+### 3.3 正確的實作
 Even though Common Lisp is not structured as a kernel plus libraries, it can be implemented that way. The kernel and library routines can be in the form of .o files for easy linking with other, possibly non-Lisp, modules; the implementation must make it possible to write, for example, small utility programs. It is also possible to piggyback on existing compilers, especially those that use common back ends. It is also possible to implement Lisp so that standard debuggers, possibly with extensions, can be made to work on Lisp code.
 
 It might take time for developers of standard tools to agree to extend their tools to Lisp, but it certainly won’t happen until our (exceptional) language is implemented more like ordinary ones.
 
-### 3.4 Achieve Total Integration
+### 3.4 達到完全整合
 I believe it is possible to implement a Lisp and surrounding environment which has no discrimination for or against any other language. It is possible using multi-lingual environments, clever representations of Lisp data, conservative garbage collection, and conventional calling protocols to make a completely integrated Lisp that has no demerits.
 
 ### 3.5 Make Lisp the Premier Prototyping Language
@@ -389,7 +392,7 @@ Subsequent statements might manipulate the correspondence and use f. Once the de
 
 A language that describes the modification and control of an existing program can be termed a program language. Program languages be built on one or several underlying programming languages, and in fact can be implemented as part of the functionality of the prototyping environment. This view is built on the insight that an environment is a mechanism to assist a programmer in creating a working program, including preparing the source text. There is no necessary requirement that an environment be limited to working only with raw source text. As another example, some systems comprise several processes communicating through channels. The creation of this part of the system can be visual, with the final result produced by the environment being a set of source code in several languages, build scripts, link directives, and operating system calls. Because no single programming language encompasses the program language, one could call such a language an epi-language.
 
-### 3.6 The Next Lisp
+### 3.6 下一個 Lisp
 I think there will be a next Lisp. This Lisp must be carefully designed, using the principles for success we saw in worse-is-better.
 
 There should be a simple, easily implementable kernel to the Lisp. That kernel should be both more than Scheme -- modules and macros -- and less than Scheme -- continuations remain an ugly stain on the otherwise clean manuscript of Scheme.
@@ -435,5 +438,5 @@ The business leadership of the AI community seems to have adopted the worst cari
 
 Sometimes the sun also rises.
 
-## References
+## 參考資料
 [1] ? & the Mysterians, 96 Tears, Pa-go-go Records 1966, re-released on Cameo Records, September 1966.
