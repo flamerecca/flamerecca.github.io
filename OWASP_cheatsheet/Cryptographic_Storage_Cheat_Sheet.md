@@ -17,10 +17,10 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
 - [加密儲存資料的小抄](#加密儲存資料的小抄)
   * [簡介](#簡介)
   * [內容](#內容)
-  * [Architectural Design](#architectural-design)
+  * [架構設計](#架構設計)
     + [Where to Perform Encryption](#where-to-perform-encryption)
     + [Minimise the Storage of Sensitive Information](#minimise-the-storage-of-sensitive-information)
-  * [Algorithms](#algorithms)
+  * [演算法](#演算法)
     + [自定義演算法](#自定義演算法)
     + [Cipher Modes](#cipher-modes)
     + [Secure Random Number Generation](#secure-random-number-generation)
@@ -34,11 +34,11 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
     + [Separation of Keys and Data](#separation-of-keys-and-data)
     + [Encrypting Stored Keys](#encrypting-stored-keys)
 
-## Architectural Design
+## 架構設計
 
 The first step in designing any application is to consider the overall architecture of the system, as this will have a huge impact on the technical implementation.
 
-This process should begin with considering the [threat model](Threat_Modeling_Cheat_Sheet.md) of the application (i.e, who you trying to protect that data against).
+This process should begin with considering the [威脅模型](Threat_Modeling_Cheat_Sheet.md) of the application (i.e, who you trying to protect that data against).
 
 The use of dedicated secret or key management systems can provide an additional layer of security protection, as well as making the management of secrets significantly easier - however it comes at the cost of additional complexity and administrative overhead - so may not be feasible for all applications. Note that many cloud environments provide these services, so these should be taken advantage of where possible.
 
@@ -57,7 +57,7 @@ Which layer(s) are most appropriate will depend on the threat model. For example
 
 The best way to protect sensitive information is to not store it in the first place. Although this applies to all kinds of information, it is most often applicable to credit card details, as they are highly desirable for attackers, and PCI DSS has such stringent requirements for how they must be stored. Wherever possible, the storage of sensitive information should be avoided.
 
-## Algorithms
+## 演算法
 
 For symmetric encryption **AES** with a key that's at least **128 bits** (ideally **256 bits**) and a secure [mode](#cipher-modes) should be used as the preferred algorithm.
 
