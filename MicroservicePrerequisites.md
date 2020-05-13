@@ -6,14 +6,13 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 當我和其他人談到微服務架構時，我聽到很多樂觀的想法。開發者很享受以較小的單位進行開發，並對比起巨大系統更好的模組化充滿期待。不過和所有架構的選擇一樣，這是有取捨的。對微服務來說，取捨錯誤特別會帶來嚴重的後果，因為一但選用微服務，你就不再是管理一個單一完整的巨大系統，而是要處理一堆小服務所組成的生態系。因此，如果你不具備某些基本條件，那就不應該考慮使用微服務架構。
 
-
 快速配置：你應該要可以在幾個小時之內開一個新的伺服器。如果使用雲端系統的話，這是很自然的。不過即使不全部使用雲端服務這也是可以達成的。要做到這麼快速的配置，你需要很多的自動化——一開始可能不需要完全自動化，但是要認真的做微服務最終還是需要做到。
 
 基本監控：with many loosely-coupled services collaborating in production, things are bound to go wrong in ways that are difficult to detect in test environments. As a result it's essential that a monitoring regime is in place to detect serious problems quickly. The baseline here is detecting technical issues (counting errors, service availability, etc) but it's also worth monitoring business issues (such as detecting a drop in orders). If a sudden problem appears then you need to ensure you can quickly rollback, hence…
 
 快速應用部署：with many services to manage, you need to be able to quickly deploy them, both to test environments and to production. Usually this will involve a DeploymentPipeline that can execute in no more than a couple of hours. Some manual intervention is alright in the early stages, but you'll be looking to fully automate it soon.
 
-These capabilities imply an important organizational shift - close collaboration between developers and operations: the DevOpsCulture. This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem. In particular any incident management needs to involve the development team and operations, both in fixing the immediate problem and the root-cause analysis to ensure the underlying problems are fixed.
+These capabilities imply an important organizational shift - close collaboration between developers and operations：也就是 DevOps 文化。 This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem. In particular any incident management needs to involve the development team and operations, both in fixing the immediate problem and the root-cause analysis to ensure the underlying problems are fixed.
 
 With this kind of setup in place, you're ready for a first system using a handful of microservices. Deploy this system and use it in production, expect to learn a lot about keeping it healthy and ensuring the devops collaboration is working well. Give yourself time to do this, learn from it, and grow more capability before you ramp up your number of services.
 
