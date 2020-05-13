@@ -28,7 +28,7 @@ eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.
 TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ
 ```    
 
-Chunk 1: **Header**
+第一段：**Header**
 
 ```json
 {
@@ -37,7 +37,7 @@ Chunk 1: **Header**
 }
 ```    
 
-Chunk 2: **Payload**
+第二段：**Payload**
 
 ```json
 {
@@ -47,7 +47,7 @@ Chunk 2: **Payload**
 }
 ```    
 
-Chunk 3: **Signature**
+第三段：**Signature**
 
 ```javascript
 HMACSHA256( base64UrlEncode(header) + "." + base64UrlEncode(payload), KEY )
@@ -71,13 +71,13 @@ If your application does not need to be fully stateless, you can consider using 
 
 # Issues
 
-## None Hashing Algorithm
+## 沒有使用雜湊演算法
 
-### Symptom
+### 症狀
 
 This attack, described [here](https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/) occurs when an attacker alters the token and changes the hashing algorithm to indicate, through, the *none* keyword, that the integrity of the token has already been verified. As explained in the link above *some libraries treated tokens signed with the none algorithm as a valid token with a verified signature*, so an attacker can alter the token claims and token will be trusted by the application.
 
-### How to Prevent
+### 如何避免
 
 First, use a JWT library that is not exposed to this vulnerability.
 
