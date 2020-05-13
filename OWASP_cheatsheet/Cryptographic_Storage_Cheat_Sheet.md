@@ -47,9 +47,9 @@ The use of dedicated secret or key management systems can provide an additional 
 Encryption can be performed on a number of levels in the application stack, such as:
 
 - 在應用層進行加密
-- At the database level (e.g, [SQL Server TDE](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15)
-- At the filesystem level (e.g, BitLocker or LUKS)
-- At the 硬體 level (e.g, encrypted RAID cards 或 SSD）
+- 在資料庫層進行加密（比方說 [SQL Server TDE](https://docs.microsoft.com/en-us/sql/relational-databases/security/encryption/transparent-data-encryption?view=sql-server-ver15)）
+- 在資料系統層進行加密（比方說 BitLocker 或 LUKS）
+- 在硬體層進行加密（比方說加密後的 RAID cards 或 SSD）
 
 Which layer(s) are most appropriate will depend on the threat model. For example, hardware level encryption is effective at protecting against the physical theft of the server, but will provide no protection if an attacker is able to compromise the server remotely.
 
@@ -91,7 +91,7 @@ If random access to the encrypted data is required then [XTS](https://en.wikiped
 
 [ECB](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#ECB) should not be used outside of very specific circumstances.
 
-### Secure Random Number Generation
+### 安全的亂數生成器
 
 Random numbers (or strings) are needed for various security critical functionality, such as generating encryption keys, IVs, session IDs, CSRF tokens or password reset tokens. As such, it is important that these are generated securely, and that it is not possible for an attacker to guess and predict them.
 
@@ -103,7 +103,7 @@ Cryptographically Secure Pseudo-Random Number Generators (CSPRNG) are designed t
 
 The table below shows the recommended algorithms for each language, as well as insecure functions that should not be used.
 
-| Language | Unsafe Functions | Cryptographically Secure Functions |
+| 程式語言 | 不安全的函式 | 密碼學上安全的函式 |
 |----------|------------------|------------------------------------|
 | C        | `random()`, `rand()` | [getrandom(2)](http://man7.org/linux/man-pages/man2/getrandom.2.html) |
 | Java     | `java.util.Random()` | [java.security.SecureRandom](https://docs.oracle.com/javase/8/docs/api/java/security/SecureRandom.html) |
@@ -115,7 +115,7 @@ The table below shows the recommended algorithms for each language, as well as i
 | Go       | `rand` using `math/rand` package, | [crypto.rand](https://golang.org/pkg/crypto/rand/) package |
 | Rust     | `rand::prng::XorShiftRng`, | [rand::prng::chacha::ChaChaRng](https://docs.rs/rand/0.5.0/rand/prng/chacha/struct.ChaChaRng.html) and the rest of the Rust library [CSPRNGs.](https://docs.rs/rand/0.5.0/rand/prng/index.html#cryptographically-secure-pseudo-random-number-generators-csprngs) |
 
-#### UUIDs and GUIDs
+#### UUID 和 GUID
 
 Universally unique identifiers (UUIDs or GUIDs) are sometimes used as a quick way to generate random strings. Although they can provide a reasonable source of randomness, this will depend on the [type or version](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions) of the UUID that is created.
 
