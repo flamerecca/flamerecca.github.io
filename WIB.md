@@ -77,7 +77,7 @@ Tak is a Gabriel benchmark that measures function calling and fixnum arithmetic.
 
 These benchmarks were run on a Sun 3 in 1987 using the standard Sun C compiler using full optimization. The Lisp was not running a non-intrusive garbage collector.
 
-### 1.3 Good Environments
+### 1.3 好的環境
 It is arguable that modern programming environments come from the Lisp and AI tradition. The first bit-mapped terminals (Stanford/MIT), the mouse pointing device (SRI), full-screen text editors (Stanford/MIT), and windowed environments (Xerox PARC) all came from laboratories engaged in AI research. Even today one can argue that the Symbolics programming environment represents the state of the art.
 
 It is also arguable that the following development environment features originated in the Lisp world:
@@ -93,7 +93,7 @@ It is also arguable that the following development environment features originat
 
 Today’s Lisp environments are equal to the very best Lisp machine environments in the 1970s. Windowing, fancy editing, and good debugging are all commonplace. In some Lisp systems, significant attention has been paid to the software lifecycle through the use of source control facilities, automatic cross-referencing, and automatic testing.
 
-### 1.4 Good Integration
+### 1.4 好的整合
 Today Lisp code can coexist with C, Pascal, Fortran, etc. These languages can be invoked from Lisp and in general, these languages can then re-invoke Lisp. Such interfaces allow the programmer to pass Lisp data to foreign code, to pass foreign data to Lisp code, to manipulate foreign data from Lisp code, to manipulate Lisp data from foreign code, to dynamically load foreign programs, and to freely mix foreign and Lisp functions.
 
 The facilities for this functionality are quite extensive and provide a means for mixing several different languages at once.
@@ -196,13 +196,13 @@ Unix 和 C 是終極的電腦病毒。
 
 「壞就是好」最後的一點好處是，因為紐澤西風格的語言和系統並不足以建立一個巨大複雜的系統，所以大的系統必須以常常重複使用元件的角度設計。因此，整合的傳統就出現了。
 
-How does the right thing stack up? There are two basic scenarios: the big complex system scenario and the diamond-like jewel scenario.
+「做對的事」會怎麼做呢？有兩個基本的場景：大的繁複系統，以及鑽石般的珠寶系統。
 
-The big complex system scenario goes like this:
+大的繁複系統如下：
 
 First, the right thing needs to be designed. Then its implementation needs to be designed. Finally it is implemented. Because it is the right thing, it has nearly 100% of desired functionality, and implementation simplicity was never a concern so it takes a long time to implement. It is large and complex. It requires complex tools to use properly. The last 20% takes 80% of the effort, and so the right thing takes a long time to get out, and it only runs satisfactorily on the most sophisticated hardware.
 
-The diamond-like jewel scenario goes like this:
+鑽石般的珠寶系統則如下：
 
 The right thing takes forever to design, but it is quite small at every point along the way. To implement it to run fast is either impossible or beyond the capabilities of most implementors.
 
