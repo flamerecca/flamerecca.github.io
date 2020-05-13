@@ -6,9 +6,9 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/JSON_Web_Token
 
 # 簡介
 
-Many applications use **JSON Web Tokens** (JWT) to allow the client to indicate its identity for further exchange after authentication.
+許多應用程式都會使用 **JSON Web Tokens** (JWT) to allow the client to indicate its identity for further exchange after authentication.
 
-From [JWT.IO](https://jwt.io/introduction):
+[JWT.IO](https://jwt.io/introduction) 上的說明：
 
 > JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
 
@@ -16,9 +16,9 @@ JSON Web Token is used to carry information related to the identity and characte
 
 This token is created during authentication (is provided in case of successful authentication) and is verified by the server before any processing. It is used by an application to allow a client to present a token representing the user's "identity card" to the server and allow the server to verify the validity and integrity of the token in a secure way, all of this in a stateless and portable approach (portable in the way that client and server technologies can be different including also the transport channel even if HTTP is the most often used).
 
-# Token Structure
+# 標記結構
 
-Token structure example taken from [JWT.IO](https://jwt.io/#debugger):
+[JWT.IO](https://jwt.io/#debugger) 上的標記結構範例：
 
 `[Base64(HEADER)].[Base64(PAYLOAD)].[Base64(SIGNATURE)]`
 
@@ -53,7 +53,7 @@ Chunk 3: **Signature**
 HMACSHA256( base64UrlEncode(header) + "." + base64UrlEncode(payload), KEY )
 ```    
 
-# Objective
+# 目標
 
 This cheatsheet provides tips to prevent common security issues when using JSON Web Tokens (JWT) with Java.
 
@@ -63,9 +63,9 @@ You can find the Java project [here](https://github.com/righettod/poc-jwt), it u
 
 In the rest of the article, the term **token** refers to the **JSON Web Tokens** (JWT).
 
-# Consideration about Using JWT
+# 使用 JWT 之前的考量
 
-Even if a JWT token is "easy" to use and allow to expose services (mostly REST style) in a stateless way, it's not the solution that fits for all applications because it comes with some caveats, like for example the question of the storage of the token (tackled in this cheatsheet) and others...
+Even if a JWT token is "easy" to use and allow to expose services (mostly REST style) in a stateless way, it's not the solution that fits for all applications because it comes with some 注意事項, like for example the question of the storage of the token (tackled in this cheatsheet) and others...
 
 If your application does not need to be fully stateless, you can consider using traditional session system provided by all web frameworks and follow the advice from the dedicated [session management cheat sheet](Session_Management_Cheat_Sheet.md). However, for stateless applications, when well implemented, it's a good candidate.
 
