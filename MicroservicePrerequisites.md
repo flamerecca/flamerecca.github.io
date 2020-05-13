@@ -4,7 +4,10 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 ----
 
-As I talk to people about using a microservices architectural style I hear a lot of optimism. Developers enjoy working with smaller units and have expectations of better modularity than with monoliths. But as with any architectural decision there are trade-offs. In particular with microservices there are serious consequences for operations, who now have to handle an ecosystem of small services rather than a single, well-defined monolith. Consequently if you don't have certain baseline competencies, you shouldn't consider using the microservice style.
+當我和其他人談到微服務架構時，我聽到很多樂觀的想法。開發者很享受以較小的單位進行開發，並對比起巨大系統更好的模組化充滿期待。不過和所有架構的選擇一樣，這是有取捨的。
+
+
+In particular with microservices there are serious consequences for operations, who now have to handle an ecosystem of small services rather than a single, well-defined monolith. 因此，如果你不具備某些基本條件，那就不應該考慮使用微服務架構。
 
 
 Rapid provisioning: you should be able to fire up a new server in a matter of hours. Naturally this fits in with CloudComputing, but it's also something that can be done without a full cloud service. To be able to do such rapid provisioning, you'll need a lot of automation - it may not have to be fully automated to start with, but to do serious microservices later it will need to get that way.
