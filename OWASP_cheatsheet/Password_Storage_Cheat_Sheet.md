@@ -181,8 +181,7 @@ work factor 基本上是針對一個密碼，雜湊加密重複運作的次數�
 
 [PBKDF2](https://en.wikipedia.org/wiki/PBKDF2) [NIST](https://pages.nist.gov/800-63-3/sp800-63b.html#memsecretver) 建議的演算法，並且有 FIPS140 認證的實作。如果有要求上述條件的話，應該優先選擇此演算法。另外 .NET 框架預設支援此演算法，所以可以看到很多 ASP.NET 的應用使用該演算法。
 
-
-PBKDF2 can be used with HMACs based on a number of different hashing algorithms. HMAC-SHA-256 有非常多系統支援，並且也是 NIST 建議的作法之一。
+PBKDF2 可以基於多種不同的雜湊演算法和 HMAC 一起搭配使用。HMAC-SHA-256 有非常多系統支援，並且也是 NIST 建議的作法之一。
 
 PBKDF2 的 work factor 代表的是雜湊運算的次數，至少必須設置到 10,000，如果在安全性要求更高的環境上應該設置到 100,000 更為合適。
 
