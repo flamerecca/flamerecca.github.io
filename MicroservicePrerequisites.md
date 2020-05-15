@@ -12,7 +12,7 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 如果突然出現問題，你要能夠馬上退回到沒問題的版本，所以你需要⋯⋯
 
-快速應用部署：with many services to manage, you need to be able to quickly deploy them, both to test environments and to production. Usually this will involve a DeploymentPipeline that can execute in no more than a couple of hours. Some manual intervention is alright in the early stages, but you'll be looking to fully automate it soon.
+快速應用部署：要處理這麼多服務，你必須要能夠在測試環境或者正式環境下都能夠快速部署服務。通常這會牽涉到使用自動部署，並且部署時間不會超過幾個小時。早期需要部分手動操作是可以接受的，但是要能很快的做到全自動部署。
 
 這些能力又需要一個很重要的組織架構轉移，要求開發者和部署者必須有密切的合作關係：也就是 DevOps 文化。 This collaboration is needed to ensure that provisioning and deployment can be done rapidly, it's also important to ensure you can react quickly when your monitoring indicates a problem. In particular any incident management needs to involve the development team and operations, both in fixing the immediate problem and the root-cause analysis to ensure the underlying problems are fixed.
 
