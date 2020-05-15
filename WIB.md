@@ -103,7 +103,7 @@ Lisp has the most powerful, comprehensive, and pervasively object-oriented exten
 
 - 多重繼承
 - Generic functions including multi-methods
-- First-class classes
+- 一級類別
 - First-class generic functions
 - Metaclasses
 - Method combination
@@ -111,9 +111,9 @@ Lisp has the most powerful, comprehensive, and pervasively object-oriented exten
 - Metaobject protocol
 - Integration with Lisp types
 
-看起來 Common Lisp（含 CLOS）will be the first standardized object-oriented programming language.
+看起來 Common Lisp（含 CLOS）會成為第一個標準化的物件導向語言
 
-### 1.6 Delivery
+### 1.6 交付
 It is possible to deliver applications written in Lisp. The currently available tools are good but are not yet ideal. These solutions include from removing unused code and data from application, building up applications using only the code and data needed, and producing .o files from Lisp code.
 
 Delivery tools are commercially provided by Lucid, Franz, and Ibuki.
@@ -129,8 +129,7 @@ Delivery tools are commercially provided by Lucid, Franz, and Ibuki.
 > 
 > ? & The Mysterians
 
-這個快樂的故事現在卻有著陰鬱的插曲。
-This happy story, though, has a sad interlude, an interlude that might be attributed to the failure of AI to soar, but which probably has some other grains of truth that we must heed. 
+這個快樂的故事現在卻有著陰鬱的插曲。這個插曲可能源自 AI 竄起的失敗，不過裡面也可能有一些我們該注意的事實。
 
 Lisp 目前遇到問題的關鍵，源自兩個軟體設計上不同哲學的對峙。這兩個哲學分別是「做對的事」和「壞就是好」。
 
@@ -162,13 +161,11 @@ Common Lisp 和 CLOS 幾乎所有的設計者，包含我，都受到了 MIT／�
 
 他對 Unix 怎麼解決 PC 輸家問題（PC loser-ing problem，或者 Program Counter Lusering problem）很有興趣。PC 輸家問題出現在使用者程式觸發了像是 IO buffers 這類很耗時的系統常駐程式的時候。如果操作過程被中斷了，應該要儲存使用者的程式狀態。
 
-因為系統常駐程式的呼叫通常是一條指令，
-Because the invocation of the system routine is usually a single instruction, the PC of the user program does not adequately capture the state of the process. The system routine must either back out or press forward. 
+因為系統常駐程式的呼叫通常是單條指令，使用者程式的 PC 沒辦法正確的捕捉程序目前的狀態。系統常駐程式要嘛得退出，要嘛得繼續處理下去。
 
-對的處理方式是退出該程式，並
-The right thing is to back out and restore the user program PC to the instruction that invoked the system routine so that resumption of the user program after the interrupt, for example, re-enters the system routine. It is called PC loser-ing because the PC is being coerced into loser mode, where loser is the affectionate name for user at MIT.
+對的處理方式是退出該程式，並重建使用者程式的 PC 到呼叫系統常駐程式之前，以便在中斷後能重新恢復使用者程序，像是可以重新進入常駐程式，這問題被稱為 PC 輸家問題，因為使用者程式的 PC 被強制進入了「輸家」模式。這裡的輸家是 MIT 的人對使用者的暱稱。
 
-MIT 的人 did not see any code that handled this case and asked the New Jersey guy how the problem was handled. The New Jersey guy said that the Unix folks were aware of the problem, but the solution was for the system routine to always finish, but sometimes an error code would be returned that signaled that the system routine had failed to complete its action. A correct user program, then, had to check the error code to determine whether to simply try the system routine again. 
+MIT 的人在 Unix 的程式裡沒看到處理這種狀況的部分，所以問紐澤西人這個問題是怎麼處理的。紐澤西人說 Unix 開發者知道這個問題，不過解決方法是系統常駐程式一定會結束，不過當系統常駐程式無法完成動作時，會回傳一個錯誤碼告知呼叫的程式。正確撰寫的使用者程式，必須要檢查常駐程式回傳的錯誤碼，並且決定是否要重新呼叫系統常駐程式。
 
 MIT 的人不喜歡這種做法，因為這不是對的處理方式。
 
@@ -200,6 +197,7 @@ Unix 和 C 是終極的電腦病毒。
 
 大的繁複系統如下：
 
+首先，要設計出對的事情，然後花時間設計對的實作方式，最後進行實作。因為這是對的事情，
 First, the right thing needs to be designed. Then its implementation needs to be designed. Finally it is implemented. Because it is the right thing, it has nearly 100% of desired functionality, and implementation simplicity was never a concern so it takes a long time to implement. It is large and complex. It requires complex tools to use properly. The last 20% takes 80% of the effort, and so the right thing takes a long time to get out, and it only runs satisfactorily on the most sophisticated hardware.
 
 鑽石般的珠寶系統則如下：
