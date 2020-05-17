@@ -22,4 +22,6 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 如果你現在還不具備上述的能力，為了開始在正式環境上使用微服務，你應該要開始鍛鍊這些能力。這些能力在單一系統上也是應該具備的，雖然不是所有軟體團隊都有這些能力，但是幾乎所有情境下，這些能力對營運都非常重要。
 
-Going beyond a handful of services requires more. You'll need to trace business transactions through multiple services and automate your provisioning and deployment by fully embracing ContinuousDelivery. There's also the shift to product centered teams that needs to be started. You'll need to organize your development environment so developers can easily swap between multiple repositories, libraries, and languages. Some of my contacts are sensing that there could be a useful MaturityModel here that can help organizations as they take on more microservice implementations - we should see more conversation on that in the next few years.
+要處理更多的服務，會需要更多的能力。你會需要追蹤貫穿多個服務的商業交易，需要完全使用自動部署來自動化系統監控以及系統部署的事項。
+
+There's also the shift to product centered teams that needs to be started. You'll need to organize your development environment so developers can easily swap between multiple repositories, libraries, and languages. Some of my contacts are sensing that there could be a useful MaturityModel here that can help organizations as they take on more microservice implementations - we should see more conversation on that in the next few years.
