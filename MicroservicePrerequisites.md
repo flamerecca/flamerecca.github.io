@@ -14,15 +14,12 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 快速應用部署：要處理這麼多服務，你必須要能夠在測試環境或者正式環境下都能夠快速部署服務。通常這會牽涉到使用自動部署，並且部署時間不會超過幾個小時。早期需要部分手動操作是可以接受的，但是要能很快的做到全自動部署。
 
-這些能力又需要一個很重要的組織架構轉移，要求開發者和部署者必須有密切的合作關係：也就是 DevOps 文化。要能夠快速的監控和部署，這種密切的合作是必須的。 
+這些能力又需要一個很重要的組織架構轉移，要求開發者和部署者必須有密切的合作關係：也就是 devOps 文化。要能夠快速的監控和部署，這種密切的合作是必須的。 
 
-另外當你監控到問題時能很快反應的能力也很重要。
+另外當你監控到問題時能很快反應的能力也很重要。特別是處理問題時應該要開發團隊和運營團隊參與，兩個團隊應該要同時處理線上問題以及一起分析根本原因，以確保問題的癥結被修正。
 
-In particular any incident management needs to involve the development team and operations, both in fixing the immediate problem and the root-cause analysis to ensure the underlying problems are fixed.
+準備好所有的東西之後，你可以開始在第一個系統上面使用幾個微服務了。部署並正式使用這些系統時，要有心理準備會學習很多怎麼維持系統運轉以及 devops 團隊合作的經驗。給自己一些時間去處理這些事情，從中學習，並在你提高服務的數量時提升上述的能力。
 
-With this kind of setup in place, you're ready for a first system using a handful of microservices. Deploy this system and use it in production, expect to learn a lot about keeping it healthy and ensuring the devops collaboration is working well. Give yourself time to do this, learn from it, and grow more capability before you ramp up your number of services.
-
-如果你現在還不具備上述的能力
-If you don't have these capabilities now, you should ensure you develop them so they are ready by the time you put a microservice system into production. Indeed these are capabilities that you really ought to have for monolithic systems too. While they aren't universally present across software organizations, there are very few places where they shouldn't be a high priority.
+如果你現在還不具備上述的能力，為了開始在正式環境上使用微服務，你應該要開始鍛鍊這些能力。這些能力在單一系統上也是應該具備的，雖然不是所有軟體團隊都有這些能力，但是幾乎所有情境下，這些能力對營運都非常重要。
 
 Going beyond a handful of services requires more. You'll need to trace business transactions through multiple services and automate your provisioning and deployment by fully embracing ContinuousDelivery. There's also the shift to product centered teams that needs to be started. You'll need to organize your development environment so developers can easily swap between multiple repositories, libraries, and languages. Some of my contacts are sensing that there could be a useful MaturityModel here that can help organizations as they take on more microservice implementations - we should see more conversation on that in the next few years.
