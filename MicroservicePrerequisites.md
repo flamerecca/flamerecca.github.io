@@ -24,4 +24,4 @@ https://martinfowler.com/bliki/MicroservicePrerequisites.html
 
 要處理更多的服務，會需要更多的能力。你會需要追蹤貫穿多個服務的商業交易，需要完全使用自動部署來自動化系統監控以及系統部署的事項。
 
-There's also the shift to product centered teams that needs to be started. You'll need to organize your development environment so developers can easily swap between multiple repositories, libraries, and languages. Some of my contacts are sensing that there could be a useful MaturityModel here that can help organizations as they take on more microservice implementations - we should see more conversation on that in the next few years.
+另外之前以產品為中心的團隊架構也需要開始轉變，你需要規劃好開發環境，讓工程師可以快速的在不同的程式語言，函式庫，以及專案中自由切換。一些和我討論的人感覺在協助組織實作更多微服務時，可能有一個成熟的模型逐漸出現。我們應該在之後幾年會看到相關的討論。
