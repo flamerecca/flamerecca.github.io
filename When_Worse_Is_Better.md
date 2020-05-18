@@ -3,6 +3,7 @@
 https://www.facebook.com/notes/kent-beck/when-worse-is-better-incrementally-escaping-local-maxima/498576730175196/
 
 ----
+在軟體設計的理想模型中，
 
 In the optimization model of software design there are one or more goals in play at any one time--reliability, performance, modifiability, and so on. Changes to the design can move the design on one or more of these dimensions. Each change requires some overhead, and so you would like few changes, but each change also entails risk, so you would like the changes to be as small as possible, but each change creates value, so you would like changes to be as big as possible. Balancing cost, risk, and progress is the art of software design.
 
