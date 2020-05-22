@@ -25,3 +25,12 @@
    same as the effect for a single such request.  Of the request methods
    defined by this specification, PUT, DELETE, and safe request methods
    are idempotent.
+   
+裡面提到，「PUT」和「DELETE」這兩個動作是冪等的，亦即無論操作幾次，應該結果都和操作一次是一樣的。
+
+首先我們看看 「DELETE」，根據語意，DELETE 通常用來刪除資料，一但第一次執行，資料被刪除之後，就無法重複刪除該資料了，所以這個動作確實是冪等的。
+
+再來我們看到「PUT」，一般來說我們會用 PUT 處理「編輯資料」的動作，
+
+## 用 POST 取出資料
+
