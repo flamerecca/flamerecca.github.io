@@ -8,14 +8,13 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 ## 簡介
 
-檔案上傳已經是各種應用裡越來越重要的功能，讓用戶可以上傳他們的照片，履歷，或者是展示自己最近工作內容的影片。
-File upload is becoming a more and more essential part of any application, where the user is able to upload their photo, their CV, or a video showcasing a project they are working on. The application should be able to fend off bogus and malicious files in a way to keep the application and the users safe.
+檔案上傳已經是各種應用裡越來越重要的功能，比方說讓用戶可以上傳他們的照片，履歷，或者是展示自己最近工作內容的影片。要保護應用本身以及使用者的安全，檔案上傳功能要可以防範假檔案或者惡意檔案的攻擊。
 
-In short, the following principles should be followed to reach a secure file upload implementation:
+簡而言之，要實作安全的檔案上傳功能，應該遵守以下原則：
 
-- **Whitelist allowed extensions. Only allow safe and critical extensions for business functionality**
-  - **要做[輸入驗證](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md#validating-free-form-unicode-text) is applied before validating the extensions.**
-- **Validate the file type, don't trust the [Content-Type header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) as it can be spoofed**
+- **以副檔名白名單允許檔案上傳格式。只允許商業邏輯上安全且重要的檔案格式**
+  - **驗證副檔名之前要做[輸入驗證](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md#validating-free-form-unicode-text)**
+- **[Content-Type header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) 是可以偽造的，所以不可信，要針對檔案類別進行驗證**
 - **將檔名改成應用本身產生的名字**
 - **設置檔名長度限制，如果可以的話，限制檔名可以使用的符號**
 - **設置檔案大小限制**
