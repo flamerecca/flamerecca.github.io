@@ -72,5 +72,38 @@ fun tailSum(number: Long, answer: Long = 0): Long {
 
 ## Kotlin 的尾遞迴
 
-如果我們嘗試
+如果我們嘗試運作 `tailSum()`
 
+```kotlin
+fun main(){
+    println(tailSum(999_999_999))
+}
+```
+
+我們一樣會得到 StackOverflowError。這是因為我們沒有告訴 kotlin 編譯器這是一個尾遞迴的函式，所以並沒有太多的優化。
+
+我們在這個函式前面加上一個關鍵字 `tailrec`
+
+```kotlin
+tailrec fun tailSum(number: Long, answer: Long = 0): Long {
+    return when (number) {
+        0L -> answer
+        else -> tailSum(number - 1, answer + number)
+    }
+}
+```
+
+這時候 `println(tailSum(999_999_999))` 就可以跑出我們的答案 `499999999500000000` 了！
+
+如果我們嘗試將一般遞迴的函式前面加上 `tailrec`
+
+```kotlin
+tailrec fun sum(number: Long): Long {
+    return when (number) {
+        1L -> 1L
+        else -> sum(number - 1) + number
+    }
+}
+```
+
+這時 IDE 會跳出提示，告訴我們雖然這個函式被宣告為尾遞迴，但是並沒有找到最後面只有呼叫一個函式的宣告。運行這段程式時也依然會有 StackOverflowError 的問題
