@@ -19,10 +19,10 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 - **設置檔名長度限制，如果可以的話，限制檔名可以使用的符號**
 - **設置檔案大小限制**
 - **只允許有權限的用戶上傳檔案**
-- **Store the files on a different server. If that's not possible, store them outside of the webroot**
+- **將檔案儲存在不同的伺服器上。如果不可能做到，那麼將檔案儲存在運作網頁程式的資料夾以外**
   - **In the case of public access to the files, use a handler that gets mapped to file names inside the application (someid -> file.ext)**
 - **Run the file through an antivirus or a sandbox if available to validate that it doesn't contain malicious data**
-- **Ensure that any libraries used are securely configured and kept up to date**
+- **確認所使用的函式庫是最新且正確設置的**
 - **防範檔案上傳的功能受到 [CSRF](Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md) 攻擊**
 
 ## 內容
