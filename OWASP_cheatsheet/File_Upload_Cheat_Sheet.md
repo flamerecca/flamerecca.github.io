@@ -20,35 +20,35 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 - **設置檔案大小限制**
 - **只允許有權限的用戶上傳檔案**
 - **將檔案儲存在不同的伺服器上。如果不可能做到，那麼將檔案儲存在運作網頁程式的資料夾以外**
-  - **如果檔案有公開存取權限，use a handler that gets mapped to file names inside the application (someid -> file.ext)**
+  - **如果檔案有公開存取權限，透過處理程序將應用程式和檔案名稱進行綁定（someid -> file.ext）**
 - **如果可以的話，用防毒軟體或者沙盒環境來運作檔案，確定裡面沒有包含惡意資料**
 - **確認所使用的函式庫是最新且正確設置的**
 - **防範檔案上傳的功能受到 [CSRF](Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md) 攻擊**
 
 ## 內容
 
-- [File Upload Threats](#file-upload-threats)
-  - [Malicious Files](#malicious-files)
+- [上傳檔案的威脅](#上傳檔案的危險)
+  - [惡意檔案](#惡意檔案)
   - [Public File Retrieval](#public-file-retrieval)
 - [File Upload Protection](#file-upload-protection)
-  - [Extension Validation](#extension-validation)
-     - [Whitelist Extensions](#whitelist-extensions)
-     - [Blacklist Extensions](#blacklist-extensions)
+  - [副檔名驗證](#副檔名驗證)
+     - [副檔名白名單](#副檔名白名單)
+     - [副檔名黑名單](#副檔名黑名單)
   - [Content-Type Validation](#content-type-validation)
   - [Magic Number Validation](#magic-number-validation)
-  - [File Name Sanitization](#file-name-sanitization)
-  - [File Content Validation](#file-content-validation)
+  - [檔名過濾](#檔名過濾)
+  - [檔案內容驗證](#檔案內容驗證)
   - [File Storage Location](#file-storage-location)
-  - [User Permissions](#user-permissions)
-  - [System Permissions](#system-permissions)
-  - [Upload and Download Limits](#upload-and-download-limits)
-- [Java Code Snippets](#java-code-snippets)
+  - [使用者權限](#使用者權限)
+  - [檔案系統權限](#檔案系統權限)
+  - [上傳下載限制](#上傳下載限制)
+- [Java 程式碼節錄](#Java 程式碼節錄)
 
-## File Upload Threats
+## 上傳檔案的危險
 
 In order to assess and know exactly what controls to implement, knowing what you're facing is essential to protect your assets. The following sections will hopefully showcase the risks accompanying the file upload functionality.
 
-### Malicious Files
+### 惡意檔案
 
 The attacker delivers a file for malicious intent, such as:
 
