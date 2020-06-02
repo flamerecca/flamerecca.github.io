@@ -20,8 +20,8 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 - **設置檔案大小限制**
 - **只允許有權限的用戶上傳檔案**
 - **將檔案儲存在不同的伺服器上。如果不可能做到，那麼將檔案儲存在運作網頁程式的資料夾以外**
-  - **In the case of public access to the files, use a handler that gets mapped to file names inside the application (someid -> file.ext)**
-- **Run the file through an antivirus or a sandbox if available to validate that it doesn't contain malicious data**
+  - **如果檔案有公開存取權限，use a handler that gets mapped to file names inside the application (someid -> file.ext)**
+- **如果可以的話，用防毒軟體或者沙盒環境來運作檔案，確定裡面沒有包含惡意資料**
 - **確認所使用的函式庫是最新且正確設置的**
 - **防範檔案上傳的功能受到 [CSRF](Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md) 攻擊**
 
