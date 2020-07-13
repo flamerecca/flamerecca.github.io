@@ -46,7 +46,9 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 ## 上傳檔案的危險
 
-In order to assess and know exactly what controls to implement, knowing what you're facing is essential to protect your assets. The following sections will hopefully showcase the risks accompanying the file upload functionality.
+要保護好系統，知道自己面對什麼樣的問題是非常重要的。這樣才知道具體上要做什麼保護措施。
+
+以下章節展示上傳檔案時隨之而來的風險。
 
 ### 惡意檔案
 
@@ -58,7 +60,7 @@ The attacker delivers a file for malicious intent, such as:
 4. Overwrite an existing file on the system
 5. Client-side active content (XSS, CSRF, etc.) that could endanger other users if the files are publicly retrievable.
 
-### Public File Retrieval
+### 公開取得檔案的風險
 
 If the file uploaded is publicly retrievable, additional threats can be addressed:
 
@@ -84,15 +86,14 @@ Refer to the [Input Validation CS](Input_Validation_Cheat_Sheet.md) to properly 
 
 只允許使用*商業邏輯上極重要的*檔案格式，不允許 without allowing any type of *non-required* extensions. For example if the system requires:
 
-- 上傳圖片, allow one type that is agreed upon to fit the business requirement;
+- 上傳圖片，允許商務需求上一致認同的一種型態
 - 上傳履歷，允許 `docx` 和 `pdf` 格式
 
-Based on the needs of the application, ensure the **傷害最小** and the **風險最低** file types to be used.
+根據應用本身的需求，確保使用**傷害最小**和**風險最低**的檔案型態。
 
 #### 副檔名黑名單
 
 只使用副檔名黑名單是非常危險的，除非沒有其他辦法，不然別這樣做。
-
 
 In order to perform this validation, specifying and identifying which patterns that could should be rejected are used in order to protect the service.
 
