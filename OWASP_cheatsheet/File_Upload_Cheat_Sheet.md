@@ -38,7 +38,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
   - [Magic Number Validation](#magic-number-validation)
   - [檔名過濾](#檔名過濾)
   - [檔案內容驗證](#檔案內容驗證)
-  - [File Storage Location](#file-storage-location)
+  - [檔案儲存位置](#file-storage-location)
   - [使用者權限](#使用者權限)
   - [檔案系統權限](#檔案系統權限)
   - [上傳下載限制](#上傳下載限制)
@@ -54,7 +54,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 攻擊者可能會上傳惡意檔案，比方說：
 
-1. Exploit vulnerabilities in the file parser or processing module (_e.g._ [ImageTrick Exploit](https://imagetragick.com/), [XXE](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_%28XXE%29_Processing))
+1. 針對檔案分析器或處理模組的弱點攻擊（比方說 [ImageTrick Exploit](https://imagetragick.com/) 和 [XXE](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_%28XXE%29_Processing)）
 2. 上傳釣魚檔案（比方說企業簡歷）
 3. 上傳 ZIP bombs 或 XML bombs（也被稱為 billion laughs attack）。或者上傳一個超大的檔案，讓系統容量爆滿，破壞主機的可用性。
 4. 嘗試覆寫系統內已存的檔案
