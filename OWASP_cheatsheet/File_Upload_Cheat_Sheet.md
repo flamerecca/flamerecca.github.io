@@ -52,13 +52,13 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 ### 惡意檔案
 
-The attacker delivers a file for malicious intent, such as:
+攻擊者可能會上傳惡意檔案，比方說：
 
 1. Exploit vulnerabilities in the file parser or processing module (_e.g._ [ImageTrick Exploit](https://imagetragick.com/), [XXE](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_%28XXE%29_Processing))
-2. Use the file for phishing (_e.g._ careers form)
-3. Send ZIP bombs, XML bombs (otherwise known as billion laughs attack), or simply huge files in a way to fill the server storage which hinders and damages the server's availability
-4. Overwrite an existing file on the system
-5. Client-side active content (XSS, CSRF, etc.) that could endanger other users if the files are publicly retrievable.
+2. 上傳釣魚檔案（比方說企業簡歷）
+3. 上傳 ZIP bombs 或 XML bombs（也被稱為 billion laughs attack）。或者上傳一個超大的檔案，讓系統容量爆滿，破壞主機的可用性。
+4. 嘗試覆寫系統內已存的檔案
+5. 攻擊客戶端的檔案（XSS、CSRF⋯⋯等）。that could endanger other users if the files are publicly retrievable.
 
 ### 公開取得檔案的風險
 
@@ -113,11 +113,13 @@ In conjunction with [content-type validation](#content-type-validation), validat
 
 ### 檔名過濾
 
-File-names can endager the system in multiple ways, either by using non acceptable characters, or by using special and restricted filenames. For Windows, refer to the following [MSDN guide](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions). For a wider overview on different filesystems and how they treat files, refer to [Wikipedia's Filename page](https://en.wikipedia.org/wiki/Filename).
+惡意檔名有不少種危害系統的可能，比方說使用系統內不合法的字符，或者使用特殊或者限制的檔名。
+
+For Windows, refer to the following [MSDN guide](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions). For a wider overview on different filesystems and how they treat files, refer to [Wikipedia's Filename page](https://en.wikipedia.org/wiki/Filename).
 
 In order to avoid the above mentioned threat, creating a **random string** as a file-name, such as generating a UUID/GUID, is essential. If the file-name is required by the business needs, proper input validation should be done for client-side (_e.g._ active content that results in XSS and CSRF attacks) and back-end side (_e.g._ special files overwrite or creation) attack vectors. File-name length limits should be taken into consideration based on the system storing the files, as each system has its own file name length limit. If user file-names are required, consider implementing the following:
 
-- Implement a maximum length
+- 設置檔名最長長度
 - Restrict characters to an allowed subset specifically, such as alphanumeric characters, hyphen, spaces, and periods
   - If this is not possible, blacklist dangerous characters that could endanger the framework and system that is storing and using the files.
 
@@ -171,7 +173,9 @@ Files should be stored in a way that ensures:
 
 ### 上傳下載限制
 
-The application should set proper size limits for the upload service in order to protect the file storage capacity. If the system is going to extract the files or process them, the file size limit should be considered after file decompression is conducted and by using secure methods to calculate zip files size. For more on this, see how to [Safely extract files from ZipInputStream](https://wiki.sei.cmu.edu/confluence/display/java/IDS04-J.+Safely+extract+files+from+ZipInputStream), Java's input stream to handle ZIP files.
+為了保護上傳容量，應用應該要為上傳功能設置一個合適的檔案大小上限。
+
+If the system is going to extract the files or process them, the file size limit should be considered after file decompression is conducted and by using secure methods to calculate zip files size. For more on this, see how to [Safely extract files from ZipInputStream](https://wiki.sei.cmu.edu/confluence/display/java/IDS04-J.+Safely+extract+files+from+ZipInputStream), Java's input stream to handle ZIP files.
 
 The application should set proper request limits as well for the download service if available to protect the server from DoS attacks.
 
