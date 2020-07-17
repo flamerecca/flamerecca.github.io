@@ -58,13 +58,13 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 2. 上傳釣魚檔案（比方說企業簡歷）
 3. 上傳 ZIP bombs 或 XML bombs（也被稱為 billion laughs attack）。或者上傳一個超大的檔案，讓系統容量爆滿，破壞主機的可用性。
 4. 嘗試覆寫系統內已存的檔案
-5. 攻擊客戶端的檔案（XSS、CSRF⋯⋯等）。that could endanger other users if the files are publicly retrievable.
+5. 攻擊客戶端的檔案（XSS、CSRF⋯⋯等）。當其他用戶存取到這些檔案時，會對用戶產生危害。
 
 ### 公開取得檔案的風險
 
-If the file uploaded is publicly retrievable, additional threats can be addressed:
+如果上傳的檔案之後會公開，那麼會有其他的風險：
 
-1. Public disclosure of other files
+1. 導致其他文件公開泄露
 2. Initiate a DoS attack by requesting lots of files. Requests are small, yet responses are much larger
 3. File content that could be deemed as illegal, offensive, or dangerous (_e.g._ personal data, copyrighted data, etc.) which will make you a host for such malicious files.
 
@@ -180,5 +180,7 @@ If the system is going to extract the files or process them, the file size limit
 The application should set proper request limits as well for the download service if available to protect the server from DoS attacks.
 
 ## Java 程式碼節錄
+
+Dominique 所撰寫的 [Document Upload Protection](https://github.com/righettod/document-upload-protection) 
 
 [Document Upload Protection](https://github.com/righettod/document-upload-protection) repository written by Dominique for certain document types in Java.
