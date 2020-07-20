@@ -210,7 +210,7 @@ WndProc(HWND hW, UINT wMsg, WPARAM wParam, LPARAM lParam)
 
 `w` 代表這些變數是 WORD，但是他們其實都是 LONG。這在搬移到 Win64 時會更看出其價值。全部的參數都是 64 bits，但是 `w` 和 `l` 的前綴會永遠留下。
 
-#### Reduce, Reuse, Recycle
+#### 減量，重用，回收
 
 If you have to define a structure to hold data for callbacks, always call the structure `PRIVDATA`. Every module can define its own `PRIVDATA`. In VC++, this has the advantage of confusing the debugger so that if you have a `PRIVDATA` variable and try to expand it in the watch window, it doesn't know which `PRIVDATA` you mean, so it just picks one.
 
@@ -313,10 +313,13 @@ _z // local_var OK
 
 #### 如何隱藏被禁止的全域變數
 
-因為全域變數是「邪惡的」，所以我們改用一個
-Since global variables are "evil", define a structure to hold all the things you'd put in globals. Call it something clever like `EverythingYoullEverNeed`. Make all functions take a pointer to this structure (call it `handle` to confuse things more). This gives the impression that you're not using global variables, you're accessing everything through a "handle". Then declare one statically so that all the code is using the same copy anyway.
+因為全域變數是「邪惡的」，所以我們改用一個結構來裝所有放在全域變數裡面的東西。我們可以聰明的叫他「`EverythingYoullEverNeed`」。
 
-#### Hide Instances With Synonyms
+Make all functions take a pointer to this structure (call it `handle` to confuse things more). This gives the impression that you're not using global variables, you're accessing everything through a "handle". Then declare one statically so that all the code is using the same copy anyway.
+
+#### 用同義詞隱藏變數
+
+對維護的工程師來說，
 
 Maintenance programmers, in order to see if they'll be any cascading effects to a change they make, do a global search for the variables named. This can be defeated by this simple expedient of having synonyms, such as
 
@@ -391,7 +394,7 @@ Compiler directives were designed with the express purpose of making the same co
 
 > _Incorrect documentation is often worse than no documentation._ - Bertrand Meyer
 
-Since the computer ignores comments and documentation, you can lie outrageously and do everything in your power to befuddle the poor maintenance programmer.
+因為電腦會忽略註解和文件內容，你可以大膽的在裡面胡說八道，盡你所能的去混淆可憐的維護工程師。
 
 #### 在註解裡說謊
 
@@ -418,7 +421,7 @@ Consider function documentation prototypes used to allow automated documentation
 實作一個非常複雜的演算法時，參照傳統軟體開發的原則，先想出完整設計過後，再開始寫程式。針對該演算法的每一步驟寫出非常詳細的文件，文件詳細程度越高越好。
 
 文件要將整個演算法拆解成詳細的結構化步驟，每個段落解釋一個步驟內的實作方式。拆分的詳細程度至少要達到五層標題。
-In fact, the design doc should break the algorithm down into a hierarchy of structured steps, described in a hierarchy of auto-numbered individual paragraphs in the document. Use headings at least 5 deep. Make sure that when you are done, you have broken the structure down so completely that there are over 500 such auto-numbered paragraphs. For example, one paragraph might be(this is a real example)
+In fact, the design doc should break the algorithm down into a hierarchy of structured steps, described in a hierarchy of auto-numbered individual paragraphs in the document. Use headings at least 5 deep. Make sure that when you are done, you have broken the structure down so completely that there are over 500 such auto-numbered paragraphs. For example, one paragraph might be（以下為真實範例）
 
 1.2.4.6.3.13 - 選擇的緩解方式
 
@@ -471,7 +474,7 @@ Always refuse to accept advances in the development environment arena, especiall
 
 #### Monty Python 式註解
 
-在 makeSnafucated() 函式前面，加上註解 `/* 做 snafucated */`。**絕不**定義 _snafucated_ 到底是什麼意思。Only a fool does not already know, with complete certainty, what _snafucated_ means. For classic examples of this technique, consult the Sun AWT JavaDOC.
+在 makeSnafucated() 函式前面，加上註解 `/* 做 snafucated */`。**絕不**定義 _snafucated_ 到底是什麼意思。只有傻子才會沒辦法百分之百確定 _snafucated_ 的意思。要看經典的例子的話，可以看 Sun AWT 的 JavaDOC。
 
 ## 程式設計
 
