@@ -6,7 +6,7 @@ For instance, 1 + 5 + 9 = 15.
 1 + 5 = 6.
 
 So the answer is 6.
-
+```
 class Solution(object):
   # Fill this in.
 
@@ -14,3 +14,4 @@ print(Solution().addDigits(159))
 # 1 + 5 + 9 = 15
 # 1 + 5 = 6
 # 6
+```
