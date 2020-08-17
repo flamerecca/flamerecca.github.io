@@ -11,9 +11,10 @@ Explanation:
 There are 3 publications with 3 or more citations, hence the h-index is 3.
 
 Here's a starting point:
-
+```python
 def hIndex(publications):
   # Fill this in.
 
 print hIndex([5, 3, 3, 1, 0])
 # 3
+```
