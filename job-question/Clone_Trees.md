@@ -9,6 +9,7 @@ For this problem, you can assume that:
 
 Can you solve this both recursively and iteratively?
 
+```python
 class Node:
   def __init__(self, val):
     self.val = val
@@ -37,3 +38,4 @@ b.right.right = Node(5)
 
 print(findNode(a, b, a.right.left))
 # 4
+```
