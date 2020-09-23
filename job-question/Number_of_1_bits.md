@@ -9,5 +9,5 @@ def one_bits(num):
 
 print(one_bits(23))
 # 4
-# 23 = 0b1011
+# 23 = 011011
 ```
