@@ -1,6 +1,6 @@
-用  Kotlin  解 [Daily Coding Problem](https://www.dailycodingproblem.com/).
+用  Kotlin  解 [Daily Coding Problem](https://www.dailycodingproblem.com/)  的全部問題列表。
 
-You can subscribe [here](https://www.dailycodingproblem.com/#subscribe).
+可以 [在此訂閱](https://www.dailycodingproblem.com/#subscribe)
 
 ## Problem 1
 
