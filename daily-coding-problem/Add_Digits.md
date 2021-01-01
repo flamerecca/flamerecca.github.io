@@ -37,7 +37,7 @@ fun addDigits(num: Int): Int {
 }
 ```
 
-[參考解答](./kotlin/AddDigits.kt)
+[參考解答](./kotlin/AddDigits)
 
 ##  參考資料
 
