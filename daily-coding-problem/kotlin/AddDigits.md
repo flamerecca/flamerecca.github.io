@@ -1,3 +1,4 @@
+```kotlin
 fun addDigits(num: Int): Int {
     if(num == 0){
         return 0
@@ -7,3 +8,4 @@ fun addDigits(num: Int): Int {
     }
     return num % 9
 }
+```
