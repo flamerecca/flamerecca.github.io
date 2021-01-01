@@ -7,7 +7,7 @@
 
 ## Kotlin 已完成題目列表
 
-* [001](daily-coding-problem/001) 
+* [001](/001) 
   * Two Sum
-* [010](daily-coding-problem/010) 
+* [010](/010) 
   * calling a function with delay
