@@ -11,6 +11,9 @@
   * Two Sum
 * [010](/daily-coding-problem/010) 
   * calling a function with delay
+* [027](/daily-coding-problem/027) 
+  * Valid Parentheses
+
 
 ##  其他面試題目列表
 
