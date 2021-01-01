@@ -13,7 +13,8 @@
   * calling a function with delay
 * [027](/daily-coding-problem/027) 
   * Valid Parentheses
-
+* [045](/daily-coding-problem/045) 
+  * implement rand7() using rand5()
 
 ##  其他面試題目列表
 
