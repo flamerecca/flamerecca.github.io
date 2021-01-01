@@ -38,3 +38,7 @@ fun addDigits(num: Int): Int {
 ```
 
 [參考解答](./kotlin/AddDigits.kt)
+
+##  參考資料
+
+https://leetcode.com/problems/add-digits/
