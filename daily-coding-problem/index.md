@@ -9,3 +9,5 @@
 
 * [001](daily-coding-problem/001) 
   * Two Sum
+* [010](daily-coding-problem/010) 
+  * calling a function with delay
