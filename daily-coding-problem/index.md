@@ -15,6 +15,8 @@
   * Valid Parentheses
 * [045](/daily-coding-problem/045) 
   * implement rand7() using rand5()
+* [066](/daily-coding-problem/066) 
+  * Make a fair coin from a biased coin
 
 ##  其他面試題目列表
 
