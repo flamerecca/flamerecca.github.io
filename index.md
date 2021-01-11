@@ -14,8 +14,8 @@
 * [軟體測試反模式-引言](anti-pattern/intro.md)
 
 ## Daily Coding Problem
-* [index](daily-coding-problem/)
-* [all](daily-coding-problem/all)
+* [index](daily-coding-problem/index.md)
+* [all](daily-coding-problem/all.md)
 
 ## 演講經歷
 * [PHP 也有 Day #42 - Laravel Dusk 使用及研究](https://community.laravel-dojo.com/phptheday/2019-01-15)
