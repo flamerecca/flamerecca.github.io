@@ -17,6 +17,8 @@
   * implement rand7() using rand5()
 * [066](/daily-coding-problem/066) 
   * Make a fair coin from a biased coin
+* [129](/daily-coding-problem/129) 
+  * sqrt(x)
 
 ##  其他面試題目列表
 
