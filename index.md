@@ -29,6 +29,9 @@
 * [JCConf Taiwan 2020 Kotlin coroutine 簡介](https://jcconf.tw/2020/)
 * [PHP 也有 Day #59 Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
 
+## 舉辦活動
+* [Kotlin Meetup #1](https://www.facebook.com/kotlintwn/posts/4502327673127347/)
+
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
 * [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
