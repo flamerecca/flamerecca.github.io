@@ -28,6 +28,7 @@
 * [COSCUP 2020 閱讀 voyager 原始碼](https://www.youtube.com/watch?v=5GmoWRwvokY&vl=en&ab_channel=COSCUP%E9%96%8B%E6%BA%90%E4%BA%BA%E5%B9%B4%E6%9C%83)
 * [JCConf Taiwan 2020 Kotlin coroutine 簡介](https://jcconf.tw/2020/)
 * [PHP 也有 Day #59 Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
+* [Kotlin Meetup #2](https://www.facebook.com/events/793159571303586/)
 
 ## 舉辦活動
 * [Kotlin Meetup #1](https://www.facebook.com/kotlintwn/posts/4502327673127347/)
