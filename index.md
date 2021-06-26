@@ -29,6 +29,10 @@
 * [JCConf Taiwan 2020 Kotlin coroutine 簡介](https://jcconf.tw/2020/)
 * [PHP 也有 Day #59 Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
 * [Kotlin Meetup #2](https://www.facebook.com/events/793159571303586/)
+* [Laravel新手村工作坊（一）](https://events.laravel-dojo.com/events/18/)
+* [Laravel新手村工作坊（二）](https://events.laravel-dojo.com/events/20/)
+* [Laravel新手村工作坊（三）](https://events.laravel-dojo.com/events/21/)
+* [Laravel新手村工作坊（四）](https://events.laravel-dojo.com/events/25/)
 
 ## 舉辦活動
 * [Kotlin Meetup #1](https://www.facebook.com/kotlintwn/posts/4502327673127347/)
