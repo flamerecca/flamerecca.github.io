@@ -21,6 +21,10 @@
 - Final class constants
 - Make reflection setAccessible() no-op
 
+以下根據作者自己的興趣，逐一介紹：
+
+### Enumerations
+
 ### 參考資料
 
 - <https://wiki.php.net/rfc#php_81>
