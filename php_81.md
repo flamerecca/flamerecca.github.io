@@ -1,4 +1,6 @@
-## PHP 8.1 
+## PHP 8.1 調整了什麼
+
+根據官網的內容，PHP 8.1 新增了：
 
 - Pure intersection types 
 - Add IntlDatePatternGenerator
