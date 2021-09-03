@@ -29,8 +29,8 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 - [上傳檔案的威脅](#上傳檔案的危險)
   - [惡意檔案](#惡意檔案)
-  - [Public File Retrieval](#public-file-retrieval)
-- [File Upload Protection](#file-upload-protection)
+  - [公開取得檔案的風險](#公開取得檔案的風險)
+- [上傳檔案防護](#上傳檔案防護)
   - [副檔名驗證](#副檔名驗證)
      - [副檔名白名單](#副檔名白名單)
      - [副檔名黑名單](#副檔名黑名單)
@@ -68,7 +68,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 2. Initiate a DoS attack by requesting lots of files. Requests are small, yet responses are much larger
 3. File content that could be deemed as illegal, offensive, or dangerous (_e.g._ personal data, copyrighted data, etc.) which will make you a host for such malicious files.
 
-## File Upload Protection
+## 上傳檔案防護
 
 There is no silver bullet in validating user content. Implementing a defense in depth approach is key to make the upload process harder and more locked down to the needs and requirements for the service. Implementing multiple techniques is key and recommended, as no one technique is enough to secure the service.
 
