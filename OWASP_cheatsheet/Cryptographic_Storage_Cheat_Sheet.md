@@ -53,15 +53,15 @@ Encryption can be performed on a number of levels in the application stack, such
 
 Which layer(s) are most appropriate will depend on the threat model. For example, hardware level encryption is effective at protecting against the physical theft of the server, but will provide no protection if an attacker is able to compromise the server remotely.
 
-### Minimise the Storage of Sensitive Information
+### 將敏感資料的儲存比例降到最低
 
-The best way to protect sensitive information is to not store it in the first place. Although this applies to all kinds of information, it is most often applicable to credit card details, as they are highly desirable for attackers, and PCI DSS has such stringent requirements for how they must be stored. Wherever possible, the storage of sensitive information should be avoided.
+保護敏感資料的最好方法，是一開始就不儲存任何敏感資料。這個說法適用任何的敏感資料，不過一般來說，最適用的狀況是針對信用卡詳細資料，因為攻擊者非常想要這類資料，並且支付卡產業資料安全標準（PCI DSS）針對這類資料的儲存規範非常嚴格。如果可能的話，一開始就避免儲存任何的敏感資料。
 
 ## 演算法
 
 For symmetric encryption **AES** with a key that's at least **128 bits** (ideally **256 bits**) and a secure [mode](#cipher-modes) should be used as the preferred algorithm.
 
-For asymmetric encryption, use elliptical curve cryptography (ECC) with a secure curve such as **Curve25519** as a preferred algorithm. If ECC is not available and  **RSA** must be used, then ensure that the key is at least **2048 bits**.
+For asymmetric encryption, use 橢圓曲線加密（ECC） with a secure curve such as **Curve25519** as a preferred algorithm. If ECC is not available and  **RSA** must be used, then ensure that the key is at least **2048 bits**.
 
 Many other symmetric and asymmetric algorithms are available which have their own pros and cons, and they may be better or worse than AES or Curve25519 in specific use cases. When considering these, a number of factors should be taken into account, including:
 
