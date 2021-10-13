@@ -1,0 +1,7 @@
+User-agent: Googlebot
+Disallow: /*.xls$
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gitpage.reccachao.net/sitemap.xml
