@@ -47,3 +47,27 @@
 看網路教學之後卡了一陣子
 
 結果只是去 setting 設定一下就好了⋯⋯
+
+## Sitemap
+
+透過 `jekyll-seo-tag` 套件建立
+
+預設位於 <https://gitpage.reccachao.net/sitemap.xml>
+
+## robots.txt
+
+對 SEO 非常重要
+
+之前設置錯誤導致 Google 一直無法對網頁建立索引
+
+目前設置很陽春但是堪用
+
+```text
+User-agent: Googlebot
+Disallow: /*.xls$
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gitpage.reccachao.net/sitemap.xml
+```
