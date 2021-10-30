@@ -1,4 +1,4 @@
-# 背單字
+# 背單字 
 專案網址：[https://github.com/flamerecca/BeiDanTz](https://github.com/flamerecca/BeiDanTz)
 
 ## 緣起
@@ -19,9 +19,9 @@
 * 根據回答問題的情況，調整複習時間的長短。越簡單的單字往後複習的間隔天數越長。
 
 
-
 ## 測試
-之前的專案都沒影處理過測試，趁著這個 side project 處理
+
+之前的專案都沒時間處理過自動化測試，趁著這個 side project 處理
 
 在前輩的建議下使用 circleci 做自動整合的部分
 
