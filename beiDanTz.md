@@ -1,4 +1,4 @@
-# 背單字 
+# 背單字 1.0
 專案網址：[https://github.com/flamerecca/BeiDanTz](https://github.com/flamerecca/BeiDanTz)
 
 ## 緣起
