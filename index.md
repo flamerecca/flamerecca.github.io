@@ -31,13 +31,18 @@ recca 的首頁
 * [JCConf Taiwan 2020 Kotlin coroutine 簡介](https://jcconf.tw/2020/)
 * [PHP 也有 Day #59 Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
 * [Kotlin Meetup #2](https://www.facebook.com/events/793159571303586/)
-* [Laravel新手村工作坊（一）](https://events.laravel-dojo.com/events/18/)
-* [Laravel新手村工作坊（二）](https://events.laravel-dojo.com/events/20/)
-* [Laravel新手村工作坊（三）](https://events.laravel-dojo.com/events/21/)
-* [Laravel新手村工作坊（四）](https://events.laravel-dojo.com/events/25/)
+* [Laravel 新手村工作坊（一）](https://events.laravel-dojo.com/events/18/)
+* [Laravel 新手村工作坊（二）](https://events.laravel-dojo.com/events/20/)
+* [Laravel 新手村工作坊（三）](https://events.laravel-dojo.com/events/21/)
+* [Laravel 新手村工作坊（四）](https://events.laravel-dojo.com/events/25/)
+* [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
 
 ## 舉辦活動
-* [Kotlin Meetup #1](https://www.facebook.com/kotlintwn/posts/4502327673127347/)
+* 2021-11-06 [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
+* 2021-10-19 [2021 Kotlin Meetup #4 Online](https://www.facebook.com/events/4392745437499911/)
+* 2021-08-31 [2021 Kotlin Meetup #3 Online](https://www.facebook.com/events/1264189300692421/)
+* 2021-04-20 [2021 Kotlin Meetup #2 @ Dcard](https://www.facebook.com/events/793159571303586/)
+* 2021-03-23 [2021 Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
 
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
