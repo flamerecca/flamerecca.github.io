@@ -5,6 +5,8 @@ description: 寫一些技術文件，筆記，雜七雜八
 enforce_ssl: gitpage.reccachao.net
 theme: jekyll-theme-hacker
 google_analytics: UA-78953126-2
+logo: /logo.png
+permalink: pretty
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
