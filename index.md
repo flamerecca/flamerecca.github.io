@@ -46,7 +46,7 @@ recca chao 的首頁
 
 ## 戰略夥伴
 
-* [狡兔 Notion 窟](https://rabbit-church.notion.site/)
+* [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
 
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
