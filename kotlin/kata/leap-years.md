@@ -1,4 +1,4 @@
-## Leap Years
+## Kotlin Kata - Leap Years
 
 寫程式計算某個西元年份是否是閏年
 
