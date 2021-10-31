@@ -44,6 +44,10 @@ recca chao 的首頁
 * 2021-04-20 [2021 Kotlin Meetup #2 @ Dcard](https://www.facebook.com/events/793159571303586/)
 * 2021-03-23 [2021 Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
 
+## 戰略夥伴
+
+* [狡兔 Notion 窟](https://rabbit-church.notion.site/)
+
 ## 雜七雜八
 * [php self 和 static 的不同](php-static.md)
 * [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
