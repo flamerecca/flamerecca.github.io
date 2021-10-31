@@ -7,7 +7,7 @@
 - 如果該年份可以被 4 整除，比方說西元 2004 年，是閏年
 
 
-```
+```kotlin
 fun isLeapYear(year: Int) : Boolean {
     TODO()
 }
