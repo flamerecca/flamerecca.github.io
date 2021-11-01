@@ -1,6 +1,6 @@
 ## 首頁 
 
-recca chao 的首頁
+Recca Chao 的首頁
 
 * [gitpage 架設](gitpage-howto.md)
 * [vim for php 筆記](php-vim.md)
