@@ -4,3 +4,7 @@
 
 ## 題目列表
 - [Leap Year](leap-years.md)
+
+-----
+
+回到 [Kata 簡介]()
