@@ -7,4 +7,4 @@
 
 -----
 
-回到 [Kata 簡介]()
+回到 [Kata 簡介](/kata/index.md)
