@@ -4,3 +4,7 @@
 
 ## 題目列表
 - [Vowel Count](vowel-count.md)
+
+------
+
+回到 [Kata 列表](/kata/index.md)
