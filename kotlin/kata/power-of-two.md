@@ -5,9 +5,8 @@ An integer n is a power of two, if there exists an integer x such that n == 2x.
 
 ```kotlin
 class Solution {
-
-    function isPowerOfTwo($n) {
-        TODO()
+    fun isPowerOfTwo(n: Int): Boolean {
+        
     }
 }
 ```
@@ -22,15 +21,11 @@ class Solution {
 
 ```kotlin
 class Solution {
-
-    function isPowerOfTwo($n) {
-        if($n == 0 ){
-            return false;
+    fun isPowerOfTwo(n: Int): Boolean {
+        if(n <= 0) {
+            return false
         }
-        if(($n & ($n -1)) == 0){
-            return true;
-        }
-        return false;
+        return (n and (n-1)) == 0
     }
 }
 ```
