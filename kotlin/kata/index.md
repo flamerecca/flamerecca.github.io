@@ -10,4 +10,4 @@
 
 -----
 
-回到 [Kata 簡介](/kata/index.md)
+回到 [Kata 簡介](../kata/index.md)
