@@ -7,4 +7,4 @@
 
 ------
 
-回到 [Kata 列表](/kata/index.md)
+回到 [Kata 列表](../../kata/index.md)
