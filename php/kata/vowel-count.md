@@ -26,4 +26,4 @@ function getCount($str) {
 }
 ```
 -----
-回到 [PHP Kata 列表]()
+回到 [PHP Kata 列表](index.md)
