@@ -34,3 +34,7 @@ class Solution {
     }
 }
 ```
+
+------
+
+回到 [Kotlin Kata 列表](index.md)
