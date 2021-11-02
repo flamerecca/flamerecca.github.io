@@ -6,7 +6,6 @@
 - [Leap Year](leap-years.md)
 - [Power Of 2](power-of-two.md)
 - [Power Of 3](power-of-three.md)
-- [Power Of 4](power-of-four.md)
 
 -----
 
