@@ -13,7 +13,7 @@ isAlt("banana")
 
 Arguments consist of only lowercase letters.
 
-----
+## 解答
 
 用 Kotlin 的 regular expression 來處理
 
