@@ -26,3 +26,7 @@ fun isLeapYear(year: Int) : Boolean {
     } 
 }
 ```
+
+------
+
+回到 [Kotlin Kata 列表](index.md)
