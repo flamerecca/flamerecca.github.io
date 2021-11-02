@@ -48,5 +48,5 @@ Kata 這個字源自日本空手道的「形」，類似中國拳法的「套路
 
 所撰寫的 Kata 練習內容
 
-- [PHP Kata](php/kata/index.md)
+- [PHP Kata](../php/kata/index.md)
 - [Kotlin Kata](../kotlin/kata/index.md)
