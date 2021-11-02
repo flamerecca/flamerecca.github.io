@@ -1,3 +1,5 @@
+## Kotlin Kata - Power of Three
+
 Given an integer `n`, return _`true`_ if it is a power of three. Otherwise, return _`false`_.
 
 An integer `n` is a power of three, if there exists an integer `x` such that `n == 3x`.
