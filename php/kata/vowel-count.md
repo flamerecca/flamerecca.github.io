@@ -25,3 +25,5 @@ function getCount($str) {
   return preg_match_all('/[aeiou]/i',$str);
 }
 ```
+-----
+回到 [PHP Kata 列表]()
