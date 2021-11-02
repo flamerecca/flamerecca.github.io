@@ -4,6 +4,7 @@
 
 ## 題目列表
 - [Leap Year](leap-years.md)
+- [Are We Alternate](are-we-alternate.md)
 - [Power Of 2](power-of-two.md)
 - [Power Of 3](power-of-three.md)
 
