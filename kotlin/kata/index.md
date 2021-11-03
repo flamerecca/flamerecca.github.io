@@ -7,7 +7,8 @@
 - [Are We Alternate](are-we-alternate.md)
 - [Power Of 2](power-of-two.md)
 - [Power Of 3](power-of-three.md)
-
+- [Power Of 4](power-of-four.md)
+- [Fizz Buzz](fizz-buzz.md)
 -----
 
 回到 [Kata 簡介](../../kata/index.md)
