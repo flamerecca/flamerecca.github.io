@@ -20,8 +20,8 @@ Recca Chao 的首頁
 * [Kata 簡介](kata/index.md)
 
 ## Daily Coding Problem
-* [index](daily-coding-problem/index.md)
-* [all](daily-coding-problem/all.md)
+* [Daily Coding Problem 簡介](daily-coding-problem/index.md)
+* [Daily Coding Problem 題目列表](daily-coding-problem/all.md)
 
 ## 演講經歷
 * [PHP 也有 Day #42 - Laravel Dusk 使用及研究](https://community.laravel-dojo.com/phptheday/2019-01-15)
