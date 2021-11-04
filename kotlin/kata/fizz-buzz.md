@@ -37,23 +37,23 @@ class Solution {
 ```kotlin
 class Solution {
     fun fizzBuzz(n: Int): List<String> {
-		val list = mutableListOf<String>()  
-		for (i in 1..n) {  
-			if(i % 15 == 0) {  
-				list.add("FizzBuzz")
-				continue
-			}  
-			if(i % 5 == 0) {  
-				list.add("Buzz")
-				continue
-			}  
-			if(i % 3 == 0) {  
-				list.add("Fizz")
-				continue
-			}  
-			list.add(i.toString())  
-		}  
-		return list
+        val list = mutableListOf<String>()
+        for (i in 1..n) {
+            if(i % 15 == 0) {
+                list.add("FizzBuzz")
+                continue
+            }
+            if(i % 5 == 0) {
+                list.add("Buzz")
+                continue
+            }
+            if(i % 3 == 0) {
+                list.add("Fizz")
+                continue
+            }
+            list.add(i.toString())
+        }
+        return list
     }
 }
 ```
@@ -63,13 +63,13 @@ class Solution {
 ```kotlin
 class Solution {
     fun fizzBuzz(n: Int) = (1..n).map {
-	    when {
+        when {
             it % 15 == 0 -> "FizzBuzz"
             it % 5 == 0 -> "Buzz"
             it % 3 == 0 -> "Fizz"
             else -> it.toString()
         }
-	}
+    }
 }
 ```
 
