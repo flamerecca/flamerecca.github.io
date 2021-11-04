@@ -32,7 +32,7 @@ class Solution {
 
 ## 解答
 
-這題題目很單純
+這題題目的邏輯很單純
 
 ```kotlin
 class Solution {
@@ -40,20 +40,36 @@ class Solution {
 		val list = mutableListOf<String>()  
 		for (i in 1..n) {  
 			if(i % 15 == 0) {  
-				list.add("FizzBuzz")  
+				list.add("FizzBuzz")
+				continue
 			}  
-			else if(i % 5 == 0) {  
-				list.add("Buzz")  
+			if(i % 5 == 0) {  
+				list.add("Buzz")
+				continue
 			}  
-			else if(i % 3 == 0) {  
-				list.add("Fizz")  
+			if(i % 3 == 0) {  
+				list.add("Fizz")
+				continue
 			}  
-			else {  
-				list.add(i.toString())  
-			}  
+			list.add(i.toString())  
 		}  
 		return list
     }
+}
+```
+
+利用 Kotlin 的 `map` 和 `when` 可以寫得更加簡潔
+
+```kotlin
+class Solution {
+    fun fizzBuzz(n: Int) = (1..n).map {
+	    when {
+            it % 15 == 0 -> "FizzBuzz"
+            it % 5 == 0 -> "Buzz"
+            it % 3 == 0 -> "Fizz"
+            else -> it.toString()
+        }
+	}
 }
 ```
 
