@@ -15,6 +15,10 @@ Recca Chao 的首頁
 ## 測試
 * [軟體測試反模式-引言](anti-pattern/intro.md)
 
+## coding kata
+
+* [Kata 簡介](kata/index.md)
+
 ## Daily Coding Problem
 * [index](daily-coding-problem/index.md)
 * [all](daily-coding-problem/all.md)
