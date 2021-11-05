@@ -2,22 +2,18 @@
 
 Recca Chao 的首頁
 
-* [gitpage 架設](gitpage-howto.md)
-* [vim for php 筆記](php-vim.md)
-* [bash 小技巧筆記](bash-tips.md)
-* [vim 編輯 markdown 表格](vim-table.md)
+## Coding Kata
+* [Kata 簡介](kata/index.md)
+* [Kotlin Kata 列表](kotlin/kata/index.md)
+* [PHP Kata 列表](php/kata/index.md)
+
+## 自動化測試
+* [軟體測試反模式-引言](anti-pattern/intro.md)
 
 ## 專案紀錄
 * [flamerecca vim](flamerecca-vim.md)
 * [背單字](beiDanTz.md)
 * [circle ci 環境設置](circleci.md)
-
-## 測試
-* [軟體測試反模式-引言](anti-pattern/intro.md)
-
-## coding kata
-
-* [Kata 簡介](kata/index.md)
 
 ## Daily Coding Problem
 * [Daily Coding Problem 簡介](daily-coding-problem/index.md)
@@ -49,7 +45,6 @@ Recca Chao 的首頁
 * 2021-03-23 [2021 Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
 
 ## 戰略夥伴
-
 * [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
 
 ## 雜七雜八
@@ -57,9 +52,13 @@ Recca Chao 的首頁
 * [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
 * [RFC 1149 - 使用鳥類載體傳遞網路協定數據包（Datagrams）之標準](RFC-1149.md)
 * [如何寫出令人混淆的程式碼](unmaintainable-code.md)
+* [gitpage 架設](gitpage-howto.md)
+* [vim for php 筆記](php-vim.md)
+* [bash 小技巧筆記](bash-tips.md)
+* [vim 編輯 markdown 表格](vim-table.md)
 * [Kotlin Academy](http://kotlin.academy/)
 
-## 聯繫我
+## 聯繫作者
 
 有任何疑問或討論，歡迎聯繫。
 
