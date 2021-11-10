@@ -15,6 +15,9 @@ class Solution {
 
 ## 解答
 
+<details>
+  <summary>點擊展開解答</summary>
+
 由於題目剛好是 2 為底
 
 我們可以利用位元運算的方式簡化題目
@@ -31,6 +34,7 @@ class Solution {
     }
 }
 ```
+</details>
 
 ------
 
