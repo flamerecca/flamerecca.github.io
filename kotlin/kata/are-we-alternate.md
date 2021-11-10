@@ -14,7 +14,9 @@ isAlt("banana")
 Arguments consist of only lowercase letters.
 
 ## 解答
-
+<details>
+  <summary>點擊展開解答</summary>
+  
 用 Kotlin 的 regular expression 來處理
 
 ```php
@@ -22,6 +24,8 @@ fun isAlt(s: String): Boolean {
     return !Regex("""[aeiou]{2}|[^aeiou]{2}""").containsMatchIn(s)  
 }
 ```
+</details>
+
 
 ------
 
