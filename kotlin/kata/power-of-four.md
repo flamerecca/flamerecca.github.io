@@ -12,6 +12,8 @@ class Solution {
 }
 ```
 ## 解法
+<details>
+  <summary>點擊展開解答</summary>
 
 由於 4 不是質數，不能使用 [Power of Three](power-of-three.md) 時的解法
 
@@ -41,7 +43,7 @@ class Solution {
     }
 }
 ```
-
+</details>
 ------
 
 回到 [Kotlin Kata 列表](index.md)
