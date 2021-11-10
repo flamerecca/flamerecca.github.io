@@ -4,7 +4,10 @@ We will consider a, e, i, o, and u as vowels for this Kata.
 
 The input string will only consist of lower case letters and/or spaces.
 
-----
+## 解答
+
+<details>
+  <summary>點擊展開解答</summary>
 
 第一版答案
 
@@ -25,5 +28,8 @@ function getCount($str) {
   return preg_match_all('/[aeiou]/i',$str);
 }
 ```
+
+</details>
+  
 -----
 回到 [PHP Kata 列表](index.md)
