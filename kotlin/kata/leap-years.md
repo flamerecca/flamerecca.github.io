@@ -14,7 +14,9 @@ fun isLeapYear(year: Int) : Boolean {
 ```
 
 ## 解答
-
+<details>
+  <summary>點擊展開解答</summary>
+  
 我原本的做法是用 if 判斷，用 `return when` 作法更好
 
 ```kotlin
@@ -26,6 +28,7 @@ fun isLeapYear(year: Int) : Boolean {
     } 
 }
 ```
+</details>
 
 ------
 
