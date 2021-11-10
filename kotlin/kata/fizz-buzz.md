@@ -31,7 +31,9 @@ class Solution {
 ```
 
 ## 解答
-
+<details>
+  <summary>點擊展開解答</summary>
+  
 這題題目的邏輯很單純
 
 ```kotlin
@@ -72,6 +74,7 @@ class Solution {
     }
 }
 ```
+</details>
 
 -----
 
