@@ -15,6 +15,9 @@ class Solution {
 
 ## 解法
 
+<details>
+  <summary>點擊展開解答</summary>
+
 利用 3 是質數這件事情，加上題目保證了輸入是 `Int`
 
 我們可以利用 `3^19`（1162261467）和 3 的冪次取 mod 必定等於零這件事
@@ -31,6 +34,7 @@ class Solution {
     }
 }
 ```
+</details>
 
 ------
 
