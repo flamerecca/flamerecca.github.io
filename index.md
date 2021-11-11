@@ -1,6 +1,8 @@
-## 首頁 
+## Recca Chao 的網頁開發 
 
-Recca Chao 的首頁
+推廣各種後端技術，包含 Laravel 和 Kotlin 後端撰寫。
+
+包含一些技術文件、後端開發筆記、自動測試、讀書心得、雜七雜八。
 
 ## Coding Kata
 * [Kata 簡介](kata/index.md)
