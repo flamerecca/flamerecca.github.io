@@ -51,6 +51,7 @@ fun sum(n: Int) = n * (n + 1) / 2
 ```kotlin
 fun sum(n: Int) = (1..n).sum()
 ```
+  
 </details>
 
 ------
