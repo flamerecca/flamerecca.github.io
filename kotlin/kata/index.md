@@ -9,6 +9,10 @@
 - [Power Of 3](power-of-three.md)
 - [Power Of 4](power-of-four.md)
 - [Fizz Buzz](fizz-buzz.md)
+- [級數和](sum-of-series.md)
+- [級數平方和](sum-of-square-series.md)
+- [階乘](multiple-of-series.md)
+
 
 -----
 
