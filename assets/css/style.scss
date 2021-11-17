@@ -2,10 +2,21 @@
 ---
 
 @font-face {
-    font-family: 'JetBrainsMono';
+    font-family: "JetBrainsMono";
     src: url("../assets/JetBrainsMono-Regular.woff2") format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 @import "{{ site.theme }}";
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $body-background url("../images/bkg.png") 0 0;
+  color: $body-foreground;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: "JetBrainsMono", Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+}
