@@ -1,4 +1,11 @@
 ---
 ---
 
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url("../assets/JetBrainsMono-Regular.woff2") format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "{{ site.theme }}";
