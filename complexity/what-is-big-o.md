@@ -80,7 +80,9 @@ f(x) = O(g(x))
 
 ---
 f(x) = C 
+
 => C <= 2 × C
+
 => 2 × C = M × 1
 
 ---
@@ -110,7 +112,9 @@ f(x) = C
 
 ---
 f(x) = log<sub>2</sub>x
+
 => log<sub>0.1</sub>x <= log<sub>0.1</sub>2 × log<sub>2</sub>x
+
 => log<sub>0.1</sub>2 × log<sub>2</sub>x = M × g(x)
 
 ---
@@ -193,5 +197,5 @@ f_2(x) = O(n)
 
 ## 延伸閱讀
 
-
+- [Binary Search 的時間複雜度](binary-search-complexity.md)
 
