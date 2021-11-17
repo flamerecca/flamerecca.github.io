@@ -16,6 +16,7 @@ fun search(nums: IntArray, target: Int): Int {
                 nums[pivot] == target -> return pivot
                 nums[pivot] > target -> right = pivot - 1
                 nums[pivot] < target -> left = pivot + 1
+	    }
         }
     }
     return -1
@@ -63,9 +64,9 @@ val pivot = left + (right - left) / 2
 
 ```kotlin
 when {
-	nums[pivot] == target -> return pivot
-	nums[pivot] > target -> right = pivot - 1
-	nums[pivot] < target -> left = pivot + 1
+    nums[pivot] == target -> return pivot
+    nums[pivot] > target -> right = pivot - 1
+    nums[pivot] < target -> left = pivot + 1
 }
 ```
 
@@ -95,9 +96,9 @@ while (left <= right) {
 ```kotlin
 val pivot = left + (right - left) / 2
 when {
-	nums[pivot] == target -> return pivot
-	nums[pivot] > target -> right = pivot - 1
-	nums[pivot] < target -> left = pivot + 1
+    nums[pivot] == target -> return pivot
+    nums[pivot] > target -> right = pivot - 1
+    nums[pivot] < target -> left = pivot + 1
 }
 ```
 
