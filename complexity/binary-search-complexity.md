@@ -1,3 +1,5 @@
+## Binary Search 的時間複雜度
+
 以下我們嘗試計算 Binary Search 的時間複雜度
 
 ## 範例程式碼
