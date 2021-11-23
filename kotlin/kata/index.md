@@ -15,6 +15,8 @@
 - [級數平方和](sum-of-square-series.md)
 - [階乘](multiple-of-series.md)
 - [九九乘法表](multiplication-table.md)
+- [遞迴版費式數列](recursive-fib-sequence.md)
+- [尾遞迴版費式數列](tail-recursive-fib-sequence.md)
 
 -----
 
