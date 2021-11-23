@@ -27,6 +27,7 @@ fun fib(n: Int): BigInteger {
 ## 解答
 <details>
   <summary>點擊展開解答</summary>
+  
 要用尾遞迴的方式處理費式數列
 
 `fib()` 函數的參數是必定不夠的
