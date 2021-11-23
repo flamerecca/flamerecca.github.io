@@ -43,7 +43,7 @@ f(29) 呼叫了 f(28) 和 f(27) ⋯⋯
 
 如果我們希望可以減少記憶體使用量
 
-可以調整為 Kotlin Kata 尾遞迴版費式數列
+可以調整為 [尾遞迴版費式數列](tail-recursive-fib-sequence.md)
 
 </details>
 
