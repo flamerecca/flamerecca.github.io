@@ -18,6 +18,10 @@
 **Input:** `1`
 **Output:** `1`
 
+**Example 3:**
+
+**Input:** `999_999_999`
+**Output:** `499999999500000000`
 
 ```kotlin
 fun sum(n: BigInteger): BigInteger{}
