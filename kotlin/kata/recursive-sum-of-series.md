@@ -34,7 +34,7 @@ fun sum(n: BigInteger): BigInteger{}
 fun sum(number: BigInteger): BigInteger {  
     return when (number) {  
         BigInteger.ONE -> BigInteger.ONE
-		else -> sum(number - BigInteger.ONE) + number  
+	else -> sum(number - BigInteger.ONE) + number  
     }  
 }
 ```
