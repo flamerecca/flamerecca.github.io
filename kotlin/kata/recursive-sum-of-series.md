@@ -52,3 +52,7 @@ f(999_999_998) 呼叫了 f(999_999_997) ⋯⋯
 可以調整為 [Kotlin Kata 尾遞迴版級數和](tail-recursive-sum-of-series.md)
   
 </details>
+
+------
+
+回到 [Kotlin Kata 列表](index.md)
