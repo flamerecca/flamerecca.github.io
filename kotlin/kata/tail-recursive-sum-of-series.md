@@ -46,6 +46,16 @@ tailrec fun sum(number: BigInteger, answer: BigInteger = BigInteger.ZERO): BigIn
     }  
 }
 ```
+
+遞迴的邏輯會變成
+  
+* sum(5, 0)
+* sum(4, 5)
+* sum(3, 9)
+* sum(2, 12)
+* sum(1, 14)
+* sum(0, 15)
+* return 15
   
 </details>
 
