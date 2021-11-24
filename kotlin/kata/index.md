@@ -18,7 +18,7 @@
 - [遞迴版費式數列](recursive-fib-sequence.md)
 - [尾遞迴版費式數列](tail-recursive-fib-sequence.md)
 - [遞迴版級數和](recursive-sum-of-series.md)
-- [尾遞迴版級數和](recursive-sum-of-series.md)
+- [尾遞迴版級數和](tail-recursive-sum-of-series.md)
 
 -----
 
