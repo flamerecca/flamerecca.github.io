@@ -51,4 +51,4 @@ tailrec fun sum(number: BigInteger, answer: BigInteger = BigInteger.ZERO): BigIn
 
 ------
 
-回到 [Kotlin 後端 Kata 列表](index.md)
+回到 [Kotlin Kata 列表](index.md)
