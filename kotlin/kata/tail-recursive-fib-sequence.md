@@ -18,6 +18,8 @@
 
 並且要能處理從 1 到 100 的輸入
 
+（參考：[Kotlin 尾遞迴](../kotlin_tail_recursion.md)）
+
 ```kotlin
 fun fib(n: Int): BigInteger {
 
