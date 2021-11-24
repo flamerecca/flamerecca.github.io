@@ -36,18 +36,30 @@ fun fib(n: Int): BigInteger {
 
 我們必須要宣告新的函數來進行處理
 
+利用預設參數，我們可以寫成
+
 ```kotlin
-fun fib(n: Int): BigInteger {  
-    tailrec fun fib(n: Int, acc1: BigInteger, acc2: BigInteger): BigInteger {  
-        return when (n) {  
-            1 -> acc1  
-            2 -> acc2  
-            else -> fib(n - 1, acc2, acc1 + acc2)  
-        }  
-    }  
-    return fib(n, BigInteger.ZERO, BigInteger.ONE)  
+tailrec fun fib(
+    n: Int,
+    acc1: BigInteger = BigInteger.ZERO,
+    acc2: BigInteger = BigInteger.ONE
+): BigInteger {
+    return when (n) {
+        1 -> acc1
+        2 -> acc2
+        else -> fib(n - 1, acc2, acc1 + acc2)
+    }
 }
 ```
+
+這樣，遞迴的邏輯變成
+
+- fib(5, 0, 1)
+- fib(4, 1, 1)
+- fib(3, 1, 2)
+- fib(2, 2, 3)
+- return 3
+
 </details>
 
 ------
