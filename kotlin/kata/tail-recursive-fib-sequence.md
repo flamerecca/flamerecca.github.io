@@ -21,7 +21,7 @@
 （參考：[Kotlin 尾遞迴](../kotlin_tail_recursion.md)）
 
 ```kotlin
-fun fib(n: Int): BigInteger {
+tailrec fun fib(n: Int): BigInteger {
 
 }
 ```
