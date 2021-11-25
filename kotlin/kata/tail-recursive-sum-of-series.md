@@ -24,7 +24,7 @@
 **Output:** `499999999500000000`
 
 ```kotlin
-fun sum(n: BigInteger): BigInteger{}
+tailrec fun sum(n: BigInteger): BigInteger{}
 ```
 
 ## 解答
