@@ -4,6 +4,7 @@
 
 ## 題目列表
 - [Leap Year](leap-years.md)
+- [A+B 練習 STDIN 輸入](a-plus-b.md)
 - [Are We Alternate](are-we-alternate.md)
 - [Binary Search](binary-search.md)
 - [Power Of 2](power-of-two.md)
