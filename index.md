@@ -63,6 +63,7 @@
 * [bash 小技巧筆記](bash-tips.md)
 * [vim 編輯 markdown 表格](vim-table.md)
 * [Mongodb 的 WriteConcern](mongodb/write-concern.md)
+* [Mockk 框架記得測試結束後要 clearAllMocks()](mockk/clear-all-mocks.md)
 * [Kotlin Academy](http://kotlin.academy/)
 
 ## 聯繫作者
