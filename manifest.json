@@ -1,0 +1,27 @@
+{
+  "short_name": "Recca Blog",
+  "name": "Recca Chao Web Blog",
+  "icons": [
+    {
+      "src": "/assets/logo.jpg",
+      "type": "image/jpeg",
+      "sizes": "600x600"
+    },
+    {
+      "src": "/assets/logo-192.png",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/logo-256.png",
+      "type": "image/jpeg",
+      "sizes": "256x256"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1A1A1A",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#1A1A1A",
+  "description": "寫些後端開發技術，包含 Laravel 和 Kotlin 後端撰寫、自動化測試、讀書等心得。Taiwan Kotlin User Group 管理員。"
+}
