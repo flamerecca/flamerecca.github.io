@@ -2,7 +2,7 @@ encoding: UTF-8
 url: https://gitpage.reccachao.net
 title: Recca Chao 的 gitHub page
 tagline: 推廣各種後端技術，包含 Laravel 和 Kotlin 後端撰寫
-description: 推廣各種後端技術，包含 Laravel 和 Kotlin 後端撰寫。Taiwan Kotlin User Group 管理員。寫一些技術文件、後端開發筆記、自動化測試、讀書心得、雜七雜八。
+description: 寫些後端開發技術，包含 Laravel 和 Kotlin 後端撰寫、自動化測試、讀書等心得。Taiwan Kotlin User Group 管理員。
 enforce_ssl: gitpage.reccachao.net
 locale: zh_TW
 theme: jekyll-theme-hacker
