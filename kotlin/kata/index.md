@@ -22,6 +22,7 @@
 - [尾遞迴版級數和](tail-recursive-sum-of-series.md)
 - [遞迴版級數平方和](sum-of-square-series.md)
 - [尾遞迴版級數平方和](tail-recursive-sum-of-square-series.md)
+- [判斷質數](check-prime.md)
 
 -----
 
