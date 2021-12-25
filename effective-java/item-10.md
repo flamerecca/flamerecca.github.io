@@ -161,3 +161,7 @@ public boolean equals(@Nullable Object other) {
 確實很多地方參考了 Effective Java 這本書的觀念
 
 作為其程式設計的架構
+
+----
+
+回到[首頁](index.md)
