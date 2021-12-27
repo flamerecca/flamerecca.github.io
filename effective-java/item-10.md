@@ -1,4 +1,4 @@
-## Effective Java 3e 讀後感 - Item 10：Obey the general contract when overriding equals
+## Effective Java 3e 讀書心得 - Item 10：Obey the general contract when overriding equals
 
 ## 覆載 `equals()` 的場景
 
