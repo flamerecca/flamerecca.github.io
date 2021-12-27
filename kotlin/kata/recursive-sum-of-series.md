@@ -38,7 +38,18 @@ fun sum(number: BigInteger): BigInteger {
     }  
 }
 ```
+由於這裡只有兩個條件，我們也可以使用 `if`
 
+```kotlin
+fun sum(number: BigInteger): BigInteger {  
+    return if (number == BigInteger.ONE) {  
+        BigInteger.ONE
+    } else {
+        sum(number - BigInteger.ONE) + number  
+    } 
+}
+```
+	
 這個遞迴的寫法，導致數字很大時，比方說 n=999_999_999
 
 f(999_999_999) 呼叫了 f(999_999_998)
