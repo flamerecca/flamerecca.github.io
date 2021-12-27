@@ -17,6 +17,9 @@
 * [Mockk 框架記得測試結束後要 clearAllMocks()](mockk/clear-all-mocks.md)
 * [Kotlin Object 實作](kotlin/object-implementation.md)
 
+## 讀書心得
+* [Effective Java](effective-java/index.md)
+
 ## 專案紀錄
 * [flamerecca vim](flamerecca-vim.md)
 * [背單字](beiDanTz.md)
