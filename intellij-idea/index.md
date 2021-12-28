@@ -33,4 +33,4 @@
 
 ## 閱讀便利
 
-- Expand or Collapse Codeblock（⌘+、⌘-、⌘⇧+、⌘⇧-）
+- [Expand or Collapse Codeblock（⌘+、⌘-、⌘⇧+、⌘⇧-）](expand-or-collapse-codeblock.md)
