@@ -20,6 +20,10 @@
 ## 讀書心得
 * [Effective Java](effective-java/index.md)
 
+## IntelliJ IDEA
+
+* [IntelliJ IDEA 經驗分享](intellij-idea/index.md)
+
 ## 專案紀錄
 * [flamerecca vim](flamerecca-vim.md)
 * [背單字](beiDanTz.md)
