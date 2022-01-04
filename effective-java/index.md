@@ -44,7 +44,7 @@ Effective Java 這本書裡面
 
 - [Item 10：Obey the general contract when overriding equals](item-10.md)
 - Item 11：Always override hashCode when you override equals
-- Item 12：Always override toString
+- [Item 12：Always override toString](item-12.md)
 - Item 13：Override clone judiciously
 - Item 14：Consider implementing Comparable
 
