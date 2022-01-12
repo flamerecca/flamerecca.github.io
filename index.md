@@ -53,6 +53,7 @@
 * [Laravel 新手村工作坊（二）](https://events.laravel-dojo.com/events/20/)
 * [Laravel 新手村工作坊（三）](https://events.laravel-dojo.com/events/21/)
 * [Laravel 新手村工作坊（四）](https://events.laravel-dojo.com/events/25/)
+* [MOPCON 2021 Kotlin 的自動測試怎麼做？](https://mopcon.org/2021/schedule/2021016)
 * [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
 
 ## 舉辦活動
