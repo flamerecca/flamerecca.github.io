@@ -1,14 +1,17 @@
+## 測試種類錯誤
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-3---having-the-wrong-kind-of-tests](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-3---having-the-wrong-kind-of-tests)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-## 測試種類錯誤
+-----
 
 根據前面兩篇反模式討論（[僅有單元測試，沒有整合測試](having-unit-tests-without-integration-tests.md) 和 [僅有整合測試，沒有單元測試](having-integration-tests-without-unit-tests.md)）我們知道應該兩種測試要同時存在了。現在我們要決定每一種分別需要多少測試。
 
 這件事沒有絕對的鐵則，需要依照你的應用狀況而定。重點是你需要花時間弄清楚哪種測試對你的應用最有價值。測試金字塔只是在假設場景為商業網頁應用開發下的建議比例，但是不是所有場景都適用。我們看看以下例子：
 
-# 範例：Linux 指令列工具
+## 範例：Linux 指令列工具
 
 你要開發一個指令列工具應用，這個指令讀入某種檔案格式（比方說 csv 檔），經過一些轉換之後，輸出成另一種檔案格式（比方說 json 檔）。這個應用不和其他系統溝通，不需要網路，轉換過程是非常複雜的數學分析運算，花費很多運算時間以保證轉換的正確性。
 
