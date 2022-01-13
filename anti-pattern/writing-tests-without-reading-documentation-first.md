@@ -1,8 +1,11 @@
+## 沒有讀文件就開始測試
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-12---writing-tests-without-reading-documentation-first](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-12---writing-tests-without-reading-documentation-first)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 沒有讀文件就開始測試
+------
 
 專業的工程師熟知他的職業技能。在開始專案之前，你應該會花時間研究你即將使用的技術。網頁框架時時在更新，知道新的技術能做什麼對寫出有效率而精確的程式碼絕對是很有幫助的。
 
