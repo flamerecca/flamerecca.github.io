@@ -1,10 +1,11 @@
+## 手動測試
+
+----
 原文摘錄自 http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-8---running-tests-manually
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
 ----
-# 手動測試
-
 
 Depending on your organization you might actually have several types of tests in place. Unit tests, Load tests, User acceptance tests are common categories of test suites that might be executed before the code goes into production.
 
