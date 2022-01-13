@@ -1,8 +1,12 @@
+## 僅有單元測試，沒有整合測試
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-1---having-unit-tests-without-integration-tests](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-1---having-unit-tests-without-integration-tests)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 僅有單元測試，沒有整合測試
+-----
+
 這是中小型公司常有的問題。公司所開發的應用僅有單元測試（測試金字塔的最底層），缺乏其他部分。通常缺乏整合測試是因為以下原因：
 
 * 公司缺乏資深工程師。整個團隊只有較資淺的工程師，他們只看過單元測試。
