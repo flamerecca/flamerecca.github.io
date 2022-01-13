@@ -1,8 +1,11 @@
+## 測試錯誤功能
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-4---testing-the-wrong-functionality](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-4---testing-the-wrong-functionality)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 測試錯誤功能
+-----
 
 前面的部分，我們討論到了測試的幾個種類，以及每種測試應該有的數量。接著，我們解釋哪些功能需要測試。
 
