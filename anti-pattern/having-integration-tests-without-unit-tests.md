@@ -1,8 +1,12 @@
+## 僅有整合測試，沒有單元測試
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-2---having-integration-tests-without-unit-tests](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-2---having-integration-tests-without-unit-tests)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 僅有整合測試，沒有單元測試
+-----
+
 這是 [僅有單元測試，沒有整合測試](having-unit-tests-without-integration-tests.md) 的相反情況。這種反模式通常出現在大公司或者大的企業集團中。幾乎所有情況下，這種反模式的出現都牽涉某些開發者認為單元測試沒有意義，只有整合測試可以發現問題。有相當多的開發者認為單元測試是浪費時間。通常，如果你問一些問題探探口風，你會發現在過去某個時間點內，管理層曾經強迫他們寫一些簡單的單元測試來提高測試覆蓋率（參考 過度關注測試覆蓋率）。
 
 理論上，專案確實可以只依靠整合測試來找出問題。但是不管是從開發測試角度來看，或者是測試運行時間來看，實際上只依靠整合測試會導致測試變得非常困難。我們從前面的表格可以看出，所有單元測試可以找出的錯誤，理論上都可以透過整合測試找出來，所以整合測試在這方面可以「取代」單元測試。但是這個策略可能長久執行嗎？
