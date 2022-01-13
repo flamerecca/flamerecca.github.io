@@ -1,8 +1,11 @@
+## 沒有將產品正式錯誤列入測試
+
+-----
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-10---not-converting-production-bugs-to-tests](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-10---not-converting-production-bugs-to-tests) 
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 沒有將產品正式錯誤列入測試
+-----
 
 測試的其中一個目的，是偵測程式碼是否退化，如同我們在[測試錯誤功能](testing-the-wrong-functionality.md)提過的概念，大部分程式會有一個「極重要」（critical）的部分，大多數的錯誤從這邊出現。每當你修好一個錯誤時，你希望相同的錯誤不再出現。其中一個最好的辦法，就是針對這個錯誤寫測試，不管是單元測試、整合測試、或者兩個都寫。
 
