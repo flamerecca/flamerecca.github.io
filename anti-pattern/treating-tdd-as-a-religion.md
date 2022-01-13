@@ -1,8 +1,11 @@
+## 將測試驅動開發視為信仰
+
+------
 原文摘錄自 [http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-11---treating-tdd-as-a-religion](http://blog.codepipes.com/testing/software-testing-antipatterns.html#anti-pattern-11---treating-tdd-as-a-religion)
 
 歡迎到原本部落格閱讀原文，認為翻譯有問題也歡迎討論。
 
-# 將測試驅動開發視為信仰
+------
 
 測試驅動開發，常簡稱為 TDD，就像所有的方法論一樣，理論上是個好方法，直到顧問們嘗試說服公司盲目相信 TDD 才是唯一的道路。這篇文章撰寫的時候，這個風潮已經逐漸消失，但是為求完整，我還是在這邊提到這點，特別是業界深深受到這個反模式的荼毒。
 
