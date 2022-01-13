@@ -1,17 +1,19 @@
+## 軟體測試反模式
+
 文章來源為 [Software Testing Anti-patterns](http://blog.codepipes.com/testing/software-testing-antipatterns.html) 這篇文章
 
 下面會將文章拆分翻譯，方便更多人閱讀
 
 對這個議題想更深入理解的人，可以去他的部落格 [Codepipes Blog](http://blog.codepipes.com/) 看看，相信會有許多收穫。
 
-# 引言
+## 引言
 已經有許多文章討論過軟體開發中測試的反模式（anti-pattern）。不過，這些文章大多數討論的是較為低階的細節，而且經常針對單一的技術或者程式語言進行討論。
 
 這篇文章內，我想要往後退一步，討論並分類出一些高階的測試反模式，這些模式是和單一技術或者語言無關的。
 
 希望不管你喜歡什麼程式語言，都會在這篇文章裡面認出一些對應的模式。
 
-# 術語
+## 術語
 很不幸的，測試的術語尚未取得全面的共識。問一百位開發者整合測試（integration test），部件測試（component test）和 E2E 測試（end-to-end test）的差異是什麼，很可能會得到一百種不同的答案。在這篇文章內我們使用測試金字塔的定義，如下圖：
 
 ![測試金字塔](/assets/test-pyramid.png)
