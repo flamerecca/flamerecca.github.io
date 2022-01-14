@@ -22,6 +22,8 @@
 - [尾遞迴版級數和](tail-recursive-sum-of-series.md)
 - [遞迴版級數平方和](sum-of-square-series.md)
 - [尾遞迴版級數平方和](tail-recursive-sum-of-square-series.md)
+- [遞迴版階乘](recursive-multiple-of-series.md)
+- [尾遞迴版階乘](tail-recursive-multiple-of-series.md)
 - [判斷質數](check-prime.md)
 - [列出最大公因數](gcd.md)
 - [列出最大公因數 輾轉相除法](euclidean.md)
