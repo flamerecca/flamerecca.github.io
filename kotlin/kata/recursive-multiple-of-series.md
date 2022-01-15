@@ -35,7 +35,7 @@ fun multiple(n: BigInteger): BigInteger{}
 我們可以用下面的方式遞迴
 
 ```kotlin
-fun squareSum(number: BigInteger): BigInteger {  
+fun multiple(number: BigInteger): BigInteger {  
     return when (number) {  
         BigInteger.ONE -> BigInteger.ONE
 		else -> sum(number - BigInteger.ONE) * number
