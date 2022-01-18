@@ -1,4 +1,4 @@
-## Kotlin Leetcode 大綱
+## Kotlin Leetcode 解題紀錄
 
 這邊列舉一些用 Kotlin 解答 leetcode 題目的內容
 
