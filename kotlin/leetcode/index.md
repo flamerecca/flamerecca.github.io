@@ -10,6 +10,7 @@
 - [20. Valid Parentheses](20.md)
 - [21. Merge Two Sorted Lists](21.md)
 - [26. Remove Duplicates from Sorted Array](26.md)
+- [136. Single Number](136.md)
 - [191. Number of 1 Bits](191.md)
 - [461. Hamming Distance](461.md)
 - [771. Jewels and Stones](771.md)
