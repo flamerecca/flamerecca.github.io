@@ -17,5 +17,6 @@
 - [231. Power of Two](231.md)
 - [258. Add Digits](258.md)
 - [326. Power of Three](326.md)
+- [342. Power of Four](342.md)
 - [461. Hamming Distance](461.md)
 - [771. Jewels and Stones](771.md)
