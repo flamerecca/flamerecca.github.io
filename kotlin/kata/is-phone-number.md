@@ -30,7 +30,7 @@ fun isPhoneNumber(s: String): Boolean {
 我們可以嘗試用 `when` 將上述條件寫成單一表達式
 
 ```kotlin
-fun isPhoneNumber(s: String) = when (true) {
+fun isPhoneNumber(s: String) = when {
     s.length < 5 || s.length > 20 -> false
     else -> Regex("""[0-9-]+""") matches s
 }
