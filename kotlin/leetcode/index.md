@@ -6,4 +6,5 @@
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
 - [13. Roman to Integer](13.md)
+- [461. Hamming Distance](461.md)
 - [771. Jewels and Stones](771.md)
