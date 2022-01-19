@@ -32,8 +32,7 @@ fun isPhoneNumber(s: String): Boolean {
 ```kotlin
 fun isPhoneNumber(s: String) = when (true) {
     s.length < 5 || s.length > 20 -> false
-    Regex("""[0-9-]+""") matches s -> true
-    else -> false
+    else -> Regex("""[0-9-]+""") matches s
 }
 ```
 
