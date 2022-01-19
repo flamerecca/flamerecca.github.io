@@ -11,6 +11,7 @@
 - [21. Merge Two Sorted Lists](21.md)
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [66. Plus One](66.md)
+- [69. Sqrt(x)](69.md)
 - [136. Single Number](136.md)
 - [191. Number of 1 Bits](191.md)
 - [461. Hamming Distance](461.md)
