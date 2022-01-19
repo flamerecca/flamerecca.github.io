@@ -9,5 +9,6 @@
 - [13. Roman to Integer](13.md)
 - [20. Valid Parentheses](20.md)
 - [21. Merge Two Sorted Lists](21.md)
+- [26. Remove Duplicates from Sorted Array](26..md)
 - [461. Hamming Distance](461.md)
 - [771. Jewels and Stones](771.md)
