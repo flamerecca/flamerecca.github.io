@@ -27,6 +27,7 @@
 - [判斷質數](check-prime.md)
 - [列出最大公因數](gcd.md)
 - [列出最大公因數 輾轉相除法](euclidean.md)
+- [確定輸入為電話號碼](is-phone-number.md)
 
 -----
 
