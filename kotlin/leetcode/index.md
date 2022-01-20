@@ -26,4 +26,5 @@
 - [476. Number Complement](476.md)
 - [509. Fibonacci Number](509.md)
 - [657. Robot Return to Origin](657.md)
+- [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
