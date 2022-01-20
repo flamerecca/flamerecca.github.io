@@ -22,4 +22,5 @@
 - [404. Sum of Left Leaves](404.md)
 - [412. Fizz Buzz](412.md)
 - [461. Hamming Distance](461.md)
+- [470. Implement Rand10() Using Rand7()](470.md)
 - [771. Jewels and Stones](771.md)
