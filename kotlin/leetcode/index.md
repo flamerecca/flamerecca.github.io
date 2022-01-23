@@ -13,6 +13,7 @@
 - [28. Implement strStr()](28.md)
 - [58. Length of Last Word](58.md)
 - [66. Plus One](66.md)
+- [67. Add Binary](67.md)
 - [69. Sqrt(x)](69.md)
 - [136. Single Number](136.md)
 - [191. Number of 1 Bits](191.md)
