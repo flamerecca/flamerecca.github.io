@@ -11,6 +11,7 @@
 - [21. Merge Two Sorted Lists](21.md)
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [28. Implement strStr()](28.md)
+- [58. Length of Last Word](58.md)
 - [66. Plus One](66.md)
 - [69. Sqrt(x)](69.md)
 - [136. Single Number](136.md)
