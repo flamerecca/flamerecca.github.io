@@ -6,6 +6,7 @@
 - [2. Add Two Numbers](2.md)
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
+- [10. Regular Expression Matching](10.md)
 - [13. Roman to Integer](13.md)
 - [20. Valid Parentheses](20.md)
 - [21. Merge Two Sorted Lists](21.md)
