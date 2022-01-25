@@ -33,3 +33,4 @@
 - [657. Robot Return to Origin](657.md)
 - [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
+- [1480. Running Sum of 1d Array](1480.md)
