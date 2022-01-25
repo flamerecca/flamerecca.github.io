@@ -35,3 +35,4 @@
 - [771. Jewels and Stones](771.md)
 - [1108. Defanging an IP Address](1108.md)
 - [1480. Running Sum of 1d Array](1480.md)
+- [1528. Shuffle String](1528.md)
