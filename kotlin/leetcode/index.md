@@ -34,6 +34,7 @@
 - [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
 - [1108. Defanging an IP Address](1108.md)
+- [1365. How Many Numbers Are Smaller Than the Current Number](1365.md)
 - [1486. XOR Operation in an Array](1486.md)
 - [1480. Running Sum of 1d Array](1480.md)
 - [1528. Shuffle String](1528.md)
