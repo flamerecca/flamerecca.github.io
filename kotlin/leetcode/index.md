@@ -39,5 +39,6 @@
 - [1480. Running Sum of 1d Array](1480.md)
 - [1528. Shuffle String](1528.md)
 - [1720. Decode XORed Array](1720.md)
+- [1791. Find Center of Star Graph](1791.md)
 - [1920. Build Array from Permutation](1920.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
