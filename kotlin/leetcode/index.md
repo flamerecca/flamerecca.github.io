@@ -41,4 +41,5 @@
 - [1720. Decode XORed Array](1720.md)
 - [1791. Find Center of Star Graph](1791.md)
 - [1920. Build Array from Permutation](1920.md)
+- [1929. Concatenation of Array](1929.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
