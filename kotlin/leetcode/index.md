@@ -44,4 +44,5 @@
 - [1859. Sorting the Sentence](1859.md)
 - [1920. Build Array from Permutation](1920.md)
 - [1929. Concatenation of Array](1929.md)
+- [2032. Two Out of Three](2032.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
