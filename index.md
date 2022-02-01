@@ -14,7 +14,7 @@
 ## 自動化測試
 - [軟體測試反模式-引言](anti-pattern/intro.md)
 
-## Kotlin
+## [Kotlin](kotlin/index.md)
 
 - [Mockk 框架記得測試結束後要 clearAllMocks()](mockk/clear-all-mocks.md)
 - [Kotlin Object 實作](kotlin/object-implementation.md)
