@@ -8,19 +8,19 @@
 
 ## Kotlin 已完成題目列表
 
-* [001](/daily-coding-problem/001) 
+* [001](/daily-coding-problem/001.md) 
   * Two Sum
-* [010](/daily-coding-problem/010) 
+* [010](/daily-coding-problem/010.md) 
   * calling a function with delay
-* [027](/daily-coding-problem/027) 
+* [027](/daily-coding-problem/027.md) 
   * Valid Parentheses
-* [045](/daily-coding-problem/045) 
+* [045](/daily-coding-problem/045.md) 
   * implement rand7() using rand5()
-* [066](/daily-coding-problem/066) 
+* [066](/daily-coding-problem/066.md) 
   * Make a fair coin from a biased coin
-* [129](/daily-coding-problem/129) 
+* [129](/daily-coding-problem/129.md) 
   * sqrt(x)
 
 ##  其他面試題目列表
 
-* [Add Digits](/daily-coding-problem/Add_Digits) 
+* [Add Digits](/daily-coding-problem/Add_Digits.md) 
