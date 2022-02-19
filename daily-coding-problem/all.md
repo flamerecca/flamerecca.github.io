@@ -6879,3 +6879,51 @@ Implement a quack using three stacks and O(1) additional memory, so that the amo
 ### Solutions
 
 * Kotlin - TBD
+
+## Problem 366
+
+### Description
+
+This problem was asked by Flexport.
+
+Given a string s, rearrange the characters so that any two adjacent characters are not the same. If this is not possible, return null.
+
+For example, if s = yyz then return yzy. If s = yyy then return null.
+
+### Solutions
+
+* Kotlin - TBD
+
+## Problem 367
+
+### Description
+
+This problem was asked by Two Sigma.
+
+Given two sorted iterators, merge it into one iterator.
+
+For example, given these two iterators:
+```
+foo = iter([5, 10, 15])
+bar = iter([3, 8, 9])
+```
+
+You should be able to do:
+
+```
+for num in merge_iterators(foo, bar):
+    print(num)
+
+# 3
+# 5
+# 8
+# 9
+# 10
+# 15
+```
+
+Bonus: Make it work without pulling in the contents of the iterators in memory.
+
+### Solutions
+
+* Kotlin - TBD
