@@ -18,6 +18,7 @@
 - [66. Plus One](66.md)
 - [67. Add Binary](67.md)
 - [69. Sqrt(x)](69.md)
+- [70. Climbing Stairs](70.md)
 - [100. Same Tree](100.md)
 - [118. Pascal's Triangle](118.md)
 - [125. Valid Palindrome](125.md)
