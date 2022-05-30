@@ -28,6 +28,7 @@
 - [226. Invert Binary Tree](226.md)
 - [231. Power of Two](231.md)
 - [258. Add Digits](258.md)
+- [268. Missing Number](268.md)
 - [326. Power of Three](326.md)
 - [342. Power of Four](342.md)
 - [344. Reverse String](344.md)
