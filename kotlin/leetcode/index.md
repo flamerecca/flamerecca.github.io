@@ -24,6 +24,7 @@
 - [118. Pascal's Triangle](118.md)
 - [125. Valid Palindrome](125.md)
 - [136. Single Number](136.md)
+- [153. Find Minimum in Rotated Sorted Array](153.md)
 - [191. Number of 1 Bits](191.md)
 - [206. Reverse Linked List](206.md)
 - [226. Invert Binary Tree](226.md)
