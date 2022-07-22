@@ -58,6 +58,7 @@
 - [1672. Richest Customer Wealth](1672.md)
 - [1720. Decode XORed Array](1720.md)
 - [1791. Find Center of Star Graph](1791.md)
+- [1832. Check if the Sentence Is Pangram](1832.md)
 - [1859. Sorting the Sentence](1859.md)
 - [1920. Build Array from Permutation](1920.md)
 - [1929. Concatenation of Array](1929.md)
