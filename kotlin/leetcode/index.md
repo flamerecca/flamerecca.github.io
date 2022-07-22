@@ -28,6 +28,7 @@
 - [153. Find Minimum in Rotated Sorted Array](153.md)
 - [191. Number of 1 Bits](191.md)
 - [206. Reverse Linked List](206.md)
+- [217. Contains Duplicate](217.md)
 - [226. Invert Binary Tree](226.md)
 - [231. Power of Two](231.md)
 - [234. Palindrome Linked List](234.md)
