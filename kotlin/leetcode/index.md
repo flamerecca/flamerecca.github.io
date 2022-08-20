@@ -43,6 +43,7 @@
 - [153. Find Minimum in Rotated Sorted Array](153.md)
 - [169. Majority Element](169.md)
 - [191. Number of 1 Bits](191.md)
+- [205. Isomorphic Strings](205.md)
 - [206. Reverse Linked List](206.md)
 - [217. Contains Duplicate](217.md)
 - [226. Invert Binary Tree](226.md)
