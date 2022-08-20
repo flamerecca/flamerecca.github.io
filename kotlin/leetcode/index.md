@@ -2,6 +2,17 @@
 
 這邊列舉一些用 Kotlin 解答 leetcode 題目的內容
 
+### 基礎問題
+
+- [2235. Add Two Integers](2235.md)
+- [268. Missing Number](268.md)
+- [258. Add Digits](258.md)
+- [412. Fizz Buzz](412.md)
+- [231. Power of Two](231.md)
+- [326. Power of Three](326.md)
+- [342. Power of Four](342.md)
+
+### 全部問題列表
 - [1. Two Sum](1.md)
 - [2. Add Two Numbers](2.md)
 - [7. Reverse Integer](7.md)
