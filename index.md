@@ -4,15 +4,13 @@
 
 包含一些技術文件、後端開發筆記、自動化測試、讀書心得、雜七雜八。
 
+[軟體開發社群公開活動](public-event.html)
+
 ## Coding Kata
 - [Kata 簡介](kata/index.md)
 - [Kotlin Kata 列表](kotlin/kata/index.md)
 - [PHP Kata 列表](php/kata/index.md)
 - [Kotlin Leetcode 解題紀錄](kotlin/leetcode/index.md)
-
-<div>
-<iframe src="https://calendar.google.com/calendar/embed?src=b3buhruprrkqmo6nhpc9u6eoig%40group.calendar.google.com&ctz=Asia%2FTaipei" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>
 
 ## 自動化測試
 - [軟體測試反模式-引言](anti-pattern/intro.md)
