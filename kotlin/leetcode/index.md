@@ -49,6 +49,7 @@
 - [226. Invert Binary Tree](226.md)
 - [231. Power of Two](231.md)
 - [234. Palindrome Linked List](234.md)
+- [242. Valid Anagram](242.md)
 - [258. Add Digits](258.md)
 - [268. Missing Number](268.md)
 - [326. Power of Three](326.md)
