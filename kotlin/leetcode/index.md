@@ -16,6 +16,22 @@
 - [70. Climbing Stairs](70.md)
 - [509. Fibonacci Number](509.md)
 
+### 陣列
+- [26. Remove Duplicates from Sorted Array](26.md)
+- [27. Remove Element](27.md)
+- [35. Search Insert Position](35.md)
+- [66. Plus One](66.md)
+- [153. Find Minimum in Rotated Sorted Array](153.md)
+- [169. Majority Element](169.md)
+- [217. Contains Duplicate](217.md)
+- [1051. Height Checker](1051.md)
+- [1480. Running Sum of 1d Array](1480.md)
+- [1672. Richest Customer Wealth](1672.md)
+- [1920. Build Array from Permutation](1920.md)
+- [1929. Concatenation of Array](1929.md)
+- [2011. Final Value of Variable After Performing Operations](2011.md)
+- [2032. Two Out of Three](2032.md)
+
 ### 全部問題列表
 - [1. Two Sum](1.md)
 - [2. Add Two Numbers](2.md)
@@ -71,8 +87,8 @@
 - [1108. Defanging an IP Address](1108.md)
 - [1365. How Many Numbers Are Smaller Than the Current Number](1365.md)
 - [1470. Shuffle the Array](1470.md)
-- [1486. XOR Operation in an Array](1486.md)
 - [1480. Running Sum of 1d Array](1480.md)
+- [1486. XOR Operation in an Array](1486.md)
 - [1528. Shuffle String](1528.md)
 - [1672. Richest Customer Wealth](1672.md)
 - [1720. Decode XORed Array](1720.md)
