@@ -32,6 +32,26 @@
 - [2011. Final Value of Variable After Performing Operations](2011.md)
 - [2032. Two Out of Three](2032.md)
 
+### String
+- [7. Reverse Integer](7.md)
+- [9. Palindrome Number](9.md)
+- [10. Regular Expression Matching](10.md)
+- [13. Roman to Integer](13.md)
+- [20. Valid Parentheses](20.md)
+- [28. Implement strStr()](28.md)
+- [58. Length of Last Word](58.md)
+- [67. Add Binary](67.md)
+- [125. Valid Palindrome](125.md)
+- [205. Isomorphic Strings](205.md)
+- [657. Robot Return to Origin](657.md)
+- [771. Jewels and Stones](771.md)
+- [1108. Defanging an IP Address](1108.md)
+- [1528. Shuffle String](1528.md)
+- [1832. Check if the Sentence Is Pangram](1832.md)
+- [1859. Sorting the Sentence](1859.md)
+- [2114. Maximum Number of Words Found in Sentences](2114.md)
+- [2315. Count Asterisks](2315.md)
+
 ### 全部問題列表
 - [1. Two Sum](1.md)
 - [2. Add Two Numbers](2.md)
