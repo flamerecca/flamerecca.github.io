@@ -32,7 +32,7 @@
 - [2011. Final Value of Variable After Performing Operations](2011.md)
 - [2032. Two Out of Three](2032.md)
 
-### String
+### 字串
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
 - [10. Regular Expression Matching](10.md)
@@ -46,6 +46,7 @@
 - [657. Robot Return to Origin](657.md)
 - [771. Jewels and Stones](771.md)
 - [1108. Defanging an IP Address](1108.md)
+- [1323. Maximum 69 Number](1323.md)
 - [1528. Shuffle String](1528.md)
 - [1832. Check if the Sentence Is Pangram](1832.md)
 - [1859. Sorting the Sentence](1859.md)
@@ -105,6 +106,7 @@
 - [965. Univalued Binary Tree](965.md)
 - [1051. Height Checker](1051.md)
 - [1108. Defanging an IP Address](1108.md)
+- [1323. Maximum 69 Number](1323.md)
 - [1365. How Many Numbers Are Smaller Than the Current Number](1365.md)
 - [1470. Shuffle the Array](1470.md)
 - [1480. Running Sum of 1d Array](1480.md)
