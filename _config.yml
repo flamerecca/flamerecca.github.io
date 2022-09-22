@@ -9,7 +9,6 @@ theme: jekyll-theme-hacker
 google_analytics: UA-78953126-2
 logo: /logo.jpg
 permalink: pretty
-markdown: CommonMarkGhPages
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
