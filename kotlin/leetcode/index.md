@@ -124,4 +124,5 @@
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2160. Minimum Sum of Four Digit Number After Splitting Digits](2160.md)
 - [2235. Add Two Integers](2235.md)
+- [2236. Root Equals Sum of Children](2236.md)
 - [2315. Count Asterisks](2315.md)
