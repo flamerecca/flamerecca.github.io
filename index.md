@@ -8,9 +8,9 @@
 
 ## MOすめ
 
-<a href="https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw">
-<img src="https://i.imgur.com/FHEbblt.png" alt="mopcon">
-</a>
+![MOすめ](https://i.imgur.com/FHEbblt.png)
+
+[MOすめ Youtube](https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw)
 
 ## Coding Kata
 - [Kata 簡介](kata/index.md)
