@@ -104,6 +104,7 @@
 - [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
 - [965. Univalued Binary Tree](965.md)
+- [1022. Sum of Root To Leaf Binary Numbers](1022.md)
 - [1051. Height Checker](1051.md)
 - [1108. Defanging an IP Address](1108.md)
 - [1323. Maximum 69 Number](1323.md)
