@@ -6,6 +6,12 @@
 
 [軟體開發社群公開活動](public-event.html)
 
+## MOすめ
+
+<a href="https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw">
+<img src="https://i.imgur.com/FHEbblt.png" alt="mopcon">
+</a>
+
 ## Coding Kata
 - [Kata 簡介](kata/index.md)
 - [Kotlin Kata 列表](kotlin/kata/index.md)
