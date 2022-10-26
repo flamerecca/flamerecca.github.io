@@ -31,6 +31,7 @@
 - [1929. Concatenation of Array](1929.md)
 - [2011. Final Value of Variable After Performing Operations](2011.md)
 - [2032. Two Out of Three](2032.md)
+- [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
 
 ### 字串
 - [7. Reverse Integer](7.md)
@@ -63,6 +64,7 @@
 - [572. Subtree of Another Tree](572.md)
 - [617. Merge Two Binary Trees](617.md)
 - [965. Univalued Binary Tree](965.md)
+- [2236. Root Equals Sum of Children](2236.md)
 
 ### 全部問題列表
 - [1. Two Sum](1.md)
@@ -139,3 +141,4 @@
 - [2235. Add Two Integers](2235.md)
 - [2236. Root Equals Sum of Children](2236.md)
 - [2315. Count Asterisks](2315.md)
+- [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
