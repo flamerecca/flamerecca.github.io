@@ -43,6 +43,7 @@
 - [67. Add Binary](67.md)
 - [125. Valid Palindrome](125.md)
 - [205. Isomorphic Strings](205.md)
+- [242. Valid Anagram](242.md)
 - [657. Robot Return to Origin](657.md)
 - [771. Jewels and Stones](771.md)
 - [1108. Defanging an IP Address](1108.md)
