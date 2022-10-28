@@ -54,6 +54,7 @@
 - [1859. Sorting the Sentence](1859.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2315. Count Asterisks](2315.md)
+- [2325. Decode the Message](2325.md)
 
 ### 樹
 
@@ -141,4 +142,5 @@
 - [2235. Add Two Integers](2235.md)
 - [2236. Root Equals Sum of Children](2236.md)
 - [2315. Count Asterisks](2315.md)
+- [2325. Decode the Message](2325.md)
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
