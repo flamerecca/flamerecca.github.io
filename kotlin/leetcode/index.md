@@ -3,8 +3,7 @@
 這邊列舉一些用 Kotlin 解答 leetcode 題目的內容
 
 ### 基礎問題
-
-- [2235. Add Two Integers](2235.md)
+- [2235. Add Two Integers](2235.md)
 - [268. Missing Number](268.md)
 - [258. Add Digits](258.md)
 - [412. Fizz Buzz](412.md)
@@ -57,7 +56,6 @@
 - [2325. Decode the Message](2325.md)
 
 ### 樹
-
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
 - [104. Maximum Depth of Binary Tree](104.md)
@@ -67,7 +65,14 @@
 - [965. Univalued Binary Tree](965.md)
 - [2236. Root Equals Sum of Children](2236.md)
 
+### 鏈結串列
+- [21. Merge Two Sorted Lists](21.md)
+- [83. Remove Duplicates from Sorted List](83.md)
+- [206. Reverse Linked List](206.md)
+- [234. Palindrome Linked List](234.md)
+
 ### 全部問題列表
+
 - [1. Two Sum](1.md)
 - [2. Add Two Numbers](2.md)
 - [7. Reverse Integer](7.md)
@@ -140,7 +145,7 @@
 - [2032. Two Out of Three](2032.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2160. Minimum Sum of Four Digit Number After Splitting Digits](2160.md)
-- [2235. Add Two Integers](2235.md)
+- [2235. Add Two Integers](2235.md)
 - [2236. Root Equals Sum of Children](2236.md)
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
