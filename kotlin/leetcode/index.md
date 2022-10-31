@@ -15,6 +15,10 @@
 - [70. Climbing Stairs](70.md)
 - [509. Fibonacci Number](509.md)
 
+### 二進位操作
+- [191. Number of 1 Bits](191.md)
+- [2220. Minimum Bit Flips to Convert Number](2220.md)
+
 ### 陣列
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [27. Remove Element](27.md)
@@ -145,6 +149,7 @@
 - [2032. Two Out of Three](2032.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2160. Minimum Sum of Four Digit Number After Splitting Digits](2160.md)
+- [2220. Minimum Bit Flips to Convert Number](2220.md)
 - [2235. Add Two Integers](2235.md)
 - [2236. Root Equals Sum of Children](2236.md)
 - [2315. Count Asterisks](2315.md)
