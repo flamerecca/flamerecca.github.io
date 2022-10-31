@@ -85,6 +85,7 @@
 - [67. Add Binary](67.md)
 - [69. Sqrt(x)](69.md)
 - [70. Climbing Stairs](70.md)
+- [83. Remove Duplicates from Sorted List](83.md)
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
 - [104. Maximum Depth of Binary Tree](104.md)
