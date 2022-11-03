@@ -69,6 +69,7 @@
 - [572. Subtree of Another Tree](572.md)
 - [617. Merge Two Binary Trees](617.md)
 - [965. Univalued Binary Tree](965.md)
+- [1022. Sum of Root To Leaf Binary Numbers](1022.md)
 - [2236. Root Equals Sum of Children](2236.md)
 
 ### 鏈結串列
