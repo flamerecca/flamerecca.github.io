@@ -37,6 +37,7 @@
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
 
 ### 字串
+- [2396. Strictly Palindromic Number](2396.md)
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
 - [10. Regular Expression Matching](10.md)
@@ -60,7 +61,7 @@
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
-- [2396. Strictly Palindromic Number](2396.md)
+
 
 ### 樹
 - [100. Same Tree](100.md)
