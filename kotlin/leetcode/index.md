@@ -34,8 +34,8 @@
 - [1929. Concatenation of Array](1929.md)
 - [2011. Final Value of Variable After Performing Operations](2011.md)
 - [2032. Two Out of Three](2032.md)
-- [2418. Sort the People](2418.md)
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
+- [2418. Sort the People](2418.md)
 
 ### 字串
 - [2396. Strictly Palindromic Number](2396.md)
