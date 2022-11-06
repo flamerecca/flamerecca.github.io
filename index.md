@@ -66,6 +66,7 @@
 - [COSCUP 2022 讓你的程式清楚易懂！談 PHP 8 撰寫方式](https://coscup.org/2022/zh-TW/session/KCQNHE)
 - [COSCUP 2022 Kotlin 的五個四大天王！談 scope function](https://coscup.org/2022/zh-TW/session/WTDBSU)
 - [JCConf Taiwan 2022 演講的投影片還沒做，就用 Kotlin 做一個吧](https://pretalx.com/jcconf-2022/talk/7EWSQL/)
+- [DevFest Taichung 2022 DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-taichung-presents-devfest-taichung-2022/)
 
 ## 舉辦活動
 - 2021-11-06 [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
