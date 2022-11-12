@@ -15,6 +15,7 @@
 ### 遞迴
 - [70. Climbing Stairs](70.md)
 - [509. Fibonacci Number](509.md)
+- [1979. Find Greatest Common Divisor of Array](1979.md)
 
 ### 二進位操作
 - [191. Number of 1 Bits](191.md)
