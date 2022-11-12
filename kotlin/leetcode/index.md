@@ -4,6 +4,7 @@
 
 ### 基礎問題
 - [2235. Add Two Integers](2235.md)
+- [2413. Smallest Even Multiple](2413.md)
 - [268. Missing Number](268.md)
 - [258. Add Digits](258.md)
 - [412. Fizz Buzz](412.md)
