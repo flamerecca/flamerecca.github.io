@@ -70,7 +70,6 @@
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 
-
 ### 樹
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
@@ -87,6 +86,9 @@
 - [83. Remove Duplicates from Sorted List](83.md)
 - [206. Reverse Linked List](206.md)
 - [234. Palindrome Linked List](234.md)
+
+### 圖
+- [832. Flipping an Image](832.md)
 
 ### 全部問題列表
 
@@ -141,6 +143,7 @@
 - [657. Robot Return to Origin](657.md)
 - [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
+- [832. Flipping an Image](832.md)
 - [965. Univalued Binary Tree](965.md)
 - [1022. Sum of Root To Leaf Binary Numbers](1022.md)
 - [1051. Height Checker](1051.md)
