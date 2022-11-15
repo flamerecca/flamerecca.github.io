@@ -24,6 +24,7 @@
 - [2220. Minimum Bit Flips to Convert Number](2220.md)
 
 ### 陣列
+- [2469. Convert the Temperature](2469.md)
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [27. Remove Element](27.md)
 - [35. Search Insert Position](35.md)
@@ -182,3 +183,4 @@
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
 - [2396. Strictly Palindromic Number](2396.md)
 - [2418. Sort the People](2418.md)
+- [2469. Convert the Temperature](2469.md)
