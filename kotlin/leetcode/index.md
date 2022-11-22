@@ -48,6 +48,7 @@
 
 ### 字串
 - [2396. Strictly Palindromic Number](2396.md)
+- [1678. Goal Parser Interpretation](1678.md)
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
 - [10. Regular Expression Matching](10.md)
@@ -167,6 +168,7 @@
 - [1486. XOR Operation in an Array](1486.md)
 - [1528. Shuffle String](1528.md)
 - [1672. Richest Customer Wealth](1672.md)
+- [1678. Goal Parser Interpretation](1678.md)
 - [1689. Partitioning Into Minimum Number Of Deci-Binary Numbers](1689.md)
 - [1720. Decode XORed Array](1720.md)
 - [1791. Find Center of Star Graph](1791.md)
