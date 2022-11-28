@@ -31,6 +31,7 @@
 - [66. Plus One](66.md)
 - [153. Find Minimum in Rotated Sorted Array](153.md)
 - [169. Majority Element](169.md)
+- [171. Excel Sheet Column Number](171.md)
 - [217. Contains Duplicate](217.md)
 - [383. Ransom Note](383.md)
 - [1051. Height Checker](1051.md)
