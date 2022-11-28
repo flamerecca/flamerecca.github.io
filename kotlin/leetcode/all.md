@@ -32,6 +32,7 @@
 - [205. Isomorphic Strings](205.md)
 - [206. Reverse Linked List](206.md)
 - [217. Contains Duplicate](217.md)
+- [225. Implement Stack using Queues](225.md)
 - [226. Invert Binary Tree](226.md)
 - [231. Power of Two](231.md)
 - [234. Palindrome Linked List](234.md)
