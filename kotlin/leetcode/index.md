@@ -79,6 +79,9 @@
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 
+### 隊列
+- [225. Implement Stack using Queues](225.md)
+
 ### 樹
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
