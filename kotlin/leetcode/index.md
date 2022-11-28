@@ -29,6 +29,7 @@
 - [27. Remove Element](27.md)
 - [35. Search Insert Position](35.md)
 - [66. Plus One](66.md)
+- [88. Merge Sorted Array](88.md)
 - [153. Find Minimum in Rotated Sorted Array](153.md)
 - [169. Majority Element](169.md)
 - [171. Excel Sheet Column Number](171.md)
