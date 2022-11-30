@@ -6,6 +6,8 @@
 
 [軟體開發社群公開活動](public-event.html)
 
+[Kotlin Tips](https://tw.kotlin.tips/)
+
 ## MOすめ
 
 ![MOすめ](https://i.imgur.com/FHEbblt.png)
