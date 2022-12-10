@@ -69,6 +69,9 @@
 - [COSCUP 2022：Kotlin 的五個四大天王！談 scope function](https://coscup.org/2022/zh-TW/session/WTDBSU)
 - [JCConf Taiwan 2022：演講的投影片還沒做，就用 Kotlin 做一個吧](https://pretalx.com/jcconf-2022/talk/7EWSQL/)
 - [DevFest Taichung 2022：DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-taichung-presents-devfest-taichung-2022/)
+- [2022 Kotlin 中文開發者大會 Online：通过 Ktor 框架同步完成 Server 及 Client Side 开发](https://blog.jetbrains.com/zh-hans/2022/11/08/2022-kotlin-online-event-for-chinese-developers/)
+- [DevFest Kaohsiung & Tainan：Kotlin 後端撰寫 101：用 Ktor 框架撰寫後端服務](https://gdg.community.dev/events/details/google-gdg-kaohsiung-presents-devfest-kaohsiung-tainan-2022/)
+- [DevFest Changhua 2022：DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-changhua-presents-devfest-changhua-2022/)
 
 ## 舉辦活動
 - 2021-11-06 [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
