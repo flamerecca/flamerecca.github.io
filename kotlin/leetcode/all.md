@@ -83,6 +83,7 @@
 - [1920. Build Array from Permutation](1920.md)
 - [1929. Concatenation of Array](1929.md)
 - [1952. Three Divisors](1952.md)
+- [2000. Reverse Prefix of Word](2000.md)
 - [2011. Final Value of Variable After Performing Operations](2011.md)
 - [2032. Two Out of Three](2032.md)
 - [2037. Minimum Number of Moves to Seat Everyone](2037.md)
