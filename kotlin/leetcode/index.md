@@ -76,6 +76,7 @@
 - [1832. Check if the Sentence Is Pangram](1832.md)
 - [1844. Replace All Digits with Characters](1844.md)
 - [1859. Sorting the Sentence](1859.md)
+- [2000. Reverse Prefix of Word](2000.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
