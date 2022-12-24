@@ -27,6 +27,7 @@
 - [136. Single Number](136.md)
 - [151. Reverse Words in a String](151.md)
 - [153. Find Minimum in Rotated Sorted Array](153.md)
+- [168. Excel Sheet Column Title](168.md)
 - [169. Majority Element](169.md)
 - [171. Excel Sheet Column Number](171.md)
 - [191. Number of 1 Bits](191.md)
