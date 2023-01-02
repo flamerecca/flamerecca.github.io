@@ -66,6 +66,7 @@
 - [168. Excel Sheet Column Title](168.md)
 - [205. Isomorphic Strings](205.md)
 - [242. Valid Anagram](242.md)
+- [520. Detect Capital](520.md)
 - [535. Encode and Decode TinyURL](535.md)
 - [657. Robot Return to Origin](657.md)
 - [771. Jewels and Stones](771.md)
