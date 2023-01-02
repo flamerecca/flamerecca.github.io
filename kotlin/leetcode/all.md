@@ -53,6 +53,7 @@
 - [470. Implement Rand10() Using Rand7()](470.md)
 - [476. Number Complement](476.md)
 - [509. Fibonacci Number](509.md)
+- [520. Detect Capital](520.md)
 - [535. Encode and Decode TinyURL](535.md)
 - [572. Subtree of Another Tree](572.md)
 - [617. Merge Two Binary Trees](617.md)
