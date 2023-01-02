@@ -69,6 +69,7 @@
 - [535. Encode and Decode TinyURL](535.md)
 - [657. Robot Return to Origin](657.md)
 - [771. Jewels and Stones](771.md)
+- [804. Unique Morse Code Words](804.md)
 - [1071. Greatest Common Divisor of Strings](1071.md)
 - [1108. Defanging an IP Address](1108.md)
 - [1221. Split a String in Balanced Strings](1221.md)
