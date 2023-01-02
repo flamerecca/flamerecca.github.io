@@ -59,6 +59,7 @@
 - [657. Robot Return to Origin](657.md)
 - [704. Binary Search](704.md)
 - [771. Jewels and Stones](771.md)
+- [804. Unique Morse Code Words](804.md)
 - [832. Flipping an Image](832.md)
 - [965. Univalued Binary Tree](965.md)
 - [1022. Sum of Root To Leaf Binary Numbers](1022.md)
