@@ -55,6 +55,7 @@
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
 - [10. Regular Expression Matching](10.md)
+- [12. Integer to Roman](12.md)
 - [13. Roman to Integer](13.md)
 - [20. Valid Parentheses](20.md)
 - [28. Implement strStr()](28.md)
