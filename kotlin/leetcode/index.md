@@ -82,6 +82,7 @@
 - [1859. Sorting the Sentence](1859.md)
 - [2000. Reverse Prefix of Word](2000.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
+- [2194. Cells in a Range on an Excel Sheet](2194.md)
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 
