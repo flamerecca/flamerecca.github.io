@@ -93,6 +93,7 @@
 - [2037. Minimum Number of Moves to Seat Everyone](2037.md)
 - [2114. Maximum Number of Words Found in Sentences](2114.md)
 - [2160. Minimum Sum of Four Digit Number After Splitting Digits](2160.md)
+- [2194. Cells in a Range on an Excel Sheet](2194.md)
 - [2220. Minimum Bit Flips to Convert Number](2220.md)
 - [2235. Add Two Integers](2235.md)
 - [2236. Root Equals Sum of Children](2236.md)
