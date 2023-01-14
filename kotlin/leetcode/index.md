@@ -36,6 +36,7 @@
 - [217. Contains Duplicate](217.md)
 - [383. Ransom Note](383.md)
 - [1051. Height Checker](1051.md)
+- [1389. Create Target Array in the Given Order](1389.md)
 - [1431. Kids With the Greatest Number of Candies](1431.md)
 - [1476. Subrectangle Queries](1476.md)
 - [1480. Running Sum of 1d Array](1480.md)
