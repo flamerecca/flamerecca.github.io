@@ -9,6 +9,7 @@
 - [258. Add Digits](258.md)
 - [1952. Three Divisors](1952.md)
 - [412. Fizz Buzz](412.md)
+- [202. Happy Number](202.md)
 - [231. Power of Two](231.md)
 - [326. Power of Three](326.md)
 - [342. Power of Four](342.md)
