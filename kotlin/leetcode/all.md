@@ -70,6 +70,7 @@
 - [1108. Defanging an IP Address](1108.md)
 - [1221. Split a String in Balanced Strings](1221.md)
 - [1323. Maximum 69 Number](1323.md)
+- [1342. Number of Steps to Reduce a Number to Zero](1342.md)
 - [1365. How Many Numbers Are Smaller Than the Current Number](1365.md)
 - [1389. Create Target Array in the Given Order](1389.md)
 - [1431. Kids With the Greatest Number of Candies](1431.md)
