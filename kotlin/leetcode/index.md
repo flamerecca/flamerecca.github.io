@@ -81,6 +81,7 @@
 - [1323. Maximum 69 Number](1323.md)
 - [1528. Shuffle String](1528.md)
 - [1689. Partitioning Into Minimum Number Of Deci-Binary Numbers](1689.md)
+- [1816. Truncate Sentence](1816.md)
 - [1832. Check if the Sentence Is Pangram](1832.md)
 - [1844. Replace All Digits with Characters](1844.md)
 - [1859. Sorting the Sentence](1859.md)
