@@ -104,6 +104,7 @@
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
+- [2367. Number of Arithmetic Triplets](2367.md)
 - [2396. Strictly Palindromic Number](2396.md)
 - [2418. Sort the People](2418.md)
 - [2469. Convert the Temperature](2469.md)
