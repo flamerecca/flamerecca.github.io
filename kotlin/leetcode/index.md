@@ -50,6 +50,7 @@
 - [2032. Two Out of Three](2032.md)
 - [2037. Minimum Number of Moves to Seat Everyone](2037.md)
 - [2357. Make Array Zero by Subtracting Equal Amounts](2357.md)
+- [2367. Number of Arithmetic Triplets](2367.md)
 - [2418. Sort the People](2418.md)
 - [2535. Difference Between Element Sum and Digit Sum of an Array](2535.md)
 
