@@ -53,6 +53,7 @@
 - [461. Hamming Distance](461.md)
 - [470. Implement Rand10() Using Rand7()](470.md)
 - [476. Number Complement](476.md)
+- [500. Keyboard Row](500.md)
 - [509. Fibonacci Number](509.md)
 - [520. Detect Capital](520.md)
 - [535. Encode and Decode TinyURL](535.md)
