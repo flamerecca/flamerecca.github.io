@@ -82,6 +82,7 @@
 - [1221. Split a String in Balanced Strings](1221.md)
 - [1323. Maximum 69 Number](1323.md)
 - [1528. Shuffle String](1528.md)
+- [1662. Check If Two String Arrays are Equivalent](1662.md)
 - [1689. Partitioning Into Minimum Number Of Deci-Binary Numbers](1689.md)
 - [1816. Truncate Sentence](1816.md)
 - [1832. Check if the Sentence Is Pangram](1832.md)
