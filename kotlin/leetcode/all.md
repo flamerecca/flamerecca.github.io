@@ -110,6 +110,7 @@
 - [2396. Strictly Palindromic Number](2396.md)
 - [2418. Sort the People](2418.md)
 - [2469. Convert the Temperature](2469.md)
+- [2520. Count the Digits That Divide a Number](2520.md)
 - [2535. Difference Between Element Sum and Digit Sum of an Array](2535.md)
 
 ------
