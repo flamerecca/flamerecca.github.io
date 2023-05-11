@@ -12,7 +12,7 @@ permalink: pretty
 markdown: CommonMarkGhPages
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
-  extensions: ["strikethrough", "autolink", "table", "tagfilter"]
+  extensions: ["strikethrough", "autolink", "table"]
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
