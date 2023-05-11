@@ -4,8 +4,6 @@
 
 包含一些技術文件、後端開發筆記、自動化測試、讀書心得、雜七雜八。
 
-[軟體開發社群公開活動](public-event.html)
-
 [Kotlin Tips](https://tw.kotlin.tips/)
 
 ## MOすめ
@@ -13,6 +11,10 @@
 ![MOすめ](https://i.imgur.com/FHEbblt.png)
 
 [MOすめ Youtube](https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw)
+
+## 軟體開發社群公開活動
+
+<iframe src="https://calendar.google.com/calendar/embed?src=b3buhruprrkqmo6nhpc9u6eoig%40group.calendar.google.com&ctz=Asia%2FTaipei&mode=AGENDA" style="border: 0" width="80%" height="600" frameborder="0" scrolling="no"></iframe>
 
 ## Coding Kata
 - [Kata 簡介](kata/index.md)
