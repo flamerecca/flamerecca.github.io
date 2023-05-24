@@ -24,6 +24,7 @@
 
 ### 二進位操作
 - [191. Number of 1 Bits](191.md)
+- [338. Counting Bits](338.md)
 - [2220. Minimum Bit Flips to Convert Number](2220.md)
 
 ### 陣列
