@@ -44,6 +44,7 @@
 - [258. Add Digits](258.md)
 - [268. Missing Number](268.md)
 - [326. Power of Three](326.md)
+- [338. Counting Bits](338.md)
 - [342. Power of Four](342.md)
 - [344. Reverse String](344.md)
 - [371. Sum of Two Integers](371.md)
