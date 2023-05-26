@@ -32,8 +32,8 @@ It's for noobs :)
 1. [刪除檔案](#刪除檔案)
 1. [刪除資料夾](#刪除資料夾)
 1. [列出資料夾內容](#列出資料夾內容)
-1. [tree view a folder and its subfolders](#tree-view-a-folder-and-its-subfolders)
-1. [find a stale file](#find-a-stale-file)
+1. [樹狀顯示一個資料夾及其子資料夾](#樹狀顯示一個資料夾及其子資料夾)
+1. [找舊檔案](#找舊檔案)
 1. [看日曆](#看日曆)
 1. [看未來的日期](#看未來的日期)
 1. [計算機](#計算機)
@@ -205,7 +205,7 @@ rm -r my_useless_folder
 ls -la my_folder
 ```
 
-## tree view a folder and its subfolders
+## 樹狀顯示一個資料夾及其子資料夾
 
 **STOP OPENING YOUR FINDER OR FILE EXPLORER** :-1:
 
