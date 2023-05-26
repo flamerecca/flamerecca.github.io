@@ -3,11 +3,10 @@
 https://www.facebook.com/notes/kent-beck/when-worse-is-better-incrementally-escaping-local-maxima/498576730175196/
 
 ----
-在軟體設計的理想模型中，
 
-In the optimization model of software design there are one or more goals in play at any one time--reliability, performance, modifiability, and so on. Changes to the design can move the design on one or more of these dimensions. Each change requires some overhead, and so you would like few changes, but each change also entails risk, so you would like the changes to be as small as possible, but each change creates value, so you would like changes to be as big as possible. Balancing cost, risk, and progress is the art of software design.
+在軟體設計的理想模型中，每個時候都存在一個或多個目標——可靠性、效能、可修改性等。對設計的變更可能會在這些方面上有所改變。每個變更都需要一些額外成本，因此希望變更盡量少，但每個變更也涉及風險，因此希望變更盡量小，但每個變更也創造價值，因此希望變更盡量大。在軟體設計中平衡成本、風險和進展是一門藝術。
 
-If you've been reading along, you will know that my Sprinting Centipede strategy is to reduce the cost of each change as much as possible so as to enable small changes to be chained together nearly continuously. From the outside it is clear that big changes are happening, even though from the inside it's clear that no individual change is large or risky.
+如果您一直在閱讀我的文章，您會知道我的「Sprinting Centipede」策略是盡量減少每次變更的成本，以便幾乎連續地鏈接在一起進行小規模的變更。從外部看，明顯發生了大變化，即使從內部看，也清楚沒有任何個別的變更是巨大或有風險的。
 
 One knock on this strategy is how it deals with the situation where incremental improvement is no longer possible, where the design has reached a local maximum. For example, suppose you have squeezed all the performance you can out of a single server and you need to shard the workload. This can be a large change to the software and can't be achieved by incremental improvements.
 
