@@ -8,7 +8,7 @@
 
 ## MOすめ
 
-![MOすめ](https://i.imgur.com/FHEbblt.png)
+![MOすめ](https://upload.cc/i1/2023/05/29/TPHLm9.jpg)
 
 [MOすめ Youtube](https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw)
 
