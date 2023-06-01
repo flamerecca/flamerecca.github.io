@@ -8,7 +8,7 @@
 
 ## MOすめ
 
-![MOすめ](https://upload.cc/i1/2023/05/29/TPHLm9.jpg)
+![MOすめ](https://raw.githubusercontent.com/flamerecca/flamerecca.github.io/main/assets/TPHLm9.jpg)
 
 [MOすめ Youtube](https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw)
 
