@@ -98,6 +98,11 @@
 - [HTTP Idempotent Methods](http-idempotent-methods.md)
 - [Kotlin Academy](http://kotlin.academy/)
 
+明代高僧憨山大師云：「
+不讀《[楞嚴](楞嚴經/index.md)》，不知修心迷悟之關鍵；
+不讀《[法華](法華經/index.md)》，不知如來救世之苦心；
+不讀《[[華嚴]]》，不知佛家之富貴。」  
+
 ## 聯繫作者
 
 有任何疑問或討論，歡迎聯繫。
