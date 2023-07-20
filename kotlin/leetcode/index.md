@@ -29,6 +29,7 @@
 
 ### 陣列
 - [2469. Convert the Temperature](2469.md)
+- [977. Squares of a Sorted Array](977.md)
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [27. Remove Element](27.md)
 - [35. Search Insert Position](35.md)
