@@ -107,5 +107,3 @@
 
 - <https://github.com/flamerecca/flamerecca/issues>
 - <mailto://flamerecca711@gmail.com>
-
-<https://button.like.co/recca_chao>
