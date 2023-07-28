@@ -10,7 +10,7 @@ google_analytics: UA-78953126-2
 logo: /logo.jpg
 permalink: pretty
 markdown: CommonMarkGhPages
-liker_id: like1lnrh84gjyu8cdcna5q89d9cz6ncwf0ymzgqv0g
+liker_id: recca_chao
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
   extensions: ["strikethrough", "autolink", "table"]
