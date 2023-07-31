@@ -44,7 +44,6 @@
 
 ## Daily Coding Problem
 - [Daily Coding Problem 簡介](daily-coding-problem/index.md)
-- [Daily Coding Problem 題目列表](daily-coding-problem/all.md)
 
 ## 時間複雜度
 - [什麼是 Big-O-notation](complexity/what-is-big-o.md)
