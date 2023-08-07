@@ -10,8 +10,8 @@
 - `121. Best Time to Buy and Sell Stock`
 - [125. Valid Palindrome](125.md)
 - [226. Invert Binary Tree](226.md)
-- `242. Valid Anagram`
-- `704. Binary Search`
+- [242. Valid Anagram](242.md)
+- [704. Binary Search](704.md)
 - `733. Flood Fill`
 - `235. Lowest Common Ancestor of a Binary Search Tree`
 - `110. Balanced Binary Tree`
@@ -21,16 +21,16 @@
 ### Week 2
 
 - `278. First Bad Version`
-- `383. Ransom Note`
-- `70. Climbing Stairs`
+- [383. Ransom Note](383.md)
+- [70. Climbing Stairs](70.md)
 - `409. Longest Palindrome`
-- `206. Reverse Linked List`
-- `169. Majority Element`
-- `67. Add Binary`
+- [206. Reverse Linked List](206.md)
+- [169. Majority Element](169.md)
+- [67. Add Binary](67.md)
 - `543. Diameter of Binary Tree`
 - `876. Middle of the Linked List`
-- `104. Maximum Depth of Binary Tree`
-- `217. Contains Duplicate`
+- [104. Maximum Depth of Binary Tree](104.md)
+- [217. Contains Duplicate](217.md)
 - `53. Maximum Subarray`
 
 ### Week 3
@@ -68,6 +68,35 @@
 
 ### Week 6
 
+- `139. Word Break`
+- `416. Partition Equal Subset Sum`
+- `8. String to Integer (atoi)`
+- `54. Spiral Matrix`
+- `78. Subsets`
+- `199. Binary Tree Right Side View`
+- `5. Longest Palindromic Substring`
+- `62. Unique Paths`
+- `105. Construct Binary Tree from Preorder and Inorder Traversal`
+
 ### Week 7
 
+- `11. Container With Most Water`
+- `17. Letter Combinations of a Phone Number`
+- `79. Word Search`
+- `438. Find All Anagrams in a String`
+- `310. Minimum Height Trees`
+- `621. Task Scheduler`
+- `146. LRU Cache`
+
 ### Week 8
+
+- `230. Kth Smallest Element in a BST`
+- `76. Minimum Window Substring`
+- `297. Serialize and Deserialize Binary Tree`
+- `42. Trapping Rain Water`
+- `295. Find Median from Data Stream`
+- `127. Word Ladder`
+- `224. Basic Calculator`
+- `1235. Maximum Profit in Job Scheduling`
+- `23. Merge k Sorted Lists`
+- `84. Largest Rectangle in Histogram`
