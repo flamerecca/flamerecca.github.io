@@ -24,6 +24,7 @@
 - [101. Symmetric Tree](101.md)
 - [104. Maximum Depth of Binary Tree](104.md)
 - [118. Pascal's Triangle](118.md)
+- [121. Best Time to Buy and Sell Stock](121.md)
 - [125. Valid Palindrome](125.md)
 - [136. Single Number](136.md)
 - [151. Reverse Words in a String](151.md)
