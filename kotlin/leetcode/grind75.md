@@ -7,7 +7,7 @@
 - [1. Two Sum](1.md)
 - [20. Valid Parentheses](20.md)
 - [21. Merge Two Sorted Lists](21.md)
-- `121. Best Time to Buy and Sell Stock`
+- [121. Best Time to Buy and Sell Stock](121.md)
 - [125. Valid Palindrome](125.md)
 - [226. Invert Binary Tree](226.md)
 - [242. Valid Anagram](242.md)
