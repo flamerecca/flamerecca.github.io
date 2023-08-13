@@ -44,6 +44,7 @@
 - [242. Valid Anagram](242.md)
 - [258. Add Digits](258.md)
 - [268. Missing Number](268.md)
+- [278. First Bad Version](278.md)
 - [326. Power of Three](326.md)
 - [338. Counting Bits](338.md)
 - [342. Power of Four](342.md)
