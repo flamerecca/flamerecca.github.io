@@ -20,7 +20,7 @@
 
 ### Week 2
 
-- `278. First Bad Version`
+- [278. First Bad Version](278.md)
 - [383. Ransom Note](383.md)
 - [70. Climbing Stairs](70.md)
 - `409. Longest Palindrome`
