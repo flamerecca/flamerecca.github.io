@@ -99,6 +99,9 @@
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 
+### 二分搜尋法
+- [278. First Bad Version](278.md)
+
 ### 隊列
 - [225. Implement Stack using Queues](225.md)
 
