@@ -109,6 +109,7 @@
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
 - [104. Maximum Depth of Binary Tree](104.md)
+- [110. Balanced Binary Tree](110.md)
 - [226. Invert Binary Tree](226.md)
 - [572. Subtree of Another Tree](572.md)
 - [617. Merge Two Binary Trees](617.md)
