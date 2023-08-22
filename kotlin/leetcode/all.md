@@ -23,6 +23,7 @@
 - [100. Same Tree](100.md)
 - [101. Symmetric Tree](101.md)
 - [104. Maximum Depth of Binary Tree](104.md)
+- [110. Balanced Binary Tree](110.md)
 - [118. Pascal's Triangle](118.md)
 - [121. Best Time to Buy and Sell Stock](121.md)
 - [125. Valid Palindrome](125.md)
