@@ -103,6 +103,7 @@
 - [278. First Bad Version](278.md)
 
 ### 隊列
+- [232. Implement Queue using Stacks](232.md)
 - [225. Implement Stack using Queues](225.md)
 
 ### 樹
