@@ -41,6 +41,7 @@
 - [225. Implement Stack using Queues](225.md)
 - [226. Invert Binary Tree](226.md)
 - [231. Power of Two](231.md)
+- [232. Implement Queue using Stacks](232.md)
 - [234. Palindrome Linked List](234.md)
 - [242. Valid Anagram](242.md)
 - [258. Add Digits](258.md)
