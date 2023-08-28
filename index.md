@@ -75,13 +75,20 @@
 - [DevFest Changhua 2022：DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-changhua-presents-devfest-changhua-2022/)
 - [COSCUP 2023：An Introduction to JetBrains Exposed: The Kotlin-based ORM Framework](https://coscup.org/2023/zh-TW/session/V8F9VH)
 - [COSCUP 2023：使用 Laravel Pennant 處理 Feature Flags](https://coscup.org/2023/zh-TW/session/MG7BDS)
+- [{Laravel x Vue}Conf Taiwan 2023：善用工具靈活思考：解鎖 PHPStorm 的強大潛能](https://laravelconf.tw/agendas?modal=agenda.WyI0Il0)
 
 ## 舉辦活動
-- 2021-11-06 [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
-- 2021-10-19 [2021 Kotlin Meetup #4 Online](https://www.facebook.com/events/4392745437499911/)
-- 2021-08-31 [2021 Kotlin Meetup #3 Online](https://www.facebook.com/events/1264189300692421/)
-- 2021-04-20 [2021 Kotlin Meetup #2 @ Dcard](https://www.facebook.com/events/793159571303586/)
-- 2021-03-23 [2021 Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
+### 2021
+- 2021-03-23 [Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
+- 2021-04-20 [Kotlin Meetup #2 @ Dcard](https://www.facebook.com/events/793159571303586/)
+- 2021-08-31 [Kotlin Meetup #3 Online](https://www.facebook.com/events/1264189300692421/)
+- 2021-10-19 [Kotlin Meetup #4 Online](https://www.facebook.com/events/4392745437499911/)
+- 2021-11-06 [Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
+### 2022
+- 2022-04-26 [Kotlin Meetup #5 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-5/)
+- 2022-05-31 [Kotlin Meetup #6 Online](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-6/)
+- 2022-08-18 [Kotlin Meetup #7 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-7/)
+- 2022-09-27 [Kotlin Meetup #8 @ 天瓏](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-8/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
