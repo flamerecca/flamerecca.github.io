@@ -123,6 +123,7 @@
 - [83. Remove Duplicates from Sorted List](83.md)
 - [206. Reverse Linked List](206.md)
 - [234. Palindrome Linked List](234.md)
+- [876. Middle of the Linked List](876.md)
 
 ### 圖
 - [832. Flipping an Image](832.md)
