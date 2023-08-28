@@ -90,6 +90,7 @@
 - 2022-08-18 [Kotlin Meetup #7 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-7/)
 - 2022-09-27 [Kotlin Meetup #8 @ 天瓏](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-8/)
 ### 2023
+- 2023-06-10 [Kotlin Annual Seminar 2023](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-annual-meetup-2023/)
 - 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
 
 ## 戰略夥伴
