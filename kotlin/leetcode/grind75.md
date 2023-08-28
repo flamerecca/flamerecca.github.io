@@ -28,7 +28,7 @@
 - [169. Majority Element](169.md)
 - [67. Add Binary](67.md)
 - `543. Diameter of Binary Tree`
-- `876. Middle of the Linked List`
+- [876. Middle of the Linked List](876.md)
 - [104. Maximum Depth of Binary Tree](104.md)
 - [217. Contains Duplicate](217.md)
 - `53. Maximum Subarray`
