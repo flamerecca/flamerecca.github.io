@@ -89,6 +89,8 @@
 - 2022-05-31 [Kotlin Meetup #6 Online](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-6/)
 - 2022-08-18 [Kotlin Meetup #7 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-7/)
 - 2022-09-27 [Kotlin Meetup #8 @ 天瓏](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-8/)
+### 2023
+- 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
