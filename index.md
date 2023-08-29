@@ -116,5 +116,5 @@
 
 有任何疑問或討論，歡迎聯繫。
 
-- <https://github.com/flamerecca/flamerecca/issues>
+- [GitHub issue](https://github.com/flamerecca/flamerecca/issues)
 - <mailto://flamerecca711@gmail.com>
