@@ -121,6 +121,7 @@
 ### 鏈結串列
 - [21. Merge Two Sorted Lists](21.md)
 - [83. Remove Duplicates from Sorted List](83.md)
+- [141. Linked List Cycle](141.md)
 - [206. Reverse Linked List](206.md)
 - [234. Palindrome Linked List](234.md)
 - [876. Middle of the Linked List](876.md)
