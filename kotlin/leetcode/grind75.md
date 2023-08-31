@@ -15,7 +15,7 @@
 - `733. Flood Fill`
 - `235. Lowest Common Ancestor of a Binary Search Tree`
 - [110. Balanced Binary Tree](110.md)
-- `141. Linked List Cycle`
+- [141. Linked List Cycle](141.md)
 - [232. Implement Queue using Stacks](232.md)
 
 ### Week 2
