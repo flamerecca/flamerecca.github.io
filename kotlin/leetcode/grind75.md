@@ -1,6 +1,6 @@
 ## grind 75
 
-參考 https://www.techinterviewhandbook.org/grind75 建立
+參考 [Grind 75 questions](https://www.techinterviewhandbook.org/grind75) 建立
 
 ### Week 1
 
