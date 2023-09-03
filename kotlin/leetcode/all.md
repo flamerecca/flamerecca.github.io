@@ -13,6 +13,7 @@
 - [27. Remove Element](27.md)
 - [28. Implement strStr()](28.md)
 - [35. Search Insert Position](35.md)
+- [53. Maximum Subarray](53.md)
 - [58. Length of Last Word](58.md)
 - [66. Plus One](66.md)
 - [67. Add Binary](67.md)
