@@ -33,6 +33,7 @@
 - [26. Remove Duplicates from Sorted Array](26.md)
 - [27. Remove Element](27.md)
 - [35. Search Insert Position](35.md)
+- [53. Maximum Subarray](53.md)
 - [66. Plus One](66.md)
 - [88. Merge Sorted Array](88.md)
 - [121. Best Time to Buy and Sell Stock](121.md)
