@@ -31,7 +31,7 @@
 - [876. Middle of the Linked List](876.md)
 - [104. Maximum Depth of Binary Tree](104.md)
 - [217. Contains Duplicate](217.md)
-- `53. Maximum Subarray`
+- [53. Maximum Subarray](53.md)
 
 ### Week 3
 
