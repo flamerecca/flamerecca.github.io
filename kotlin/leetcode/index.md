@@ -130,3 +130,5 @@
 - [832. Flipping an Image](832.md)
 
 ### [全部問題列表](all.md)
+
+### [Grind 75 問題列表](grind75.md)
