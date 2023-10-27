@@ -123,6 +123,7 @@
 - [2469. Convert the Temperature](2469.md)
 - [2520. Count the Digits That Divide a Number](2520.md)
 - [2535. Difference Between Element Sum and Digit Sum of an Array](2535.md)
+- [2769. Find the Maximum Achievable Number](2769.md)
 
 ------
 
