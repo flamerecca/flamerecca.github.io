@@ -61,6 +61,7 @@
 - [2367. Number of Arithmetic Triplets](2367.md)
 - [2418. Sort the People](2418.md)
 - [2535. Difference Between Element Sum and Digit Sum of an Array](2535.md)
+- [2798. Number of Employees Who Met the Target](2798.md)
 
 ### 字串
 - [2396. Strictly Palindromic Number](2396.md)
