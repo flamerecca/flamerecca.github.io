@@ -66,6 +66,7 @@
 
 ### 字串
 - [2396. Strictly Palindromic Number](2396.md)
+- [2942. Find Words Containing Character](2942.md)
 - [1678. Goal Parser Interpretation](1678.md)
 - [7. Reverse Integer](7.md)
 - [9. Palindrome Number](9.md)
