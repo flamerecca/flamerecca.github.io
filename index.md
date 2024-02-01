@@ -97,7 +97,7 @@
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
 
 ## 雜七雜八
-- [閱讀清單][(reading-list.md)
+- [閱讀清單](reading-list.md)
 - [GitLab 的六個價值 - CREDIT](gitlab-values.md)
 - [php self 和 static 的不同](php-static.md)
 - [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
