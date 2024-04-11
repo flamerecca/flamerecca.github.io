@@ -122,4 +122,4 @@
 
 - [GitHub issue](https://github.com/flamerecca/flamerecca/issues)
 - <mailto://flamerecca711@gmail.com>
-- <tel:+886-910230124>
+- [tel](tel:+886-910230124)
