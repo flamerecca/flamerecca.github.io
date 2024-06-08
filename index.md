@@ -76,8 +76,8 @@
 - [COSCUP 2023：An Introduction to JetBrains Exposed: The Kotlin-based ORM Framework](https://coscup.org/2023/zh-TW/session/V8F9VH)
 - [COSCUP 2023：使用 Laravel Pennant 處理 Feature Flags](https://coscup.org/2023/zh-TW/session/MG7BDS)
 - [{Laravel x Vue}Conf Taiwan 2023：善用工具靈活思考：解鎖 PHPStorm 的強大潛能](https://laravelconf.tw/agendas?modal=agenda.WyI0Il0)
-- [探索 Javalin：一個輕量級 Java 和 Kotlin 網頁框架](https://pretalx.com/jcconf-2023/talk/MT9BYA/)
-- [Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
+- [JCConf 2023：探索 Javalin：一個輕量級 Java 和 Kotlin 網頁框架](https://pretalx.com/jcconf-2023/talk/MT9BYA/)
+- [DevFest Taipei 2023：Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
 
 ## 舉辦活動
 ### 2021
