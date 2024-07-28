@@ -104,6 +104,7 @@
 - [2194. Cells in a Range on an Excel Sheet](2194.md)
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
+- [3110. Score of a String](3110.md)
 
 ### 二分搜尋法
 - [278. First Bad Version](278.md)
