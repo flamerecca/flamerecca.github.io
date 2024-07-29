@@ -126,6 +126,7 @@
 - [2535. Difference Between Element Sum and Digit Sum of an Array](2535.md)
 - [2769. Find the Maximum Achievable Number](2769.md)
 - [2798. Number of Employees Who Met the Target](2798.md)
+- [2894. Divisible and Non-divisible Sums Difference](2894.md)
 - [2942. Find Words Containing Character](2942.md)
 - [3110. Score of a String](3110.md)
 - [3190. Find Minimum Operations to Make All Elements Divisible by Three](3190.md)
