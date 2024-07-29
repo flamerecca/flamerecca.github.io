@@ -100,6 +100,8 @@
 - 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
 ### 2024
 - 2024-03-10 ~ 2024-03-16 [WTM Taipei | IWD'24 Week](https://gdg.community.dev/events/details/google-gdg-taipei-presents-wtm-taipei-iwd24-week/)
+- 2024-06-18 [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
+
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
 
