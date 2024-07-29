@@ -78,6 +78,9 @@
 - [{Laravel x Vue}Conf Taiwan 2023：善用工具靈活思考：解鎖 PHPStorm 的強大潛能](https://laravelconf.tw/agendas?modal=agenda.WyI0Il0)
 - [JCConf 2023：探索 Javalin：一個輕量級 Java 和 Kotlin 網頁框架](https://pretalx.com/jcconf-2023/talk/MT9BYA/)
 - [DevFest Taipei 2023：Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
+- [IWD 24 Week：Tech Communities Impact the Future](https://www.accupass.com/event/2402160912355310126620)
+- [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
+- [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
 
 ## 舉辦活動
 ### 2021
