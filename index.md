@@ -49,6 +49,11 @@
 - [什麼是 Big-O-notation](complexity/what-is-big-o.md)
 - [Binary Search 的時間複雜度](complexity/binary-search-complexity.md)
 
+## 課程經歷
+### 2024
+- [五倍學院 Laravel 入門](https://5xcampus.com/courses/laravel.html)
+- 中正大學 Laravel 系統安全開發
+
 ## 演講經歷
 - [PHP 也有 Day #42：Laravel Dusk 使用及研究](https://community.laravel-dojo.com/phptheday/2019-01-15)
 - [PHP 也有 Day #44：先別提測試了，你聽過 TDD 已死了嗎？](https://community.laravel-dojo.com/phptheday/2019-04-16)
