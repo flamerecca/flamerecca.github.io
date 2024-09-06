@@ -8,18 +8,18 @@ https://www.facebook.com/notes/kent-beck/when-worse-is-better-incrementally-esca
 
 如果您一直在閱讀我的文章，您會知道我的「Sprinting Centipede」策略是盡量減少每次變更的成本，以便幾乎連續地鏈接在一起進行小規模的變更。從外部看，明顯發生了大變化，即使從內部看，也清楚沒有任何個別的變更是巨大或有風險的。
 
-One knock on this strategy is how it deals with the situation where incremental improvement is no longer possible, where the design has reached a local maximum. For example, suppose you have squeezed all the performance you can out of a single server and you need to shard the workload. This can be a large change to the software and can't be achieved by incremental improvements.
+一個對這種策略的批評是它如何應對當增量改進不再可能時的情況，即設計已達到局部最大值。例如，假設您已經從單個伺服器中擠取了所有性能，並且需要對工作負載進行分片。這可能是軟體的一個重大變化，無法通過增量改進來實現。
 
-It's tempting to pull out a clean white sheet of paper when faced with a local maximum and a big trough. However, the risk compounds when replacing a large amount of functionality in one go. Do we have to give up the risk management advantages of incremental change just because have painted ourselves into a (mixed) metaphorical corner?
+當面對局部最大值和一個巨大的低谷時，拿出一張乾淨的白紙是很誘人的。然而，在一次性替換大量功能時，風險會累積。我們是否必須放棄增量變化的風險管理優勢，只因為我們把自己畫進了（混合）比喻的角落？
 
-The problem is worse than it seems on the surface. If we have been making little incremental changes daily for months or years, our skills at de novo development will have atrophied. Not only are we putting a big bunch of functionality into production at once, we developed that functionality at less than 100%. Bad mojo.
+問題比表面看起來更糟。如果我們在幾個月或幾年內每天進行一點點增量變化，我們的全新開發技能將會退化。我們不僅一次將大量功能投入生產，而且我們以不到100%的水準開發了該功能。糟糕的氛圍。
 
-The key is being able to abandon the other half of the phrase "incremental improvement". If we are willing to mindfully practice incremental degradation, then we can escape local maxima, travel through the Valley of Despair, and climb the new Mountain of Blessedness all without abandoning the safety of small steps. Here are some examples.
+關鍵在於能夠放棄“增量改進”這個短語的另一半。如果我們願意有意識地實踐增量退化，那麼我們就可以避開局部最大值，穿越絕望之谷，攀登新的幸福之山，而無需放棄小步驟的安全性。以下是一些例子。
 
-Suppose we have a class that is awkwardly factored into methods. Say there is 100 lines of logic, the coding standards demand no more than 10 lines per function, and someone took the original 100 line function and chopped it every 10 lines (I'm not smart enough to make this stuff up). What's the best way to get to a sensible set of helper methods? Incremental improvement is hard because related computations can easily be split between functions. Incremental degradation, though, is easy (especially with the right tools): inline everything until you have one gigantic, ugly function. With the, er..., stuff all in one pile, it's relatively easy to make incremental improvements.
+假設我們有一個被笨拙地分解成方法的類別。假設有100行邏輯，編碼標準要求每個函數不超過10行，有人將原始的100行函數每10行切割一次（我不夠聰明去編造這些東西）。如何最好地獲得一組合理的輔助方法？增量改進很難，因為相關的計算很容易在函數之間分割。然而，增量退化很容易（尤其是使用正確的工具）：將所有內容內聯，直到您擁有一個巨大且醜陋的函數。將所有東西放在一堆中後，相對容易進行增量改進。
 
-Suppose we need to switch from one data store to another. Normalization is good, right? So the incremental way to convert is to denormalize. Everywhere we write to the old store, write to the new store. Bulk migrate all the old data. Begin reading from the new store and comparing results to make sure they match. When the error rate is acceptable, stop writing to the old store and decommission.
+假設我們需要從一個資料存儲切換到另一個。 正規化是好的，對吧？ 因此，逐步轉換的方法是去正規化。 在每個寫入舊存儲的地方，也寫入新存儲。 批量遷移所有舊數據。 開始從新存儲讀取並比較結果以確保它們匹配。 當錯誤率可接受時，停止向舊存儲寫入並停用。
 
-The literature and tools for incremental change betray a bias towards improvement. Fowler's "Refactoring" covers extracting methods more thoroughly than inlining them. Refactoring tools often implement varieties of extract before inline. To be fair, that's the more common direction to move. However, mastering incremental design demands being equally prepared to improve or degrade the design at any time, depending on whether it's possible to incrementally improve. In fact, sometimes when I have degraded the design and discover I still can't make incremental progress, I release my inner pig and make a really big mess.
+有關逐步變更的文獻和工具背叛了對改進的偏見。 Fowler 的《重構》更全面地涵蓋了提取方法，而不是內聯它們。 重構工具通常實現了各種提取之前內聯的方法。 公平地說，那是更常見的移動方向。 然而，精通逐步設計需要同樣準備好隨時改進或降低設計，具體取決於是否可能逐步改進。 實際上，有時當我降低了設計並發現我仍然無法逐步進展時，我會釋放內心的豬，搞出一團大亂。
 
 簡單講：如果你不能讓它更好，那就讓它更糟
