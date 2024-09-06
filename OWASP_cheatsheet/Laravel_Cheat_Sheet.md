@@ -79,7 +79,7 @@ protected $middlewareGroups = [
 'lifetime' => 15,
 ```
 
-您也可以參考[Cookie安全性指南](https://owasp.org/www-chapter-london/assets/slides/OWASPLondon20171130_Cookie_Security_Myths_Misconceptions_David_Johansson.pdf)以了解更多關於cookie安全性和上述提到的cookie屬性的信息。 { /*examples*/ }
+您也可以參考[Cookie安全性指南](https://owasp.org/www-chapter-london/assets/slides/OWASPLondon20171130_Cookie_Security_Myths_Misconceptions_David_Johansson.pdf)以了解更多關於cookie安全性和上述提到的cookie屬性的信息。 
 
 ## 認證
 
@@ -162,7 +162,7 @@ select * from `users` where `email` = ?
 
 因此，即使 `$email` 是不受信任的使用者輸入資料，您也受到保護，不會受到 SQL 注入攻擊的影響。
 
-### 原始查詢 SQL 注入 {/examples/}
+### 原始查詢 SQL 注入
 
 Laravel 也提供原始查詢表達式和原始查詢，用於構建複雜查詢或不受支援的特定資料庫查詢。
 
@@ -200,7 +200,7 @@ use App\Models\User;
 User::whereRaw('email = :email', ['email' => $request->input('email')])->get();
 ```
 
-### 欄位名稱 SQL 注入 {/examples/}
+### 欄位名稱 SQL 注入
 
 絕不能讓使用者輸入資料決定查詢中引用的欄位名稱。
 
@@ -226,7 +226,7 @@ $request->validate(['sortBy' => 'in:price,updated_at']);
 User::query()->orderBy($request->validated()['sortBy'])->get();
 ```
 
-### 驗證規則 SQL 注入 {/examples/}
+### 驗證規則 SQL 注入
 
 某些驗證規則可以提供資料庫欄位名稱的選項。這些規則容易受到 SQL 注入攻擊，方式與欄位名稱 SQL 注入相同，因為它們以類似的方式構建查詢。
 
@@ -293,7 +293,7 @@ $request->validate([
 
 這兩種攻擊都可以通過簡單的檔案驗證來避免，如上所述。
 
-### 不要依賴使用者輸入來指定檔案名稱或路徑 {/examples/}
+### 不要依賴使用者輸入來指定檔案名稱或路徑
 
 如果您的應用程式允許使用者控制的資料來構建檔案上傳的路徑，這可能導致覆寫重要檔案或將檔案存儲在不良位置。
 
@@ -319,7 +319,7 @@ Route::post('/upload', function (Request $request) {
 });
 ```
 
-### 盡量避免處理 ZIP 或 XML 檔案 {/examples/}
+### 盡量避免處理 ZIP 或 XML 檔案
 
 XML 檔案可能會使您的應用程式受到各種攻擊的影響，例如 XXE 攻擊、十億笑攻擊等。如果處理 ZIP 檔案，您可能會受到 zip bomb DOS 攻擊的影響。
 
@@ -365,7 +365,7 @@ Route::get('/redirect', function (Request $request) {
 
 ## 跨站請求偽造（CSRF）
 
-[跨站請求偽造（CSRF）](https://owasp.org/www-community/attacks/csrf) 是一種攻擊類型，當惡意網站、電子郵件、部落格、即時消息或程式導致使用者的網頁瀏覽器在使用者已驗證時對受信任網站執行不需要的操作時發生。
+[跨站請求偽造（CSRF）](https://owasp.org/www-community/attacks/csrf)是一種攻擊類型，當惡意網站、電子郵件、部落格、即時消息或程式導致使用者的網頁瀏覽器在使用者已驗證時對受信任網站執行不需要的操作時發生。
 
 Laravel 提供了 `VerifyCSRFToken` 中介軟體，以提供開箱即用的 CSRF 保護。通常，如果您在 `App\Http\Kernel` 類的 `web` 中介軟體組中有此中介軟體，您應該受到良好的保護：
 
@@ -452,4 +452,4 @@ extract($request->all());
 - [Laravel CSRF 文件](https://laravel.com/docs/csrf)
 - [Laravel 驗證文件](https://laravel.com/docs/validation)
 - [Enlightn SAST 和 DAST 工具](https://www.laravel-enlightn.com/)
-- [Laravel Enlightn 安全性文件](https://www.laravel-enlightn.com/docs/security/){/*examples*/}
+- [Laravel Enlightn 安全性文件](https://www.laravel-enlightn.com/docs/security/)
