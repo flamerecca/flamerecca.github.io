@@ -28,8 +28,6 @@ php artisan key:generate
 
 - 確保您的應用程式沒有弱點依賴。您可以使用 [Enlightn 安全檢查器](https://github.com/enlightn/security-checker) 來檢查這一點。 
 
-{ /*examples*/ }
-
 ## Cookie安全性和會話管理
 
 預設情況下，Laravel已經以安全方式配置。但是，如果您更改了cookie或會話配置，請確保以下事項：
