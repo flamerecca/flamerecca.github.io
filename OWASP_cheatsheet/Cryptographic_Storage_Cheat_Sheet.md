@@ -4,43 +4,44 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
 
 ----
 
-# 加密儲存資料的小抄
+# 密碼儲存小抄
 
 ## 簡介
 
-這篇文章提供以加密保護資料時，該怎麼實作的簡單模型。
+本文提供了一個簡單的模型，用於實施保護靜態數據解決方案時的遵循。
 
-密碼不應該以可以解密的方式進行儲存，應該使用安全的密碼雜湊演算法。儲存密碼的指引在[密碼儲存的小抄](Password_Storage_Cheat_Sheet.md) 裡面有說明。
+不應使用可逆加密來儲存密碼 - 應改用安全的密碼雜湊算法。[密碼儲存小抄](Password_Storage_Cheat_Sheet.md) 包含了有關儲存密碼的進一步指導。
 
 ## 內容
 
-- [加密儲存資料的小抄](#加密儲存資料的小抄)
+- [密碼儲存小抄](#密碼儲存小抄)
   * [簡介](#簡介)
   * [內容](#內容)
   * [架構設計](#架構設計)
-    + [Where to Perform Encryption](#where-to-perform-encryption)
-    + [Minimise the Storage of Sensitive Information](#minimise-the-storage-of-sensitive-information)
+    + [加密應該在哪裡執行](#加密應該在哪裡執行)
+    + [減少敏感信息的儲存](#減少敏感信息的儲存)
   * [演算法](#演算法)
     + [自定義演算法](#自定義演算法)
-    + [Cipher Modes](#cipher-modes)
-    + [Secure Random Number Generation](#secure-random-number-generation)
-      - [UUIDs and GUIDs](#uuids-and-guids)
-    + [Defence in Depth](#defence-in-depth)
-  * [Key Management](#key-management)
-    + [Processes](#processes)
-    + [Key Generation](#key-generation)
-    + [Key Lifetimes and Rotation](#key-lifetimes-and-rotation)
-  * [Key Storage](#key-storage)
-    + [Separation of Keys and Data](#separation-of-keys-and-data)
-    + [Encrypting Stored Keys](#encrypting-stored-keys)
+    + [加密模式](#加密模式)
+    + [隨機填充](#隨機填充)
+    + [安全隨機數生成](#安全隨機數生成)
+      - [UUIDs 和 GUIDs](#UUIDs 和 GUIDs)
+    + [防禦深度](#防禦深度)
+  * [金鑰管理](#金鑰管理)
+    + [流程](#流程)
+    + [金鑰生成](#金鑰生成)
+    + [金鑰壽命和輪換](#金鑰壽命和輪換)
+  * [金鑰存儲](#金鑰存儲)
+    + [金鑰和數據的分離](#金鑰和數據的分離)
+    + [加密存儲的金鑰](#加密存儲的金鑰)
 
 ## 架構設計
 
-The first step in designing any application is to consider the overall architecture of the system, as this will have a huge impact on the technical implementation.
+設計任何應用程序的第一步是考慮系統的整體架構，因為這將對技術實施產生巨大影響。
 
-This process should begin with considering the [威脅模型](Threat_Modeling_Cheat_Sheet.md) of the application (i.e, who you trying to protect that data against).
+這個過程應該從考慮應用程序的[威脅模型](Threat_Modeling_Cheat_Sheet.md) 開始（即，您正在試圖保護哪些數據）。
 
-The use of dedicated secret or key management systems can provide an additional layer of security protection, as well as making the management of secrets significantly easier - however it comes at the cost of additional complexity and administrative overhead - so may not be feasible for all applications. Note that many cloud environments provide these services, so these should be taken advantage of where possible.
+使用專用的秘密或金鑰管理系統可以提供額外的安全保護層，同時使秘密管理顯著變得更容易 - 但這將增加額外的複雜性和管理開銷 - 因此可能對所有應用程序都不可行。請注意，許多雲環境提供這些服務，因此應該在可能的情況下加以利用。[秘密管理小抄](Secrets_Management_Cheat_Sheet.md) 包含了有關此主題的進一步指導。
 
 ### 執行加密的位置
 
@@ -53,55 +54,59 @@ Encryption can be performed on a number of levels in the application stack, such
 
 Which layer(s) are most appropriate will depend on the threat model. For example, hardware level encryption is effective at protecting against the physical theft of the server, but will provide no protection if an attacker is able to compromise the server remotely.
 
-### 將敏感資料的儲存比例降到最低
+### 減少敏感信息的儲存
 
 保護敏感資料的最好方法，是一開始就不儲存任何敏感資料。這個說法適用任何的敏感資料，不過一般來說，最適用的狀況是針對信用卡詳細資料，因為攻擊者非常想要這類資料，並且支付卡產業資料安全標準（PCI DSS）針對這類資料的儲存規範非常嚴格。如果可能的話，一開始就避免儲存任何的敏感資料。
 
 ## 演算法
 
-For symmetric encryption **AES** with a key that's at least **128 bits** (ideally **256 bits**) and a secure [mode](#cipher-modes) should be used as the preferred algorithm.
+對於對稱加密 **AES**，應使用至少 **128 位元**（理想情況下為 **256 位元**）的金鑰和安全的[模式](#cipher-modes)作為首選演算法。
 
-For asymmetric encryption, use 橢圓曲線加密（ECC） with a secure curve such as **Curve25519** as a preferred algorithm. If ECC is not available and  **RSA** must be used, then ensure that the key is at least **2048 bits**.
+對於非對稱加密，應使用橢圓曲線加密（ECC），並使用安全曲線，如 **Curve25519** 作為首選演算法。如果 ECC 不可用且必須使用 **RSA**，則確保金鑰至少為 **2048 位元**。
 
-Many other symmetric and asymmetric algorithms are available which have their own pros and cons, and they may be better or worse than AES or Curve25519 in specific use cases. When considering these, a number of factors should be taken into account, including:
+還有許多其他對稱和非對稱演算法可供選擇，它們各自有優缺點，可能在特定用例中比 AES 或 Curve25519 更好或更差。在考慮這些時，應考慮多個因素，包括：
 
-- Key size.
-- Known attacks and weaknesses of the algorithm.
-- Maturity of the algorithm.
-- Approval by third parties such as [NIST's algorithmic validation program](https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program).
-- Performance (both for encryption and decryption).
-- Quality of the libraries available.
-- Portability of the algorithm (i.e, how widely supported is it).
+- 金鑰大小。
+- 演算法的已知攻擊和弱點。
+- 演算法的成熟度。
+- 第三方的批准，如[NIST 的演算法驗證計畫](https://csrc.nist.gov/projects/cryptographic-algorithm-validation-program)。
+- 效能（加密和解密）。
+- 可用的函式庫品質。
+- 演算法的可移植性（即，它有多廣泛的支援）。
 
-In some cases there may be regulatory requirements that limit the algorithms that can be used, such as [FIPS 140-2](https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf) or [PCI DSS](https://www.pcisecuritystandards.org/pci_security/glossary#Strong%20Cryptography).
+在某些情況下，可能會有法規要求限制可使用的演算法，例如[FIPS 140-2](https://csrc.nist.gov/csrc/media/publications/fips/140/2/final/documents/fips1402annexa.pdf)或[PCI DSS](https://www.pcisecuritystandards.org/pci_security/glossary#Strong%20Cryptography)。
 
 ### 自定義演算法
 
 不要這麼做
 
-### Cipher Modes
+### 加密模式
 
-There are various [modes](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation) that can be used to allow block ciphers (such as AES) to encrypt arbitrary amounts of data, in the same way that a stream cipher would. These modes have different security and performance characteristics, and a full discussion of them is outside the scope of this cheat sheet. Some of the modes have requirements to generate secure initialisation vectors (IVs) and other attributes, but these should be handled automatically by the library.
+有各種[模式](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation)可用於允許區塊加密（如 AES）加密任意量的資料，就像串流加密器一樣。這些模式具有不同的安全性和效能特性，對它們的全面討論超出了此速查表的範圍。一些模式有生成安全初始化向量（IV）和其他屬性的要求，但這些應由函式庫自動處理。
 
-Where available, authenticated modes should always be used. These provide guarantees of the integrity and authenticity of the data, as well as confidentiality. The most commonly used authenticated modes are **[GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)** and **[CCM](https://en.wikipedia.org/wiki/CCM_mode)**, which should be used as a first preference.
+在可用時，應始終使用驗證模式。這些提供了數據的完整性和真實性的保證，以及機密性。最常用的驗證模式是 **[GCM](https://en.wikipedia.org/wiki/Galois/Counter_Mode)** 和 **[CCM](https://en.wikipedia.org/wiki/CCM_mode)**，應作為首選。 
 
-If GCM or CCM are not available, then [CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_%28CTR%29) mode or [CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_%28CBC%29) mode should be used. As these do not provide any guarantees about the authenticity of the data, separate authentication should be implemented, such as using the [Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC_%28EtM%29) technique. Care needs to be taken when using this method with [variable length messages](https://en.wikipedia.org/wiki/CBC-MAC#Security_with_fixed_and_variable-length_messages)
+如果 GCM 或 CCM 不可用，則應使用 [CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_%28CTR%29) 模式或 [CBC](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_Block_Chaining_%28CBC%29) 模式。由於這些模式不提供有關數據真實性的任何保證，因此應實施獨立的認證，例如使用 [Encrypt-then-MAC](https://en.wikipedia.org/wiki/Authenticated_encryption#Encrypt-then-MAC_%28EtM%29) 技術。在使用此方法與 [可變長度訊息](https://en.wikipedia.org/wiki/CBC-MAC#Security_with_fixed_and_variable-length_messages) 時需要小心。
 
-If random access to the encrypted data is required then [XTS](https://en.wikipedia.org/wiki/Disk_encryption_theory#XTS) mode should be used. This is typically used for disk encryption, so it unlikely to be used by a web application.
+除了非常特定的情況下，不應使用 [ECB](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#ECB)。
 
-[ECB](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#ECB) should not be used outside of very specific circumstances.
+### 隨機填充
+
+對於 RSA，啟用隨機填充是至關重要的。隨機填充也被稱為 OAEP 或最佳非對稱加密填充。這種防禦類型通過在有效負載的開頭添加隨機性來防範已知明文攻擊。
+
+在這種情況下通常使用 [PKCS#1](https://wikipedia.org/wiki/RSA_(cryptosystem)#Padding_schemes) 的填充模式。
 
 ### 安全的亂數生成器
 
-Random numbers (or strings) are needed for various security critical functionality, such as generating encryption keys, IVs, session IDs, CSRF tokens or password reset tokens. As such, it is important that these are generated securely, and that it is not possible for an attacker to guess and predict them.
+隨機數（或字串）在各種安全關鍵功能中都是必需的，例如生成加密金鑰、初始化向量、會話 ID、CSRF 標記或重設密碼標記。因此，重要的是這些數據是安全生成的，並且攻擊者無法猜測和預測它們。
 
-It is generally not possible for computers to generate truly random numbers (without special hardware), so most systems and languages provide two different types of randomness.
+通常，計算機無法生成真正的隨機數（沒有特殊硬體），因此大多數系統和語言提供兩種不同類型的隨機性。
 
-Pseudo-Random Number Generators (PRNG) provide low-quality randomness that are much faster, and can be used for non-security related functionality (such as ordering results on a page, or randomising UI elements). However, they **must not** be used for anything security critical, as it is often possible for attackers to guess or predict the output.
+偽隨機數生成器（PRNG）提供低質量的隨機性，速度更快，可用於非安全相關功能（例如在頁面上排序結果或隨機化 UI 元素）。但是，**絕對不應**將其用於任何安全關鍵功能，因為攻擊者通常可以猜測或預測輸出。
 
-Cryptographically Secure Pseudo-Random Number Generators (CSPRNG) are designed to produce a much higher quality of randomness (more strictly, a greater amount of entropy), making them safe to use for security-sensitive functionality. However, they are slower and more CPU intensive, can end up blocking in some circumstances when large amounts of random data are requested. As such, if large amounts of non-security related randomness are needed, they may not be appropriate.
+加密安全偽隨機數生成器（CSPRNG）旨在產生更高質量的隨機性（更嚴格地說，更多的熵量），使其可以安全用於安全敏感功能。然而，它們速度較慢且消耗 CPU 較多，在某些情況下可能會因請求大量隨機數據而導致阻塞。因此，如果需要大量與安全性無關的隨機性，則可能不適用。
 
-The table below shows the recommended algorithms for each language, as well as insecure functions that should not be used.
+下表顯示了每種語言的推薦算法，以及不應使用的不安全函數。
 
 | 程式語言 | 不安全的函式 | 密碼學上安全的函式 |
 |----------|------------------|------------------------------------|
@@ -115,34 +120,34 @@ The table below shows the recommended algorithms for each language, as well as i
 | Go       | `rand` using `math/rand` package, | [crypto.rand](https://golang.org/pkg/crypto/rand/) package |
 | Rust     | `rand::prng::XorShiftRng`, | [rand::prng::chacha::ChaChaRng](https://docs.rs/rand/0.5.0/rand/prng/chacha/struct.ChaChaRng.html) and the rest of the Rust library [CSPRNGs.](https://docs.rs/rand/0.5.0/rand/prng/index.html#cryptographically-secure-pseudo-random-number-generators-csprngs) |
 
-#### UUID 和 GUID
+#### UUIDs 和 GUIDs
 
-Universally unique identifiers (UUIDs or GUIDs) are sometimes used as a quick way to generate random strings. Although they can provide a reasonable source of randomness, this will depend on the [type or version](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions) of the UUID that is created.
+通用唯一識別碼（UUIDs 或 GUIDs）有時被用作快速生成隨機字串的方法。儘管它們可以提供合理的隨機性來源，但這將取決於創建的 UUID 的[類型或版本](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions)。
 
-Specifically, version 1 UUIDs are comprised of a high precision timestamp and the MAC address of the system that generated them, so are **not random** (although they may be hard to guess, given the timestamp is to the nearest 100ns). Type 4 UUIDs are randomly generated, although whether this is done using a CSPRNG will depend on the implementation. Unless this is known to be secure in the specific language or framework, the randomness of UUIDs should not be relied upon.
+具體來說，版本 1 的 UUID 由高精度時間戳和生成它們的系統的 MAC 地址組成，因此**不是隨機的**（儘管可能很難猜測，因為時間戳是到最接近 100 納秒）。類型 4 的 UUID 是隨機生成的，儘管是否使用 CSPRNG 進行生成取決於實現。除非在特定語言或框架中已知這是安全的，否則不應依賴 UUID 的隨機性。
 
-### Defence in Depth
+### 防禦深度
 
-Applications should be designed to still be secure even if cryptographic controls fail. Any information that is stored in an encrypted form should also be protected by additional layers of security. Application should also not rely on the security of encrypted URL parameters, and should enforce strong access control to prevent unauthorised access to information.
+應設計應用程序，即使加密控制失敗，仍然保持安全。以加密形式存儲的任何信息也應受到額外安全層的保護。應用程序還不應依賴於加密 URL 參數的安全性，應強制執行強大的存取控制，以防止未經授權訪問信息。
 
-## Key Management
+## 金鑰管理
 
-### Processes
+### 流程
 
-Formal processes should be implemented (and tested) to cover all aspects of key management, including:
+應實施（並測試）正式流程，以涵蓋金鑰管理的所有方面，包括：
 
-- Generating and storing new keys.
-- Distributing keys to the required parties.
-- Deploying keys to application servers.
-- Rotating and decommissioning old keys
+- 生成和存儲新金鑰。
+- 將金鑰分發給所需方。
+- 部署金鑰到應用伺服器。
+- 輪換和停用舊金鑰。
 
-### Key Generation
+### 金鑰生成
 
-Keys should be randomly generated using a cryptographically secure function, such as those discussed in the [Secure Random Number Generation](#secure-random-number-generation) section. Keys **should not** be based on common words or phrases, or on "random" characters generated by mashing the keyboard.
+金鑰應使用加密安全函數隨機生成，例如在[安全隨機數生成](#secure-random-number-generation)部分討論的那些。金鑰**不應**基於常見詞語或短語，也不應基於通過亂按鍵盤生成的“隨機”字符。
 
-Where multiple keys are used (such as data separate data-encrypting and key-encrypting keys), they should be fully independent from each other.
+如果使用多個金鑰（例如數據分離的數據加密和金鑰加密金鑰），它們應完全獨立於彼此。
 
-### Key Lifetimes and Rotation
+### 金鑰壽命和輪換
 
 Encryption keys should be changed (or rotated) based on a number of different criteria:
 
@@ -163,7 +168,7 @@ The first option should generally be preferred, as it greatly simplifies both th
 
 It is important that the code and processes required to rotate a key are in place **before** they are required, so that keys can be quickly rotated in the event of a compromise. Additionally, processes should also be implemented to allow the encryption algorithm or library to be changed, in case a new vulnerability is found in the algorithm or implementation.
 
-## Key Storage
+## 金鑰存儲
 
 Securely storing cryptographic keys is one of the hardest problems to solve, as the application always needs to have some level of access to the keys in order to decrypt the data. While it may not be possible to fully protect the keys from an attacker who has fully compromised the application, a number of steps can be taken to make it harder for them to obtain the keys.
 
@@ -189,13 +194,13 @@ In some cases none of these will be available, such as in a shared hosting envir
 - Protect the configuration files containing the keys with restrictive permissions.
 - Avoid storing keys in environment variables, as these can be accidentally exposed through functions such as [phpinfo()](https://www.php.net/manual/en/function.phpinfo.php) or through the `/proc/self/environ` file.
 
-### Separation of Keys and Data
+### 金鑰和數據的分離
 
-Where possible, encryption keys should be stored in a separate location from encrypted data. For example, if the data is stored in a database, the keys should be stored in the filesystem. This means that if an attacker only has access to one of these (for example through directory traversal or SQL injection), they cannot access both the keys and the data.
+在可能的情況下，應將加密金鑰存儲在與加密數據不同的位置。例如，如果數據存儲在數據庫中，則金鑰應存儲在文件系統中。這意味著如果攻擊者只能訪問其中一個（例如通過目錄遍歷或 SQL 注入），則無法同時訪問金鑰和數據。
 
-Depending on the architecture of the environment, it may be possible to store the keys and data on separate systems, which would provide a greater degree of isolation.
+根據環境的架構，可能可以將金鑰和資料存儲在不同的系統上，這將提供更高程度的隔離。
 
-### Encrypting Stored Keys
+### 加密存儲的金鑰
 
 Where possible, encryption keys should themselves be stored in an encrypted form. At least two separate keys are required for this:
 
