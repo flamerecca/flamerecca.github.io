@@ -18,7 +18,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
   * [簡介](#簡介)
   * [內容](#內容)
   * [架構設計](#架構設計)
-    + [加密應該在哪裡執行](#加密應該在哪裡執行)
+    + [執行加密的位置](#執行加密的位置)
     + [減少敏感信息的儲存](#減少敏感信息的儲存)
   * [演算法](#演算法)
     + [自定義演算法](#自定義演算法)
