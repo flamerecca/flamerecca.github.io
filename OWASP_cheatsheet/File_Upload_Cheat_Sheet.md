@@ -4,32 +4,33 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 
 ----
 
-# 上傳檔案的小抄
+# 檔案上傳小抄
 
 ## 簡介
 
-檔案上傳已經是各種應用裡越來越重要的功能，比方說讓用戶可以上傳他們的照片，履歷，或者是展示自己最近工作內容的影片。要保護應用本身以及使用者的安全，檔案上傳功能要可以防範假檔案或者惡意檔案的攻擊。
+檔案上傳正逐漸成為任何應用程式中更為重要的一部分，使用者可以上傳他們的照片、履歷，或是展示他們正在進行的專案的影片。應用程式應該能夠防範虛假和惡意檔案，以保護應用程式和使用者的安全。
 
-簡而言之，要實作安全的檔案上傳功能，應該遵守以下原則：
+簡而言之，應遵循以下原則以實現安全的檔案上傳實作：
 
-- **以副檔名白名單允許檔案上傳格式。只允許商業邏輯上安全且重要的檔案格式**
-  - **驗證副檔名之前要做[輸入驗證](https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Input_Validation_Cheat_Sheet.md#validating-free-form-unicode-text)**
-- **[Content-Type header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type) 是可以偽造的，所以不可信，要針對檔案類別進行驗證**
-- **將檔名改成應用本身產生的名字**
-- **設置檔名長度限制，如果可以的話，限制檔名可以使用的符號**
-- **設置檔案大小限制**
-- **只允許有權限的用戶上傳檔案**
-- **將檔案儲存在不同的伺服器上。如果不可能做到，那麼將檔案儲存在運作網頁程式的資料夾以外**
-  - **如果檔案有公開存取權限，透過處理程序將應用程式和檔案名稱進行綁定（someid -> file.ext）**
-- **如果可以的話，用防毒軟體或者沙盒環境來運作檔案，確定裡面沒有包含惡意資料**
-- **確認所使用的函式庫是最新且正確設置的**
-- **防範檔案上傳的功能受到 [CSRF](Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md) 攻擊**
+- **列出允許的副檔名。僅允許安全和關鍵的副檔名以供業務功能使用**
+  - **確保在驗證副檔名之前應用 [輸入驗證](Input_Validation_Cheat_Sheet.md#file-upload-validation)**
+- **驗證檔案類型，不要信任 [Content-Type 標頭](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Type)，因為它可能被偽造**
+- **將檔案名稱更改為應用程式生成的內容**
+- **設定檔案名稱長度限制。如有可能，限制允許的字元**
+- **設定檔案大小限制**
+- **僅允許授權使用者上傳檔案**
+- **將檔案存儲在不同的伺服器上。如果不可能，則將它們存儲在網站根目錄之外**
+  - **在檔案公開存取的情況下，使用一個映射到應用程式內部檔案名稱的處理程序（someid -> file.ext）**
+- **將檔案通過防毒軟體或沙箱過濾以驗證其不包含惡意資料**
+- **如果適用，將檔案通過 CDR（Content Disarm & Reconstruct）過濾（如 PDF、DOCX 等）**
+- **確保任何使用的函式庫都被安全配置並保持最新**
+- **保護檔案上傳免受 [CSRF](Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.md) 攻擊**
 
 ## 內容
 
 - [上傳檔案的威脅](#上傳檔案的危險)
   - [惡意檔案](#惡意檔案)
-  - [公開取得檔案的風險](#公開取得檔案的風險)
+  - [公開檔案檢索](#公開檔案檢索)
 - [上傳檔案防護](#上傳檔案防護)
   - [副檔名驗證](#副檔名驗證)
      - [副檔名白名單](#副檔名白名單)
@@ -60,31 +61,31 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
 4. 嘗試覆寫系統內已存的檔案
 5. 攻擊客戶端的檔案（XSS、CSRF⋯⋯等）。當其他用戶存取到這些檔案時，會對用戶產生危害。
 
-### 公開取得檔案的風險
+### 公開檔案檢索
 
 如果上傳的檔案之後會公開，那麼會有其他的風險：
 
 1. 導致其他文件公開泄露
-2. Initiate a DoS attack by requesting lots of files. Requests are small, yet responses are much larger
-3. File content that could be deemed as illegal, offensive, or dangerous (_e.g._ personal data, copyrighted data, etc.) which will make you a host for such malicious files.
+2. 通過請求大量檔案來發起 DoS 攻擊。請求很小，但回應卻要大得多
+3. 檔案內容可能被視為非法、冒犯性或危險（例如個人資料、受版權保護的資料等），這將使您成為這些惡意檔案的主機。
 
 ## 上傳檔案防護
 
-There is no silver bullet in validating user content. Implementing a defense in depth approach is key to make the upload process harder and more locked down to the needs and requirements for the service. Implementing multiple techniques is key and recommended, as no one technique is enough to secure the service.
+在驗證使用者內容方面並無萬無一失的方法。實施深度防禦方法是使上傳過程更加困難並更加符合服務的需求和要求的關鍵。實施多種技術是關鍵且建議的，因為沒有一種技術足以保護服務。
 
 ### 副檔名驗證
 
-Ensure that the validation occurs after decoding the file name, and that a proper filter is set in place in order to avoid certain known bypasses, such as the following:
+確保驗證發生在解碼檔案名之後，並設置適當的過濾器，以避免某些已知的繞過方式，例如：
 
-- Double extensions, _e.g._ `.jpg.php`, where it circumvents easily the regex `\.jpg`
-- Null bytes, _e.g._ `.php%00.jpg`, where `.jpg` gets truncated and `.php` becomes the new extension
-- Generic bad regex that isn't properly tested and well reviewed. Refrain from building your own logic unless you have enough knowledge on this topic.
+- 雙重副檔名，例如 `.jpg.php`，其中它很容易繞過正則表達式 `\.jpg`
+- 空字節，例如 `.php%00.jpg`，其中 `.jpg` 被截斷，而 `.php` 成為新的副檔名
+- 通用的不良正則表達式，未經適當測試和審查。除非您對此主題有足夠的了解，否則請避免構建自己的邏輯。
 
-Refer to the [Input Validation CS](Input_Validation_Cheat_Sheet.md) to properly parse and process the extension.
+請參考 [輸入驗證 CS](Input_Validation_Cheat_Sheet.md) 以正確解析和處理副檔名。
 
 #### 副檔名白名單
 
-只允許使用*商業邏輯上極重要的*檔案格式，不允許 without allowing any type of *non-required* extensions. For example if the system requires:
+只允許使用 *商業邏輯上極重要的* 檔案格式，不允許任何類型的 *非必要* 擴充功能。例如，如果系統需要：
 
 - 上傳圖片，允許商務需求上一致認同的一種型態
 - 上傳履歷，允許 `docx` 和 `pdf` 格式
@@ -97,90 +98,85 @@ Refer to the [Input Validation CS](Input_Validation_Cheat_Sheet.md) to properly 
 
 In order to perform this validation, specifying and identifying which patterns that could should be rejected are used in order to protect the service.
 
-### Content-Type Validation
+### 內容類型驗證
 
-_The Content-Type for uploaded files is provided by the user, and as such cannot be trusted, as it is trivial to spoof. Although it should not be relied upon for security, it provides a quick check to prevent users from unintentionally uploading files with the incorrect type._
+_用戶提供上傳檔案的內容類型，因此不能信任，因為很容易進行欺騙。儘管不應依賴它來進行安全性，但它提供了一個快速檢查，以防止用戶意外上傳具有不正確類型的檔案。_
 
-Other than defining the extension of the uploaded file, its MIME-type can be checked for a quick protection against simple file upload attacks.
+除了定義上傳檔案的擴充功能外，可以檢查其 MIME 類型，以快速保護免受簡單檔案上傳攻擊。
 
-This can be done preferrably in a whitelist approach; otherwise, this can be done in a blacklist approach.
+最好以白名單的方式進行；否則，可以以黑名單的方式進行。
 
-### File Signature Validation
+### 檔案簽名驗證
 
-In conjunction with [content-type validation](#content-type-validation), validating the file's signature can be checked and verified against the expected file that should be received.
+與 [內容類型驗證](#content-type-validation) 一起，可以檢查並驗證檔案的簽名，以確認是否符合應收到的預期檔案。
 
-> This should not be used on its own, as bypassing it is pretty common and easy.
+> 這不應單獨使用，因為繞過它非常常見且容易。
 
 ### 檔名過濾
 
-惡意檔名有不少種危害系統的可能，比方說使用系統內不合法的字符，或者使用特殊或者限制的檔名。
+檔名可能以多種方式危害系統，可以使用不可接受的字元，或使用特殊和受限制的檔名。對於 Windows，請參考以下 [MSDN 指南](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions)。有關不同檔案系統及其處理檔案方式的更廣泛概述，請參考 [維基百科的檔名頁面](https://en.wikipedia.org/wiki/Filename)。
 
-For Windows, refer to the following [MSDN guide](https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file?redirectedfrom=MSDN#naming-conventions). For a wider overview on different filesystems and how they treat files, refer to [Wikipedia's Filename page](https://en.wikipedia.org/wiki/Filename).
 
-In order to avoid the above mentioned threat, creating a **random string** as a file-name, such as generating a UUID/GUID, is essential. If the file-name is required by the business needs, proper input validation should be done for client-side (_e.g._ active content that results in XSS and CSRF attacks) and back-end side (_e.g._ special files overwrite or creation) attack vectors. File-name length limits should be taken into consideration based on the system storing the files, as each system has its own file name length limit. If user file-names are required, consider implementing the following:
+為了避免上述威脅，創建一個**隨機字串**作為檔案名稱是必要的，例如生成 UUID/GUID。如果業務需求需要檔案名稱，應對客戶端進行適當的輸入驗證（_例如_ 導致 XSS 和 CSRF 攻擊的主動內容）和後端（_例如_ 特殊檔案覆寫或創建）攻擊向量。應根據存儲檔案的系統，考慮檔案名稱長度限制，因為每個系統都有自己的檔案名稱長度限制。如果需要使用使用者檔案名稱，請考慮實施以下措施：
 
-- 設置檔名最長長度
-- Restrict characters to an allowed subset specifically, such as alphanumeric characters, hyphen, spaces, and periods
-  - If this is not possible, blacklist dangerous characters that could endanger the framework and system that is storing and using the files.
+- 實施最大長度
+- 限制字符為特定允許的子集，例如字母數字字符、連字符、空格和句號
+  - 如果不可能，則封鎖可能危及存儲和使用檔案的框架和系統的危險字符。
 
 ### 檔案內容驗證
 
-As mentioned in the [Public File Retrieval](#public-file-retrieval) section, file content can contain malicious, inappropriate, or illegal data.
+如在[公共檔案檢索](#public-file-retrieval)部分所述，檔案內容可能包含惡意、不當或非法數據。
 
-Based on the expected type, special file content validation can be applied:
+根據預期類型，可以應用特殊的檔案內容驗證：
 
-- For **images**, applying image rewriting techniques destroys any kind of malicious content injected in an image; this could be done through [randomization](https://security.stackexchange.com/a/8625/118367).
-- For **Microsoft documents**, the usage of [Apache POI](https://poi.apache.org/) helps validating the uploaded documents.
-- **ZIP files** are not recommended since they can contain all types of files, and the attack vectors pertaining to them are numerous.
+- 對於**圖像**，應用圖像重寫技術可以消除圖像中注入的任何類型的惡意內容；這可以通過[隨機化](https://security.stackexchange.com/a/8625/118367)來完成。
+- 對於**Microsoft 文件**，使用[Apache POI](https://poi.apache.org/)有助於驗證上傳的文件。
+- **ZIP 檔案**不建議使用，因為它們可能包含各種類型的檔案，與之相關的攻擊向量很多。
 
-The File Upload service should allow users to report illegal content, and copyright owners to report abuse.
+檔案上傳服務應允許用戶舉報非法內容，並允許版權所有者舉報濫用。
 
-If there are enough resources, manual file review should be conducted in a sandboxed environment before releasing the files to the public.
+如果有足夠的資源，應在釋放檔案到公眾之前在受控環境中進行手動檔案審查。
 
-Adding some automation to the review could be helpful, which is a harsh process and should be well studied before its usage. Some services (_e.g._ Virus Total) provide APIs to scan files against well known malicious file hashes. Some frameworks can check and validate the raw content type and validating it against predefined file types, such as in [ASP.NET Drawing Library](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageformat). Beware of data leakage threats and information gathering by public services.
+將一些自動化添加到審查中可能會有所幫助，這是一個嚴格的過程，在使用之前應該進行充分研究。一些服務（_例如_ 病毒總）提供 API 來掃描文件以對抗眾所周知的惡意文件哈希。一些框架可以檢查和驗證原始內容類型，並將其與預定義的文件類型進行驗證，例如在[ASP.NET 繪圖庫](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.imaging.imageformat)中。請注意公共服務可能導致數據洩露威脅和信息收集。
 
 ### 檔案儲存位置
 
-The location where the files should be stored must be chosen based on security and business requirements. The following points are set by security priority, and are inclusive:
+應根據安全性和業務需求來選擇應存儲檔案的位置。以下點由安全性優先順序設定，並包括：
 
-1. Store the files on a **different host**, which allows for complete segragation of duties between the application serving the user, and the host handling file uploads and their storage.
-2. Store the files **outside the webroot**, where only administrative access is allowed.
-3. Store the files **inside the webroot**, and set them in write permissions only.
-   - If read access is required, setting proper controls is a must (_e.g._ internal IP, authorized user, etc.)
+1. 將檔案存儲在**不同的主機**上，這樣可以完全區分用戶端應用程式和處理檔案上傳及存儲的主機之間的職責。
+2. 將檔案存儲在**網站根目錄之外**，僅允許管理訪問。
+3. 將檔案存儲在**網站根目錄內**，並僅設置寫入權限。
+  - 如果需要讀取訪問權限，設置適當的控制是必要的（_例如_ 內部 IP、授權使用者等）。
 
-Storing files in a studied manner in databases is one additional technique. This is sometimes used for automatic backup processes, non file-system attacks, and permissions issues. In return, this opens up the door to performance issues (in some cases), storage considerations for the database and its backups, and this opens up the door to SQLi attack. This is advised only when a DBA is on the team and that this process shows to be an improvement on storing them on the file-system.
+以研究方式將檔案存儲在資料庫中是一種額外的技術。這有時用於自動備份過程、非檔案系統攻擊和權限問題。然而，這也會帶來性能問題（在某些情況下）、資料庫及其備份的存儲考量，以及可能引發 SQLi 攻擊的風險。建議僅在團隊中有資料庫管理員（DBA）並且此過程證明是將其存儲在檔案系統上的改進時才使用。
 
-> Some files are emailed or processed once they are uploaded, and are not stored on the server. It is essential to conduct the security measures discussed in this sheet before doing any actions on them.
+> 有些檔案在上傳後會通過電子郵件發送或處理，並不會存儲在伺服器上。在對其進行任何操作之前，必須在此表中討論的安全措施。
 
 ### 使用者權限
 
-Before any file upload service is accessed, proper validation should occur on two levels for the user uploading a file:
+在訪問任何檔案上傳服務之前，應對上傳檔案的使用者進行兩個層面的適當驗證：
 
-- Authentication level
-  - The user should be a registered user, or an identifiable user, in order to set restrictions and limitations for their upload capabilities
-- Authorization level
-  - The user should have appropriate permissions to access or modify the files
+- 認證層級
+  - 使用者應為註冊使用者或可識別使用者，以便為其上傳功能設置限制和限制
+- 授權層級
+  - 使用者應具有適當的權限以訪問或修改檔案
 
 ### 檔案系統權限
 
-> Set the files permissions on the principle of least privilege.
+> 根據最低權限原則設置檔案權限。
 
-Files should be stored in a way that ensures:
+應以確保以下方式存儲檔案：
 
-- Allowed system users are the only ones capable of reading the files
-- Required modes only are set for the file
-  - If execution is required, scanning the file before running it is required as a security best practice, to ensure that no macros or hidden scripts are available.
+- 允許的系統使用者是唯一能夠讀取檔案的使用者
+- 檔案僅設置所需的模式
+    - 如果需要執行，則在運行之前掃描檔案是一種安全最佳實踐，以確保沒有可用的巨集或隱藏腳本。
 
 ### 上傳下載限制
 
-為了保護上傳容量，應用應該要為上傳功能設置一個合適的檔案大小上限。
+應用程式應該為上傳服務設定適當的大小限制，以保護檔案儲存容量。如果系統將要提取檔案或處理它們，則在進行檔案解壓縮後應考慮檔案大小限制，並使用安全方法來計算 zip 檔案大小。有關詳細資訊，請參閱如何[從ZipInputStream安全提取檔案](https://wiki.sei.cmu.edu/confluence/display/java/IDS04-J.+Safely+extract+files+from+ZipInputStream)，Java的輸入串流來處理 ZIP 檔案。
 
-If the system is going to extract the files or process them, the file size limit should be considered after file decompression is conducted and by using secure methods to calculate zip files size. For more on this, see how to [Safely extract files from ZipInputStream](https://wiki.sei.cmu.edu/confluence/display/java/IDS04-J.+Safely+extract+files+from+ZipInputStream), Java's input stream to handle ZIP files.
-
-The application should set proper request limits as well for the download service if available to protect the server from DoS attacks.
+應用程式還應為下載服務設定適當的請求限制，以保護伺服器免受 DoS 攻擊。
 
 ## Java 程式碼節錄
 
-Dominique 所撰寫的 [Document Upload Protection](https://github.com/righettod/document-upload-protection) 
-
-[Document Upload Protection](https://github.com/righettod/document-upload-protection) repository written by Dominique for certain document types in Java.
+Dominique 所撰寫的 [Document Upload Protection](https://github.com/righettod/document-upload-protection) ，用於Java中的某些文件類型。
