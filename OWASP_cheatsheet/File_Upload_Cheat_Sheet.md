@@ -177,6 +177,6 @@ _用戶提供上傳檔案的內容類型，因此不能信任，因為很容易�
 
 應用程式還應為下載服務設定適當的請求限制，以保護伺服器免受 DoS 攻擊。
 
-## Java 程式碼節錄
+## Java程式碼節錄
 
 Dominique 所撰寫的 [Document Upload Protection](https://github.com/righettod/document-upload-protection) ，用於Java中的某些文件類型。
