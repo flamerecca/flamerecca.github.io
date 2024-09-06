@@ -43,7 +43,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/File_Upload_Ch
   - [使用者權限](#使用者權限)
   - [檔案系統權限](#檔案系統權限)
   - [上傳下載限制](#上傳下載限制)
-- [Java 程式碼節錄](#Java 程式碼節錄)
+- [Java程式碼節錄](#Java程式碼節錄)
 
 ## 上傳檔案的危險
 
