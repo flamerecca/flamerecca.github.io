@@ -30,9 +30,6 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Password_Stora
 
 由於**加密是雙向函數**，攻擊者可以從加密數據中檢索原始明文。它可以用於存儲用戶地址等數據，因為這些數據在用戶檔案中以明文顯示。對其地址進行雜湊將導致一團亂。 
 
-<Notes>
-This translation follows the rules provided.
-
 唯一應該在密碼中使用加密的情況是在必須獲取原始明文密碼的邊緣情況下。如果應用程式需要使用密碼與不支援現代方式以程式設計方式授予訪問權限的其他系統進行身份驗證，例如 OpenID Connect (OIDC)，則可能需要這樣做。在可能的情況下，應使用替代架構以避免以加密形式存儲密碼的需求。
 
 有關加密的進一步指導，請參閱[加密存儲秘訣表](Cryptographic_Storage_Cheat_Sheet.md)。
