@@ -2,6 +2,7 @@
 ---
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 @import "{{ site.theme }}";
 
@@ -21,5 +22,5 @@ li {
 }
 
 pre code {
-  font-family: "JetBrains Mono", monospace;
+  font-family: "Roboto Mono", monospace;
 }
