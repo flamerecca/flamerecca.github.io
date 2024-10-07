@@ -107,6 +107,7 @@
 - [2315. Count Asterisks](2315.md)
 - [2325. Decode the Message](2325.md)
 - [3110. Score of a String](3110.md)
+- [3280. Convert Date to Binary](3280.md)
 
 ### 二分搜尋法
 - [278. First Bad Version](278.md)
