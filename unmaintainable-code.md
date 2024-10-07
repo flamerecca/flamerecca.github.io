@@ -1,359 +1,345 @@
 來源為[https://github.com/Droogans/unmaintainable-code/](https://github.com/Droogans/unmaintainable-code/)
 
-# 如何寫出無法維護的程式碼
+# 如何撰寫難以維護的程式碼
 
-## 保障終身工作 ;-)
+## 確保終身就業 ;-)
 
 **Roedy Green**
- [**Canadian Mind Products**](http://mindprod.com/jgloss/unmain.html)
+ [**加拿大心智產品**](http://mindprod.com/jgloss/unmain.html)
+
+<sup>2015 年左右，經作者許可重製 [（原文連結）](https://github.com/Droogans/unmaintainable-code/issues/3#issuecomment-235317722)</sup>
 
 * * *
 
-## 引言
+## 簡介
 
-> _可以用無能解釋的事，永遠不要歸咎於惡意。_ - 拿破崙
+> _別把無能當作惡意。_ - 拿破崙
 
-為了讓 Java 領域有更多工作機會，我在這邊傳授一些大師的教誨。指導後進如何寫出極難維護的程式碼，讓後面的接班人即使做最小的修改都要花上數以年計的時間。並且，如果你嚴格遵守這些規則，你會保障**你自己**終身的工作穩定。因為你寫的程式碼除了你自己之外沒人能維護。不過，如果你遵守**全部**的規則，那麼連你自己也沒法維護這些程式！
+為了在 Java 程式設計領域創造就業機會，我將從大師們那裡傳授如何撰寫難以維護的程式碼的技巧，這樣後來者將花費數年時間才能進行最簡單的更改。此外，如果您遵循所有這些規則，您甚至可以確保**自己**終身就業，因為沒有人能像您一樣希望維護這段程式碼。然而，如果您完全遵循**所有**這些規則，即使是您自己也無法維護這段程式碼！
 
-你不希望做得太過火，你不希望你的程式碼**看起來**很難維護，只需要讓他**真的**很難維護就好。不然可能會引起夠多的注意，導致後人重寫或者重構你的程式。
+您不希望過度做這件事。您的程式碼不應該**看起來**完全難以維護，只需**是**那樣。否則，它可能會被重寫或重構。
 
-## 大原則
+## 一般原則
 
 > _Quidquid latine dictum sit, altum sonatur._
-> _- 無論什麼話用拉丁語說，聽起來都很深奧_
+> _- 拉丁文的任何話都聽起來很深奧。_
 
-要阻礙之後維護的工程師，你需要知己知彼，理解他的想法。他收到你的程式碼，他沒有時間全部讀過一遍，更別提理解了。他想要趕快找到需要修改的部分，然後改完，期間不影響其他的功能。
+為了阻礙維護程式設計師，您必須了解他的思維方式。他手上有您的龐大程式。他沒有時間全部閱讀，更不用說理解。他希望迅速找到進行更改的地方，進行更改並離開，並且不希望更改帶來任何意外的副作用。
 
-他彷彿以管窺天一般，只能看到你程式碼的一小部分。你要確保他這樣做時永遠搞不清楚你的程式碼全貌。你要讓他非常難找到應該修改的部分，更重要得是，你要確保他**忽視**任何東西時，事情就會變得越奇怪越好。
+他透過一根衛生紙筒觀看您的程式碼。他一次只能看到程式的一小部分。您要確保他無法從中獲得整體概念。您要盡可能讓他難以找到他正在尋找的程式碼。但更重要的是，您要讓他盡可能地難以安全地**忽略**任何內容。
 
-工程師會被慣例所蒙蔽而自滿。不過，當你偶爾違背一下慣例，你就會強迫他放下自信，認真地檢視每一行你所寫的程式碼。
+程式設計師通常會被慣例所安撫。但偶爾，通過微妙地違反慣例，您迫使他用放大鏡閱讀您程式碼的每一行。
 
-你可能會認為每種語言的特色都讓程式碼難以維護 -- 其實不儘然，只有在正確的誤用時能生效。
+你可能會認為每種語言特性都會使代碼難以維護 -- 這並非如此，只有在被適當地誤用時才會如此。
 
 ## 命名
 
-> _「當我用這個字時，」 Humpty Dumpty 説，語帶輕蔑：「那個字就是我當時想的意思，不多也不少」_
-> - Lewis Carroll -- Through the Looking Glass, Chapter 6
+> _"當我使用一個詞語時," 頑皮的杜姆提說道，聲音中帶著一絲輕蔑，"它的意思就是我選擇的意思 - 既不多也不少。"_
+> - 路易斯·卡羅爾 -- 《鏡中奇遇》第6章
 
-要寫難以維護的程式碼，命名上面有許多的技巧可用。命名對編譯器來說沒有影響，因此給予我們極大的空間，可以寫出能運作，但是對之後的工程師難以看懂的程式碼。
+寫出難以維護的代碼的許多技巧在於命名變數和方法的藝術。對編譯器來說，它們一點都不重要。這給了你極大的自由度，可以用它們來迷惑維護程式設計師。
 
-#### <cite>Names For Baby</cite> 新用途
+#### 給 <cite>Names For Baby</cite> 新的用途
 
-買本幫小孩命名的書，你再也不會不知道怎麼幫變數命名了。比方說，Fred 就是個很好的名字，又很好輸入。
+買一本嬰兒命名書，你將永遠不會為變數名稱感到困惑。Fred 是一個很棒的名字，而且容易打字。如果你正在尋找易於打字的變數名稱，可以嘗試使用 `asdf` 或者如果你使用 DSK 鍵盤，可以使用 `aoeu`。
 
-如果你想找其他很好輸入的名稱，可以試試 `adsf`，如果你使用 Dvorak 鍵盤，也可以用 `aoeu`。
+#### 單字母變數名稱
 
-#### 單字母命名法
+如果你將變數命名為 `a`、`b`、`c`，那麼使用簡單的文本編輯器將無法搜索到它們的實例。此外，沒有人能夠猜測它們的用途。如果有人甚至暗示要打破自從 FØRTRAN 以來一直受尊敬的使用 `i`、`j` 和 `k` 作為索引變數的傳統，即將它們替換為 `ii`、`jj` 和 `kk`，請警告他們西班牙宗教裁判所對異端分子所做的事情。
 
-如果你用 `a`, `b`, `c` 幫變數命名，你可以保證之後的工程師無法用文字搜尋找到這些變數。另外，也沒有人能猜到他們的用途。如果有人希望打破從 FØRTRAN 以來，用 `i`, `j`, `k` 來當作 index 的傳統，就將他們改成 `ii`, `jj`, `kk`，並警告他們以前對異教徒都是怎麼處置的。
+#### 創意拼寫錯誤
 
-#### 有創意的拼字錯誤
+如果你必須使用描述性的變數和函數名稱，請拼寫錯誤。通過在一些函數和變數名稱中拼寫錯誤，並在其他地方拼寫正確（例如 `SetPintleOpening` 和 `SetPintalClosing`），我們有效地消除了 grep 或 IDE 搜索技術的使用。這方法非常有效。通過在不同的劇院中拼寫 _tory_ 或 _tori_，增加一種國際風味。
 
-如果你一定要使用有意義的變數和函式名稱，那就拼錯字。藉由在某些地方拼錯字，其他類似的函式又拼對字來命名（像是`SetPintleOpening` 和 `SetPintalClosing`），我們保證其他工程師無法用搜尋或 grep 來找到應該處理的程式碼。這種方法效果十分顯著。另外，我們也可以透過在不同的 theatres/theaters（美式拼法） 裡面，使用_tory_ 或 _tori_拼法來加入一點國際觀。
+#### 抽象化
 
-#### 抽象
+在命名函數和變數時，大量使用抽象詞語，如 _it_、_everything_、_data_、_handle_、_stuff_、_do_、_routine_、_perform_ 和數字，例如 `routineX48`、`PerformDataFunction`、`DoIt`、`HandleStuff` 和 `do_args_method`。
 
-在命名變數時，使用抽象的字，像是 _it_, _everything_, _data_, _handle_, _stuff_, _do_, _routine_, _perform_，可以搭配數字編號。比方說 `routineX48`，`PerformDataFunction`，`DoIt`，`HandleStuff`，`do_args_method`⋯⋯等等。
+#### 首字母縮略詞
 
-#### A.C.R.O.N.Y.M.S.（縮寫）
+使用首字母縮略詞使代碼簡潔。真正的男人從不定義首字母縮略詞；他們天生就理解它們。
 
-使用縮寫讓程式碼緊湊。男子漢從不定義縮寫，他們天生就知道縮寫的意思了。
+#### 同義詞替換
 
-#### 同義字替換法
-
-為了不無聊，用同義字典來為同一行為找出盡可能多的單字。比方說 _display_ 也可以寫成 _show_， _present_。當兩個函式行為一模一樣時，用不同的字暗示他們有些微不同。但是，當兩個函式有重要的不同點時，用相同的單字隱藏其不同處（比方說，一個是印東西在紙上，一個是印東西在螢幕上，都使用 _print_ 來命名）。任何情況下，絕不建立單字表文件說明每個單字明確的用法。這種不專業的文件違背了 _資訊隱藏_ 的設計原則。
+為了打破無聊，使用一本同義詞詞典，尋找盡可能多的替代詞彙來指代相同的動作，例如 _display_、_show_、_present_。模糊地暗示存在一些微妙的差異，即使實際上並不存在。然而，如果有兩個功能相似但有關鍵區別的函數，始終使用相同的詞來描述這兩個功能（例如 _print_ 意為 "寫入文件"、"在紙上放墨水" 和 "在屏幕上顯示"）。切勿屈服於要求編寫具有特殊目的的專案詞彙詳細定義的要求。這樣做將是對 _信息隱藏_ 結構化設計原則的專業違反。
 
 #### 使用其他語言的複數形式
 
-一個 VMS 系統可以用來監測不同「Vaxen」（如果用中世紀英文規則下「Vax」的複數）回傳的「statii」（如果用拉丁文規則的話「status」的複數）。世界語，[克林貢語](https://www.kli.org/) 和哈比語的文法均適用。對類世界語單字的複數型態，使用世界語文法，在字尾加上-oj。這樣做是在幫世界和平盡一份力。
+一個 VMS 腳本跟蹤從各種 "Vaxen" 返回的 "statii"。世界語、[克林貢語](http://www.kli.org/) 和霍比特語都符合這些目的的語言。對於虛構的世界語複數形式，添加 oj。這將有助於實現世界和平。
 
-#### 大寫
+#### 大小寫混合
 
-在單字的每個音節隨意地插入大寫，比方說 `ComputeRasterHistoGram()`
+隨機大寫單詞中間音節的第一個字母。例如 `ComputeRasterHistoGram()`。
 
 #### 重複使用名稱
 
-只要文法允許，給類別、建構子、方法、成員變數、參數和區域變數一樣的名稱。要更進一步，在`{}`區塊內重複使用相同的區域變數名稱。這樣的目標是強迫之後的維護者要詳細確認每個變數的可視範圍到底在哪邊。在 Java 裡面，可以讓一般的方法假裝自己是建構子。
+在語言規則允許的地方，給予類、建構子、方法、成員變量、參數和局部變量相同的名稱。額外加分的是，在 `{}` 區塊內重複使用局部變量名稱。目標是迫使維護程序員仔細檢查每個實例的作用域。特別是在 Java 中，讓普通方法偽裝成建構子。
 
 #### 重音字母
 
-使用重音字母當變數名稱，像是
+在變量名稱中使用帶重音的字符。例如：
 
 ```c
 typedef struct { int i; } ínt;
 ```
 
-第二個 ínt 上面的 í 其實是**重音 i**。如果只用一般的文字編輯器，幾乎不可能看出 i 上面的一點變斜了這點不同。
+其中第二個 ínt 的 í 實際上是 i-acute。僅使用簡單的文本編輯器，幾乎不可能區分重音符號的傾斜。
 
-#### 利用編譯器長度限制
+#### 利用編譯器名稱長度限制
 
-如果假設編譯器只能分辨命名的前八個字，那麼就多多利用後方的空間。
+如果編譯器只區分名稱的前 8 個字符，則變化結尾，例如一種情況下是 `var_unit_update()`，另一種情況下是 `var_unit_setup()`。編譯器將將兩者都視為 `var_unit`。
 
-比方說程式裡混雜使用 `var_unit_update()` 和 `var_unit_setup()`，對編譯器來說，這兩個都是 `var_unit`。
+#### 底線，真正的朋友
 
-#### 底線，大家的好朋友
+使用 `_` 和 `__` 作為識別符。
 
-使用 `_` 和 `__` 當作名稱。
+#### 混合語言
 
-#### 混雜各種語言
+隨機穿插兩種語言（人類或計算機）。如果你的老闆堅持讓你使用他的語言，告訴他你可以更好地組織自己的思緒，或者如果這樣不起作用，聲稱語言歧視並威脅向雇主提起訴訟索取巨額賠償。
 
-任意混用人類和電腦的語言。如果你的老闆堅持使用他的語言，告訴他你使用自己的語言時比較好整理思緒。如果這樣沒有用，提出這是語言歧視，並要脅你的老闆要付罰款。
+#### 擴展ASCII
 
-#### 延伸 ASCII
+擴展ASCII字符作為變量名是完全有效的，包括 ß、Ð 和 ñ 字符。在簡單的文本編輯器中幾乎不可能輸入，除非複製/粘貼。
 
-延伸 ASCII 符號非常適合用來命名，像是 ß、Ð 和 ñ。用一般的文字編輯器，除了剪貼之外幾乎不可能輸入這些符號。
+#### 其他語言的名稱
 
-#### 來自其他語言的命名
+使用外語詞典作為變量名的來源。例如，使用德語中的 _punkt_ 代表 _point_。沒有你對德語的牢固掌握，維護代碼的人將享受解讀含義的多元文化體驗。
 
-使用各種語言來命名變數，比方說用德語的 _punkt_ 來命名 _point_ 。之後的維護者，不像你這麼精通德文，必然會在解讀這些變數命名時享受其文化體驗。
+#### 數學名稱
 
-#### 來自數學術語的命名
-
-使用看起來像是數學運算符號的變數命名，像是：
+選擇偽裝成數學運算符的變量名，例如：
 
 ```js
 openParen = (slash + asterix) / equals;
 ```
 
-#### 眼花撩亂的命名
+#### 耀眼的名稱
 
-隨心情選擇富有感情，但是和程式意義完全無關的名稱，像是：
+選擇帶有無關情感內涵的變量名。例如：
 
 ```js
 marypoppins = (superman + starship) / god;
 ```
-這會讓讀者閱讀時非常困擾，必須一邊理解你的想法，一邊嘗試忽視這些單字的意義。
 
-#### 重新命名和重複利用
+這會讓讀者困惑，因為他們很難將詞語的情感內涵與他們試圖思考的邏輯分開。
 
-對 Ada，一個許多技巧都無法使用的語言來說，這個技巧特別有效。一開始宣告物件和套件的人都是笨蛋，所以與其說服他們改變命名。不如在自己修改的部分裡面改變名稱就好。記得留下一些地方保留舊名稱，讓不注意的人中計。
+#### 重新命名和重複使用
 
-#### 使用 i 的時機
+這個技巧在 Ada 語言中特別有效，該語言對許多標準的混淆技術免疫。最初為您使用的所有對象和包命名的人都是白癡。與其試圖說服他們改變，不如使用重命名和子類型將一切都重新命名為您自己設計的名稱。確保留下一些對舊名稱的引用，作為對不慎者的陷阱。
 
-絕不在傳統使用 `i` 的地方，也就是最裡面 for 迴圈的 index 時，使用 `i` 命名變數。特別是在非整數的變數下使用 `i` 效果更好。
+#### 何時使用 i
 
-使用 `n` 當作迴圈的 index 變數命名。
+永遠不要將 `i` 用於最內層的循環變量。除了 `i` 之外，任何其他變量都可以使用。尤其是對於非整數變量，應自由使用 `i`。同樣，將 `n` 用作循環索引。
 
-#### 慣例
+#### 約定無關緊要
 
-忽略 [Sun Java 程式慣例](http://web.archive.org/web/20091003224540/http://java.sun.com/docs/codeconv/)，反正，連 Sun 自己也不遵守。幸好編譯器不會因為不遵守這些規範就報錯。目標是要想出微妙地違反這些慣例的命名方式。如果你被強迫使用駝峰式命名，你還是可以在一些模糊地帶做變化，比方說同時使用 _input**F**ile**n**ame_ 和 _input**f**ile**N**ame_。自己發明一個無比複雜的命名慣例，並且在別人不遵守時指責他們。
+忽略 [Sun Java Coding Conventions](http://web.archive.org/web/20091003224540/http://java.sun.com/docs/codeconv/)，畢竟，Sun 公司也是如此。幸運的是，當你違反這些約定時，編譯器不會告密。目標是提出只在大小寫上微妙不同的名稱。如果被迫使用大寫約定，仍然可以在選擇模糊的地方進行顛覆，例如同時使用 _input**F**ile**n**ame_ 和 _input**f**ile**N**ame_。發明自己的複雜命名約定，然後責罵其他人不遵循它們。
 
-#### 小寫 l 看起來像是數字 1
+#### 小寫的 l 看起來很像數字 1
 
-用小寫 l 代表長的常數。比方說，比起 `10L`，`10l`更容易被誤認為是 `101`。不使用任何可以輕易辨認出`uvw`, `wW`, `gq9`, `2z`, `5s`, `il17|!j`, `oO08`, `` `'" ``, `;,.`, `m nn rn`, 和 `{[()]}`的字體。發揮創意。
+使用小寫的 l 來表示長常數。例如，`10l` 更容易被誤認為 `101` 而不是 `10L`。禁止使用任何清楚區分 `uvw`、`wW`、`gq9`、`2z`、`5s`、`il17|!j`、`oO08`、`` `'" `、`;,.`、`m nn rn` 和 `{[()]}` 的字型。要有創意。
 
-#### 重複利用全域變數，變成私有變數
+#### 將全域名稱重複使用為私有名稱
 
-在模組 A 裡面宣告一個全域變數，在模組 B 裡面也宣告一個同名的私有變數，讓人誤以為模組 B 是使用模組 A 裡面宣告的變數。在任何文件和註解裡面絕不說明這重複利用的情況。
+在模組 A 中宣告一個全域陣列，在模組 B 的標頭檔中宣告一個同名的私有陣列，這樣看起來在模組 B 中使用的是全域陣列，但實際上不是。在註解中不要提及這種重複。
 
-#### 再看重複利用
+#### 回收再利用
 
-用違背直覺的方式重複使用變數。比方說，你有全域變數 `A` 和 `B`，函式 `foo` 和 `bar`。然後你知道 `A` 常常傳給 `foo`，`B` 常常傳給 `bar`，那麼就宣告`function foo(B)` 和 `function bar(A)`，這樣在函式裡面 `A` 和 `B` 就常常會被搞混。隨著函式和全域變數變多，你可以編織出巨大的混亂網，裡面充斥著各種同名的函式和變數。
+以混淆的方式使用作用域，通過以矛盾的方式重複使用變數名稱。例如，假設您有全域變數 `A` 和 `B`，以及函數 `foo` 和 `bar`。如果您知道變數 `A` 將經常傳遞給 `foo`，而 `B` 則傳遞給 `bar`，請確保將函數定義為 `function foo(B)` 和 `function bar(A)`，這樣在函數內部 `A` 將始終被稱為 `B`，反之亦然。通過更多函數和全域變數，您可以創建龐大的混亂網絡，相互矛盾地使用相同的名稱。
 
-#### 重複使用你的變數
+#### 重複使用您的變數
 
-只要能運作，盡可能重複使用不相關的變數名稱。
+在作用域規則允許的地方，重複使用現有的不相關變數名稱。同樣，將同一臨時變數用於兩個不相關的目的（聲稱節省堆疊空間）。對於一種狡猾的變體，變形變數，例如，在一個非常長的方法的頂部為變數賦值，然後在中間的某個地方以微妙的方式改變變數的含義，例如，將其從基於 0 的座標轉換為基於 1 的座標。請務必不要記錄這種含義變更。
 
-使用相同的暫時變數來處理不同的用途。更進一步，在程式裡面修改這個變數。舉例來說，在一個很長的函式裡，開頭宣告一個變數，中間進行很小的修改，比方說從零開始改成從一開始。確保所有的文件裡都不會提到這個修改。
+#### Cd wrttn wtht vwls s mch trsr
 
-#### Cd wrttn wtht vwls s mch trsr（沒有母音的程式更珍貴）
+在變數或方法名稱中使用縮寫時，通過為同一單詞提供幾種變體，甚至偶爾用全拼寫出來，來打破單調。這有助於打敗那些懶惰的人，他們只使用文本搜索來理解程序的某些方面。考慮變體拼寫作為詭計的一種變體，例如，混合使用國際 _colour_、美式 _color_ 和酷哥語 _kulerz_。如果完全拼寫名稱，每個名稱只有一種可能的拼法。這對於維護程序員來說太容易記住了。由於縮寫單詞有很多不同的方式，使用縮審，您可以有幾個不同的變數，它們都有相同的表面目的。作為額外的獎勵，維護程序員甚至可能不會注意到它們是獨立的變數。
 
-對變數和函式使用縮寫時，同一個字使用各種縮寫法法以免無聊。甚至可以時不時不用縮寫，把全名拼出來。這樣可以免得之後的懶惰鬼用搜尋的方式，只需要了解你的部分程式就知道怎麼處理問題。針對同一個字，可以考慮使用不同拼法，比方說對顏色，混用國際的拼法 _colour_，美式的拼法 _color_ 以及俗俚拼法 _kulerz_。如果你總是固定用全名，那麼每個名稱就只有一種可能拼法，這對之後維護的工程師來說太好記了。因為一個字有許多縮寫的方式，使用縮寫的話，我們可以對一個目標有數個不同的變數。另外，之後維護的工程師可能根本沒注意到他們是不同的變數。
+#### 誤導性名稱
 
-#### 誤導的名稱
-
-確保每個函式都比名稱顯示的多做（或少做）一點事情。舉個簡單的例子，`isValid(x)` 除了檢查 `x` 是不是合法的之外，可以順便將 `x` 轉成二進位，並存進資料庫裡面。
+確保每個方法都比其名稱所暗示的多做一點（或少做一點）。舉個簡單的例子，一個名為 `isValid(x)` 的方法應該在副作用中將 `x` 轉換為二進制並將結果存儲在數據庫中。
 
 #### m_
 
-C++ 曾經有個命名慣例是使用`m_`開頭的字代表成員（member）變數。這可以幫助你區分儲存方法的變數，直到你想起方法（method）這個字也是 m 開頭。
+來自 C++ 領域的一種命名慣例是在成員前面使用 `m_`。這應該幫助您將它們與方法區分開來，只要您忘記了 "method" 也以字母 "m" 開頭。
 
 #### o_apple obj_apple
 
-使用 `o` 或 `obj` 前綴代表所有物件（object），代表你有看到多型結構的大局。
-
+為每個類的每個實例使用 "o" 或 "obj" 前綴，以顯示您正在考慮整個多態圖。
 
 #### 匈牙利命名法
 
-匈牙利命名法是混淆程式碼的戰術核子武器，用！光只是這個技法可以污染的程式碼範圍，沒有什麼比起良好設計的匈牙利命名法，能更快地殺害之後維護的工程師。以下技巧可以保證你毀掉原本匈牙利命名法的初衷：
+匈牙利命名法是源代碼混淆技術中的戰術核武器；使用它吧！由於大量源代碼被這種慣例污染，沒有什麼比一場精心策劃的匈牙利命名法攻擊更能迅速殺死一名維護工程師。以下提示將幫助您破壞匈牙利命名法的原始意圖：
 
- - 即使你使用 C++ 等能直接宣告常數的語言，堅持使用 `c` 前綴代表常數，
+- 堅持在 C++ 和其他直接強制變量的 const 性質的語言中使用 "c" 作為 const 的表示。
 
- - 使用和你現在用的語言無關的匈牙利命名法綴詞。比方說，堅持 PowerBuilder 的 `l_` 和 `a_`（本地（local）和參數（argument））前綴。寫 C++ 時，堅持使用 VB 類語言會使用的 control type 前綴，忽略連微軟的 MFC 類別庫程式碼都沒有 control type 前綴這個事實。
+- 尋找並使用在當前語言以外的其他語言中具有意義的匈牙利瑕疵。例如，堅持使用 PowerBuilder 的 `l_` 和 `a_`（本地和引數）作用範圍前綴，並始終使用 VB 式風格，在編寫 C++ 時對每種控制類型都有一個匈牙利瑕疵。盡量忽視 MFC 源代碼中明顯可見的 megs 不使用控制類型的匈牙利瑕疵。
 
- - 違背匈牙利命名法內常用的變數應該要攜帶較少其他資訊的原則。要達到這點，可以堅持每個類別都應該有自己的前綴，不讓別人提醒你針對什麼**是**類別這件事情，根本**不存在**匈牙利命名法前綴。這個原則非常重要，如果沒有遵守，那程式碼可能會充斥許多簡短的，母音/子音比例變高的變數名稱。最差的狀況甚至可能導致整個混淆的努力失效，程式碼裡面出現用英文就可以看懂的段落！
+- 總是違反匈牙利命名法的原則，即最常用的變量應該攜帶最少的額外信息。通過上述技術和堅持每個類型都有自定義瑕疵前綴來實現這一目標。絕不允許任何人提醒您**沒有**瑕疵告訴您某物**是**一個類。如果您未能遵守這一原則，則源代碼可能會充斥著具有更高元音/輔音比率的較短變量名，最壞的情況下，這可能導致混淆的完全崩潰，並在代碼中自發出現英文命名法！
 
- - 違背匈牙利命名原則內要求所有符號都要以有意義的方式命名這個原則。單單匈牙利綴詞的組合就足以作為一個很充份的變數名稱了。
+- 肆無忌憚地違反匈牙利式概念，即函式引數和其他高可見性符號必須給予有意義的名稱，但僅僅使用匈牙利式前綴作為臨時變數名稱。
 
- - 堅持在匈牙利命名法綴詞裡面包含所有獨立的資訊。參考這個真實世界的變數名稱 `a_crszkvc30LastNameCol`。花費一整個團隊的維護工程師大概三天的時間，才搞清楚這個變數是一個常數（`c`），參考（`reference`），函式的引數（`a_`），null 結尾字串（`sz`），某個資料庫欄位（`Col`）裡面名為 `LastName` 的資料，資料長度是 Varchar[30]（`vc30`），而且是某個表的 primary key 裡面的一部分（`k`）。 搭配「所有變數都是公開的」原則，這個技巧可以讓數千行程式碼直接廢掉！
+- 堅持在匈牙利式前綴中攜帶完全正交的資訊。考慮這個現實世界的例子 `a_crszkvc30LastNameCol`。一組維護工程師花了將近3天的時間才弄清楚這個龐大的變數名稱描述了一個常數、參考、從資料庫欄位中保存信息的函式引數，該欄位的類型為 Varchar[30]，名稱為 "LastName"，並且是表的主鍵的一部分。當這種原則與 "所有變數應該是公開的" 結合時，這種技術可以立即使數千行源代碼變得過時！
 
- - 善加利用人腦一次只能同時處理七件事情的原則。舉例來說，良好運用上面原則，可以寫出具有以下特點的程式碼：
+- 利用人類大腦同時僅能記住7個信息的原則。例如，按照上述標準編寫的代碼具有以下特點：
 
-    * 一行帶有 14 個型態和意義資訊的宣告。
-    * 呼叫一個函式，傳入三個參數，回傳帶有 29 個型態和名稱資訊的值。
-    * 繼續改善這個優秀但是稍嫌簡潔的標準，建議使用五個字母標注程式碼撰寫的時間點，像是 `Monam` 和`FriPM`，讓你的同事驚訝一下。
-    * 即使只使用有一點複雜的巢狀結構，也可以輕易擊垮其他人的短期記憶。**特別是** 當這段程式碼無法在螢幕上同時看到開頭和結尾時。
+    * 單個賦值語句包含14個類型和名稱信息。
+    * 單個函式調用傳遞三個參數並賦值結果包含29個類型和名稱信息。
+    * 努力改進這種優秀但過於簡潔的標準。通過建議在代碼中使用一個5個字母的星期幾前綴，以幫助區分在 `星期一上午` 和 `星期五下午` 編寫的代碼，來給管理層和同事留下深刻印象。
+    * 即使是一個中等複雜的巢狀結構也很容易使短期記憶不堪重負，**尤其是**當維護程序員無法同時在屏幕上看到每個區塊的開始和結束時。
 
-#### 再看匈牙利命名法
+#### 重新思考匈牙利式前綴
 
-匈牙利命名法的一個技巧是「改變變數型態，但是不改變變數名稱」。這種技巧常見於將程式碼從 Win16：
+匈牙利式前綴中的一個後續技巧是 "更改變數的類型但保持變數名稱不變"。這幾乎總是在從 Win16 遷移到 Windows 應用程式時完成：
 
 ```c
 WndProc(HWND hW, WORD wMsg, WORD wParam, LONG lParam)
 ```
 
-更新到 Win32：
+到 Win32
 
 ```c
 WndProc(HWND hW, UINT wMsg, WPARAM wParam, LPARAM lParam)
 ```
 
-`w` 代表這些變數是 WORD，但是他們其實都是 LONG。這在搬移到 Win64 時會更看出其價值。全部的參數都是 64 bits，但是 `w` 和 `l` 的前綴會永遠留下。
+其中 `w` 值暗示它們是字，但實際上它們指的是長整數。這種方法的真正價值在於 Win64 遷移時變得清晰，當參數將是64位寬時，但舊的 `w` 和 `l` 前綴將永遠保留。
 
-#### 減量，重用，回收
+#### 減少、重複使用、回收
 
-If you have to define a structure to hold data for callbacks, always call the structure `PRIVDATA`. Every module can define its own `PRIVDATA`. In VC++, this has the advantage of confusing the debugger so that if you have a `PRIVDATA` variable and try to expand it in the watch window, it doesn't know which `PRIVDATA` you mean, so it just picks one.
+如果您必須定義一個結構來保存回呼的數據，請始終將該結構命名為 `PRIVDATA`。每個模組都可以定義自己的 `PRIVDATA`。在 VC++ 中，這樣做的好處是會讓調試器感到困惑，因此如果您有一個 `PRIVDATA` 變數並嘗試在監視窗口中展開它，它不知道您指的是哪個 `PRIVDATA`，所以它只會選擇一個。
 
-#### 隱晦的電影引用
+#### 模糊的電影參考
 
-使用 `LancelotsFavouriteColour` 這種變數名稱儲存 `#0204FB` 的 RGB 色碼，不要用 `blue`。這個顏色和正藍色看起來幾乎一樣，但是你之後的維護者必須要想辦法弄清楚 `0204FB` 到底是什麼，可能還會用上繪圖工具。只有特別喜歡 "Monty Python and the Holy Grail" 這部電影的人才會知道 Lancelot 最喜歡的顏色是藍色。畢竟，如果一個工程師沒法直接回想這部電影的細節，那麼他根本就不適合當工程師。
+使用常數名稱像 `LancelotsFavouriteColour` 而不是 `blue`，並將其分配為十六進制值 `$0204FB`。該顏色在屏幕上看起來與純藍色相同，維護程序員必須計算 `0204FB`（或使用一些圖形工具）才能知道它的外觀。只有那些對《蒙提·派森與聖杯》非常熟悉的人才會知道 Lancelot 的最喜歡的顏色是藍色。如果一個維護程序員無法從記憶中完整引用整部《蒙提·派森》電影的話，他或她就不應該成為一名程序員。
 
 ## 偽裝
 
-> _當錯誤浮現的時間越長，那錯誤就越難找_ - Roedy Green
+> _一個 bug 浮現所需的時間越長，找到它就越困難。_ - Roedy Green
 
-撰寫難以維護的程式碼上面，許多技巧來自於偽裝的藝術。將東西隱藏起來，或者讓東西看起來的樣子不是真實情況。許多技巧依賴編譯器比起人類或者文字編輯器更能詳細區分細節這件事情。以下是一些偽裝的技巧：
+寫出難以維護的代碼的技巧之一就是偽裝的藝術，隱藏事物，或使事物看起來不是它們本來的樣子。許多人依賴於編譯器在做出細微區別方面比人眼或文本編輯器更有能力。以下是一些最佳的偽裝技巧。
 
-#### 偽裝成註解的程式碼（反之亦然）
+#### 偽裝成註釋和相反
 
-包含看起來像是程式碼，但是其實是註解的段落：
+包含被註釋掉的代碼區段，但乍一看不會顯示出來。
 
 ```js
-for(j=0; j<array_len; j+ =8)
-{
-total += array[j+0 ];
-total += array[j+1 ];
-total += array[j+2 ]; /* Main body of
-total += array[j+3 ]; * loop is unrolled
-total += array[j+4 ]; * for greater speed.
-total += array[j+5 ]; */
-total += array[j+6 ];
-total += array[j+7 ];
+for (j=0; j<array_len; j+=8) {
+    total += array[j+0];
+    total += array[j+1];
+    total += array[j+2]; /* Main body of
+    total += array[j+3]; * loop is unrolled
+    total += array[j+4]; * for greater speed.
+    total += array[j+5]; */
+    total += array[j+6];
+    total += array[j+7];
 }
 ```
 
-沒有上色的話，你會知道中間三行被註解掉了嗎？
+如果沒有顏色編碼，您會注意到三行代碼被註釋掉嗎？
 
-#### namespaces
+#### 命名空間
 
-在 C 裡面，struct/union 和 typedef struct/union 是不同的東西。你可以先定義一個 struct/union，然後定義同名的 typedef struct/union。如果可以的話，讓這兩個 struct/union 結構幾乎一樣。
+在 C 中，Struct/union 和 typedef struct/union 是不同的命名空間（在 C++ 中不是）。在這兩個命名空間中使用相同的名稱來定義結構或聯合體。如果可能的話，讓它們幾乎兼容。
 
 ```c
 typedef struct {
-char* pTr;
-size_t lEn;
+    char* pTr;
+    size_t lEn;
 } snafu;
 
 struct snafu {
-unsigned cNt
-char* pTr;
-size_t lEn;
+    unsigned cNt
+    char* pTr;
+    size_t lEn;
 } A;
 ```
-> 譯註：個人認為這個範例相當優秀，光看著就覺得自己得了不治之症
 
 #### 隱藏巨集定義
 
-在一堆沒用的註解裡面隱藏聚集的定義。之後維護的工程師閱讀註解到一半就會無聊而放棄，永遠找不到你所定義的巨集。確保你的巨集將原本合理的行為替換成某種奇怪的操作，比方說：
+在垃圾註釋中隱藏巨集定義。程序員會感到厭煩，不會完成閱讀註釋，因此永遠不會發現巨集。確保巨集將看起來像一個完全合法的賦值替換為一些奇怪的操作，一個簡單的例子：
 
 ```c
 #define a=b a=0-b
 ```
 
-#### 裝忙
+#### 假裝忙碌
 
-用 `define` 定義將全部輸入以註解處理的函式。像是：
+使用 `define` 陳述來創建虛構的函數，這些函數只是將其引數註釋掉，例如：
 
 ```c
 #define fastcopy(x,y,z) /*xyz*/
 // ...
-fastcopy(array1, array2, size); /* 什麼都不會做 */
+fastcopy(array1, array2, size); /* 什麼都不做 */
 ```
 
-#### 使用換行來隱藏變數
+#### 使用連續性來隱藏變數
 
-如果你想寫
+不要使用
 
 ```c
 #define local_var xy_z
 ```
 
-將 `xy_z` 分成兩行，改成：
+將 `xy_z` 分成兩行：
 
 ```c
 #define local_var xy\
 _z // local_var OK
 ```
 
-這樣一來，搜尋 `xy_z` 完全找不到這個變數，但是對 C 前置處理器來說，末端的 `\` 代表將兩行合併，所以可以編譯出 `xy_z` 這個變數。
+這樣，對於該檔案，全域搜尋 `xy_z` 將不會找到任何結果。對於 C 預處理器來說，行尾的 `\` 表示將此行與下一行連接在一起。
 
-#### 偽裝成保留字的任意命名
+#### 偽裝為關鍵字的任意名稱
 
-在文件撰寫時，如果你需要一個名稱，比方說代表某個可能的輸入檔案時，絕不使用好理解的任意命名，比方說  _"Charlie.dat"_ 或 _"Frodo.txt"_。基本上，在文件的範例裡，名稱越像保留關鍵字越好。比方說，你可以將變數或者參數命名為 `bank`，`blank`，`class`，`const`，`constant`，`input`，`key`，`keyword`，`kind`，`output`，`parameter`，`parm`，`system`，`type`，`value`，`var` 和 `variable`。
+在進行文件編寫時，如果需要一個任意名稱來代表文件名，請使用 _"file"_。絕不要使用明顯是任意名稱的名稱，例如 _"Charlie.dat"_ 或 _"Frodo.txt"_。一般來說，在您的示例中，使用盡可能聽起來像保留關鍵字的任意名稱。例如，參數或變數的良好名稱可以是 `bank`、`blank`、`class`、`const`、`constant`、`input`、`key`、`keyword`、`kind`、`output`、`parameter`、`parm`、`system`、`type`、`value`、`var` 和 `variable`。如果您在示例中使用實際的保留字作為任意名稱，這些名稱將被您的命令處理器或編譯器拒絕，那就更好了。如果您做得好，用戶將在保留關鍵字和示例中的任意名稱之間感到困惑，但您可以聲稱您這樣做是為了幫助他們將每個變數與相應的目的關聯起來。
 
-如果你使用該語言真正的保留關鍵字，也就是該段範例碼如果嘗試編譯或運作會出錯的話，那就更好了。做得好的話，可以讓之後的用戶完全搞不懂哪段是程式需要的保留字，哪些又是你設定的名稱。如果有人問起，你可以無辜的看著他，宣稱這是為了幫助大家更好地理解這些變數的意義。
+#### 代碼名稱不得與屏幕名稱匹配
 
-#### 程式碼內名稱絕不和畫面名稱相同
+選擇變數名稱與在屏幕上顯示這些變數時使用的標籤完全無關。例如，在屏幕上標籤為 "郵政編碼" 的字段，但在代碼中將相關變數稱為 `zip`。
 
-選擇和程式畫面上對應的資料一點關係都沒有的名稱來命名你的變數。比方說，畫面顯示「郵遞區號（Postal Code）」的資料，程式碼內對應的變數是 `zip`。
+#### 不要更改名稱
 
-#### 絕不改名
+不要全局重命名以使代碼的兩個部分同步，使用多個相同符號的 TYPEDEF。
 
-與其要到處找名稱不同的地方修改讓兩個功能合併，不如用多個 TYPEDEF 來同步程式。
+#### 如何隱藏禁止使用的全局變數
 
-#### 如何隱藏被禁止的全域變數
+由於全局變量是 "邪惡" 的，定義一個結構來保存您將放入全局變量中的所有東西。將其稱為像 `EverythingYoullEverNeed` 這樣的巧妙名稱。使所有函數都接受指向此結構的指針（將其稱為 `handle` 以增加混淆）。這給人的印象是您並未使用全局變量，而是通過 "handle" 訪問所有內容。然後靜態聲明一個，以便所有代碼都使用同一個副本。
 
-因為全域變數是「邪惡的」，所以我們改用一個結構來裝所有放在全域變數裡面的東西。我們可以聰明的叫他「`EverythingYoullEverNeed`」。
+#### 隱藏具有同義詞的實例
 
-Make all functions take a pointer to this structure (call it `handle` to confuse things more). This gives the impression that you're not using global variables, you're accessing everything through a "handle". Then declare one statically so that all the code is using the same copy anyway.
-
-#### 用同義詞隱藏變數
-
-對維護的工程師來說，
-
-Maintenance programmers, in order to see if they'll be any cascading effects to a change they make, do a global search for the variables named. This can be defeated by this simple expedient of having synonyms, such as
+維護程式設計師為了查看他們所做的更改是否會有任何連鎖效應，會對命名的變數進行全局搜索。這可以通過使用同義詞來輕鬆擊敗，例如
 
 ```c
-#define xxx global_var // in file std.h
-#define xy_z xxx // in file ..\other\substd.h
-#define local_var xy_z // in file ..\codestd\inst.h
+#define xxx global_var // 在檔案 std.h 中
+#define xy_z xxx // 在檔案 ..\other\substd.h 中
+#define local_var xy_z // 在檔案 ..\codestd\inst.h 中
 ```
 
-These defs should be scattered through different include-files. They are especially effective if the include-files are located in different directories. The other technique is to reuse a name in every scope. The compiler can tell them apart, but a simple minded text searcher cannot. Unfortunately SCIDs in the coming decade will make this simple technique impossible. since the editor understands the scope rules just as well as the compiler.
+這些定義應該分散在不同的包含檔案中。如果這些包含檔案位於不同的目錄中，則尤其有效。另一種技術是在每個範圍中重複使用一個名稱。編譯器可以將它們區分開來，但一個簡單的文本搜索器卻辦不到。不幸的是，未來十年的 SCIDs 將使這種簡單的技術變得不可能，因為編輯器對範圍規則的理解程度與編譯器一樣。
 
-#### 長又相似的變數名稱
+#### 長得相似的變數名稱
 
-Use very long variable names or class names that differ from each other by only one character, or only in upper/lower case. An ideal variable name pair is `swimmer` and `swimner`. Exploit the failure of most fonts to clearly discriminate between `ilI1|` or `oO08` with identifier pairs like `parselnt` and `parseInt` or `D0Calc` and `DOCalc`. `l` is an exceptionally fine choice for a variable name since it will, to the casual glance, masquerade as the constant `1`. In many fonts rn looks like an m. So how about a variable `swirnrner`. Create variable names that differ from each other only in case e.g. `HashTable` and `Hashtable`.
+使用非常長的變數名稱或僅在一個字符或僅在大小寫不同的情況下有所不同的類別名稱。一個理想的變數名稱對是 `swimmer` 和 `swimner`。利用大多數字型無法清楚區分 `ilI1|` 或 `oO08` 的失敗，使用識別符對如 `parselnt` 和 `parseInt` 或 `D0Calc` 和 `DOCalc`。`l` 是一個非常好的變數名稱選擇，因為對於隨意一瞥的人來說，它會偽裝成常數 `1`。在許多字型中，`rn` 看起來像 `m`。那麼一個變數 `swirnrner` 如何？創建只在大小寫不同的情況下有所不同的變數名稱，例如 `HashTable` 和 `Hashtable`。
 
-#### 唸起來相似或看起來相似的變數名稱
+#### 聽起來相似看起來相似的變數名稱
 
-Variables that resemble others except for capitalization and underlines have the advantage of confounding those who like remembering names by sound or letter-spelling, rather than by exact representations.
+變數與其他變數相似，除了大小寫和底線之外，具有混淆那些喜歡按聲音或字母拼寫記住名稱的人的優勢，而不是通過精確表示。
 
-#### Overload and Bewilder
+#### 過載和迷惑
 
-In C++, overload library functions by using `#define`. That way it looks like you are using a familiar library function where in actuality you are using something totally different.
+在 C++ 中，通過使用 `#define` 來過載庫函數。這樣看起來你正在使用一個熟悉的庫函數，而實際上你正在使用完全不同的東西。
 
-#### Choosing The Best Overload Operator
+#### 選擇最佳的過載運算符
 
-In C++, overload `+`, `-`, `*`, and `/` to do things totally unrelated to addition, subtraction etc. After all, if the Stroustroup can use the shift operator to do I/O, why should you not be equally creative? If you overload `+`, make sure you do it in a way that `i = i + 5;` has a totally different meaning from `i += 5;`. Here is an example of elevating overloading operator obfuscation to a high art. Overload the `!` operator for a class, but have the overload have nothing to do with inverting or negating. Make it return an integer. Then, in order to get a logical value for it, you must use `! !`. However, this inverts the logic, so [drum roll] you must use `! ! !`. Don't confuse the `!` operator, which returns a boolean 0 or 1, with the `~` bitwise logical negation operator.
+在 C++ 中，過載 `+`、`-`、`*` 和 `/` 來執行與加法、減法等完全無關的事情。畢竟，如果 Stroustroup 可以使用位移運算符來進行 I/O，為什麼你不能同樣具有創造力呢？如果你過載 `+`，確保你以一種方式來做，使得 `i = i + 5;` 與 `i += 5;` 有完全不同的含義。這裡有一個將過載運算符混淆提升到一種高藝術的例子。為一個類過載 `!` 運算符，但過載與反轉或否定無關。讓它返回一個整數。然後，為了獲得它的邏輯值，你必須使用 `! !`。然而，這會反轉邏輯，所以 [鼓聲] 你必須使用 `! ! !`。不要混淆 `!` 運算符，它返回一個布爾值 0 或 1，與 `~` 位元邏輯否定運算符不要混淆。
 
-#### Overload new
+#### 重載 new
 
-Overload the `new` operator - much more dangerous than overloading the `+-/*`. This can cause total havoc if overloaded to do something different from its original function (but vital to the object's function so it's very difficult to change). This should ensure users trying to create a dynamic instance get really stumped. You can combine this with the case sensitivity trick also have a member function, and variable called "New".
+重載 `new` 運算子 - 比重載 `+-/*` 更危險。如果將其重載以執行與原始功能不同的操作（但對物件的功能至關重要，因此很難更改），這可能會導致嚴重混亂。這應該確保嘗試創建動態實例的使用者會感到非常困惑。您還可以將此與區分大小寫的技巧結合，並且有一個名為 "New" 的成員函數和變數。
 
 #### #define
 
-`#define` in C++ deserves an entire essay on its own to explore its rich possibilities for obfuscation. Use lower case `#define` variables so they masquerade as ordinary variables. Never use parameters to your preprocessor functions. Do everything with global `#defines`. One of the most imaginative uses of the preprocessor I have heard of was requiring five passes through CPP before the code was ready to compile. Through clever use of `defines` and `ifdefs`, a master of obfuscation can make header files declare different things depending on how many times they are included. This becomes especially interesting when one header is included in another header. Here is a particularly devious example:
+在 C++ 中，`#define` 值得一篇專文來探索其豐富的混淆可能性。使用小寫 `#define` 變數，使它們偽裝成普通變數。永遠不要將參數用於預處理器函數。使用全局 `#define` 來完成所有操作。我聽說過預處理器最具想像力的用法之一是在編譯代碼之前需要通過 CPP 五次。通過巧妙地使用 `defines` 和 `ifdefs`，混淆大師可以使標頭文件根據其被包含的次數聲明不同的內容。當一個標頭文件包含在另一個標頭文件中時，這尤其有趣。這是一個特別狡猾的例子：
 
 ```cpp
 #ifndef DONE
@@ -382,334 +368,321 @@ void g(std::string str);
 #endif // DONE
 ```
 
-This one gets fun when passing `g()` a `char*`, because a different version of `g()` will be called depending on how many times the header was included.
+當向 `g()` 傳遞一個 `char*` 時，這個例子變得有趣，因為根據標頭文件被包含的次數，將調用不同版本的 `g()`。
 
-#### Compiler Directives
+#### 編譯器指令
 
-Compiler directives were designed with the express purpose of making the same code behave completely differently. Turn the boolean short-circuiting directive on and off repeatedly and vigourously, as well as the long strings directive.
+編譯器指令的設計目的是使相同的代碼表現完全不同。反覆且積極地打開和關閉布林短路指令，以及長字符串指令。
 
 ## 文件
 
-> _Any fool can tell the truth, but it requires a man of some sense to know how to lie well._ - Samuel Butler (1835 - 1902)
+> _任何傻瓜都能講真話，但需要有一定見識的人才知道如何說謊。_ - Samuel Butler（1835 - 1902）
 
-> _Incorrect documentation is often worse than no documentation._ - Bertrand Meyer
+> _不正確的文件通常比沒有文件更糟。_ - Bertrand Meyer
 
-因為電腦會忽略註解和文件內容，你可以大膽的在裡面胡說八道，盡你所能的去混淆可憐的維護工程師。
+由於電腦忽略註釋和文件，您可以大膽說謊，並盡一切努力讓可憐的維護程序員感到困惑。
 
-#### 在註解裡說謊
+#### 在註釋中說謊
 
-你不需要特別做什麼，只要不維護註解，隨著程式碼改變，註解自然而然就會說謊了。
+您不必積極地說謊，只需不及時更新註釋與代碼的一致性。
 
-#### 為顯而易見的東西寫文件
+#### 記錄明顯的事項
 
-在程式碼裡散佈像是 `/* i 加上 1*/` 這樣的註解。不過絕對不對這段程式碼實際在做什麼這種模糊的事加上註解。
+在代碼中加入像 `/* 將 i 加 1 */` 這樣的註釋，但永遠不要記錄像套件或方法的整體目的這樣模糊的內容。
 
-#### 紀錄怎麼做的，而不是為什麼這麼做
+#### 記錄如何而非為何
 
-只紀錄程式碼做了什麼事情的細節，但是不描述這段程式碼的功能。這樣一來，如果出錯，負責改的人完全不知道這段程式應該要做什麼事情。
+僅記錄程序執行的細節，而不是它試圖實現的目標。這樣，如果有 bug，修復者將不知道代碼應該做什麼。
 
-#### 避免為了「顯而易見」的東西寫文件
+#### 避免記錄「明顯的」事項
 
-假如你在為一個飛機定位系統撰寫文件。確保假設加入一條新的航線，程式碼至少要改 25 個地方以上。確定沒有文件如果加入航線到底要注意哪些地方。後面的維護者沒有看過你的每一行程式之前，完全沒有辦法更新任何商業流程。
+例如，如果你正在編寫一個航空公司預訂系統，確保代碼中至少有 25 個地方需要修改，如果要添加另一家航空公司。永遠不要記錄它們的位置。跟在你後面的人沒有權利在不完全理解每一行代碼的情況下修改你的代碼。
 
-#### On the Proper Use Of Documentation Templates
+#### 關於文檔模板的正確使用
 
-Consider function documentation prototypes used to allow automated documentation of the code. These prototypes should be copied from one function (or method or class) to another, but never fill in the fields. If for some reason you are forced to fill in the fields make sure that all parameters are named the same for all functions, and all cautions are the same but of course not related to the current function at all.
+考慮使用函數文檔原型來允許代碼的自動文檔化。這些原型應該從一個函數（或方法或類）複製到另一個，但永遠不要填寫字段。如果由於某種原因你被迫填寫字段，請確保所有參數對於所有函數都是相同的命名，所有注意事項也是相同的，但當然與當前函數無關。
 
-####  設計文件的正確用法
+#### 關於設計文檔的正確使用
 
-實作一個非常複雜的演算法時，參照傳統軟體開發的原則，先想出完整設計過後，再開始寫程式。針對該演算法的每一步驟寫出非常詳細的文件，文件詳細程度越高越好。
+在實現非常複雜的算法時，使用經典的軟體工程原則，在開始編碼之前進行良好的設計。撰寫一份極其詳細的設計文檔，描述非常複雜算法中的每一步。這份文檔越詳細，越好。
+實際上，設計文檔應將算法分解為一個結構化步驟的層次結構，描述在文檔中的一個層次結構的自動編號段。使用至少 5 級標題。確保當完成時，你已經將結構分解得如此完全，以至於有超過 500 個這樣的自動編號段。例如，一個段落可能是（這是一個真實的例子）
 
-文件要將整個演算法拆解成詳細的結構化步驟，每個段落解釋一個步驟內的實作方式。拆分的詳細程度至少要達到五層標題。
-In fact, the design doc should break the algorithm down into a hierarchy of structured steps, described in a hierarchy of auto-numbered individual paragraphs in the document. Use headings at least 5 deep. Make sure that when you are done, you have broken the structure down so completely that there are over 500 such auto-numbered paragraphs. For example, one paragraph might be（以下為真實範例）
+1.2.4.6.3.13 - 顯示所有影響，以便應用所選的緩解措施的活動（省略了簡短的偽代碼）。
 
-1.2.4.6.3.13 - 選擇的緩解方式
+#### 計量單位
 
-Display all impacts for activity where selected mitigations can apply (short pseudocode omitted).
+永遠不要記錄任何變數、輸入、輸出或參數的計量單位。例如，英尺、公尺、箱子。這在點算方面並不重要，但在工程工作中非常重要。作為推論，永遠不要記錄任何轉換常數的計量單位，或者值是如何衍生的。在註釋中加入一些不正確的計量單位是一種輕微的欺騙手段，但非常有效。如果你感到特別惡意，可以捏造自己的計量單位；以自己的名字或某個不知名的人命名，並且永遠不要定義它。如果有人質疑你，告訴他們你這樣做是為了可以使用整數而不是浮點數運算。
 
-**然後**⋯⋯ （精彩的部分來了）當你寫程式碼時，針對每個段落，你對應的函式名稱為：
+#### 注意事項
 
-```c
-Act1_2_4_6_3_13()
-```
+永遠不要在代碼中記錄注意事項。如果你懷疑某個類別中可能存在錯誤，請自己留著。如果你對代碼應如何重新組織或重寫有想法，千萬不要寫下來。記住《小鹿斑比》電影中 Thumper 的話："如果你說不出好話，就不要說話"？如果寫那段代碼的程序員看到了你的評論怎麼辦？如果公司的老闆看到了呢？如果客戶看到了呢？你可能會被解雇。一個匿名評論說"這需要修復！"可以奇蹟般地起作用，尤其是如果不清楚評論指的是什麼。保持模糊，沒有人會感到受到個人批評。
 
-函式本身不用再註解了，畢竟設計文件已經寫過了！
+#### 變數文件
 
-Since the design doc is auto-numbered, it will be extremely difficult to keep it up to date with changes in the code (because the function names, of course, are static, not auto-numbered.) This isn't a problem for you because you will not try to keep the document up to date. In fact, do everything you can to destroy all traces of the document.
+**永遠**不要在變數宣告上加上註釋。有關變數如何使用、其範圍、合法值、隱含/顯示的小數位數、度量單位、顯示格式、資料輸入規則（例如，必須填寫總數，必須輸入）以及何時可以信任其值等事實應從程序代碼中獲取。如果你的老闆強迫你寫註釋，可以在方法體中大量添加，但絕不要對變數宣告進行註釋，即使是臨時變數也不行！
 
-Those who come after you should only be able to find one or two contradictory, early drafts of the design document hidden on some dusty shelving in the back room near the dead 286 computers.
+#### 在註釋中貶低
 
-#### Units of Measure
-
-Never document the units of measure of any variable, input, output or parameter. e.g. feet, metres, cartons. This is not so important in bean counting, but it is very important in engineering work. As a corollary, never document the units of measure of any conversion constants, or how the values were derived. It is mild cheating, but very effective, to salt the code with some incorrect units of measure in the comments. If you are feeling particularly malicious, make up your **own** unit of measure; name it after yourself or some obscure person and never define it. If somebody challenges you, tell them you did so that you could use integer rather than floating point arithmetic.
-
-#### 抓到了
-
-Never document gotchas in the code. If you suspect there may be a bug in a class, keep it to yourself. If you have ideas about how the code should be reorganised or rewritten, for heaven's sake, do not write them down. Remember the words of Thumper in the movie Bambi, _"If you can't say anything nice, don't say anything at all"_? What if the programmer who wrote that code saw your comments? What if the owner of the company saw them? What if a customer did? You could get yourself fired. An anonymous comment that says "This needs to be fixed!" can do wonders, especially if it's not clear what the comment refers to. Keep it vague, and nobody will feel personally criticised.
-
-#### 用文件紀錄變數
-
-**Never** put a comment on a variable declaration. Facts about how the variable is used, its bounds, its legal values, its implied/displayed number of decimal points, its units of measure, its display format, its data entry rules (e.g. total fill, must enter), when its value can be trusted etc. should be gleaned from the procedural code. If your boss forces you to write comments, lard method bodies with them, but never comment a variable declaration, not even a temporary!
-
-#### Disparage In the Comments
-
-Discourage any attempt to use external maintenance contractors by peppering your code with insulting references to other leading software companies, especial anyone who might be contracted to do the work. e.g.:
+通過在代碼中散佈對其他領先軟件公司的侮辱性引用，尤其是可能被承包進行工作的公司，來阻止任何使用外部維護承包商的嘗試。例如：
 
 ```c
 /* The optimised inner loop.
 This stuff is too clever for the dullard at Software Services Inc., who would
 probably use 50 times as memory & time using the dumb routines in <math.h>.
 */
-class clever_SSInc
-    {
+class clever_SSInc {
     .. .
-    }
+}
 ```
 
-If possible, put insulting stuff in syntactically significant parts of the code, as well as just the comments so that management will probably break the code if they try to sanitise it before sending it out for maintenance.
+如果可能，將侮辱性內容放在代碼的語法上具有重要意義的部分，而不僅僅是註釋，這樣管理層在嘗試在發送維護之前對代碼進行清理時可能會破壞代碼。
 
-#### COMMENT AS IF IT WERE CØBØL ON PUNCH CARDS
+#### 將註釋撰寫得像在打孔卡片上的CØBØL
 
-Always refuse to accept advances in the development environment arena, especially SCIDs. Disbelieve rumors that all function and variable declarations are never more than one click away and always assume that code developed in Visual Studio 6.0 will be maintained by someone using edlin or vi. Insist on Draconian commenting rules to bury the source code proper.
+始終拒絕接受開發環境領域的進步，尤其是SCIDs。不要相信所有函式和變數宣告永遠只有一個點擊遠，並且始終假設在Visual Studio 6.0中開發的代碼將由使用edlin或vi的人員進行維護。堅持嚴格的註釋規則以掩蓋源代碼。
 
-#### Monty Python 式註解
+#### 蒙提·派森式註釋
 
-在 makeSnafucated() 函式前面，加上註解 `/* 做 snafucated */`。**絕不**定義 _snafucated_ 到底是什麼意思。只有傻子才會沒辦法百分之百確定 _snafucated_ 的意思。要看經典的例子的話，可以看 Sun AWT 的 JavaDOC。
+在名為`makeSnafucated`的方法中，僅插入JavaDoc `/* make snafucated */`。**任何地方都不要**定義什麼是“snafucated”。只有傻瓜才不知道“snafucated”是什麼意思，並且完全確定。要查看此技術的經典示例，請參考Sun AWT JavaDOC。
 
 ## 程式設計
 
-> _The cardinal rule of writing unmaintainable code is to specify each fact in as many places as possible and in as many ways as possible._ - Roedy Green
+> _撰寫難以維護代碼的基本規則是在盡可能多的地方以盡可能多的方式指定每個事實。_ - Roedy Green
 
-The key to writing maintainable code is to specify each fact about the application in only one place. To change your mind, you need change it in only one place, and you are guaranteed the entire program will still work. Therefore, the key to writing unmaintainable code is to specify a fact over and over, in as many places as possible, in as many variant ways as possible. Happily, languages like Java go out of their way to make writing this sort of unmaintainable code easy. For example, it is almost impossible to change the type of a widely used variable because all the casts and conversion functions will no longer work, and the types of the associated temporary variables will no longer be appropriate. Further, if the variable is displayed on the screen, all the associated display and data entry code has to be tracked down and manually modified. The Algol family of languages which include C and Java treat storing data in an array, Hashtable, flat file and database with **totally** different syntax. In languages like Abundance, and to some extent Smalltalk, the syntax is identical; just the declaration changes. Take advantage of Java's ineptitude. Put data you know will grow too large for RAM, for now into an array. That way the maintenance programmer will have a horrendous task converting from array to file access later. Similarly place tiny files in databases so the maintenance programmer can have the fun of converting them to array access when it comes time to performance tune.
+撰寫易於維護代碼的關鍵是只在一個地方指定有關應用程序的每個事實。要改變主意，您只需在一個地方進行更改，並且可以保證整個程序仍將正常運作。因此，撰寫難以維護代碼的關鍵是在盡可能多的地方以盡可能多種方式指定一個事實。令人高興的是，像Java這樣的語言竭盡全力使撰寫這種難以維護代碼變得容易。例如，幾乎不可能更改廣泛使用的變數的類型，因為所有的轉換和轉換函數將不再起作用，相關臨時變數的類型也將不再適用。此外，如果在屏幕上顯示變數，則必須跟踪所有相關的顯示和數據輸入代碼並手動修改。包括C和Java在內的Algol語言家族對將數據存儲在數組、Hashtable、平面文件和數據庫中具有**完全**不同的語法。在像Abundance和在某種程度上Smalltalk這樣的語言中，語法是相同的；只是聲明發生了變化。利用Java的笨拙。將您知道將來會變得過大以至於無法放入RAM的數據暫時放入數組中。這樣，維護程序員將需要進行艱鉅的任務，以便稍後從數組訪問轉換為文件訪問。同樣地，將微小文件放入數據庫中，以便維護程序員在進行性能調整時可以將其轉換為數組訪問。
 
-#### Java Casts
+#### Java 轉型
 
-Java's casting scheme is a gift from the Gods. You can use it without guilt since the language requires it. Every time you retrieve an object from a Collection you must cast it back to its original type. Thus the type of the variable may be specified in dozens of places. If the type later changes, all the casts must be changed to match. The compiler may or may not detect if the hapless maintenance programmer fails to catch them all (or changes one too many). In a similar way, all matching casts to `(short)` need to be changed to `(int)` if the type of a variable changes from `short` to `int`. There is a movement afoot in invent a generic cast operator `(cast)` and a generic conversion operator `(convert)` that would require no maintenance when the type of variable changes. Make sure this heresy never makes it into the language specification. Vote no on RFE 114691 and on genericity which would eliminate the need for many casts.
+Java 的轉型方案是神的恩賜。您可以毫無罪惡感地使用它，因為語言要求這樣做。每次從集合中擷取物件時，您都必須將其轉型回原始類型。因此，變數的類型可能在數十個地方被指定。如果類型稍後更改，則必須更改所有轉型以匹配。編譯器可能會或可能不會檢測到不幸的維護程式設計師未能捕捉到所有問題（或更改了太多）。以類似的方式，如果變數的類型從 `short` 變為 `int`，則所有匹配的轉型為 `(short)` 需要更改為 `(int)`。目前有一個運動正在興起，試圖發明一個通用轉型運算子 `(cast)` 和一個通用轉換運算子 `(convert)`，當變數類型更改時不需要進行任何維護。請確保這種異端邪說永遠不會出現在語言規範中。在 RFE 114691 和可能消除許多轉型需求的泛型性上投下反對票。
 
-#### Exploit Java's Redundancy
+#### 利用 Java 的冗餘性
 
-Java insists you specify the type of every variable twice. Java programmers are so used to this redundancy they won't notice if you make the two types slightly different, as in this example:
+Java 要求您兩次指定每個變數的類型。Java 程式設計師如此習慣這種冗餘性，以至於他們不會注意到如果您讓兩種類型稍有不同，就像這個例子中一樣：
 
 ```java
 Bubblegum b = new Bubblegom();
 ```
 
-Unfortunately the popularity of the ++ operator makes it harder to get away with pseudo-redundant code like this:
+不幸的是，`++` 運算子的普及使得像這樣的虛假冗餘代碼更難以通過：
 
 ```java
 swimmer = swimner + 1;
 ```
 
-#### 從不驗證
+#### 永遠不要驗證
 
-絕不檢查輸入的格式是否正確或者有差異。這表示了你絕對相信公司，也代表你是團隊的好成員，絕對相信團隊的所有夥伴和用戶。即使輸入的資料看起來很奇怪或有錯，總是輸出看起來有道理的回傳值。
+永遠不要檢查輸入數據的任何正確性或不一致性。這將表明您絕對信任公司的設備，以及您是一個完美的團隊合作者，信任所有專案合作夥伴和系統操作者。即使數據輸入有問題或錯誤，也應始終返回合理值。
 
-#### 有禮貌，從不斷言
+#### 請禮貌，永遠不要斷言
 
-避免使用 `assert()`  功能。他可能使本來需要三天的除錯工作變成十分鐘搞定。
+避免使用 `assert()` 機制，因為它可能會將一個為期三天的調試盛宴變成十分鐘的盛宴。
 
 #### 避免封裝
 
-In the interests of efficiency, avoid encapsulation. Callers of a method need all the external clues they can get to remind them how the method works inside.
+為了效率起見，避免封裝。方法的調用者需要盡可能多的外部線索，以提醒他們方法內部的運作方式。
 
-#### Clone & Modify
+#### 複製和修改
 
-以效率的名義，剪貼別人的程式碼然後修改。這樣比起寫很多小的，可重複使用的模組要快很多。這個技巧在以程式碼行數判斷工程師效率的公司裡面特別有效。
+--- 
+
+這是翻譯好的內容，請檢查並告訴我是否需要進一步的修改。
 
 #### 使用靜態陣列
 
-If a module in a library needs an array to hold an image, just define a static array. Nobody will ever have an image bigger than 512 x 512, so a fixed-size array is OK. For best precision, make it an array of doubles. Bonus effect for hiding a 2 Meg static array which causes the program to exceed the memory of the client's machine and thrash like crazy even if they never use your routine.
+為了效率起見，使用剪下/貼上/複製/修改。這比使用許多小型可重複使用的模組要快得多。這在那些以你編寫的程式碼行數來衡量你進度的商店中尤其有用。
 
-#### Dummy Interfaces
+#### 使用靜態陣列
 
-Write an empty interface called something like `WrittenByMe`, and make all of your classes implement it. Then, write wrapper classes for any of Java's built-in classes that you use. The idea is to make sure that every single object in your program implements this interface. Finally, write all methods so that both their arguments and return types are `WrittenByMe`. This makes it nearly impossible to figure out what some methods do, and introduces all sorts of entertaining casting requirements. For a further extension, have each team member have his/her own personal interface (e.g., `WrittenByJoe`); any class worked on by a programmer gets to implement his/her interface. You can then arbitrarily refer to objects by any one of a large number of meaningless interfaces!
+如果庫中的模組需要一個陣列來保存圖像，只需定義一個靜態陣列。沒有人會有比 512 x 512 更大的圖像，因此固定大小的陣列是可以的。為了最佳精確度，將其設為雙精度陣列。對於隱藏一個 2 兆靜態陣列的獎勵效果，這會使程式超出客戶機的記憶體並且即使他們從未使用你的例程也會瘋狂地交換。
 
-#### 肥大的 Listener
+#### 虛擬介面
 
-Never create separate Listeners for each Component. Always have one listener for every button in your project and simply use massive if...else statements to test for which button was pressed.
+編寫一個名為 `WrittenByMe` 的空介面，並讓所有的類別實作它。然後，為你使用的任何 Java 內建類別編寫包裝類別。這個想法是確保你程式中的每個物件都實作這個介面。最後，編寫所有方法，使其引數和返回類型都是 `WrittenByMe`。這使得幾乎不可能弄清楚某些方法的作用，並引入各種有趣的轉型要求。進一步擴展，讓每個團隊成員都有自己的個人介面（例如 `WrittenByJoe`）；任何一位程式設計師工作過的類別都要實作他/她的介面。然後，你可以任意地用許多無意義的介面之一來參考物件！
 
-#### Too Much Of A Good Thing<sup>TM</sup>
+#### 巨大的監聽器
 
-Go wild with encapsulation and oo. For example:
+永遠不要為每個元件創建單獨的監聽器。在你的專案中，總是為每個按鈕只有一個監聽器，然後簡單地使用大量的 if...else 陳述來測試按下了哪個按鈕。
+
+#### 過度的好事<sup>TM</sup>
+
+放縱於封裝和物件導向。例如：
 
 ```java
 myPanel.add( getMyButton() );
-private JButton getMyButton()
-    {
+private JButton getMyButton() {
     return myButton;
-    }
-```
-
-That one probably did not even seem funny. Don't worry. It will some day.
-
-#### Friendly Friend
-
-Use as often as possible the friend-declaration in C++. Combine this with handing the pointer of the creating class to a created class. Now you don't need to fritter away your time in thinking about interfaces. Additionally you should use the keywords _private_ and _protected_ to prove that your classes are well encapsulated.
-
-#### 使用三維陣列 
-
-Lots of them. Move data between the arrays in convoluted ways, say, filling the columns in `arrayB` with the rows from `arrayA`. Doing it with an offset of 1, for no apparent reason, is a nice touch. Makes the maintenance programmer nervous.
-
-#### Mix and Match
-
-Use both accessor methods and public variables. That way, you can change an object's variable without the overhead of calling the accessor, but still claim that the class is a "Java Bean". This has the additional advantage of frustrating the maintenence programmer who adds a logging function to try to figure out who is changing the value.
-
-#### 包裝，包裝，再包裝
-
-Whenever you have to use methods in code you did not write, insulate your code from that other _dirty_ code by at least one layer of wrapper. After all, the other author **might** some time in the future recklessly rename every method. Then where would you be? You could of course, if he did such a thing, insulate your code from the changes by writing a wrapper or you could let VAJ handle the global rename. However, this is the perfect excuse to preemptively cut him off at the pass with a wrapper layer of indirection, **before** he does anything idiotic. One of Java's main faults is that there is no way to solve many simple problems without dummy wrapper methods that do nothing but call another method of the same name, or a closely related name. This means it is possible to write wrappers four-levels deep that do absolutely nothing, and almost no one will notice. To maximise the obscuration, at each level, rename the methods, selecting random synonyms from a thesaurus. This gives the illusion something of note is happening. Further, the renaming helps ensure the lack of consistent project terminology. To ensure no one attempts to prune your levels back to a reasonable number, invoke some of your code bypassing the wrappers at each of the levels.
-
-#### 繼續包裝包裝再包裝
-
-Make sure all API functions are wrapped at least 6-8 times, with function definitions in separate source files. Using `#defines` to make handy shortcuts to these functions also helps.
-
-#### 沒有秘密！
-
-Declare every method and variable `public`. After all, somebody, sometime might want to use it. Once a method has been declared public, it can't very well be retracted, now can it? This makes it very difficult to later change the way anything works under the covers. It also has the delightful side effect of obscuring what a class is for. If the boss asks if you are out of your mind, tell him you are following the classic principles of transparent interfaces.
-
-#### The Kama Sutra
-
-This technique has the added advantage of driving any users or documenters of the package to distraction as well as the maintenance programmers. Create a dozen overloaded variants of the same method that differ in only the most minute detail. I think it was Oscar Wilde who observed that positions 47 and 115 of the Kama Sutra were the same except in 115 the woman had her fingers crossed. Users of the package then have to carefully peruse the long list of methods to figure out just which variant to use. The technique also balloons the documentation and thus ensures it will more likely be out of date. If the boss asks why you are doing this, explain it is solely for the convenience of the users. Again for the full effect, clone any common logic and sit back and wait for the copies to gradually get out of sync.
-
-#### Permute and Baffle
-
-Reverse the parameters on a method called `drawRectangle(height, width)` to `drawRectangle(width, height)` without making any change whatsoever to the name of the method. Then a few releases later, reverse it back again. The maintenance programmers can't tell by quickly looking at any call if it has been adjusted yet. Generalisations are left as an exercise for the reader.
-
-#### Theme and Variations
-
-Instead of using a parameter to a single method, create as many separate methods as you can. For example instead of `setAlignment(int alignment)` where `alignment` is an enumerated constant, for left, right, center, create three methods `setLeftAlignment`, `setRightAlignment`, and `setCenterAlignment`. Of course, for the full effect, you must clone the common logic to make it hard to keep in sync.
-
-#### 靜態就是好
-
-Make as many of your variables as possible static. If _you_ don't need more than one instance of the class in this program, no one else ever will either. Again, if other coders in the project complain, tell them about the execution speed improvement you're getting.
-
-#### Cargill's Quandry
-
-Take advantage of Cargill's quandary (I think this was his) "any design problem can be solved by adding an additional level of indirection, except for too many levels of indirection." Decompose OO programs until it becomes nearly impossible to find a method which actually updates program state. Better yet, arrange all such occurrences to be activated as callbacks from by traversing pointer forests which are known to contain every function pointer used within the entire system. Arrange for the forest traversals to be activated as side-effects from releasing reference counted objects previously created via deep copies which aren't really all that deep.
-
-#### Packratting
-
-Keep all of your unused and outdated methods and variables around in your code. After all - if you needed to use it once in 1976, who knows if you will want to use it again sometime? Sure the program's changed since then, but it might just as easily change back, you "don't want to have to reinvent the wheel" (supervisors love talk like that). If you have left the comments on those methods and variables untouched, and sufficiently cryptic, anyone maintaining the code will be too scared to touch them.
-
-#### And That's Final
-
-Make all of your leaf classes final. After all, _you're_ done with the project - certainly no one else could possibly improve on your work by extending your classes. And it might even be a security flaw - after all, isn't java.lang.String final for just this reason? If other coders in your project complain, tell them about the execution speed improvement you're getting.
-
-#### Eschew The Interface
-
-In Java, disdain the interface. If your supervisors complain, tell them that Java interfaces force you to "cut-and-paste" code between different classes that implement the same interface the same way, and they know how hard that would be to maintain. Instead, do as the Java AWT designers did - put lots of functionality in your classes that can only be used by classes that inherit from them, and use lots of "instanceof" checks in your methods. This way, if someone wants to reuse your code, they have to extend your classes. If they want to reuse your code from two different classes - tough luck, they can't extend both of them at once! If an interface is unavoidable, make an all-purpose one and name it something like `ImplementableIface`. Another gem from academia is to append "Impl" to the names of classes that implement interfaces. This can be used to great advantage, e.g. with classes that implement `Runnable`.
-
-#### Avoid Layouts
-
-Never use layouts. That way when the maintenance programmer adds one more field he will have to manually adjust the absolute co-ordinates of every other thing displayed on the screen. If your boss forces you to use a layout, use a single giant `GridBagLayout`, and hard code in absolute grid co-ordinates.
-
-#### 環境變數
-
-If you have to write classes for some other programmer to use, put environment-checking code (`getenv()` in C++ / `System.getProperty()` in Java) in your classes' nameless static initializers, and pass all your arguments to the classes this way, rather than in the constructor methods. The advantage is that the initializer methods get called as soon as the class program binaries get loaded, even before any of the classes get instantiated, so they will usually get executed before the program `main()`. In other words, there will be no way for the rest of the program to modify these parameters before they get read into your classes - the users better have set up all their environment variables just the way you had them!
-
-#### Table Driven Logic
-
-Eschew any form of table-driven logic. It starts out innocently enough, but soon leads to end users proofreading and then _shudder_, even modifying the tables for themselves.
-
-#### Modify Mom's Fields
-
-In Java, all primitives passed as parameters are effectively read-only because they are passed by value. The callee can modify the parameters, but that has no effect on the caller's variables. In contrast all objects passed are read-write. The reference is passed by value, which means the object itself is effectively passed by reference. The callee can do whatever it wants to the fields in your object. Never document whether a method actually modifies the fields in each of the passed parameters. Name your methods to suggest they only look at the fields when they actually change them.
-
-#### 全域變數的魔法
-
-Instead of using exceptions to handle error processing, have your error message routine set a global variable. Then make sure that every long-running loop in the system checks this global flag and terminates if an error occurs. Add another global variable to signal when a user presses the 'reset' button. Of course all the major loops in the system also have to check this second flag. Hide a few loops that **don't** terminate on demand.
-
-#### 全域變數，再來一次！
-
-If God didn't want us to use global variables, he wouldn't have invented them. Rather than disappoint God, use and set as many global variables as possible. Each function should use and set at least two of them, even if there's no reason to do this. After all, any good maintenance programmer will soon figure out this is an exercise in detective work, and she'll be happy for the exercise that separates real maintenance programmers from the dabblers.
-
-#### 全域變數，最後一次！
-
-Global variables save you from having to specify arguments in functions. Take full advantage of this. Elect one or more of these global variables to specify what kinds of processes to do on the others. Maintenance programmers foolishly assume that C functions will not have side effects. Make sure they squirrel results and internal state information away in global variables.
-
-#### 副作用
-
-在 C 裡面，所有的函式都應該是 idempotent（沒有任何副作用）。我希望這邊的提示已經夠了。
-
-#### Backing Out
-
-Within the body of a loop, assume that the loop action is successful and immediately update all pointer variables. If an exception is later detected on that loop action, back out the pointer advancements as side effects of a conditional expression following the loop body.
-
-#### Local Variables
-
-Never use local variables. Whenever you feel the temptation to use one, make it into an instance or static variable instead to unselfishly share it with all the other methods of the class. This will save you work later when other methods need similar declarations. C++ programmers can go a step further by making all variables global.
-
-#### Configuration Files
-
-These usually have the form keyword=value. The values are loaded into Java variables at load time. The most obvious obfuscation technique is to use slightly different names for the keywords and the Java variables. Use configuration files even for constants that never change at run time. Parameter file variables require at least five times as much code to maintain as a simple variable would.
-
-#### Bloated classes
-
-To ensure your classes are bounded in the most obtuse way possible, make sure you include peripheral, obscure methods and attributes in every class. For example, a class that defines astrophysical orbit geometry really should have a method that computes ocean tide schedules and attributes that comprise a Crane weather model. Not only does this over-define the class, it makes finding these methods in the general system code like looking for a guitar pick in a landfill.
-
-#### 沈溺在 Subclass 中
-
-Object oriented programming is a godsend for writing unmaintainable code. If you have a class with 10 properties (member/method) in it, consider a base class with only one property and subclassing it 9 levels deep so that each descendant adds one property. By the time you get to the last descendant class, you'll have all 10 properties. If possible, put each class declaration in a separate file. This has the added effect of bloating your `INCLUDE` or `USES` statements, and forces the maintainer to open that many more files in his or her editor. Make sure you create at least one instance of each subclass.
-
-## 混淆程式碼
-
-> _Sedulously eschew obfuscatory hyperverbosity and prolixity._
-
-#### Obfuscated C
-
-Follow the obfuscated C contests on the Internet and sit at the lotus feet of the masters.
-
-#### Find a Forth or APL Guru
-
-In those worlds, the terser your code and the more bizarre the way it works, the more you are revered.
-
-#### I'll Take a Dozen
-
-Never use one housekeeping variable when you could just as easily use two or three.
-
-#### Jude the Obscure
-
-Always look for the most obscure way to do common tasks. For example, instead of using arrays to convert an integer to the corresponding string, use code like this:
-
-```c
-char *p;
-switch (n)
-{
-case 1:
-    p = "one";
-    if (0)
-case 2:
-    p = "two";
-    if (0)
-case 3:
-    p = "three";
-    printf("%s", p);
-    break;
 }
 ```
 
-#### Foolish Consistency Is the Hobgoblin of Little Minds
+這個可能甚至看起來不好笑。別擔心。總有一天會好笑的。
 
-When you need a character constant, use many different formats `' '`, `32`, `0x20`, `040`. Make liberal use of the fact that `10` and `010` are not the same number in C or Java.
+#### 友好的朋友
 
-#### 型態轉換
+在 C++ 中盡可能多地使用友元宣告。結合將創建類別的指標傳遞給已創建類別。現在你不需要浪費時間思考介面。此外，你應該使用關鍵字 _private_ 和 _protected_ 來證明你的類別封裝得很好。
 
-Pass all data as a `void *` and then typecast to the appropriate structure. Using byte offsets into the data instead of structure casting is fun too.
+#### 使用三維陣列
 
-#### 巢狀 Switch 結構
+有很多。以錯綜複雜的方式在陣列之間移動資料，比如說，將`arrayA`的列填入`arrayB`的欄位。以偏移量為1進行操作，沒有明顯的理由，這樣做會讓維護程式設計師感到緊張。
 
-(a switch within a switch) is the most difficult type of nesting for the human mind to unravel.
+#### 混合搭配
 
-#### Exploit Implicit Conversion
+同時使用取值器方法和公共變數。這樣一來，您可以在不調用取值器的情況下更改物件的變數，但仍然聲稱該類別是一個“Java Bean”。這有一個額外的優點，可以讓試圖添加記錄功能以找出誰更改了值的維護程式設計師感到沮喪。
 
-Memorize all of the subtle implicit conversion rules in the programming language. Take full advantage of them. Never use a picture variable (in COBOL or PL/I) or a general conversion routine (such as `sprintf` in C). Be sure to use floating-point variables as indexes into arrays, characters as loop counters, and perform string functions on numbers. After all, all of these operations are well-defined and will only add to the terseness of your source code. Any maintainer who tries to understand them will be very grateful to you because they will have to read and learn the entire chapter on implicit data type conversion; a chapter that they probably had completely overlooked before working on your programs.
+#### 包裝、包裝、包裝
 
-#### Raw ints
+每當您必須使用您未編寫的程式碼中的方法時，請至少通過一層包裝器將您的程式碼與其他**骯髒**程式碼隔離開來。畢竟，其他作者**可能**在未來的某個時候魯莽地重新命名每個方法。那時你會怎麼辦呢？當然，如果他這樣做了，您可以通過編寫一個包裝器來隔離您的程式碼免受更改的影響，或者您可以讓VAJ處理全局重命名。然而，這是一個完美的藉口，預先阻止他通過一層間接的包裝器層在他做任何蠢事之前。Java的一個主要缺點是沒有辦法解決許多簡單的問題，而不使用除了調用另一個同名方法或密切相關名稱的方法之外什麼都不做的虛擬包裝器方法。這意味著可以編寫四層深的包裝器，完全不做任何事情，幾乎沒有人會注意到。為了最大程度地模糊視線，在每個層級，重新命名方法，從同義詞詞典中隨機選擇隨機詞彙。這給人一種發生了重要事情的錯覺。此外，重新命名有助於確保一致的專案術語的缺乏。為了確保沒有人嘗試將您的層級削減到合理數量，請在每個層級繞過包裝器調用一些您的程式碼。
 
-When using ComboBoxes, use a switch statement with integer cases rather than named constants for the possible values.
+#### 再次包裝包裝包裝
+
+確保所有API函數至少被包裝6-8次，並在單獨的源文件中定義函數。使用`#defines`來製作這些函數的方便快捷方式也是有幫助的。
+
+#### 沒有秘密！
+
+將每個方法和變數都宣告為`public`。畢竟，總有人在某個時候想要使用它。一旦一個方法被宣告為`public`，它就無法被收回，對吧？這使得以後更改任何內部工作方式變得非常困難。這也有一個令人愉快的副作用，即模糊了類別的用途。如果老闆問你是不是瘋了，告訴他你正在遵循透明介面的經典原則。
+
+#### 卡瑪經
+
+這種技巧的額外優勢是讓任何使用者或套件文檔的人分心，以及維護程式設計師。創建一打過載的相同方法變體，只有微小細節不同。我想是奧斯卡·王爾德觀察到卡瑪經的第47和115個姿勢是一樣的，只是在115中女人交叉了手指。然後套件的使用者必須仔細查看方法的長列表，才能弄清楚應該使用哪個變體。這種技巧還會膨脹文檔，因此更容易過時。如果老闆問你為什麼這樣做，解釋說這僅僅是為了使用者的方便。再次為了完整效果，複製任何常見邏輯，然後坐下等待逐漸不同步的副本。
+
+#### 排列和迷惑
+
+將一個名為`drawRectangle(height, width)`的方法的參數反轉為`drawRectangle(width, height)`，而不對方法名稱做任何更改。然後幾個版本後再次反轉回來。維護程式設計師無法通過快速查看任何調用來判斷它是否已經調整過。一般化留給讀者作為練習。
+
+#### 主題和變化
+
+不要使用單個方法的參數，盡可能創建多個獨立的方法。例如，不要使用`setAlignment(int alignment)`這樣的參數，其中`alignment`是一個列舉常數，代表左、右、中，而是創建三個方法`setLeftAlignment`、`setRightAlignment`和`setCenterAlignment`。當然，為了完整效果，您必須複製共同邏輯，使其難以保持同步。
+
+#### 靜態是好的
+
+盡可能將您的變數設為靜態。如果在此程式中您不需要多個類別實例，其他人也不會需要。再次，如果專案中的其他開發人員抱怨，告訴他們您正在獲得的執行速度改善。
+
+#### 卡吉爾的困境
+
+利用卡吉爾的困境（我想這是他的）"任何設計問題都可以通過增加額外的間接層來解決，除了太多的間接層"。將面向對象程序分解，直到幾乎不可能找到實際更新程式狀態的方法。更好的是，安排所有這樣的發生在針對整個系統中使用的每個函數指針的指標森林中的回呼，通過釋放先前通過並非真正那麼深的深拷貝創建的引用計數對象來激活森林遍歷的副作用。如果您尚未觸及這些方法和變數的註釋，並且足夠神秘，任何維護代碼的人都會害怕觸及它們。
+
+#### Packratting
+
+在代碼中保留所有未使用和過時的方法和變數。畢竟 - 如果您在 1976 年曾需要使用它，誰知道您將來可能會再次使用它？當然，自那時以來程式已經改變，但它可能會輕易地改回來，您“不想重新發明輪子”（主管喜歡這樣的談話）。如果您尚未觸及這些方法和變數的註釋，並且足夠神秘，任何維護代碼的人都會害怕觸及它們。
+
+#### 就這樣
+
+使您的所有葉子類別都是 final。畢竟，您已經完成了這個專案 - 當然沒有其他人可能通過擴展您的類別來改進您的工作。這甚至可能是一個安全漏洞 - 畢竟，java.lang.String 不就是為了這個原因而是 final 嗎？如果專案中的其他開發人員抱怨，告訴他們您正在獲得的執行速度改善。
+
+#### 避免接口
+
+在 Java 中，輕視接口。如果您的主管抱怨，告訴他們 Java 接口強迫您在實現相同接口的不同類別之間“剪貼”代碼，他們知道這樣做有多難以維護。相反，像 Java AWT 設計者一樣 - 在您的類別中放入許多功能，只能被繼承自它們的類別使用，在您的方法中使用大量的“instanceof”檢查。這樣，如果有人想重用您的代碼，他們必須擴展您的類別。如果他們想從兩個不同的類別重用您的代碼 - 那就太糟糕了，他們無法同時擴展兩個類別！如果接口是不可避免的，創建一個通用的接口，並將其命名為像 `ImplementableIface` 這樣的名稱。學術界的另一個寶石是將實現接口的類別的名稱附加“Impl”。這可以被廣泛利用，例如實現 `Runnable` 的類別。
+
+#### 避免佈局
+
+永遠不要使用佈局。這樣，當維護程序員添加一個字段時，他將不得不手動調整屏幕上顯示的每一個其他元素的絕對坐標。如果你的老闆強迫你使用佈局，請使用單個巨大的 `GridBagLayout`，並在絕對網格坐標中硬編碼。
+
+#### 環境變數
+
+如果你必須為其他程序員編寫類，請將環境檢查代碼（在 C++ 中使用 `getenv()` / 在 Java 中使用 `System.getProperty()`）放在你的類的無名靜態初始化器中，並通過這種方式將所有引數傳遞給類，而不是在構造方法中。優點是初始化方法會在類程序二進制文件加載時立即調用，甚至在任何類被實例化之前，因此它們通常會在程序的 `main()` 之前被執行。換句話說，在這些參數被讀入你的類之前，程序的其餘部分沒有辦法修改這些參數 - 用戶最好將他們的環境變數設置得和你一樣！
+
+#### 表驅動邏輯
+
+避免任何形式的表驅動邏輯。它起初看起來很無辜，但很快就會導致最終用戶校對，然後 _噁心地_，甚至修改表格。
+
+#### 修改 Mom 的字段
+
+在 Java 中，所有作為參數傳遞的基本類型實際上是只讀的，因為它們是按值傳遞的。被調用者可以修改參數，但這對調用者的變量沒有影響。相比之下，所有傳遞的對象都是可讀寫的。引用是按值傳遞的，這意味著對象本身實際上是按引用傳遞的。被調用者可以對你對象中的字段做任何想做的事情。永遠不要記錄一個方法是否實際上修改了每個傳遞參數中的字段。命名你的方法以暗示它們只查看字段，當它們實際上改變它們時。
+
+#### 全局變量的魔力
+
+不要使用異常來處理錯誤處理，讓你的錯誤消息例程設置一個全局變量。然後確保系統中的每個長時間運行的循環檢查這個全局標誌，如果發生錯誤就終止。再添加另一個全局變量來標誌當用戶按下 '重置' 按鈕時。當然，系統中的所有主要循環也必須檢查這第二個標誌。隱藏一些**不**按需終止的循環。
+
+#### 全域變數，我們無法強調這些足夠了！
+
+如果上帝不希望我們使用全域變數，他就不會發明它們。與其讓上帝失望，不如盡可能使用和設定許多全域變數。每個函數應該使用和設定至少兩個全域變數，即使沒有理由這樣做。畢竟，任何一位優秀的維護程式設計師很快就會發現這是一項偵探工作，她會為這種區分真正維護程式設計師和業餘者的練習感到高興。
+
+#### 全域變數，再說一次，夥計們
+
+全域變數可以免去在函數中指定引數的麻煩。充分利用這一點。選擇一個或多個全域變數來指定對其他變數進行哪些類型的處理。維護程式設計師愚蠢地假設 C 函數不會產生副作用。確保它們將結果和內部狀態資訊保存在全域變數中。
+
+#### 副作用
+
+在 C 語言中，函數應該是幂等的（無副作用）。希望這個提示足夠了。
+
+#### 回退
+
+在迴圈的主體內，假設迴圈操作成功並立即更新所有指標變數。如果稍後檢測到該迴圈操作有異常，則在迴圈主體後面的條件表達式的副作用中回退指標進展。
+
+#### 區域變數
+
+永遠不要使用區域變數。每當你感覺到使用一個的誘惑時，將其轉換為實例或靜態變數，以無私地與類別的所有其他方法共享。這將在其他方法需要類似聲明時為您節省工作。C++ 程式設計師可以進一步將所有變數設為全域。
+
+#### 組態檔案
+
+這些通常具有關鍵字=值的形式。值在加載時加載到 Java 變數中。最明顯的混淆技術是使用略有不同的名稱來命名關鍵字和 Java 變數。即使是永遠不會在運行時更改的常數，也應使用組態檔案。參數檔案變數需要至少五倍的代碼來維護，而簡單變數只需要的代碼。
+
+#### 過度膨脹的類別
+
+為了確保您的類別以最難理解的方式綁定，請確保在每個類別中包含外圍、晦澀的方法和屬性。例如，定義天體軌道幾何的類別應該有一個計算海洋潮汐時間表的方法和包含一個Crane氣象模型的屬性。這不僅過度定義了類別，還使得在一般系統代碼中尋找這些方法就像在垃圾場中尋找一個吉他撥片一樣困難。
+
+#### 放任地使用子類
+
+面向對象編程對於編寫難以維護的代碼來說是一大福音。如果您有一個類別中有10個屬性（成員/方法），請考慮只有一個屬性的基類，然後將其子類化到9個層級，使每個後代添加一個屬性。當您到達最後一個後代類別時，您將擁有所有10個屬性。如果可能，請將每個類聲明放在單獨的文件中。這不僅會使您的`INCLUDE`或`USES`語句變得臃腫，還會迫使維護者在編輯器中打開更多文件。請確保至少創建每個子類的一個實例。
+
+## 編碼混淆
+
+> _切忌過度冗長和繁瑣的語言。_
+
+#### 混淆的C語言
+
+關注互聯網上的混淆C語言比賽，並坐在大師的蓮花腳下。
+
+#### 找一位Forth或APL大師
+
+在那些領域中，您的代碼越簡潔，並且運作方式越奇怪，您就會越受尊敬。
+
+#### 我要十二個
+
+當您可以輕鬆使用兩個或三個變數時，絕不要只使用一個。
+
+#### 神秘的裘德
+
+總是尋找執行常見任務的最神秘方式。例如，不要使用陣列將整數轉換為對應的字符串，而是使用像這樣的代碼：
+
+```c
+char *p;
+switch (n) {
+    case 1:
+        p = "one";
+        if (0)
+    case 2:
+        p = "two";
+        if (0)
+    case 3:
+        p = "three";
+        printf("%s", p);
+        break;
+}
+```
+
+#### 愚蠢的一致性是小心靈的妖精
+
+當您需要一個字符常量時，使用許多不同的格式 `' '`, `32`, `0x20`, `040`。充分利用在C或Java中`10`和`010`不是相同數字的事實。
+
+#### 強制轉換
+
+將所有資料作為 `void *` 傳遞，然後將其類型轉換為適當的結構。使用數據的位移而不是結構轉換是一種有趣的方式。
+
+#### 巢狀開關
+
+（一個開關內部有另一個開關）是人類思維最難理解的巢狀類型。
+
+#### 利用隱式轉換
+
+記住編程語言中所有微妙的隱式轉換規則。充分利用它們。永遠不要使用圖片變數（在 COBOL 或 PL/I 中）或一般轉換例程（例如在 C 中的 `sprintf`）。確保將浮點變數用作陣列的索引，將字符用作循環計數器，並對數字執行字符串函數。畢竟，所有這些操作都是明確定義的，並且只會增加您源代碼的簡潔性。任何試圖理解它們的維護人員將對您非常感激，因為他們將不得不閱讀並學習有關隱式數據類型轉換的整個章節；這可能是他們在處理您的程序之前完全忽略的一章。
+
+#### 原始整數
+
+在使用 ComboBoxes 時，使用帶有整數 case 的開關語句，而不是可能值的命名常量。
 
 #### 分號！
 
-Always use semicolons whenever they are syntactically allowed. For example:
+只要在語法上允許，就始終使用分號。例如：
 
 ```java
 if(a);
@@ -721,40 +694,40 @@ d = c;
 ;
 ```
 
-#### 使用八進位
+#### 使用八進制
 
-Smuggle octal literals into a list of decimal numbers like this:
+將八進制文字直接嵌入到十進制數字列表中，如下所示：
 
 ```java
-array = new int []
-{
-111,
-120,
-013,
-121,
+array = new int [] {
+    111,
+    120,
+    013,
+    121,
 };
 ```
 
-#### Convert Indirectly
+#### 間接轉換
 
-Java offers great opportunity for obfuscation whenever you have to convert. As a simple example, if you have to convert a double to a String, go circuitously, via Double with `new Double(d).toString()` rather than the more direct `Double.toString(d)`. You can, of course, be far more circuitous than that! Avoid any conversion techniques recommended by the Conversion Amanuensis. You get bonus points for every extra temporary object you leave littering the heap after your conversion.
+Java 在必須轉換時提供了一個很好的混淆機會。舉個簡單的例子，如果必須將 double 轉換為 String，可以繞道而行，通過 `new Double(d).toString()` 而不是更直接的 `Double.toString(d)`。當然，您可以比這更迂迴！避免使用轉換技術建議的 Conversion Amanuensis。在轉換後，每留下一個額外的臨時對象在堆中，您都會獲得額外的積分。
 
-#### 巢狀結構
+#### 嵌套
 
-Nest as deeply as you can. Good coders can get up to 10 levels of `( )` on a single line and 20 `{ }` in a single method. C++ coders have the additional powerful option of preprocessor nesting totally independent of the nest structure of the underlying code. You earn extra Brownie points whenever the beginning and end of a block appear on separate pages in a printed listing. Wherever possible, convert nested ifs into nested [?:] ternaries. If they span several lines, so much the better.
+盡可能深度嵌套。優秀的程式設計師可以在單行上達到 10 層 `( )` 和在單個方法中達到 20 `{ }`。C++ 程式設計師還有一個額外強大的選項，即預處理器嵌套，完全獨立於底層代碼的巢狀結構。每當區塊的開始和結束出現在打印清單的不同頁面上時，您都會獲得額外的 Brownie 積分。在可能的情況下，將嵌套的 if 轉換為嵌套的 [?:] 三元運算符。如果它們跨越多行，那就更好。
 
-#### Numeric Literals
+#### 數值文字
 
-If you have an array with 100 elements in it, hard code the literal 100 in as many places in the program as possible. Never use a static final named constant for the 100, or refer to it as `myArray.length`. To make changing this constant even more difficult, use the literal 50 instead of 100/2, or 99 instead of 100-1. You can futher disguise the 100 by checking for `a == 101` instead of `a > 100`, or `a > 99` instead of `a >= 100`.
-Consider things like page sizes, where the lines consisting of x header, y body, and z footer lines, you can apply the obfuscations independently to each of these and to their partial or total sums.
+如果您有一個包含100個元素的陣列，在程式中盡可能多次硬編碼文字100。永遠不要使用靜態常數`myArray.length`來代替100，也不要使用靜態常數來表示100，或者引用它。為了使更改這個常數變得更加困難，使用文字50代替100的一半，或者使用99代替100減1。您可以進一步掩蓋100，例如檢查`a == 101`而不是`a > 100`，或者`a > 99`而不是`a >= 100`。
 
-These time-honoured techniques are especially effective in a program with two unrelated arrays that just accidentally happen to both have 100 elements. If the maintenance programmer has to change the length of one of them, he will have to decipher every use of the literal 100 in the program to determine which array it applies to. He is almost sure to make at least one error, hopefully one that won't show up for years later.
+考慮像頁面大小這樣的事情，其中包含x個標頭行、y個正文行和z個頁腳行，您可以對這些以及它們的部分或總和獨立應用這些混淆技巧。
 
-There are even more fiendish variants. To lull the maintenance programmer into a false sense of security, dutifully create the named constant, but very occasionally "accidentally" use the literal 100 value instead of the named constant. Most fiendish of all, in place of the literal 100 or the correct named constant, sporadically use some other unrelated named constant that just accidentally happens to have the value 100, for now. It almost goes without saying that you should avoid any consistent naming scheme that would associate an array name with its size constant.
+這些古老的技巧在一個具有兩個無關的陣列的程式中特別有效，這兩個陣列碰巧都有100個元素。如果維護程式設計師必須更改其中一個的長度，他將不得不解讀程式中文字100的每個用法，以確定它適用於哪個陣列。他幾乎肯定會至少犯一個錯誤，希望這個錯誤不會在幾年後顯現。
 
-#### C's Eccentric View Of Arrays
+還有更狡猾的變體。為了讓維護程式設計師產生一種虛假的安全感，誠實地創建命名常數，但非常偶爾“意外地”使用文字100的值而不是命名常數。最狡猾的是，在文字100或正確的命名常數的位置，偶爾使用一些其他無關的命名常數，這些命名常數碰巧具有值100，目前是這樣。幾乎不用說，您應該避免任何將陣列名稱與其大小常數關聯起來的一致命名方案。
 
-C compilers transform `myArray[i]` into `*(myArray + i)`, which is equivalent to `*(i + myArray)` which is equivalent to `i[myArray]`. Experts know to put this to good use. To really disguise things, generate the index with a function:
+#### C 語言對陣列的古怪觀點
+
+C 編譯器將`myArray[i]`轉換為`*(myArray + i)`，這等效於`*(i + myArray)`，這等效於`i[myArray]`。專家知道如何善加利用這一點。為了真正掩蓋事情，使用函數生成索引：
 
 ```c
 int myfunc(int q, int p) { return p%q; }
@@ -762,57 +735,57 @@ int myfunc(int q, int p) { return p%q; }
 myfunc(6291, 8)[Array];
 ```
 
-Unfortunately, these techniques can only be used in native C classes, not Java.
+不幸的是，這些技巧只能在原生 C 類別中使用，而不能在 Java 中使用。
 
-#### 超 長 一 行
+#### 長行
 
-Try to pack as much as possible into a single line. This saves the overhead of temporary variables, and makes source files shorter by eliminating new line characters and white space. Tip: remove all white space around operators. Good programmers can often hit the 255 character line length limit imposed by some editors. The bonus of long lines is that programmers who cannot read 6 point type must scroll to view them.
+嘗試將盡可能多的內容打包成單行。這樣可以節省臨時變數的開銷，並通過消除換行符和空格使源文件更為簡潔。提示：刪除所有運算符周圍的空格。優秀的程式設計師通常能夠達到一些編輯器所施加的 255 字符行長限制。長行的額外好處是，無法閱讀 6 點字體的程式設計師必須滾動查看它們。
 
-#### 例外
+#### 例外情況
 
-I am going to let you in on a little-known coding secret. Exceptions are a pain in the behind. Properly-written code never fails, so exceptions are actually unnecessary. Don't waste time on them. Subclassing exceptions is for incompetents who know their code will fail. You can greatly simplify your program by having only a single try/catch in the entire application (in main) that calls System.exit(). Just stick a perfectly standard set of throws on every method header whether they could actually throw any exceptions or not.
+我將告訴你一個鮮為人知的編碼秘訣。例外情況很煩人。寫得好的程式碼永遠不會失敗，因此例外情況實際上是不必要的。不要浪費時間在它們上面。對於知道他們的程式碼會失敗的無能者來說，子類化例外情況是必要的。通過在整個應用程序中僅有一個 try/catch（在主函數中）並調用 System.exit()，你可以大大簡化你的程式。只需在每個方法標頭上放置一組完全標準的 throws，無論它們是否實際上可能拋出任何例外。
 
-#### 何時使用例外
+#### 何時使用例外情況
 
-Use exceptions for non-exceptional conditions. Routinely terminate loops with an `ArrayIndexOutOfBoundsException`. Pass return standard results from a method in an exception.
+對於非例外情況使用例外情況。通常使用 `ArrayIndexOutOfBoundsException` 來終止迴圈。在例外情況中從方法中傳回標準結果。
 
-#### 沈溺在使用線程（thread）內
+#### 盡情使用執行緒
 
-標題說明一切。
+標題說明了一切。
 
-#### 律師程式碼
+#### 律師代碼
 
-Follow the language lawyer discussions in the newsgroups about what various bits of tricky code should do e.g. `a=a++;` or `f(a++,a++);` then sprinkle your code liberally with the examples. In C, the effects of pre/post decrement code such as
+在新聞組中遵循語言律師對於各種棘手代碼應該如何執行的討論，例如 `a=a++;` 或 `f(a++,a++);`，然後在你的代碼中大量使用這些示例。在 C 語言中，像
 
 ```c
 *++b ? (*++b + *(b-1)) : 0
 ```
 
-are not defined by the language spec. Every compiler is free to evaluate in a different order. This makes them doubly deadly. Similarly, take advantage of the complex tokenising rules of C and Java by removing all spaces.
+這樣的前/後遞減代碼的效果並不由語言規範定義。每個編譯器都可以按不同的順序進行評估。這使它們變得更加致命。同樣地，通過刪除所有空格，利用 C 和 Java 的複雜標記規則。
 
-#### 提早回傳
+#### 早期返回
 
-Rigidly follow the guidelines about no goto, no early returns, and no labelled breaks especially when you can increase the if/else nesting depth by at least 5 levels.
+嚴格遵循有關不使用 goto、不使用早期返回和不使用標記中斷的指南，尤其是當你可以將 if/else 的巢狀深度增加至少 5 級時。
 
-#### 避免大括號
+#### 避免 {}
 
-Never put in any `{ }` surrounding your if/else blocks unless they are syntactically obligatory. If you have a deeply nested mixture of if/else statements and blocks, especially with misleading indentation, you can trip up even an expert maintenance programmer. For best results with this technique, use Perl. You can pepper the code with additional ifs _after_ the statements, to amazing effect.
+除非在語法上是必需的，否則永遠不要在 if/else 區塊周圍放入 `{ }`。如果你有一個深度嵌套的 if/else 陳述和區塊混合，尤其是具有誤導性縮排，即使是專家維護程式設計師也可能出錯。對於這種技術的最佳效果，使用 Perl。你可以在陳述之後的地方添加額外的 if，產生驚人的效果。
 
-#### 來自地獄的 Tabs
+#### 地獄中的定位製表符
 
-Never underestimate how much havoc you can create by indenting with tabs instead of spaces, especially when there is no corporate standard on how much indenting a tab represents. Embed tabs inside string literals, or use a tool to convert spaces to tabs that will do that for you.
+永遠不要低估使用製表符而不是空格進行縮排可能造成的混亂程度，尤其是當公司沒有關於製表符代表多少縮排的標準時。將製表符嵌入字串文字中，或使用工具將空格轉換為製表符，讓工具為您執行此操作。
 
-#### Magic Matrix Locations
+#### 魔法矩陣位置
 
-Use special values in certain matrix locations as flags. A good choice is the `[3][0]` element in a transformation matrix used with a homogeneous coordinate system.
+在某些矩陣位置使用特殊值作為標誌。一個不錯的選擇是在與齊次座標系統一起使用的變換矩陣中的 `[3][0]` 元素。
 
-#### Magic Array Slots revisited
+#### 重新訪問魔法陣列插槽
 
-If you need several variables of a given type, just define an array of them, then access them by number. Pick a numbering convention that only you know and don't document it. And don't bother to define `#define` constants for the indexes. Everybody should just know that the global variable `widget[15]` is the cancel button. This is just an up-to-date variant on using absolute numerical addresses in assembler code.
+如果您需要多個給定類型的變數，只需定義一個它們的陣列，然後按編號訪問它們。選擇一個只有您知道並且不要記錄的編號慣例。也不要麻煩定義 `#define` 常數來表示索引。每個人都應該知道全域變數 `widget[15]` 是取消按鈕。這只是在組合語言代碼中使用絕對數值地址的最新變體。
 
-#### Never Beautify
+#### 永不美化
 
-Never use an automated source code tidier (beautifier) to keep your code aligned. Lobby to have them banned them from your company on the grounds they create false deltas in PVCS/CVS (version control tracking) or that every programmer should have his own indenting style held forever sacrosanct for any module he wrote. Insist that other programmers observe those idiosyncratic conventions in "his " modules. Banning beautifiers is quite easy, even though they save the millions of keystrokes doing manual alignment and days wasted misinterpreting poorly aligned code. Just insist that everyone use the **same** tidied format, not just for storing in the common repository, but also while they are editing. This starts an RWAR and the boss, to keep the peace, will ban automated tidying. Without automated tidying, you are now free to _accidentally_ misalign the code to give the optical illusion that bodies of loops and ifs are longer or shorter than they really are, or that else clauses match a different if than they really do. e.g.
+永遠不要使用自動源代碼整理工具（美化器）來保持代碼對齊。遊說將它們從公司禁止，理由是它們在 PVCS/CVS（版本控制追踪）中創建虛假增量，或者每個程序員應該擁有他為任何模塊編寫的縮排風格，這樣風格永遠不會被改變。堅持其他程序員遵守這些古怪的慣例在“他的”模塊中。禁止美化器非常容易，即使它們節省了數百萬次手動對齊和浪費時間解釋對齊不良的代碼。只需堅持每個人使用**相同**的整潔格式，不僅用於存儲在共同存儲庫中，而且在編輯時也使用。這將引發一場爭吵，老闆為了保持和平，將禁止自動整理。沒有自動整理，您現在可以 _意外地_ 將代碼對齊不良，以產生視覺上的錯覺，使循環和 if 的主體看起來比實際更長或更短，或者 else 子句與實際不匹配的 if 匹配。例如：
 
 ```c
 if(a)
@@ -820,19 +793,21 @@ if(a)
 else x=z;
 ```
 
-#### The Macro Preprocessor
+#### 宏預處理器
 
-It offers great opportunities for obfuscation. The key technique is to nest macro expansions several layers deep so that you have to discover all the various parts in many different *.hpp files. Placing executable code into macros then including those macros in every *.cpp file (even those that never use those macros) will maximize the amount of recompilation necessary if ever that code changes.
+<permalink>
 
-#### Exploit Schizophrenia
+它提供了很好的混淆機會。 關鍵技術是將巨集展開嵌套多層，以便您必須在許多不同的 *.hpp 檔案中發現所有各個部分。 將可執行代碼放入巨集中，然後在每個 *.cpp 檔案中包含這些巨集（即使從不使用這些巨集的檔案）將最大程度地增加重新編譯所需的量，如果該代碼發生變化。
 
-Java is schizophrenic about array declarations. You can do them the old C, way `String x[]`, (which uses mixed pre-postfix notation) or the new way `String[] x`, which uses pure prefix notation. If you want to really confuse people, mix the notationse.g.
+#### 利用精神分裂
+
+Java 在陣列聲明方面存在精神分裂。 您可以按照舊的 C 方式 `String x[]` 進行聲明（使用混合的前置後置表示法），或者按照新的方式 `String[] x` 進行聲明，該方式使用純前置表示法。 如果您想要真正混淆人們，混合使用表示法，例如：
 
 ```java
 byte[ ] rowvector, colvector , matrix[ ];
 ```
 
-which is equivalent to:
+等同於：
 
 ```java
 byte[ ] rowvector;
@@ -840,9 +815,9 @@ byte[ ] colvector;
 byte[ ][] matrix;
 ```
 
-#### Hide Error Recovery Code
+#### 隱藏錯誤恢復代碼
 
-Use nesting to put the error recovery for a function call as far as possible away from the call. This simple example can be elaborated to 10 or 12 levels of nest:
+使用巢狀結構將函數調用的錯誤恢復盡可能遠離調用。 這個簡單的例子可以擴展到 10 或 12 層的巢：
 
 ```javascript
 if ( function_A() == OK )
@@ -862,34 +837,32 @@ if ( function_A() == OK )
         }
 ```
 
-#### Pseudo C
+#### 伪 C
 
-The real reason for `#define` was to help programmers who are familiar with another programming language to switch to C. Maybe you will find declarations like `#define begin {` or `#define end }` useful to write more interesting code.
+`#define` 的真正原因是幫助熟悉其他編程語言的程序員轉換到 C。 也許您會發現像 `#define begin {` 或 `#define end }` 這樣的聲明對於撰寫更有趣的代碼很有用。
 
-#### Confounding Imports
+#### 令人困惑的導入
 
-Keep the maintenance programmer guessing about what packages the methods you are using are in. Instead of:
+讓維護程序員猜測您正在使用的方法位於哪些套件中。 與其：
 
 ```java
 import MyPackage.Read;
 import MyPackage.Write;
 ```
 
-use:
+使用：
 
 ```java
 import Mypackage.*;
 ```
 
-Never fully qualify any method or class no matter how obscure. Let the maintenance programmer guess which of the packages/classes it belongs to. Of course, inconsistency in when you fully qualify and how you do your imports helps most.
+永遠不要完全限定任何方法或類，無論多麼晦澀。 讓維護程序員猜測它屬於哪個套件/類。 當然，在何時完全限定以及如何進行導入的一致性對幫助最大。
 
-#### 通馬桶
+#### 馬桶管道
 
-Never under any circumstances allow the code from more than one function or procedure to appear on the screen at once. To achieve this with short routines, use the following handy tricks:
-Blank lines are generally used to separate logical blocks of code. Each line is a logical block in and of itself. Put blank lines between each line.
-Never comment your code at the end of a line. Put it on the line above. If you're forced to comment at the end of the line, pick the longest line of code in the entire file, add 10 spaces, and left-align all end-of-line comments to that column.
-
-Comments at the top of procedures should use templates that are at least 15 lines long and make liberal use of blank lines. Here's a handy template:
+絕不允許來自多個函數或程序的代碼同時出現在屏幕上。 為了實現這一點，對於短例程，使用以下方便的技巧：
+空行通常用於分隔邏輯代碼塊。 每行本身就是一個邏輯塊。 在每行之間放置空行。
+永遠不要在代碼行的末尾進行註釋。 將其放在上一行。 如果被迫在行尾進行註釋，選擇整個文件中最長的代碼行，添加 10 個空格，並將所有行尾註釋左對齊到該列。
 
 ```java
 /*
@@ -927,149 +900,147 @@ Comments at the top of procedures should use templates that are at least 15 line
 */
 ```
 
-The technique of putting so much redundant information in documentation almost guarantees it will soon go out of date, and will help befuddle maintenance programmers foolish enough to trust it.
-
 ## 測試
 
-> _I don't need to test my programs. I have an error-correcting modem._
+> _我不需要測試我的程式。我有一個能自動修正錯誤的調制解調器。_
 > - Om I. Baud
 
-Leaving bugs in your programs gives the maintenance programmer who comes along later something interesting to do. A well done bug should leave absolutely no clue as to when it was introduced or where. The laziest way to accomplish this is simply never to test your code.
+在程式中留下錯誤可以讓後來的維護程式設計師有趣的事情可做。一個完美的 bug 應該絲毫不留痕跡，不讓人知道它是何時引入的或在哪裡。最懶惰的方法就是從不測試你的程式碼。
 
-#### 絕不測試
+#### 永遠不要測試
 
-Never test any code that handles the error cases, machine crashes, or OS glitches. Never check return codes from the OS. That code never gets executed anyway and slows down your test times. Besides, how can you possibly test your code to handle disk errors, file read errors, OS crashes, and all those sorts of events? Why, you would have to have either an incredibly unreliable computer or a test scaffold that mimicked such a thing. Modern hardware never fails, and who wants to write code just for testing purposes? It isn't any fun. If users complain, just blame the OS or hardware. They'll never know.
+永遠不要測試任何處理錯誤情況、機器當機或作業系統故障的程式碼。永遠不要檢查作業系統的返回代碼。那段程式碼永遠不會執行，而且會拖慢你的測試時間。此外，你怎麼可能測試你的程式碼來處理磁碟錯誤、檔案讀取錯誤、作業系統當機等所有這些事件呢？你需要一台非常不可靠的電腦，或者一個模擬這種情況的測試支架。現代硬體從不會出錯，而且誰想要為了測試而寫程式碼呢？這樣一點樂趣都沒有。如果用戶抱怨，就怪作業系統或硬體。他們永遠不會知道。
 
-#### 絕對絕對不做效能測試
+#### 永遠不要進行任何性能測試
 
-Hey, if it isn't fast enough, just tell the customer to buy a faster machine. If you did do performance testing, you might find a bottleneck, which might lead to algorithm changes, which might lead to a complete redesign of your product. Who wants that? Besides, performance problems that crop up at the customer site mean a free trip for you to some exotic location. Just keep your shots up-to-date and your passport handy.
+嘿，如果速度不夠快，就告訴客戶買一台更快的機器。如果你真的進行了性能測試，你可能會發現瓶頸，這可能導致算法的更改，進而導致產品的完全重新設計。誰想要那樣呢？此外，在客戶現場出現的性能問題意味著你可以免費前往一些異國風情的地方。只需保持疫苗接種最新和護照隨身攜帶。
 
-#### 不寫測試條件
+#### 永遠不要撰寫任何測試案例
 
-Never perform code coverage or path coverage testing. Automated testing is for wimps. Figure out which features account for 90% of the uses of your routines, and allocate 90% of the tests to those paths. After all, this technique probably tests only about 60% of your source code, and you have just saved yourself 40% of the test effort. This can help you make up the schedule on the back-end of the project. You'll be long gone by the time anyone notices that all those nice "marketing features" don't work. The big, famous software companies test code this way; so should you. And if for some reason, you are still around, see the next item.
+永遠不要進行程式碼覆蓋率或路徑覆蓋率測試。自動化測試是給懦夫的。找出哪些功能佔你例程使用的 90%，並將 90% 的測試分配給這些路徑。畢竟，這種技術可能僅測試了你源代碼的約 60%，你已經節省了 40% 的測試工作。這可以幫助你在專案後期補足進度。當人們注意到所有那些漂亮的「行銷功能」都不起作用時，你早已離開。大型知名軟體公司都是這樣測試程式碼的；你也應該這樣做。如果出於某種原因，你仍然在這裡，請參見下一項。
 
-#### 測試是懦夫的行為
+#### 測試是給懦夫的
 
-A brave coder will bypass that step. Too many programmers are afraid of their boss, afraid of losing their job, afraid of customer hate mail and afraid of being sued. This fear paralyzes action, and reduces productivity. Studies have shown that eliminating the test phase means that managers can set ship dates well in advance, an obvious aid in the planning process. With fear gone, innovation and experimentation can blossom. The role of the programmer is to produce code, and debugging can be done by a cooperative effort on the part of the help desk and the legacy maintenance group.
-If we have full confidence in our coding ability, then testing will be unnecessary. If we look at this logically, then any fool can recognise that testing does not even attempt to solve a technical problem, rather, this is a problem of emotional confidence. A more efficient solution to this lack of confidence issue is to eliminate testing completely and send our programmers to self-esteem courses. After all, if we choose to do testing, then we have to test every program change, but we only need to send the programmers to one course on building self-esteem. The cost benefit is as amazing as it is obvious.
+一位勇敢的程式設計師將會跳過這一步驟。太多的程式設計師害怕老闆，害怕失去工作，害怕客戶的憎恨郵件，害怕被起訴。這種恐懼會使行動癱瘓，並降低生產力。研究顯示，消除測試階段意味著管理者可以提前設定交貨日期，這在規劃過程中是一個明顯的幫助。當恐懼消失時，創新和實驗可以蓬勃發展。程式設計師的角色是產生程式碼，而除錯可以通過幫助台和遺留維護小組的合作努力來完成。
+如果我們對自己的編碼能力充滿信心，那麼測試將是不必要的。從邏輯上看，任何傻瓜都可以認識到，測試甚至不試圖解決技術問題，而是一個情感信心的問題。對於這種缺乏信心問題，一個更有效的解決方案是完全消除測試，並將我們的程式設計師送去自尊心課程。畢竟，如果我們選擇進行測試，那麼我們必須測試每個程式更改，但我們只需要讓程式設計師參加一個建立自尊心的課程。成本效益之驚人與明顯同樣。
 
-#### 保證程式只在 debug mode 下才會正確
+#### 確保僅在偵錯模式下運作
 
-If you've defined TESTING as 1
+如果您將 TESTING 定義為 1
 
 ```c
 #define TESTING 1
 ```
 
-this gives you the wonderful opportunity to have separate code sections, such as
+這將為您提供絕佳的機會，可以有單獨的程式碼部分，例如
 
 ```c
 #if TESTING==1
 #endif
 ```
 
-which can contain such indispensable tidbits as
+其中可以包含不可或缺的小提示，如
 
 ```c
 x = rt_val;
 ```
 
-so that if anyone resets TESTING to 0, the program won't work. And with the tiniest bit of imaginative work, it will not only befuddle the logic, but confound the compiler as well.
+這樣，如果有人將 TESTING 重置為 0，該程式將無法運作。再加上一點想像力，它不僅會困惑邏輯，還會使編譯器困惑。
 
-## 語言選擇
+## 語言的選擇
 
-> _Philosophy is a battle against the bewitchment of our intelligence by means of language._
-> - Ludwig Wittgenstein
+> _哲學是一場對抗語言通過智慧的迷惑的戰鬥。_
+> - 路德維希·維特根斯坦
 
-Computer languages are gradually evolving to become more fool proof. Using state of the art languages is unmanly. Insist on using the oldest language you can get away with, octal machine language if you can (Like Hans und Frans, I am no girlie man; I am so virile I used to code by plugging gold tipped wires into a plugboard of IBM unit record equipment (punch cards), or by poking holes in paper tape with a hand punch), failing that assembler, failing that FORTRAN or COBOL, failing that C, and BASIC, failing that C++.
+電腦語言逐漸演變為更加防呆。使用最先進的語言是不男人的。堅持使用您可以使用的最古老的語言，如果可以的話使用八進制機器語言（就像漢斯和弗朗斯一樣，我不是娘娘腔；我是如此有男子氣概，以至於我曾經通過將金頂線插入 IBM 單位記錄設備（打孔卡）的插板，或者用手動打孔器在紙帶上打孔），如果不行，使用組合語言，如果不行使用 FORTRAN 或 COBOL，如果不行使用 C，和 BASIC，如果不行使用 C++。
 
 #### FØRTRAN
 
-Write all your code in FORTRAN. If your boss ask why, you can reply that there are lots of very useful libraries that you can use thus saving time. However the chances of writing maintainable code in FORTRAN are zero, and therefore following the unmaintainable coding guidelines is a lot easier.
+將所有代碼都寫在FORTRAN中。如果老闆問為什麼，您可以回答說有很多非常有用的庫可以使用，從而節省時間。然而，在FORTRAN中編寫可維護的代碼的機會為零，因此遵循不可維護的編碼指南會更容易。
 
-#### 避免 Ada
+#### 避免Ada
 
-About 20% of these techniques can't be used in Ada. Refuse to use Ada. If your manager presses you, insist that no-one else uses it, and point out that it doesn't work with your large suite of tools like lint and plummer that work around C's failings.
+大約有20%的技術在Ada中無法使用。拒絕使用Ada。如果您的經理向您施壓，堅持說沒有其他人使用它，並指出它與您的大量工具套件（如lint和plummer）不兼容，這些工具套件是為了解決C的缺陷而設計的。
 
-#### 使用 ASM
+#### 使用ASM
 
-Convert all common utility functions into asm.
+將所有常見的實用功能轉換為asm。
 
-#### 使用 QBASIC
+#### 使用QBASIC
 
-Leave all important library functions written in QBASIC, then just write an asm wrapper to handle the large->medium memory model mapping.
+將所有重要的庫函數寫成QBASIC，然後只需編寫一個asm包裝器來處理大型->中型內存模型映射。
 
-#### 行內組語
+#### 內聯組合語言
 
-Sprinkle your code with bits of inline assembler just for fun. Almost no one understands assembler anymore. Even a few lines of it can stop a maintenance programmer cold.
+在代碼中加入一些內聯組合語言片段，僅僅是為了好玩。幾乎沒有人再了解組合語言。即使是幾行組合語言也可能讓維護程序員束手無策。
 
-#### MASM call C
+#### MASM調用C
 
-If you have assembler modules which are called from C, try to call C back from the assembler as often as possible, even if it's only for a trivial purpose and make sure you make full use of the goto, bcc and other charming obfuscations of assembler.
+如果您有從C調用的組件模塊，請嘗試盡可能經常地從組件調用C，即使僅用於微不足道的目的，並確保充分利用goto、bcc和其他組件的迷人混淆。
 
-#### Avoid Maintainability Tools
+#### 避免可維護性工具
 
-Avoid coding in Abundance, or using any of its principles kludged into other languages. It was **designed** from the ground up with the primary goal of making the maintenance programmer's job easier. Similarly avoid Eiffel or Ada since they were designed to catch bugs before a program goes into production.
+避免在Abundance中編碼，或將其原則混入其他語言中。它從頭開始**設計**的主要目標是使維護程序員的工作更輕鬆。同樣，避免Eiffel或Ada，因為它們旨在在程序進入生產階段之前捕獲錯誤。
 
-## 和其他人合作
+## 與他人打交道
 
-> _他人即地獄_
-> - Jean-Paul Sartre, No Exit, 1934
+> _地獄就是別人。_
+> - 讓-保羅·薩特（Jean-Paul Sartre），《無出口》（No Exit），1934年
 
-There are many hints sprinkled throughout the tips above on how to rattle maintenance programmers though frustration, and how to foil your boss's attempts to stop you from writing unmaintainable code, or even how to foment an RWAR that involves everyone on the topic of how code should be formatted in the repository.
+在上述提示中，有許多提示散佈在其中，告訴您如何通過挫敗維護程序員的努力，如何阻止老闆阻止您編寫不可維護的代碼，甚至如何在庫中格式化代碼的話題上引發一場RWAR，讓每個人都參與其中。
 
-#### 你的老闆永遠知道所有事
+#### 老闆最懂
 
-If your boss thinks that his or her 20 year old FORTRAN experience is an excellent guide to contemporary programming, rigidly follow all his or her recommendations. As a result, the boss will trust you. That may help you in your career. You will learn many new methods to obfuscate program code.
+如果您的老闆認為他或她的20年FORTRAN經驗是當代編程的絕佳指南，請嚴格遵循他或她的所有建議。結果，老闆會信任您。這可能有助於您的職業生涯。您將學習許多新的方法來混淆程序代碼。
 
-#### Subvert The Help Desk
+#### 顛覆幫助台
 
-One way to help ensure the code is full of bugs is to ensure the maintenance programmers never hear about them. This requires subverting the help desk. Never answer the phone. Use an automated voice that says "thank you for calling the helpline. To reach a real person press "1" or leave a voice mail wait for the tone". Email help requests should be ignored other than to assign them a tracking number. The standard response to any problem is " I think your account is locked out. The person able to authorise reinstatement is not available just now."
+確保程式碼充滿錯誤的一種方法是確保維護程式設計師永遠不會聽說它們。這需要顛覆幫助台。永遠不要接電話。使用自動語音說"感謝您撥打幫助熱線。要聯絡真人，請按“1”，或留言等待提示音。" 電子郵件求助請求應該被忽略，除非分配追蹤編號。對任何問題的標準回應是"我認為您的帳戶被鎖定了。能夠授權恢復的人現在不在。"
 
-#### 閉嘴
+#### 保持緘默
 
-Be never vigilant of the next Y2K. If you ever spot something that could sneak up on a fixed deadline and destroy all life in the western hemisphere then **do not** openly discuss it until we are under the critical 4 year event window of panic and opportunity. Do not tell friends, coworkers, or other competent people of your discovery. Under no circumstances attempt to publish anything that might hint at this new and tremendously profitable threat. Do send one normal priority, jargon encrypted, memo to upper management to cover-your-a$$. If at all possible attach the jargon encrypted information as a rider on an otherwise unrelated plain-text memo pertaining to a more immediately pressing business concern. Rest assured that we all see the threat too. Sleep sound at night knowing that long after you've been forced into early retirement you will be begged to come back at a logarithmically increased hourly rate!
+永遠警惕下一個Y2K。如果您發現可能在固定截止日期前潛在威脅並摧毀西半球所有生命的事情，**絕對不要**公開討論，直到我們處於關鍵的4年事件窗口之下。不要告訴朋友、同事或其他能幹的人您的發現。在任何情況下都不要嘗試發布可能暗示這個新且極具利潤威脅的任何內容。請發送一份普通優先級、用行話加密的備忘錄給高級管理層以自保。如果可能的話，請將行話加密信息作為附件附加在與更緊迫的業務關注無關的純文本備忘錄上。請放心，我們都看到了這個威脅。安心入眠，知道即使在您被迫提前退休後，您將被懇求以將薪酬按對數增加的時薪回來！
 
-#### Baffle 'Em With Bullshit
+#### 用廢話迷惑他們
 
-Subtlety is a wonderful thing, although sometimes a sledge-hammer is more subtle than other tools. So, a refinement on misleading comments create classes with names like `FooFactory` containing comments with references to the GoF creational patterns (ideally with http links to bogus UML design documents) that have nothing to do with object creation. Play off the maintainer's delusions of competence. More subtly, create Java classes with protected constructors and methods like `Foo f = Foo.newInstance()` that return actual **new instances**, rather than the expected singleton. The opportunities for side-effects are endless.
+微妙是一件美好的事情，儘管有時候一把大錘比其他工具更微妙。因此，對於誤導性評論的改進創建了像`FooFactory`這樣的類，其中包含對GoF創建模式的引用的註釋（理想情況下帶有指向虛假UML設計文件的http鏈接），而這與對象創建無關。利用維護者對能力的錯覺。更微妙的是，創建具有受保護構造函數和像`Foo f = Foo.newInstance()`這樣的方法的Java類，它返回實際的**新實例**，而不是預期的單例。造成的副作用機會是無窮的。
 
-#### Book Of The Month Club
+#### 本月之書俱樂部
 
-Join a computer book of the month club. Select authors who appear to be too busy writing books to have had any time to actually write any code themselves. Browse the local bookstore for titles with lots of cloud diagrams in them and no coding examples. Skim these books to learn obscure pedantic words you can use to intimidate the whippersnappers that come after you. Your code should impress. If people can't understand your vocabulary, they must assume that you are very intelligent and that your algorithms are very deep. Avoid any sort of homely analogies in your algorithm explanations.
+加入一個電腦書籍之月俱樂部。選擇那些看起來太忙於寫書，以至於根本沒有時間寫任何程式碼的作者。在當地書店尋找那些擁有大量雲圖且沒有編碼範例的書籍標題。略讀這些書籍，學習一些冷僻的詞彙，以用來威嚇那些跟在你後面的年輕人。你的程式碼應該令人印象深刻。如果人們無法理解你的詞彙，他們必須認為你非常聰明，且你的演算法非常深奧。在解釋演算法時避免使用任何樸實無華的類比。
 
-## 自己來吧
+## 自行打造
 
-You've always wanted to write system level code. Now is your chance. Ignore the standard libraries and [write your own](http://www.roll-your-own.com). It will look great on your resumé.
+你一直想寫系統層級的程式碼。現在是你的機會。忽略標準庫，[自己寫](http://www.roll-your-own.com)。這將會讓你的履歷看起來很棒。
 
-#### 自己來 BNF
+#### 自行打造 BNF
 
-Always document your command syntax with your own, unique, undocumented brand of BNF notation. Never explain the syntax by providing a suite of annotated sample valid and invalid commands. That would demonstrate a complete lack of academic rigour. Railway diagrams are almost as gauche. Make sure there is no obvious way of telling a terminal symbol (something you would actually type) from an intermediate one -- something that represents a phrase in the syntax. Never use typeface, colour, caps, or any other visual clues to help the reader distinguish the two. Use the exact same punctuation glyphs in your BNF notation that you use in the command language itself, so the reader can never tell if a `(...)`, `[...]`, `{...}` or `"..."` is something you actually type as part of the command, or is intended to give clues about which syntax elements are obligatory, repeatable or optional in your BNF notation. After all, if they are too stupid to figure out your variant of BNF, they have no business using your program.
+始終使用你自己獨特的未記錄品牌的 BNF 表示法來記錄你的命令語法。永遠不要透過提供一套帶有註釋的範例有效和無效命令來解釋語法。這將展示出完全缺乏學術嚴謹性。鐵路圖幾乎一樣俗氣。確保沒有明顯的方法可以區分終端符號（實際上您會輸入的內容）和中間符號（代表語法中的片語）。永遠不要使用字體、顏色、大寫或任何其他視覺線索來幫助讀者區分兩者。在你的 BNF 表示法中使用完全相同的標點符號字形，這樣讀者永遠無法確定 `(...)`, `[...]`, `{...}` 或 `"..."` 是您實際上作為命令的一部分輸入，還是用於提供關於 BNF 表示法中哪些語法元素是必需的、可重複的或可選的線索。畢竟，如果他們太笨無法理解你的 BNF 變體，他們就沒有使用你的程式的業務。
 
-#### Roll Your Own Allocator
+#### 自行打造配置器
 
-Everyone knows that debugging your dynamic storage is complicated and time consuming. Instead of making sure each class has no storage leaks, reinvent your own storage allocator. It just mallocs space out of a big arena. Instead of freeing storage, force your users to periodically perform a system reset that clears the heap. There's only a few things the system needs to keep track of across resets -- lots easier than plugging all the storage leaks; and so long as the users remember to periodically reset the system, they'll never run out of heap space. Imagine them trying to change this strategy once deployed!
+每個人都知道調試動態存儲是複雜且耗時的。與其確保每個類別都沒有存儲洩漏，不如重新發明您自己的存儲配置器。它只是從一個大型區域中分配空間。而不是釋放存儲，強迫您的使用者定期執行清除堆的系統重置。系統在重置時只需要跟踪幾件事情 - 比起修補所有存儲洩漏要容易得多；只要使用者記得定期重置系統，他們永遠不會用盡堆空間。想像一下當他們嘗試在部署後更改這種策略！
 
-## 特異語言的各種技巧
+## 奇特語言的技巧
 
-> _用 Basic 寫程式會造成大腦損傷_
+> _在 Basic 中編程會導致腦損傷。_
 > - Edsger Wybe Dijkstra
 
-#### SQL Aliasing
+#### SQL 別名
 
-將資料表名稱 `AS` 成一個到兩個字母的單字。更好的做法是將名稱 `AS`  成其他完全無關的資料表名稱。
+將表名別名為一個或兩個字母。更好的做法是將它們別名為其他不相關的現有表的名稱。
 
-#### SQL Outer Join
+#### SQL 外部連接
 
-Mix the various flavours of outer join syntax just to keep everyone on their toes.
+混合各種外部連接語法的風格，只是為了讓每個人都保持警惕。
 
-#### JavaScript Scope
+#### JavaScript 作用域
 
-"Optimise" JavaScript code taking advantage of the fact a function can access all local variables in the scope of the caller.
+"優化" JavaScript 代碼，利用函數可以訪問調用者作用域中的所有局部變量這一事實。
 
-#### Visual Basic 宣告
+#### Visual Basic 声明
 
-如果原本是：
+不要這樣做：
 
 ```vbnet
 dim Count_num as string
@@ -1077,15 +1048,15 @@ dim Color_var as string
 dim counter as integer
 ```
 
-改成：
+使用：
 
 ```vbnet
 Dim Count_num$, Color_var$, counter%
 ```
 
-#### Visual Basic 的瘋狂
+#### Visual Basic 瘋狂
 
-If reading from a text file, read 15 characters more than you need to then embed the actual text string like so:
+如果從文本文件讀取，讀取比所需多15個字符，然後像這樣嵌入實際文本字符串：
 
 ```vbnet
 ReadChars = .ReadChars (29,0)
@@ -1095,17 +1066,17 @@ Mid,14,24 = "withoutanys"
 and left,5 = "without"
 ```
 
-#### Delphi/Pascal 專屬技巧
+#### Delphi/Pascal 專用
 
-Don't use functions and procedures. Use the label/goto statements then jump around a lot inside your code using this. It'll drive 'em mad trying to trace through this. Another idea, is just to use this for the hang of it and scramble your code up jumping to and fro in some haphazard fashion.
+不要使用函數和過程。使用標籤/goto語句，然後在代碼中大量跳轉。這將使他們瘋狂，試圖跟踪這些跳轉。另一個想法只是為了熟悉它，並且在代碼中跳來跳去，以某種雜亂的方式。
 
 #### Perl
 
-特別是在很長的一行裡面，使用末端 if 或者末端 unless 宣告方式。
+尤其在非常長的行的末尾使用尾隨 if 和 unless。
 
 #### Lisp
 
-LISP is a dream language for the writer of unmaintainable code. Consider these baffling fragments:
+LISP 是一個夢幻般的編寫難以維護代碼的語言。考慮這些令人困惑的片段：
 
 ```lisp
 (lambda (*<8-]= *<8-[= ) (or *<8-]= *<8-[= ))
@@ -1117,20 +1088,20 @@ LISP is a dream language for the writer of unmaintainable code. Consider these b
 
 #### Visual Foxpro
 
-This one is specific to Visual Foxpro. A variable is undefined and can't be used unless you assign a value to it. This is what happens when you check a variable's type:
+這個專門針對 Visual Foxpro。除非為其分配一個值，否則變量未定義並且無法使用。這是當您檢查變量類型時發生的情況：
 
 ```foxpro
 lcx = TYPE('somevariable')
 ```
 
-The value of `lcx` will be `'U'` or `undefined`. BUT if you assign scope to the variable it sort of defines it and makes it a logical `FALSE`. Neat, huh!?
+`lcx` 的值將是 `'U'` 或 `undefined`。但是，如果為變量分配作用域，它會定義它並使其成為邏輯 `FALSE`。很巧妙，對吧！？
 
 ```foxpro
 LOCAL lcx
 lcx = TYPE('somevariable')
 ```
 
-The value of lcx is now `'L'` or logical. It is further defined the value of `FALSE`. Just imagine the power of this in writing unmaintainable code.
+`lcx` 的值現在是 `'L'` 或邏輯。它進一步定義了 `FALSE` 的值。想像一下在編寫難以維護代碼時這種方法的威力。
 
 ```foxpro
 LOCAL lc_one, lc_two, lc_three... , lc_n
@@ -1152,100 +1123,104 @@ ENDIF
 
 ## 其他技巧
 
-> _如果你給人一個程式，他會挫折一天；如果你教他怎麼寫程式，他會挫折一生。_
+> _如果你給某人一個程式，你會讓他們感到挫敗一天；如果你教他們如何寫程式，你會讓他們終身感到挫敗。_
 > - 匿名
 
-#### 不重新編譯
+#### 不要重新編譯
 
-我們從設計最好，最有敵意的技巧開始講起。寫完程式，編譯成執行檔，如果成功了之後，我們做一些小修改⋯⋯對每個模組都做，**但是不重新編譯**。畢竟只是小修改，編譯可以晚一點我們有空除錯時再處理。這時候，當下一個倒霉鬼接手你的程式，修改之後編譯出的執行檔有問題，他一定會誤以為是他剛剛改的東西出錯了。這可以花他好幾週的時間除錯才能找到問題。
+讓我們從可能是有史以來設計的最狡猾技巧開始：將程式碼編譯成可執行檔。如果它運作正常，然後只需在每個模組中做一兩個小小的變更在原始碼中...**但不要打擾重新編譯這些。** 你可以在以後有更多時間時再進行，也可以在有時間進行除錯時再進行。當幾年後不幸的維護程式設計師做了一個更改並且程式碼不再運作時，她將錯誤地假設這一定是她最近更改的某些東西。你將讓她陷入一場持續數週的狂野追逐。
 
-#### Foiling Debuggers
+#### 擋住除錯器
 
-A very simple way to confound people trying to understand your code by tracing it with a line debugger, is to make the lines long. In particular, put the then clause on the same line as the if. They can't place breakpoints. They can't tell which branch of an if was taken.
+一個非常簡單的方式來困惑試圖用行除錯器追蹤你的程式碼的人，就是使行變得很長。特別是，將 then 子句放在與 if 相同的行上。他們無法設置斷點。他們無法知道 if 的哪個分支被執行。
 
-#### 標準度量衡 v.s. 美式度量衡
+#### S.I. vs 美國度量
 
-In engineering work there are two ways to code. One is to convert all inputs to S.I. (metric) units of measure, then do your calculations then convert back to various civil units of measure for output. The other is to maintain the various mixed measure systems throughout. Always choose the second. It's the American way!
+在工程工作中有兩種編碼方式。一種是將所有輸入轉換為 S.I.（公制）度量單位，然後進行計算，然後再轉換回各種民用度量單位進行輸出。另一種是在整個程式中保留各種混合度量系統。永遠選擇第二種。這是美國的方式！
 
 #### CANI
 
-經常且不斷改進（**C**onstant **A**nd **N**ever-ending **I**mprovement）。 Make "improvements" to your code often, and force users to upgrade often - after all, no one wants to be running an outdated version. Just because they think they're happy with the program as it is, just think how much happier they will be after you've "fixed" it! Don't tell anyone what the differences between versions are unless you are forced to - after all, why tell someone about bugs in the old version they might never have noticed otherwise?
+**C**onstant **A**nd **N**ever-ending **I**mprovement。經常對你的程式碼進行“改進”，並強迫用戶經常升級 - 畢竟，沒有人想運行過時的版本。僅僅因為他們認為他們對目前的程式很滿意，想想當你“修復”後他們會有多麼快樂！除非被迫，否則不要告訴任何人版本之間的差異 - 畢竟，為什麼告訴某人舊版本中的錯誤，否則他們可能永遠不會注意到？
 
-#### About Box
+#### 關於框
 
-The About Box should contain only the name of the program, the names of the coders and a copyright notice written in legalese. Ideally it should link to several megs of code that produce an entertaining animated display. However, it should **never** contain a description of what the program is for, its minor version number, or the date of the most recent code revision, or the website where to get the updates, or the author's email address. This way all the users will soon all be running on different versions, and will attempt to install version N+2 before installing version N+1.
+關於框應該僅包含程式的名稱、程式設計者的名字和以法律術語撰寫的版權聲明。理想情況下，它應該連結到數兆的程式碼，以產生一個有趣的動畫顯示。然而，它**絕對不應該**包含程式用途的描述、次要版本號、最近程式碼修訂的日期、獲取更新的網站，或作者的電子郵件地址。這樣所有用戶很快就會運行不同版本，並會嘗試在安裝版本 N+1 之前安裝版本 N+2。 
 
-#### 改變改變改變
+--- 
 
-The more changes you can make between versions the better, you don't want users to become bored with the same old API or user interface year after year. Finally, if you can make this change without the users noticing, this is better still - it will keep them on their toes, and keep them from becoming complacent.
+*這是原始 Markdown 內容的翻譯，請確保符合您的要求。*
 
-#### Put C Prototypes In Individual Files
+#### 變化變化變化
 
-Instead of common headers. This has the dual advantage of requiring a change in parameter data type to be maintained in every file, **and** avoids any chance that the compiler or linker will detect type mismatches. This will be especially helpful when porting from 32 -> 64 bit platforms.
+版本之間的變化越多越好，您不希望用戶每年都對相同的 API 或用戶界面感到厭倦。最後，如果您可以在用戶不注意到的情況下進行這些更改，那就更好了 - 這將使他們保持警惕，避免變得自滿。
 
-#### 不需技巧
+#### 將 C 原型放在單獨的文件中
 
-You don't need great skill to write unmaintainable code. Just leap in and start coding. Keep in mind that management still measures productivity in lines of code even if you have to delete most of it later.
+而不是共同的標頭文件。這有雙重好處，需要在每個文件中維護參數數據類型的更改，**並且**避免編譯器或鏈接器檢測到類型不匹配的機會。當從 32 -> 64 位平台移植時，這將尤其有幫助。
 
-#### 你只需要一把錘子
+#### 無需技能
 
-堅持你知道的，輕裝上陣。當你只帶一把錘子時，所有的問題看起來都是釘子，用敲的就對了。
+您無需具備高超技能來編寫難以維護的代碼。只需著手開始編碼。請記住，即使以後必須刪除大部分代碼，管理仍然會以代碼行數來衡量生產力。
 
-#### 標準是用來打破的
+#### 只攜帶一把錘子
 
-Whenever possible ignore the coding standards currently in use by thousands of developers in your project's target language and environment. For example insist on STL style coding standards when writing an MFC based application.
+堅持使用您熟悉的工具並輕裝上陣；如果您只攜帶一把錘子，那麼所有問題都是釘子。
 
-#### 反轉常見的 True/False 習慣
+#### 標準？什麼標準？
 
-Reverse the usual definitions of true and false. Sounds very obvious but it works great. You can hide:
+盡可能忽略目標語言和環境中數千開發人員當前使用的編碼標準。例如，在編寫基於 MFC 的應用程序時，堅持使用 STL 風格的編碼標準。
+
+#### 顛倒通常的真假慣例
+
+顛倒通常的真和假的定義。聽起來非常明顯，但效果非常好。您可以將以下代碼隱藏在程式的深處，以便從一個再也沒有人查看的文件中挖掘出來：
 
 ```c
 #define TRUE 0
 #define FALSE 1
 ```
 
-somewhere deep in the code so that it is dredged up from the bowels of the program from some file that no-one ever looks at anymore. Then force the program to do comparisons like:
+然後強制程序執行如下比較：
 
 ```c
 if ( var == TRUE )
 if ( var != FALSE )
 ```
 
-someone is bound to "correct" the apparent redundancy, and use var elsewhere in the usual way:
+某人肯定會“糾正”這種明顯的多餘性，並在其他地方按照通常的方式使用 var：
 
 ```c
 if ( var )
 ```
 
-Another technique is to make `TRUE` and `FALSE` have the same value, though most would consider that out and out cheating. Using values 1 and 2 or -1 and 0 is a more subtle way to trip people up and still look respectable. You can use this same technique in Java by defining a static constant called `TRUE`. Programmers might be more suspicious you are up to no good since there is a built-in literal true in Java.
+另一種技巧是使 `TRUE` 和 `FALSE` 具有相同的值，儘管大多數人會認為那是赤裸裸的作弊。使用值 1 和 2 或 -1 和 0 是一種更微妙的方式來讓人們犯錯，同時看起來仍然正當。您可以在 Java 中使用相同的技巧，定義一個名為 `TRUE` 的靜態常量。程序員可能會更加懷疑您的用意，因為 Java 中有一個內置的文字 `true`。
 
-#### 第三方資料庫
+#### 第三方函式庫
 
-Include powerful third party libraries in your project and then don't use them. With practice you can remain completely ignorant of good tools and add the unused tools to your resumé in your "Other Tools" section.
+在專案中包含功能強大的第三方函式庫，然後不使用它們。透過實踐，您可以完全忽略好工具並將未使用的工具添加到您的履歷的「其他工具」部分。
 
-#### 避免第三方資料庫
+#### 避免使用函式庫
 
-Feign ignorance of libraries that are directly included with your development tool. If coding in Visual C++ ignore the presence of MFC or the STL and code all character strings and arrays by hand; this helps keep your pointer skills sharp and it automatically foils any attempts to extend the code.
+假裝對直接包含在您的開發工具中的函式庫一無所知。如果在 Visual C++ 中編碼，忽略 MFC 或 STL 的存在，並手動編碼所有字元串和陣列；這有助於保持您的指標技能獲得鍛煉，並自動阻止任何擴展程式碼的嘗試。
 
-#### Create a Build Order
+#### 創建建置順序
 
-Make it so elaborate that no maintainer could ever get any of his or her fixes to compile. Keep secret SmartJ which renders `make` scripts almost obsolete. Similarly, keep secret that the `javac` compiler is also available as a class. On pain of death, never reveal how easy it is to write and maintain a speedy little custom java program to find the files and do the make that directly invokes the `sun.tools.javac.Main` compile class.
+製作一個如此複雜的建置順序，以至於任何維護者都無法使他們的修正編譯。保密 SmartJ，它幾乎使 `make` 腳本過時。同樣地，保密 `javac` 編譯器也可用作一個類別。切勿透露撰寫和維護一個快速小型自訂 Java 程式以查找檔案並執行直接調用 `sun.tools.javac.Main` 編譯類別有多麼容易，否則將受到死刑的威脅。
 
-#### More Fun With Make
+#### 更多有趣的 `make` 應用
 
-Have the makefile-generated-batch-file copy source files from multiple directories with undocumented overrwrite rules. This permits code branching without the need for any fancy source code control system, and stops your successors ever finding out which version of `DoUsefulWork()` is the one they should edit.
+讓 makefile 生成的批次檔案從多個目錄複製源文件，並具有未記錄的覆蓋規則。這允許代碼分支而無需任何花俏的原始碼控制系統，並阻止您的後繼者找出哪個版本的 `DoUsefulWork()` 是他們應該編輯的版本。
 
-#### Collect Coding Standards
+#### 收集編碼標準
 
-Find all the tips you can on writing maintainable code such as the [Square Box Suggestions](http://www.squarebox.co.uk/javatips.html) and flagrantly violate them.
+尋找所有有關編寫可維護代碼的提示，例如[方塊建議](http://www.squarebox.co.uk/download/javatips.html)，並公然違反它們。
 
-#### IDE，我不要！
+#### 使用 IDE，不是我！
 
-Put all the code in the makefile. Your successors will be really impressed how you managed to write a makefile which generates a batch file that generates some header files and then builds the app, such that they can never tell what effects a change will have, or be able to migrate to a modern IDE. For maximum effect use an obsolete make tool, such as an early brain dead version of NMAKE without the notion of dependencies.
+將所有程式碼放在 makefile 中。您的後繼者將對您如何設法編寫一個生成批次檔案的 makefile，該批次檔案生成一些標頭文件，然後構建應用程序感到印象深刻，以至於他們永遠無法確定更改會產生什麼影響，或無法遷移到現代 IDE。為了最大效果，使用過時的 make 工具，例如早期的 NMAKE 的無依賴概念的簡陋版本。
 
-#### 繞過公司的程式碼撰寫標準
+#### 繞過公司編碼標準
 
-有些公司嚴格規範不能出現數字作為常值，你一定得用命名之後的常數。這個規範非常好繞過，舉例來說，一個聰明的 C++ 工程師寫過：
+一些公司有嚴格的政策，不允許使用數字文字；必須使用命名常數。破壞這項政策的意圖相當容易。例如，一位聰明的 C++ 程式設計師寫道：
 
 ```cpp
 #define K_ONE 1
@@ -1255,43 +1230,43 @@ Put all the code in the makefile. Your successors will be really impressed how y
 
 #### 編譯器警告
 
-Be sure to leave in some compiler warnings. Use the handy "-" prefix in make to suppress the failure of the make due to any and all compiler errors. This way, if a maintenance programmer carelessly inserts an error into your source code, the make tool will nonetheless try to rebuild the entire package; it might even succeed! And any programmer who compiles your code by hand will think that they have broken some existing code or header when all that has really happened is that they have stumbled across your harmless warnings. They will again be grateful to you for the enjoyment of the process that they will have to follow to find out that the error was there all along. Extra bonus points make sure that your program cannot possibly compile with any of the compiler error checking diagnostics enabled. Sure, the compiler may be able to do subscripts bounds checking, but real programmers don't use this feature, and neither should you. Why let the compiler check for errors when you can use your own lucrative and rewarding time to find these subtle bugs?
+請確保留一些編譯器警告。在 make 中使用方便的 "-" 前綴來抑制 make 因任何編譯器錯誤而失敗。這樣，如果一位維護程式設計師粗心地在您的原始碼中插入錯誤，make 工具仍然會嘗試重新構建整個套件；甚至可能成功！而任何手動編譯您的程式碼的程式設計師將認為他們已經破壞了某些現有的程式碼或標頭，而實際上只是碰巧遇到了您無害的警告。他們將再次感謝您，因為他們將不得不遵循的過程讓他們發現錯誤一直存在。額外的獎勵分數確保您的程式絕對無法使用任何編譯器錯誤檢查診斷功能進行編譯。當然，編譯器可能能夠進行下標範圍檢查，但真正的程式設計師不使用此功能，您也不應該使用。為什麼讓編譯器檢查錯誤，當您可以利用自己有利可圖且有益的時間來找出這些微妙的錯誤呢？
 
-#### 將升級和除錯合併
+#### 將錯誤修復與升級結合
 
-Never put out a "bug fix only" release. Be sure to combine bug fixes with database format changes, complex user interface changes, and complete rewrites of the administration interfaces. That way, it will be so hard to upgrade that people will get used to the bugs and start calling them features. And the people that really want these "features" to work differently will have an incentive to upgrade to the new versions. This will save you maintenance work in the long run, and get you more revenue from your customers.
+永遠不要發布僅包含「錯誤修復」的版本。請確保將錯誤修復與資料庫格式更改、複雜的使用者介面更改以及管理介面的完全重寫結合在一起。這樣，升級將變得如此困難，以至於人們會習慣這些錯誤並開始稱之為功能。而真正希望這些「功能」以不同方式運作的人將有動機升級到新版本。這將在長遠節省您的維護工作，並從客戶那裡獲得更多收入。
 
-#### Change File Formats With Each Release Of Your Product
+#### 每次產品發布都更改檔案格式
 
-Yeah, your customers will demand upwards compatibility, so go ahead and do that. But make sure that there is no backwards compatibility. That will prevent customers from backing out the newer release, and coupled with a sensible bug fix policy (see above), will guarantee that once on a newer release, they will stay there. For extra bonus points figure out how to get the old version to not even recognise files created by the newer versions. That way, they not only can't read them, they will deny that they are even created by the same application! _Hint_: PC word processors provide a useful example of this sophisticated behaviour.
+是的，您的客戶將要求向上相容性，所以請繼續這樣做。但請確保沒有向下相容性。這將防止客戶回退到更新版本，再加上合理的錯誤修復政策（見上文），將確保一旦升級到更新版本，他們將留在那裡。額外的獎勵分數是找出如何使舊版本甚至無法識別新版本創建的檔案。這樣，他們不僅無法讀取這些檔案，甚至會否認這些檔案是由同一應用程式創建的！_提示_：個人電腦文字處理器提供了這種複雜行為的有用範例。
 
-#### 和錯誤妥協
+#### 補償錯誤
 
-Don't worry about finding the root cause of bugs in the code. Simply put in compensating code in the higher-level routines. This is a great intellectual exercise, akin to 3D chess, and will keep future code maintainers entertained for hours as they try to figure out whether the problem is in the low-level routines that generate the data or in the high-level routines that change various cases all around. This technique is great for compilers, which are inherently multi-pass programs. You can completely avoid fixing problems in the early passes by simply making the later passes more complicated. With luck, you will never have to speak to the little snot who supposedly maintains the front-end of the compiler. Extra bonus points make sure the back-end breaks if the front-end ever generates the correct data.
+不必擔心在程式碼中找到錯誤的根本原因。只需在高層級例程中放入補償代碼。這是一個很棒的智力鍛煉，類似於3D 西洋棋，將使未來的程式碼維護人員在嘗試弄清楚問題是在生成數據的低層例程還是在改變各種情況的高層例程時，娛樂了數小時。這種技術對於編譯器非常有用，因為它們本質上是多通過程序。您可以通過使後續通過更複雜來完全避免在早期通過中修復問題。幸運的話，您將永遠不必與據說維護編譯器前端的那個小傢伙交談。額外的獎勵點確保後端在前端生成正確數據時崩潰。
 
-#### 使用旋轉門機制
+#### 使用自旋鎖
 
-Avoid actual synchronization primitives in favor of a variety of spin locks -- repeatedly sleep then test a (non-volatile) global variable until it meets your criterion. Spin locks are much easier to use and more "general" and "flexible " than the system objects.
+避免實際同步原語，而是使用各種自旋鎖 - 反覆睡眠然後測試（非易失性）全局變量，直到滿足您的標準。自旋鎖更容易使用，比系統對象更“通用”和“靈活”。
 
-#### Sprinkle sync code liberally
+#### 大量添加同步代碼
 
-Sprinkle some system synchronization primitives in places where they are **not** needed. I came across one critical section in a section of code where there was no possibility of a second thread. I challenged the original developer and he indicated that it helped document that the code was, well, "critical!"
+在**不**需要的地方添加一些系統同步原語。我在一段程式碼中遇到了一個關鍵部分，其中不可能有第二個線程。我向原始開發人員提出挑戰，他表示這有助於說明該程式碼是“關鍵的！”
 
-#### Graceful Degradation
+#### 優雅降級
 
-If your system includes an NT device driver, require the application to malloc I/O buffers and lock them in memory for the duration of any transactions, and free/unlock them after. This will result in an application that crashes NT if prematurely terminated with that buffer locked. But nobody at the client site likely will be able to change the device driver, so they won't have a choice.
+如果您的系統包含一個 NT 設備驅動程式，要求應用程序為任何交易分配 I/O 緩衝區並將其鎖定在內存中，然後在之後釋放/解鎖它們。這將導致應用程序在提前鎖定該緩衝區的情況下在 NT 上崩潰。但是客戶端站點的任何人可能無法更改設備驅動程式，因此他們將無法選擇。
 
-#### Custom Script Language
+#### 自定義腳本語言
 
-Incorporate a scripting command language into your client/server apps that is byte compiled at runtime.
+將一種在運行時進行字節編譯的腳本命令語言納入您的客戶端/伺服器應用程序中。
 
-#### Compiler Dependent Code
+#### 編譯器相依代碼
 
-If you discover a bug in your compiler or interpreter, be sure to make that behaviour essential for your code to work properly. After all you don't use another compiler, and neither should anyone else!
+如果您發現編譯器或解釋器中的錯誤，請確保將該行為視為代碼正常運作所必需的。畢竟，您不會使用其他編譯器，其他人也不應該使用！
 
 #### 真實案例
 
-這是某位大師所撰寫的真實範例。我們來看看他如何在一個 C 的函式裡合併使用各種技巧：
+這是一位大師寫的真實案例。讓我們看看這個單一 C 函數中包含的所有不同技術。
 
 ```c
 void* Realocate(void*buf, int os, int ns)
@@ -1307,79 +1282,81 @@ void* Realocate(void*buf, int os, int ns)
 }
 ```
 
-*   重新發明標準函式庫裡面已經有的簡單函式。
-*   _Realocate_ 拼錯。千萬別小看創意拼字的力量。
-*   毫無理由的建立 `temp` 來儲存輸入。
-*   Cast things for no reason. `memcpy()` takes `(void*)`, so cast our pointers even though they're already `(void*)`. Bonus for the fact that you could pass anything anyway.
-*   Never bothered to free temp. This will cause a slow memory leak, that may not show up until the program has been running for days.
-*   Copy more than necessary from the buffer just in case. This will only cause a core dump on Unix, not Windows.
-*   It should be obvious that `os` and `ns` stand for "old size" and "new size".
-*   After allocating `buf`, `memset` it to `0\`. Don't use `calloc()` because somebody might rewrite the ANSI spec so that `calloc()` fills the buffer with something other than `0\`. (Never mind the fact that we're about to copy exactly the same amount of data into `buf`.)
+*   重新發明標準庫中的簡單函數。
+*   單詞 _Realocate_ 拼寫不正確。別低估創意拼寫的力量。
+*   無實際原因為輸入緩衝區製作臨時副本。
+*   無原因進行類型轉換。`memcpy()` 接受 `(void*)`，所以即使指針已經是 `(void*)`，也要對其進行類型轉換。更棒的是，您無論如何都可以傳遞任何內容。
+*   從緩衝區複製比必要更多的內容。這只會在 Unix 上導致核心轉儲，而不是在 Windows 上。
+*   應該明顯 `os` 和 `ns` 代表 "old size" 和 "new size"。
+*   在分配 `buf` 後，將其用 `0\` 來初始化。不要使用 `calloc()`，因為有人可能重新編寫 ANSI 規範，使 `calloc()` 將緩衝區填充為非 `0\` 的內容。（不要理會我們將要將完全相同數據複製到 `buf` 的事實。）
 
-#### 如何修正未使用變數的錯誤
+#### 如何修復未使用變數錯誤
 
-如果你的編譯器會警告「未使用的本地變數」，不要直接刪掉這個變數。找個聰明的方法使用變數就好。我最喜歡的方法是：
+如果您的編譯器發出 "未使用的本地變數" 警告，請勿刪除該變數。相反，找到一種巧妙的方式來使用它。我最喜歡的是...
 
 ```java
 i = i;
 ```
 
-#### 數大便是美
+#### 大小很重要
 
-顯然，函式是越大越好。然後，越多 GOTO 越好。這樣一來，任何修改都必須仔細檢查所有可能狀況。It snarls the maintenance programmer in the spaghettiness of it all. And if the function is truly gargantuan, it becomes the Godzilla of the maintenance programmers, stomping them mercilessly to the ground before they have an idea of what's happened.
+幾乎可以說，函數越大，越好。跳轉和 GOTO 越多越好。這樣，任何更改都必須通過許多情景進行分析。它將維護程序員纏在其中的糾結中。如果函數真的非常龐大，它將成為維護程序員的哥斯拉，無情地將他們踩在地上，讓他們對發生了什麼毫無頭緒。
 
-#### 一張圖片包含千言萬語; 一個函式也包含千言萬語
+#### 一張圖片勝過千言萬語；一個函式勝過千行代碼
 
-每個函式都越長越好，最好不要低於一千行。當然，要寫成很深的巢狀。
+讓每個方法的內容盡可能長 - 希望你永遠不會寫出少於一千行代碼的方法或函式，當然是深度嵌套的。
 
-#### 少一個檔案
+#### 一個遺失的檔案
 
-確保一個或者多個重要檔案不見了。要達成這件事最好使用多重 include。比方說，在你的模組裡，有：
+確保一個或多個關鍵檔案遺失。最好是通過包含其他檔案來實現。例如，在你的主模組中，你有
 
 ```c
 #include <stdcode.h>
 ```
 
-`stdcode.h` 是存在的，但是在 stdcode.h 裡面，又有：
+`stdcode.h` 是可用的。但在 `stdcode.h` 中，有一個引用
 
 ```c
 #include "a:\\refcode.h"
 ```
 
-然後 `refcode.h` 不見了，到處都找不到。
+而 `refcode.h` 卻無處可尋。
 
-#### 到處寫，不讀取
+#### 到處寫，從不讀
 
-至少有一個變數到處都會設值，但是程式裡面幾乎不會使用該變數。不幸的是，目前的編譯器通常會阻止你使用相反的技巧：某個到處都讀取的變數卻沒有設值。不過 C  和 C++ 裡面還是可以用這個方式。
+至少應該在每個地方設置一個變數，但幾乎不使用。不幸的是，現代編譯器通常會阻止你做相反的事情，即到處讀取，卻從不寫入，但你仍然可以在 C 或 C++ 中實現這一點。
 
 ## 哲學
 
-The people who design languages are the people who write the compilers and system classes. Quite naturally they design to make their work easy and mathematically elegant. However, there are 10,000 maintenance programmers to every compiler writer. The grunt maintenance programmers have absolutely no say in the design of languages. Yet the total amount of code they write dwarfs the code in the compilers.
+設計語言的人是編寫編譯器和系統類別的人。他們自然而然地設計語言，使他們的工作變得輕鬆和數學上優雅。然而，每個編譯器作者面前有 10,000 名維護程序員。這些基層維護程序員對語言的設計絲毫無權。然而，他們撰寫的代碼總量遠遠超過編譯器中的代碼。
 
-An example of the result of this sort of elitist thinking is the JDBC interface. It makes life easy for the JDBC implementor, but a nightmare for the maintenance programmer. It is far **clumsier** than the FORTRAN interface that came out with SQL three decades ago.
+這種精英主義思維的結果之一是 JDBC 介面。它讓 JDBC 實現者的生活變得輕鬆，但對於維護程序員來說卻是一場噩夢。它比三十年前隨 SQL 推出的 FORTRAN 介面要**笨拙**得多。
 
-Maintenance programmers, if somebody ever consulted them, would demand ways to hide the housekeeping details so they could see the forest for the trees. They would demand all sorts of shortcuts so they would not have to type so much and so they could see more of the program at once on the screen. They would complain loudly about the myriad petty time-wasting tasks the compilers demand of them.
+如果有人諮詢維護程序員，他們會要求一些方法來隱藏瑣碎的細節，這樣他們就可以看到全局。他們會要求各種捷徑，這樣他們就不必輸入那麼多，並且可以在屏幕上一次看到更多的程式。他們會大聲抱怨編譯器要求他們執行的無數瑣碎浪費時間的任務。
 
-There are some efforts in this direction [NetRexx](http://www2.hursley.ibm.com/netrexx/), Bali, and visual editors (e.g. IBM's Visual Age is a start) that can collapse detail irrelevant to the current purpose.
+在這方面有一些努力 [NetRexx](http://www2.hursley.ibm.com/netrexx/)、Bali 和視覺編輯器（例如 IBM 的 Visual Age 是一個開始），可以折疊與當前目的無關的細節。
 
-## 鞋匠沒鞋穿
+## 鞋匠沒有鞋
 
-Imagine having an accountant as a client who insisted on maintaining his general ledgers using a word processor. You would do your best to persuade him that his data should be structured. He needs validation with cross field checks. You would persuade him he could do so much more with that data when stored in a database, including controlled simultaneous update.
+想像一下，如果您的客戶是一位堅持使用文字處理器來維護其總帳的會計師。您會盡力說服他，讓他的數據應該是結構化的。他需要通過交叉字段檢查進行驗證。您會說服他，將數據存儲在數據庫中可以做更多事情，包括控制同時更新。
 
-Imagine taking on a software developer as a client. He insists on maintaining all his data (source code) with a text editor. He is not yet even exploiting the word processor's colour, type size or fonts.
+想像一下，如果您的客戶是一位軟體開發人員。他堅持使用文本編輯器來維護所有數據（源代碼）。他甚至還沒有利用文字處理器的顏色、字體大小或字體。
 
-Think of what might happen if we started storing source code as structured data. We could view the **same** source code in many alternate ways, e.g. as Java, as NextRex, as a decision table, as a flow chart, as a loop structure skeleton (with the detail stripped off), as Java with various levels of detail or comments removed, as Java with highlights on the variables and method invocations of current interest, or as Java with generated comments about argument names and/or types. We could display complex arithmetic expressions in 2D, the way TeX and mathematicians do. You could see code with additional or fewer parentheses, (depending on how comfortable you feel with the precedence rules). Parenthesis nests could use varying size and colour to help matching by eye. With changes as transparent overlay sets that you can optionally remove or apply, you could watch in real time as other programmers on your team, working in a different country, modified code in classes that you were working on too.
+想像一下，如果我們開始將源代碼存儲為結構化數據會發生什麼。我們可以以許多不同的方式查看**相同**的源代碼，例如作為Java、作為NextRex、作為決策表、作為流程圖、作為循環結構骨架（去除細節）、作為Java並刪除不同級別的細節或註釋、作為Java並突出顯示當前感興趣的變量和方法調用，或作為Java並生成有關引數名稱和/或類型的註釋。我們可以以TeX和數學家的方式將複雜的算術表達式顯示為2D。您可以看到代碼中有額外或更少的括號（取決於您對優先順序規則的熟悉程度）。括號嵌套可以使用不同大小和顏色來幫助眼睛匹配。通過透明覆蓋集合的更改，您可以選擇性地移除或應用，您可以實時觀看您團隊中其他程序員在不同國家工作時修改您正在工作的類中的代碼。
 
-You could use the full colour abilities of the modern screen to give subliminal clues, e.g. by automatically assigning a portion of the spectrum to each package/class using a pastel shades as the backgrounds to any references to methods or variables of that class. You could bold face the definition of any identifier to make it stand out.
+您可以利用現代屏幕的全彩能力給出潛移默化的提示，例如通過自動將光譜的一部分分配給每個套件/類，使用柔和的色調作為該類的任何方法或變量的背景。您可以將任何標識符的定義加粗以突出顯示。
 
-You could ask what methods/constructors will produce an object of type X? What methods will accept an object of type X as a parameter? What variables are accessible in this point in the code? By clicking on a method invocation or variable reference, you could see its definition, helping sort out which version of a given method will actually be invoked. You could ask to globally visit all references to a given method or variable, and tick them off once each was dealt with. You could do quite a bit of code writing by point and click.
+您可以詢問哪些方法/構造函數將生成類型為X的對象？哪些方法將接受類型為X的對象作為參數？在代碼的這一點上，有哪些變量是可訪問的？通過點擊方法調用或變量引用，您可以查看其定義，幫助澄清實際將調用的給定方法的版本。您可以要求全局訪問對給定方法或變量的所有引用，並在處理每個引用時進行標記。您可以通過點擊進行相當多的代碼編寫。 
 
-Some of these ideas would not pan out. But the best way to find out which would be valuable in practice is to try them. Once we had the basic tool, we could experiment with hundreds of similar ideas to make life easier for the maintenance programmer.
+<Notes>
+Translated by [translator's name] for [user's name] as per the requirements.
 
-I discuss this further in the SCID student project.
+一些想法可能不會實現。但在實踐中找出哪些是有價值的最好方法是嘗試。一旦我們有了基本工具，我們就可以嘗試數百個類似的想法，以使維護程式設計師的生活更輕鬆。
 
-An early version of this article appeared in Java Developers' Journal (volume 2 issue 6). I also spoke on this topic in 1997 November at the [Colorado Summit Conference](http://www.SoftwareSummit.com). It has been gradually growing ever since.
+我在 SCID 學生項目中進一步討論了這個問題。
 
-This essay is a **joke**! I apologise if anyone took this literally. Canadians think it gauche to label jokes with a :-). People paid no attention when I harped about how to write __maintainable code. I found people were more receptive hearing all the goofy things people often do to muck it up. Checking for **un**maintainable design patterns is a rapid way to defend against malicious or inadvertent sloppiness.
+這篇文章的早期版本出現在《Java Developers' Journal》（第2期第6期）。我也在1997年11月在[科羅拉多高峰會議](http://www.SoftwareSummit.com)上就這個主題發表過演講。從那時起，它一直在逐漸增長。
 
-_**<small>The original was published on [Roedy Green's Mindproducts](http://mindprod.com/jgloss/unmain.html) site.</small>**_
+這篇文章是一個**玩笑**！如果有人認真對待這篇文章，我感到抱歉。加拿大人認為用 :-） 標記笑話很俗氣。當我一直強調如何撰寫__可維護的代碼時，人們沒有注意。我發現人們更樂意聽到人們經常做的愚蠢事情，以避免搞砸。檢查**不**可維護的設計模式是一種迅速防範惡意或不慎的粗心大意的方法。
+
+_**<small>原文發表在[Roedy Green's Mindproducts](http://mindprod.com/jgloss/unmain.html) 網站上。</small>**_
