@@ -47,6 +47,7 @@
 - [383. Ransom Note](383.md)
 - [485. Max Consecutive Ones](485.md)
 - [1051. Height Checker](1051.md)
+- [1299. Replace Elements with Greatest Element on Right Side](1299.md)
 - [1389. Create Target Array in the Given Order](1389.md)
 - [1431. Kids With the Greatest Number of Candies](1431.md)
 - [1476. Subrectangle Queries](1476.md)
