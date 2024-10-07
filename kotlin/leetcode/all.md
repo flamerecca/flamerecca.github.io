@@ -81,6 +81,7 @@
 - [1108. Defanging an IP Address](1108.md)
 - [1137. N-th Tribonacci Number](1137.md)
 - [1221. Split a String in Balanced Strings](1221.md)
+- [1299. Replace Elements with Greatest Element on Right Side](1299.md)
 - [1323. Maximum 69 Number](1323.md)
 - [1342. Number of Steps to Reduce a Number to Zero](1342.md)
 - [1365. How Many Numbers Are Smaller Than the Current Number](1365.md)
