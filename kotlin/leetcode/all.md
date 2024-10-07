@@ -35,6 +35,7 @@
 - [168. Excel Sheet Column Title](168.md)
 - [169. Majority Element](169.md)
 - [171. Excel Sheet Column Number](171.md)
+- [190. Reverse Bits](190.md)
 - [191. Number of 1 Bits](191.md)
 - [202. Happy Number](202.md)
 - [205. Isomorphic Strings](205.md)
