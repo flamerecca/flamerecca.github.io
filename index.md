@@ -86,6 +86,9 @@
 - [DevFest Taipei 2023：Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
 - [IWD 24 Week：Tech Communities Impact the Future](https://www.accupass.com/event/2402160912355310126620)
 - [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
+- [2024/05 Laravel 新手小聚：初探 Laravel Blueprint：用 YAML 撰寫你的 Laravel 應用程式](https://events.laravel-dojo.com/events/50)
+- [2024/06 Laravel 新手小聚：Livewire 介紹：輕鬆構建動態頁面](https://events.laravel-dojo.com/events/51)
+- [2024/07 Laravel 新手小聚：Laravel Filament 介紹：客製化後台的好工具](https://events.laravel-dojo.com/events/52)
 - [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
 
 ## 舉辦活動
