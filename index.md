@@ -55,14 +55,17 @@
 - 中正大學 Laravel 系統安全開發
 
 ## 演講經歷
+### 2019
 - [PHP 也有 Day #42：Laravel Dusk 使用及研究](https://community.laravel-dojo.com/phptheday/2019-01-15)
 - [PHP 也有 Day #44：先別提測試了，你聽過 TDD 已死了嗎？](https://community.laravel-dojo.com/phptheday/2019-04-16)
 - [Laradiner #41：【單元測試的藝術 (第二版)】第 7 章(前半段)](https://community.laravel-dojo.com/laradiner/2019-10-22)
 - [PHP 也有 Day #50：處理前人的遺產 - 聊 legacy code](https://community.laravel-dojo.com/phptheday/2019-11-26)
 - [LaravelConf Taiwan 2019：星移電掣般的 Trace Code 讓你如光速一般的追蹤程式碼](https://www.youtube.com/watch?v=nvAlBpbFNNs&ab_channel=LaravelConfTaiwan)
+### 2020
 - [LaravelConf Taiwan 2020：大象也能飛翔！聊 Laravel 效能調校](https://2020.laravelconf.tw/agenda)
 - [COSCUP 2020：閱讀 voyager 原始碼](https://www.youtube.com/watch?v=5GmoWRwvokY&vl=en&ab_channel=COSCUP%E9%96%8B%E6%BA%90%E4%BA%BA%E5%B9%B4%E6%9C%83)
 - [JCConf Taiwan 2020：Kotlin coroutine 簡介](https://jcconf.tw/2020/)
+### 2021
 - [PHP 也有 Day #59：Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
 - [Kotlin Meetup #2](https://www.facebook.com/events/793159571303586/)
 - [Laravel 新手村工作坊（一）](https://events.laravel-dojo.com/events/18/)
@@ -72,6 +75,7 @@
 - [COSCUP 2021：Kotlin 也能寫後端？帶你初探 Ktor 框架的世界](https://coscup.org/2021/zh-TW/session/JP3EMZ)
 - [MOPCON 2021：Kotlin 的自動測試怎麼做？](https://mopcon.org/2021/schedule/2021016)
 - [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
+### 2022
 - [COSCUP 2022：讓你的程式清楚易懂！談 PHP 8 撰寫方式](https://coscup.org/2022/zh-TW/session/KCQNHE)
 - [COSCUP 2022：Kotlin 的五個四大天王！談 scope function](https://coscup.org/2022/zh-TW/session/WTDBSU)
 - [JCConf Taiwan 2022：演講的投影片還沒做，就用 Kotlin 做一個吧](https://pretalx.com/jcconf-2022/talk/7EWSQL/)
@@ -79,11 +83,13 @@
 - [2022 Kotlin 中文開發者大會 Online：通过 Ktor 框架同步完成 Server 及 Client Side 开发](https://blog.jetbrains.com/zh-hans/2022/11/08/2022-kotlin-online-event-for-chinese-developers/)
 - [DevFest Kaohsiung & Tainan：Kotlin 後端撰寫 101：用 Ktor 框架撰寫後端服務](https://gdg.community.dev/events/details/google-gdg-kaohsiung-presents-devfest-kaohsiung-tainan-2022/)
 - [DevFest Changhua 2022：DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-changhua-presents-devfest-changhua-2022/)
+### 2023
 - [COSCUP 2023：An Introduction to JetBrains Exposed: The Kotlin-based ORM Framework](https://coscup.org/2023/zh-TW/session/V8F9VH)
 - [COSCUP 2023：使用 Laravel Pennant 處理 Feature Flags](https://coscup.org/2023/zh-TW/session/MG7BDS)
 - [{Laravel x Vue}Conf Taiwan 2023：善用工具靈活思考：解鎖 PHPStorm 的強大潛能](https://laravelconf.tw/agendas?modal=agenda.WyI0Il0)
 - [JCConf 2023：探索 Javalin：一個輕量級 Java 和 Kotlin 網頁框架](https://pretalx.com/jcconf-2023/talk/MT9BYA/)
 - [DevFest Taipei 2023：Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
+### 2024
 - [IWD 24 Week：Tech Communities Impact the Future](https://www.accupass.com/event/2402160912355310126620)
 - [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
 - [2024/05 Laravel 新手小聚：初探 Laravel Blueprint：用 YAML 撰寫你的 Laravel 應用程式](https://events.laravel-dojo.com/events/50)
