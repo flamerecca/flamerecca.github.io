@@ -113,6 +113,7 @@
 
 ### 二分搜尋法
 - [278. First Bad Version](278.md)
+- [704. Binary Search](704.md)
 
 ### 隊列
 - [232. Implement Queue using Stacks](232.md)
