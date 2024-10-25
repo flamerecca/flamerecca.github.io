@@ -4,34 +4,34 @@
 
 ### Week 1
 
-- [1. Two Sum](1.md)
-- [20. Valid Parentheses](20.md)
-- [21. Merge Two Sorted Lists](21.md)
-- [121. Best Time to Buy and Sell Stock](121.md)
-- [125. Valid Palindrome](125.md)
-- [226. Invert Binary Tree](226.md)
-- [242. Valid Anagram](242.md)
-- [704. Binary Search](704.md)
-- `733. Flood Fill`
-- `235. Lowest Common Ancestor of a Binary Search Tree`
-- [110. Balanced Binary Tree](110.md)
-- [141. Linked List Cycle](141.md)
-- [232. Implement Queue using Stacks](232.md)
+- [1. Two Sum](1.md) （陣列）
+- [20. Valid Parentheses](20.md) （堆疊）
+- [21. Merge Two Sorted Lists](21.md) （鏈結串列）
+- [121. Best Time to Buy and Sell Stock](121.md) （陣列）
+- [125. Valid Palindrome](125.md) （字串）
+- [226. Invert Binary Tree](226.md) （二元樹）
+- [242. Valid Anagram](242.md) （字串）
+- [704. Binary Search](704.md) （二分搜尋）
+- `733. Flood Fill` （圖）
+- `235. Lowest Common Ancestor of a Binary Search Tree` （二元搜尋樹）
+- [110. Balanced Binary Tree](110.md) （二元樹）
+- [141. Linked List Cycle](141.md) （鏈結串列）
+- [232. Implement Queue using Stacks](232.md) （堆疊）
 
 ### Week 2
 
-- [278. First Bad Version](278.md)
-- [383. Ransom Note](383.md)
-- [70. Climbing Stairs](70.md)
-- `409. Longest Palindrome`
-- [206. Reverse Linked List](206.md)
-- [169. Majority Element](169.md)
-- [67. Add Binary](67.md)
-- `543. Diameter of Binary Tree`
-- [876. Middle of the Linked List](876.md)
-- [104. Maximum Depth of Binary Tree](104.md)
-- [217. Contains Duplicate](217.md)
-- [53. Maximum Subarray](53.md)
+- [278. First Bad Version](278.md) （二分搜尋）
+- [383. Ransom Note](383.md) （Hash Table）
+- [70. Climbing Stairs](70.md) （動態規劃）
+- `409. Longest Palindrome` （字串）
+- [206. Reverse Linked List](206.md) （鏈結串列）
+- [169. Majority Element](169.md) （陣列）
+- [67. Add Binary](67.md) （二進位）
+- `543. Diameter of Binary Tree` （二元樹）
+- [876. Middle of the Linked List](876.md) （鏈結串列）
+- [104. Maximum Depth of Binary Tree](104.md) （二元樹）
+- [217. Contains Duplicate](217.md) （陣列）
+- [53. Maximum Subarray](53.md) （動態規劃）
 
 ### Week 3
 
