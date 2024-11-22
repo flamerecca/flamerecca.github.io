@@ -6,12 +6,6 @@
 
 [Kotlin Tips](https://tw.kotlin.tips/)
 
-## MOすめ
-
-![MOすめ](https://raw.githubusercontent.com/flamerecca/flamerecca.github.io/main/assets/TPHLm9.jpg)
-
-[MOすめ Youtube](https://www.youtube.com/channel/UCFpr5TjvP6tFqccS_oTfWHw)
-
 ## 軟體開發社群公開活動
 
 <iframe src="https://calendar.google.com/calendar/embed?src=b3buhruprrkqmo6nhpc9u6eoig%40group.calendar.google.com&ctz=Asia%2FTaipei&mode=AGENDA" style="border: 0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
