@@ -24,7 +24,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
     + [加密模式](#加密模式)
     + [隨機填充](#隨機填充)
     + [安全隨機數生成](#安全隨機數生成)
-      - [UUIDs 和 GUIDs](#UUIDs 和 GUIDs)
+      - [UUIDs 和 GUIDs](#UUIDs和GUIDs)
     + [防禦深度](#防禦深度)
   * [金鑰管理](#金鑰管理)
     + [流程](#流程)
@@ -132,7 +132,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Cryptographic_
 | Rust        | `rand::prng::XorShiftRng`                                                                                                          | [rand::prng::chacha::ChaChaRng](https://docs.rs/rand/0.5.0/rand/prng/chacha/struct.ChaChaRng.html) 和 Rust 函式庫的其他部分 [CSPRNGs.](https://docs.rs/rand/0.5.0/rand/prng/index.html#cryptographically-secure-pseudo-random-number-generators-csprngs) |
 | Node.js     | `Math.random()`                                                                                                                    | [crypto.randomBytes()](https://nodejs.org/api/crypto.html#cryptorandombytessize-callback), [crypto.randomInt()](https://nodejs.org/api/crypto.html#cryptorandomintmin-max-callback), [crypto.randomUUID()](https://nodejs.org/api/crypto.html#cryptorandomuuidoptions) |
 
-#### UUIDs 和 GUIDs
+#### UUIDs和GUIDs
 
 通用唯一識別碼（UUIDs 或 GUIDs）有時被用作快速生成隨機字串的方法。儘管它們可以提供合理的隨機性來源，但這將取決於創建的 UUID 的[類型或版本](https://en.wikipedia.org/wiki/Universally_unique_identifier#Versions)。
 
