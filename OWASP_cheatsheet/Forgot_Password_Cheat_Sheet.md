@@ -17,7 +17,7 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Forgot_Passwor
 - **對於現有和不存在的帳戶返回一致的訊息。**
 - **確保使用者回應訊息所花費的時間是一致的。**
 - **使用側通道來傳達重設密碼的方法。**
-- **使用[URL 標記](#url-tokens)進行最簡單和最快速的實現。**
+- **使用[URL 標記](#URL標記)進行最簡單和最快速的實現。**
 - **確保生成的標記或代碼：**
     - **使用具有密碼安全算法的隨機生成。**
     - **足夠長以防範暴力攻擊。**
@@ -40,8 +40,6 @@ https://github.com/OWASP/CheatSheetSeries/blob/master/cheatsheets/Forgot_Passwor
 - 實施保護措施，例如對每個帳戶進行速率限制、要求 CAPTCHA 或其他控制來防止過多的自動提交。否則，攻擊者可能會為特定帳戶每小時進行數千次密碼重設請求，將無用的請求洪水般地發送到使用者的接收系統（例如電子郵件收件匣或簡訊）。
 - 採用正常的安全措施，例如[SQL 注入防範方法](SQL_Injection_Prevention_Cheat_Sheet.md)和[輸入驗證](Input_Validation_Cheat_Sheet.md)。 
 
-permalink: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html
-
 ### 用戶重設密碼
 
 用戶通過提供通過電子郵件發送的令牌或通過短信或其他機制發送的代碼證明其身份後，應該將其密碼重設為一個新的安全密碼。為了確保這一步驟的安全性，應採取以下措施：
@@ -59,10 +57,10 @@ permalink: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_
 
 可以通過以下任何方法來完成：
 
-- [URL 令牌](#url-tokens)。
-- [PIN碼](#pins)
-- [離線方法](#offline-methods)
-- [安全問題](#security-questions)。
+- [URL標記](#URL標記)。
+- [PIN碼](#PINs)
+- [離線方法](#離線方法)
+- [安全問題](#安全問題)。
 
 這些方法可以結合使用，以提供更高程度的保證，確保用戶是其所聲稱的人。無論如何，您必須確保用戶始終有一種方法來恢復其帳戶，即使這涉及聯繫支援團隊並向工作人員證明其身份。
 
@@ -77,7 +75,7 @@ permalink: https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_
 - 在使用後使其失效。
 - 以安全的方式存儲，如[Password Storage Cheat Sheet](Password_Storage_Cheat_Sheet.md)中討論的那樣。
 
-### URL 標記
+### URL標記
 
 URL 標記是通過 URL 的查詢字串傳遞的，通常通過電子郵件發送給用戶。該過程的基本概述如下：
 
