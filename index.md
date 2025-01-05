@@ -93,6 +93,9 @@
 - [2024/06 Laravel 新手小聚：Livewire 介紹：輕鬆構建動態頁面](https://events.laravel-dojo.com/events/51)
 - [2024/07 Laravel 新手小聚：Laravel Filament 介紹：客製化後台的好工具](https://events.laravel-dojo.com/events/52)
 - [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
+- [JCConf 2024：Ktor 3.0 入門：簡述 Ktor 的架構及 3.0 版本的主要特點](https://pretalx.com/jcconf-2024/talk/AXSX9J/)
+- [2024/11 Laravel 新手小聚：用 Laravel 自動化測試保障程式穩定度](https://events.laravel-dojo.com/events/56)
+- [DevFest Taipei：在GCP上使用 Ktor 3.0 架設高效後端服務](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2024/)
 
 ## 舉辦活動
 ### 2021
@@ -107,6 +110,7 @@
 - 2022-08-18 [Kotlin Meetup #7 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-7/)
 - 2022-09-27 [Kotlin Meetup #8 @ 天瓏](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-8/)
 ### 2023
+- 2023-02-23 [Kotlin Meetup #9 @ TFC](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-9/)
 - 2023-04-18 [KotlinConf'23 Global Watch Party @ 獺空間](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-kotlinconf-2023-global-watch-party/)
 - 2023-06-10 [Kotlin Annual Seminar 2023 @ CMoney](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-annual-meetup-2023/)
 - 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
@@ -115,7 +119,10 @@
 - 2024-04-27 [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式 @ 言文字](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
 - 2024-06-18 [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
 - 2024-10-15 [Kotlin Meetup #14：KSP + AI to boost your productivity @ DCard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-14ksp-ai-to-boost-your-productivity/)
-- 2024-11-19 [Kotlin Meetup #15：Cassandra 應用 - 解決億量級消費數據分析問題 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-15cassandra-ying-yong-jie-jue-yi-liang-ji-xiao-fei-shu-ju-fen-xi-wen-ti/) 
+- 2024-10-17 [Digital Rogue Meetup # 01: The Journey of Becoming a Digital Nomad](https://www.meetup.com/taiwan-digital-rogue/events/303927656/)
+- 2024-11-19 [Kotlin Meetup #15：Cassandra 應用 - 解決億量級消費數據分析問題 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-15cassandra-ying-yong-jie-jue-yi-liang-ji-xiao-fei-shu-ju-fen-xi-wen-ti/)
+- 2024-11-27 [Digital Rogue Meetup #02](https://www.meetup.com/taiwan-digital-rogue/events/304339966/)
+- 2024-12-05 [Digital Rogue Meetup #03](https://www.meetup.com/taiwan-digital-rogue/events/304735235/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
@@ -141,7 +148,7 @@
 
 不讀《[法華](法華經/index.md)》，不知如來救世之苦心；
 
-不讀《華嚴》，不知佛家之富貴。」  
+不讀《[華嚴](華嚴經/index.md)》，不知佛家之富貴。」  
 
 ## 聯繫作者
 
