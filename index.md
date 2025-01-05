@@ -126,6 +126,7 @@
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
+- [Taiwan Digital Rogue 台灣網路遊民](https://www.meetup.com/taiwan-digital-rogue/)
 
 ## 雜七雜八
 - [閱讀清單](reading-list.md)
