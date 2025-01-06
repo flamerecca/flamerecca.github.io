@@ -134,6 +134,7 @@
 - [php self 和 static 的不同](php-static.md)
 - [如何在 fish console 裡面編寫 .bashrc 檔案](fishshell-bashrc.md)
 - [RFC 1149 - 使用鳥類載體傳遞網路協定數據包（Datagrams）之標準](RFC-1149.md)
+- [RFC 2549 - 具有服務品質（QoS）的鳥類攜帶IP](RFC-2549.md)
 - [如何寫出令人混淆的程式碼](unmaintainable-code.md)
 - [gitpage 架設](gitpage-howto.md)
 - [vim for php 筆記](php-vim.md)
