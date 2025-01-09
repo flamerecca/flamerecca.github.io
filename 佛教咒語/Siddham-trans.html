@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>羅馬拼音梵文轉悉曇文</title>
+    <script>
+        // 定義羅馬拼音到悉曇文字的對應表
+        const romanToSiddhamMap = {
+            'a': '𑖀',
+            'ā': '𑖁',
+            'i': '𑖂',
+            'ī': '𑖃',
+            'u': '𑖄',
+            'ū': '𑖅',
+            'ṛ': '𑖆',
+            'ṝ': '𑖇',
+            'e': '𑖏',
+            'ai': '𑖐',
+            'o': '𑖑',
+            'au': '𑖒',
+            'ka': '𑖓',
+            'kha': '𑖔',
+            'ga': '𑖕',
+            'gha': '𑖖',
+            'ṅa': '𑖗',
+            'ca': '𑖘',
+            'cha': '𑖙',
+            'ja': '𑖚',
+            'jha': '𑖛',
+            'ña': '𑖜',
+            'ṭa': '𑖝',
+            'ṭha': '𑖞',
+            'ḍa': '𑖟',
+            'ḍha': '𑖠',
+            'ṇa': '𑖡',
+            'ta': '𑖢',
+            'tha': '𑖣',
+            'da': '𑖤',
+            'dha': '𑖥',
+            'na': '𑖦',
+            'pa': '𑖧',
+            'pha': '𑖨',
+            'ba': '𑖩',
+            'bha': '𑖪',
+            'ma': '𑖫',
+            'ya': '𑖬',
+            'ra': '𑖭',
+            'la': '𑖮',
+            'va': '𑖯',
+            'śa': '𑖰',
+            'ṣa': '𑖱',
+            'sa': '𑖲',
+            'ha': '𑖳',
+            'kṣa': '𑖴',
+            'jñā': '𑖵'
+        };
+
+        function romanToSiddham() {
+            const input = document.getElementById('textInput').value;
+            const words = input.split(' ');
+            const converted = words.map(word => {
+                let result = '';
+                let buffer = '';
+
+                for (const char of word) {
+                    buffer += char;
+                    if (romanToSiddhamMap[buffer]) {
+                        result += romanToSiddhamMap[buffer];
+                        buffer = '';
+                    } else if (romanToSiddhamMap[char]) {
+                        result += romanToSiddhamMap[char];
+                        buffer = '';
+                    }
+                }
+
+                if (buffer) {
+                    result += buffer; // 保留無法匹配的部分
+                }
+
+                return result;
+            });
+
+            document.getElementById('siddhamOutput').innerText = converted.join(' ');
+        }
+    </script>
+</head>
+<body>
+    <h1>羅馬拼音梵文轉悉曇文</h1>
+    <label for="textInput">請輸入羅馬拼音梵文:</label>
+    <input type="text" id="textInput" placeholder="輸入羅馬拼音">
+    <button onclick="romanToSiddham()">轉換</button>
+    <h2>悉曇文:</h2>
+    <p id="siddhamOutput"></p>
+</body>
+</html>
