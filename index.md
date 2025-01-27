@@ -95,7 +95,7 @@
 - [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
 - [JCConf 2024：Ktor 3.0 入門：簡述 Ktor 的架構及 3.0 版本的主要特點](https://pretalx.com/jcconf-2024/talk/AXSX9J/)
 - [2024/11 Laravel 新手小聚：用 Laravel 自動化測試保障程式穩定度](https://events.laravel-dojo.com/events/56)
-- [DevFest Taipei：在GCP上使用 Ktor 3.0 架設高效後端服務](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2024/)
+- [DevFest Taipei 2024：在GCP上使用 Ktor 3.0 架設高效後端服務](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2024/)
 
 ## 舉辦活動
 ### 2021
