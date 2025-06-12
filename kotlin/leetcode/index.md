@@ -22,6 +22,7 @@
 ### 遞迴
 - [70. Climbing Stairs](70.md)
 - [509. Fibonacci Number](509.md)
+- [543. Diameter of Binary Tree](543.md)
 - [1137. N-th Tribonacci Number](1137.md)
 - [1979. Find Greatest Common Divisor of Array](1979.md)
 
