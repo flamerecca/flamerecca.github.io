@@ -66,6 +66,7 @@
 - [509. Fibonacci Number](509.md)
 - [520. Detect Capital](520.md)
 - [535. Encode and Decode TinyURL](535.md)
+- [543. Diameter of Binary Tree](543.md)
 - [572. Subtree of Another Tree](572.md)
 - [617. Merge Two Binary Trees](617.md)
 - [657. Robot Return to Origin](657.md)
