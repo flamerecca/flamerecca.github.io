@@ -27,7 +27,7 @@
 - [206. Reverse Linked List](206.md) （鏈結串列）
 - [169. Majority Element](169.md) （陣列）
 - [67. Add Binary](67.md) （二進位）
-- `543. Diameter of Binary Tree` （二元樹）
+- [543. Diameter of Binary Tree](543.md) （二元樹）
 - [876. Middle of the Linked List](876.md) （鏈結串列）
 - [104. Maximum Depth of Binary Tree](104.md) （二元樹）
 - [217. Contains Duplicate](217.md) （陣列）
