@@ -13,6 +13,7 @@
 - [231. Power of Two](231.md)
 - [326. Power of Three](326.md)
 - [342. Power of Four](342.md)
+- [1025. Divisor Game](1025.md)
 - [1342. Number of Steps to Reduce a Number to Zero](1342.md)
 - [1603. Design Parking System](1603.md)
 - [2520. Count the Digits That Divide a Number](2520.md)
