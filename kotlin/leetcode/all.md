@@ -78,6 +78,7 @@
 - [965. Univalued Binary Tree](965.md)
 - [977. Squares of a Sorted Array](977.md)
 - [1022. Sum of Root To Leaf Binary Numbers](1022.md)
+- [1025. Divisor Game](1025.md)
 - [1051. Height Checker](1051.md)
 - [1071. Greatest Common Divisor of Strings](1071.md)
 - [1108. Defanging an IP Address](1108.md)
