@@ -9,7 +9,7 @@ theme: jekyll-theme-hacker
 google_analytics: UA-78953126-2
 logo: /logo.jpg
 permalink: pretty
-markdown: GFM
+markdown: kramdown
 liker_id: recca_chao
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
