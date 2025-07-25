@@ -10,6 +10,8 @@ google_analytics: UA-78953126-2
 logo: /logo.jpg
 permalink: pretty
 markdown: kramdown
+kramdown:
+  parse_block_html: true
 liker_id: recca_chao
 commonmark:
   options: ["UNSAFE", "SMART", "FOOTNOTES"]
