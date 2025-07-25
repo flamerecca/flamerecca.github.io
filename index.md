@@ -26,6 +26,7 @@
 
 ## Laravel
 - [OWASP Laravel 快速參考手冊](OWASP_cheatsheet/Laravel_Cheat_Sheet.md)
+- [Laravel 小技巧](laravel-tips/index.md)
 
 ## 讀書心得
 - [Effective Java](effective-java/index.md)
