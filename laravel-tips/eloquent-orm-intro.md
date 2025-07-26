@@ -3,7 +3,7 @@
 - [防止 N+1 問題](#prevent-n+1)
 - [「doesntExist」方法](#doesntExist)
 
-### 防止 N+1 問題 {#prevent-n+1} ([⬆️](#eloquent-ORM))
+### 防止 N+1 問題([⬆️](#eloquent-ORM)) {#prevent-n+1} 
 
 預先載入可以顯著提升效能。使用「preventLazyLoading」方法可確保在開發期間所有關聯都已預先載入，並自訂其對違規行為的行為 🚀
 
@@ -27,7 +27,7 @@ public function boot(): void
 }
 ```
 
-### 「doesntExist」方法 {#doesntExist} ([⬆️](#eloquent-ORM))
+### 「doesntExist」方法([⬆️](#eloquent-ORM))  {#doesntExist}
 
 有時候您可能想要檢查資料庫中是否不存在某些記錄。雖然檢查計數或使用 exists() 方法可以做到這一點，但 Laravel 附帶「doesntExist」方法可以優雅地做到這一點 🚀
 
