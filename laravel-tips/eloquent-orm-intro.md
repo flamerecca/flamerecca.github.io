@@ -3,7 +3,7 @@
 - [防止 N+1 問題](#prevent-n+1)
 - [「doesntExist」方法](#doesntExist)
 
-### 防止 N+1 問題 {#prevent-n+1} 
+### 防止 N+1 問題 {#prevent-n+1}
 
 預先載入可以顯著提升效能。使用「preventLazyLoading」方法可確保在開發期間所有關聯都已預先載入，並自訂其對違規行為的行為 🚀
 
