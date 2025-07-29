@@ -36,11 +36,11 @@ use App\Models\User;
 use Illuminate\Auth\Access\Response;
 use Illuminate\Support\Facades\Gate;
 
-Gate::define('edit-settings', function (User $user) {
-    return $user->isAdmin
+Gate::define('edit-settings', fn (User $user) =>
+    $user->isAdmin
         ? Response::allow()
-        : Response::denyAsNotFound();
-});
+        : Response::denyAsNotFound()
+);
 ```
 
 ### 一次性驗證使用者 {#once}
