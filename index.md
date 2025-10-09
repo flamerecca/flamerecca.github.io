@@ -100,6 +100,13 @@
 - [2024/11 Laravel 新手小聚：用 Laravel 自動化測試保障程式穩定度](https://events.laravel-dojo.com/events/56)
 - [DevFest Taipei 2024：在GCP上使用 Ktor 3.0 架設高效後端服務](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2024/)
 
+### 2025
+- 2025-01-21 [Laravel 新手小聚：可惜你是php工程師，代表你是詐騙集團](https://events.laravel-dojo.com/events/57-%E3%80%90-2025-01-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
+- 2025-03-19 [Laravel 新手小聚：深入解析 Laravel 12：新功能、最佳本地與線上部署實作](https://events.laravel-dojo.com/events/58-%E3%80%90-2025-03-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
+- 2025-04-19 [Laravel Meetup Taipei 2025 #1：Laravel 12 的 Starter Kit 與 Laravel Cloud](https://events.laravel-dojo.com/events/59-laravel-meetup-taipei-2025-1)
+- 2025-08-10 [COSCUP 2025：Kotlin 的三個超能力：讓後端開發更輕鬆愉快](https://coscup.org/2025/sessions/UBNW9N)
+- 2025-09-19 [JCConf 2025：以為用 Ktor 就 non-blocking 了？但你寫的可能不是：從踩坑到解法的實戰分享](https://jcconf.tw/2025/)
+
 ## 舉辦活動
 ### 2021
 - 2021-03-23 [Kotlin Meetup #1 來了！](https://www.facebook.com/events/480898682916368/)
@@ -127,12 +134,6 @@
 - 2024-11-19 [Kotlin Meetup #15：Cassandra 應用 - 解決億量級消費數據分析問題 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-15cassandra-ying-yong-jie-jue-yi-liang-ji-xiao-fei-shu-ju-fen-xi-wen-ti/)
 - 2024-11-27 [Digital Rogue Meetup #02](https://www.meetup.com/taiwan-digital-rogue/events/304339966/)
 - 2024-12-05 [Digital Rogue Meetup #03](https://www.meetup.com/taiwan-digital-rogue/events/304735235/)
-### 2025
-- 2025-01-21 [Laravel 新手小聚：可惜你是php工程師，代表你是詐騙集團](https://events.laravel-dojo.com/events/57-%E3%80%90-2025-01-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
-- 2025-03-19 [Laravel 新手小聚：深入解析 Laravel 12：新功能、最佳本地與線上部署實作](https://events.laravel-dojo.com/events/58-%E3%80%90-2025-03-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
-- 2025-04-19 [Laravel Meetup Taipei 2025 #1：Laravel 12 的 Starter Kit 與 Laravel Cloud](https://events.laravel-dojo.com/events/59-laravel-meetup-taipei-2025-1)
-- 2025-08-10 [COSCUP 2025：Kotlin 的三個超能力：讓後端開發更輕鬆愉快](https://coscup.org/2025/sessions/UBNW9N)
-- 2025-09-19 [JCConf 2025：以為用 Ktor 就 non-blocking 了？但你寫的可能不是：從踩坑到解法的實戰分享](https://jcconf.tw/2025/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
