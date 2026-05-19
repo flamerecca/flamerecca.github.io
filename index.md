@@ -58,7 +58,7 @@
 - 2025-09 [五倍學院 不用寫太多code，也能做出漂亮後台 Laravel Filament 快速上手](https://www.accupass.com/event/2508220529366987129660)
 - 2025-12 五倍學院 n8n 入門教學
 ### 2026
-- 2026-05 [五倍學院 Laravel 13 AI 搭配實戰]([Laravel 13 AI 搭配實戰](https://5xcampus.com/courses/laravel-boost-ai)
+- 2026-05 [五倍學院 Laravel 13 AI 搭配實戰](https://5xcampus.com/courses/laravel-boost-ai)
 
 ## 演講經歷
 ### 2019
