@@ -112,6 +112,7 @@
 - 2025-08-10 [COSCUP 2025：Kotlin 的三個超能力：讓後端開發更輕鬆愉快](https://coscup.org/2025/sessions/UBNW9N)
 - 2025-09-19 [JCConf 2025：以為用 Ktor 就 non-blocking 了？但你寫的可能不是：從踩坑到解法的實戰分享](https://jcconf.tw/2025/)
 ### 2026
+- 2026-01-30 [2026 n8n 年會：用 n8n 打造可控的自動化工作流](https://www.tigerai.info/2026n8ntaipeiannualsummit)
 - 2026-04-07 [在 AI 時代的 PHP 開發：Laravel 13 升級與實戰](https://events.laravel-dojo.com/events/62)
 - 2026-05-19 [先有規格再開工：Laravel 的spec driven development 開發實戰](https://events.laravel-dojo.com/events/63) 
 
