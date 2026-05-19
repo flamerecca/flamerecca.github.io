@@ -58,6 +58,7 @@
 - 2025-09 [五倍學院 不用寫太多code，也能做出漂亮後台 Laravel Filament 快速上手](https://www.accupass.com/event/2508220529366987129660)
 - 2025-12 五倍學院 n8n 入門教學
 ### 2026
+- 2026-05 Laravel 13 入門：核心概念與實作
 - 2026-05 [五倍學院 Laravel 13 AI 搭配實戰](https://5xcampus.com/courses/laravel-boost-ai)
 
 ## 演講經歷
@@ -114,6 +115,7 @@
 ### 2026
 - 2026-01-30 [2026 n8n 年會：用 n8n 打造可控的自動化工作流](https://www.tigerai.info/2026n8ntaipeiannualsummit)
 - 2026-04-07 [在 AI 時代的 PHP 開發：Laravel 13 升級與實戰](https://events.laravel-dojo.com/events/62)
+- 2026-05-11 [利用 n8n 打造 AI 驅動的醫療自動化工作流](https://gdg.community.dev/events/details/google-gdg-on-campus-taipei-medical-university-taipei-taiwan-presents-li-yong-n8n-da-zao-ai-qu-dong-de-yi-liao-zi-dong-hua-gong-zuo-liu/)
 - 2026-05-19 [先有規格再開工：Laravel 的spec driven development 開發實戰](https://events.laravel-dojo.com/events/63) 
 
 ## 舉辦活動
