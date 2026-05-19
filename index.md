@@ -143,6 +143,25 @@
 - 2024-11-19 [Kotlin Meetup #15：Cassandra 應用 - 解決億量級消費數據分析問題 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-15cassandra-ying-yong-jie-jue-yi-liang-ji-xiao-fei-shu-ju-fen-xi-wen-ti/)
 - 2024-11-27 [Digital Rogue Meetup #02](https://www.meetup.com/taiwan-digital-rogue/events/304339966/)
 - 2024-12-05 [Digital Rogue Meetup #03](https://www.meetup.com/taiwan-digital-rogue/events/304735235/)
+### 2025
+- 2025-02-11 [Digital Rogue Meetup #04：數位遊牧入門 - 打造你的數位遊牧生活](https://www.meetup.com/taiwan-digital-rogue/events/305964311/)
+- 2025-02-12 [Kotlin Meetup #16：Kotlin 程式語言簡介，Kotlin 程式語言和其他語言相比的優點，以及 Kotlin 的未來發展 @ c](https://gdg.community.dev/events/details/google-gdg-tainan-presents-kotlin-meetup-16/)
+- 2025-02-25 [Digital Rogue Meetup #05：數位遊牧的理想與生活規劃](https://www.meetup.com/taiwan-digital-rogue/events/306269675/)
+- 2025-03-14 [Digital Rogue Meetup #06：WordCamp Asia 2025 參與經驗分享](https://www.meetup.com/taiwan-digital-rogue/events/306621974/)
+- 2025-03-27 [Kotlin Meetup #17：讓老家電變智慧：Kotlin + CMP 打造雙平台遠端控制 App @ Dcard](https://www.meetup.com/taiwan-kotlin-user-group/events/306236451/)
+- 2025-04-09 [Kotlin Meetup #18：Ktor 3.0 入門：簡述 Ktor 3.0 的特點以及架設方式 @ 好想工作室](https://www.meetup.com/taiwan-kotlin-user-group/events/306971471/)
+- 2025-04-15 [Digital Rogue Meetup #07：國際行銷實戰分享：從創作者到品牌經營](https://www.meetup.com/taiwan-digital-rogue/events/307040574/)
+- 2025-05-19 [Digital Rogue Meetup #08：你的星盤裡藏著什麼？解鎖你的天賦與數位游牧潛力](https://www.meetup.com/taiwan-digital-rogue/events/307397895/)
+- 2025-05-30 [Kotlin Meetup #19：這不是你平常寫的 Kotlin：Code Golf 的黑魔法 @ Dcard](https://www.meetup.com/taiwan-kotlin-user-group/events/307852975/)
+- 2025-06-11 [Digital Rogue Meetup #09：如何用 AI × SEO 打造你的數位遊牧收入系統](https://www.meetup.com/taiwan-digital-rogue/events/308201434/)
+- 2025-07-03 [Digital Rogue Teaparty #01](https://www.meetup.com/taiwan-digital-rogue/events/308566586/)
+- 2025-07-14 [Digital Rogue Meetup #10：每位遊牧人都該有的「人生管理系統」 Notion x Heptabase 情境分享](https://www.meetup.com/taiwan-digital-rogue/events/308584095/)
+- 2025-08-13 [Digital Rogue Meetup #11：「欸這公司不錯欸」：敏捷公關人打造企業雇主品牌實戰筆記](https://www.meetup.com/taiwan-digital-rogue/events/309695614/)
+- 2025-09-04 [Digital Rogue Meetup #12：工作不只在辦公室：認識數位遊牧的生活方式](https://www.meetup.com/taiwan-digital-rogue/events/310691152/)
+- 2025-10-14 [Digital Rogue Meetup #13：網站 ≠ 名片：如何用 Elementor 設計會帶來客戶的網站](https://www.meetup.com/taiwan-digital-rogue/events/311321265/)
+- 2025-11-22 [Taiwan KUG Conference 2025](https://www.meetup.com/taiwan-kotlin-user-group/events/311564439/)
+### 2026
+- 2026-03-30 [Digital Rogue Meetup #14：數位遊牧的專屬特助：自動化工具如何讓你邊玩邊賺](https://www.meetup.com/taiwan-digital-rogue/events/313756571/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
