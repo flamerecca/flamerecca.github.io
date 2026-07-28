@@ -68,10 +68,12 @@
 - 2019-07-13 [LaravelConf Taiwan 2019：星移電掣般的 Trace Code 讓你如光速一般的追蹤程式碼](https://www.youtube.com/watch?v=nvAlBpbFNNs&ab_channel=LaravelConfTaiwan)
 - 2019-10-22 [Laradiner #41：【單元測試的藝術 (第二版)】第 7 章(前半段)](https://community.laravel-dojo.com/laradiner/2019-10-22)
 - 2019-11-26 [PHP 也有 Day #50：處理前人的遺產 - 聊 legacy code](https://community.laravel-dojo.com/phptheday/2019-11-26)
+
 ### 2020
 - 2020-07-25 [LaravelConf Taiwan 2020：大象也能飛翔！聊 Laravel 效能調校](https://2020.laravelconf.tw/agenda)
 - 2020-08-01 [COSCUP 2020：閱讀 voyager 原始碼](https://www.youtube.com/watch?v=5GmoWRwvokY&vl=en&ab_channel=COSCUP%E9%96%8B%E6%BA%90%E4%BA%BA%E5%B9%B4%E6%9C%83)
 - 2020-11-19 [JCConf Taiwan 2020：Kotlin coroutine 簡介](https://jcconf.tw/2020/)
+
 ### 2021
 - 2021-01-26 [PHP 也有 Day #59：Laravel Feature Flags ABC 安全快速的提供新功能](https://events.laravel-dojo.com/events/13-php-%E4%B9%9F%E6%9C%89-day-59)
 - 2021-04-20 [Kotlin Meetup #2](https://www.facebook.com/events/793159571303586/)
@@ -82,6 +84,7 @@
 - 2021-07-31 [COSCUP 2021：Kotlin 也能寫後端？帶你初探 Ktor 框架的世界](https://coscup.org/2021/zh-TW/session/JP3EMZ)
 - 2021-10-23 [MOPCON 2021：Kotlin 的自動測試怎麼做？](https://mopcon.org/2021/schedule/2021016)
 - 2021-11-06 [2021 Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
+
 ### 2022
 - 2022-07-30 [COSCUP 2022：Kotlin 的五個四大天王！談 scope function](https://coscup.org/2022/zh-TW/session/WTDBSU)
 - 2022-07-31 [COSCUP 2022：讓你的程式清楚易懂！談 PHP 8 撰寫方式](https://coscup.org/2022/zh-TW/session/KCQNHE)
@@ -90,12 +93,14 @@
 - 2022-11-26 [2022 Kotlin 中文開發者大會 Online：通过 Ktor 框架同步完成 Server 及 Client Side 开发](https://blog.jetbrains.com/zh-hans/2022/11/08/2022-kotlin-online-event-for-chinese-developers/)
 - 2022-11-27 [DevFest Kaohsiung & Tainan：Kotlin 後端撰寫 101：用 Ktor 框架撰寫後端服務](https://gdg.community.dev/events/details/google-gdg-kaohsiung-presents-devfest-kaohsiung-tainan-2022/)
 - 2022-12-04 [DevFest Changhua 2022：DevFest 的投影片還沒做，就用 Kotlin 做一個吧](https://gdg.community.dev/events/details/google-gdg-changhua-presents-devfest-changhua-2022/)
+
 ### 2023
 - 2023-07-29 [COSCUP 2023：An Introduction to JetBrains Exposed: The Kotlin-based ORM Framework](https://coscup.org/2023/zh-TW/session/V8F9VH)
 - 2023-07-30 [COSCUP 2023：使用 Laravel Pennant 處理 Feature Flags](https://coscup.org/2023/zh-TW/session/MG7BDS)
 - 2023-08-19 [{Laravel x Vue}Conf Taiwan 2023：善用工具靈活思考：解鎖 PHPStorm 的強大潛能](https://laravelconf.tw/agendas?modal=agenda.WyI0Il0)
 - 2023-10-06 [JCConf 2023：探索 Javalin：一個輕量級 Java 和 Kotlin 網頁框架](https://pretalx.com/jcconf-2023/talk/MT9BYA/)
 - 2023-12-16 [DevFest Taipei 2023：Taiwan Kotlin User Group 如何利用 Google Meet、Google 雲端硬碟等技術管理社群大小事](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2023/)
+
 ### 2024
 - 2024-03-10 [IWD 24 Week：Tech Communities Impact the Future](https://www.accupass.com/event/2402160912355310126620)
 - 2024-04-27 [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
@@ -106,12 +111,14 @@
 - 2024-09-27 [JCConf 2024：Ktor 3.0 入門：簡述 Ktor 的架構及 3.0 版本的主要特點](https://pretalx.com/jcconf-2024/talk/AXSX9J/)
 - 2024-11-26 [2024/11 Laravel 新手小聚：用 Laravel 自動化測試保障程式穩定度](https://events.laravel-dojo.com/events/56)
 - 2024-11-30 [DevFest Taipei 2024：在GCP上使用 Ktor 3.0 架設高效後端服務](https://gdg.community.dev/events/details/google-gdg-taipei-presents-devfest-taipei-2024/)
+
 ### 2025
 - 2025-01-21 [Laravel 新手小聚：可惜你是php工程師，代表你是詐騙集團](https://events.laravel-dojo.com/events/57-%E3%80%90-2025-01-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
 - 2025-03-19 [Laravel 新手小聚：深入解析 Laravel 12：新功能、最佳本地與線上部署實作](https://events.laravel-dojo.com/events/58-%E3%80%90-2025-03-%E3%80%91laravel-%E6%96%B0%E6%89%8B%E5%B0%8F%E8%81%9A)
 - 2025-04-19 [Laravel Meetup Taipei 2025 #1：Laravel 12 的 Starter Kit 與 Laravel Cloud](https://events.laravel-dojo.com/events/59-laravel-meetup-taipei-2025-1)
 - 2025-08-10 [COSCUP 2025：Kotlin 的三個超能力：讓後端開發更輕鬆愉快](https://coscup.org/2025/sessions/UBNW9N)
 - 2025-09-19 [JCConf 2025：以為用 Ktor 就 non-blocking 了？但你寫的可能不是：從踩坑到解法的實戰分享](https://jcconf.tw/2025/)
+
 ### 2026
 - 2026-01-30 [2026 n8n 年會：用 n8n 打造可控的自動化工作流](https://www.tigerai.info/2026n8ntaipeiannualsummit)
 - 2026-04-07 [在 AI 時代的 PHP 開發：Laravel 13 升級與實戰](https://events.laravel-dojo.com/events/62)
@@ -127,16 +134,19 @@
 - 2021-08-31 [Kotlin Meetup #3 Online](https://www.facebook.com/events/1264189300692421/)
 - 2021-10-19 [Kotlin Meetup #4 Online](https://www.facebook.com/events/4392745437499911/)
 - 2021-11-06 [Kotlin 中文開發者大會 Online](https://taiwan-kotlin-user-group.github.io/mini-conf-2021/)
+
 ### 2022
 - 2022-04-26 [Kotlin Meetup #5 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-5/)
 - 2022-05-31 [Kotlin Meetup #6 Online](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-6/)
 - 2022-08-18 [Kotlin Meetup #7 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-7/)
 - 2022-09-27 [Kotlin Meetup #8 @ 天瓏](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-8/)
+
 ### 2023
 - 2023-02-23 [Kotlin Meetup #9 @ TFC](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-9/)
 - 2023-04-18 [KotlinConf'23 Global Watch Party @ 獺空間](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-kotlinconf-2023-global-watch-party/)
 - 2023-06-10 [Kotlin Annual Seminar 2023 @ CMoney](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-annual-meetup-2023/)
 - 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
+
 ### 2024
 - 2024-03-10 ~ 2024-03-16 [WTM Taipei | IWD'24 Week](https://gdg.community.dev/events/details/google-gdg-taipei-presents-wtm-taipei-iwd24-week/)
 - 2024-04-27 [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式 @ 言文字](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
@@ -147,6 +157,7 @@
 - 2024-11-19 [Kotlin Meetup #15：Cassandra 應用 - 解決億量級消費數據分析問題 @ Dcard](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-15cassandra-ying-yong-jie-jue-yi-liang-ji-xiao-fei-shu-ju-fen-xi-wen-ti/)
 - 2024-11-27 [Digital Rogue Meetup #02](https://www.meetup.com/taiwan-digital-rogue/events/304339966/)
 - 2024-12-05 [Digital Rogue Meetup #03](https://www.meetup.com/taiwan-digital-rogue/events/304735235/)
+
 ### 2025
 - 2025-02-11 [Digital Rogue Meetup #04：數位遊牧入門 - 打造你的數位遊牧生活](https://www.meetup.com/taiwan-digital-rogue/events/305964311/)
 - 2025-02-12 [Kotlin Meetup #16：Kotlin 程式語言簡介，Kotlin 程式語言和其他語言相比的優點，以及 Kotlin 的未來發展 @ c](https://gdg.community.dev/events/details/google-gdg-tainan-presents-kotlin-meetup-16/)
@@ -164,6 +175,7 @@
 - 2025-09-04 [Digital Rogue Meetup #12：工作不只在辦公室：認識數位遊牧的生活方式](https://www.meetup.com/taiwan-digital-rogue/events/310691152/)
 - 2025-10-14 [Digital Rogue Meetup #13：網站 ≠ 名片：如何用 Elementor 設計會帶來客戶的網站](https://www.meetup.com/taiwan-digital-rogue/events/311321265/)
 - 2025-11-22 [Taiwan KUG Conference 2025](https://www.meetup.com/taiwan-kotlin-user-group/events/311564439/)
+
 ### 2026
 - 2026-03-30 [Digital Rogue Meetup #14：數位遊牧的專屬特助：自動化工具如何讓你邊玩邊賺](https://www.meetup.com/taiwan-digital-rogue/events/313756571/)
 - 2026-07-19 [Google Cloud Next 2026 ＆ Kotlin Turns 15Yrs Party 活動：KotlinConf26 重磅摘要](https://gdg.community.dev/events/details/google-gdg-taoyuan-presents-google-cloud-next-2026-kotlin-turns-15yrs-party-huo-dong/)
