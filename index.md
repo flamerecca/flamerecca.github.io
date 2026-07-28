@@ -116,7 +116,9 @@
 - 2026-01-30 [2026 n8n 年會：用 n8n 打造可控的自動化工作流](https://www.tigerai.info/2026n8ntaipeiannualsummit)
 - 2026-04-07 [在 AI 時代的 PHP 開發：Laravel 13 升級與實戰](https://events.laravel-dojo.com/events/62)
 - 2026-05-11 [利用 n8n 打造 AI 驅動的醫療自動化工作流](https://gdg.community.dev/events/details/google-gdg-on-campus-taipei-medical-university-taipei-taiwan-presents-li-yong-n8n-da-zao-ai-qu-dong-de-yi-liao-zi-dong-hua-gong-zuo-liu/)
-- 2026-05-19 [先有規格再開工：Laravel 的spec driven development 開發實戰](https://events.laravel-dojo.com/events/63) 
+- 2026-05-19 [先有規格再開工：Laravel 的spec driven development 開發實戰](https://events.laravel-dojo.com/events/63)
+- 2026-07-19 [Google Cloud Next 2026 ＆ Kotlin Turns 15Yrs Party 活動：KotlinConf26 重磅摘要](https://gdg.community.dev/events/details/google-gdg-taoyuan-presents-google-cloud-next-2026-kotlin-turns-15yrs-party-huo-dong/)
+- 2026-07-21 [Laravel 新手小聚：Kotlin & Laravel 大亂鬥](https://www.accupass.com/event/2607140711316005009360)
 
 ## 舉辦活動
 ### 2021
@@ -164,6 +166,7 @@
 - 2025-11-22 [Taiwan KUG Conference 2025](https://www.meetup.com/taiwan-kotlin-user-group/events/311564439/)
 ### 2026
 - 2026-03-30 [Digital Rogue Meetup #14：數位遊牧的專屬特助：自動化工具如何讓你邊玩邊賺](https://www.meetup.com/taiwan-digital-rogue/events/313756571/)
+- 2026-07-19 [Google Cloud Next 2026 ＆ Kotlin Turns 15Yrs Party 活動：KotlinConf26 重磅摘要](https://gdg.community.dev/events/details/google-gdg-taoyuan-presents-google-cloud-next-2026-kotlin-turns-15yrs-party-huo-dong/)
 
 ## 戰略夥伴
 - [Taiwan Kotlin User Group](https://taiwan-kotlin-user-group.github.io/)
