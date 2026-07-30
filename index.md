@@ -148,7 +148,7 @@
 - 2023-08-15 [Kotlin Meetup #10 @ PicCollage](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-10gei-rd-pm-de-ui-li-jie-ru-men-ke/)
 
 ### 2024
-- 2024-03-10 ~ 2024-03-16 [WTM Taipei | IWD'24 Week](https://gdg.community.dev/events/details/google-gdg-taipei-presents-wtm-taipei-iwd24-week/)
+- 2024-03-10 ~ 16 [WTM Taipei | IWD'24 Week](https://gdg.community.dev/events/details/google-gdg-taipei-presents-wtm-taipei-iwd24-week/)
 - 2024-04-27 [Kotlin Meetup #11：Kotlin 的空值安全：用 Kotlin 打造更安全的應用程式 @ 言文字](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-11kotlin-de-kong-zhi-an-quan-yong-kotlin-da-zao-geng-an-quan-de-ying-yong-cheng-shi/)
 - 2024-06-18 [Kotlin Meetup #13： KotlinConf 2024 Global Watch Party](https://gdg.community.dev/events/details/google-gdg-taipei-presents-kotlin-meetup-13-kotlinconf-2024-global-watch-party/)
 - 2024-09-27 [JCConf 2024：Ktor 3.0 入門：簡述 Ktor 的架構及 3.0 版本的主要特點](https://jcconf.tw/2024/)
