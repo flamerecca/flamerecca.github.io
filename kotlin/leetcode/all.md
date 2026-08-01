@@ -136,6 +136,7 @@
 - [3190. Find Minimum Operations to Make All Elements Divisible by Three](3190.md)
 - [3280. Convert Date to Binary](3280.md)
 - [3925. Concatenate Array With Reverse](3925.md)
+- [3945. Digit Frequency Score](3945.md)
 
 ------
 
