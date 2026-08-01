@@ -135,6 +135,7 @@
 - [3110. Score of a String](3110.md)
 - [3190. Find Minimum Operations to Make All Elements Divisible by Three](3190.md)
 - [3280. Convert Date to Binary](3280.md)
+- [3783. Mirror Distance of an Integer](3783.md)
 - [3925. Concatenate Array With Reverse](3925.md)
 - [3945. Digit Frequency Score](3945.md)
 
