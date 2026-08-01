@@ -20,6 +20,7 @@
 - [2769. Find the Maximum Achievable Number](2769.md)
 - [2894. Divisible and Non-divisible Sums Difference](2894.md)
 - [3945. Digit Frequency Score](3945.md)
+- [3783. Mirror Distance of an Integer](3783.md)
 
 ### 遞迴
 - [70. Climbing Stairs](70.md)
