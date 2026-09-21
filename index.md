@@ -48,16 +48,22 @@
 - [Binary Search 的時間複雜度](complexity/binary-search-complexity.md)
 
 ## 課程經歷
+
 ### 2024
+
 - 2024-07 [五倍學院 Laravel 入門](https://5xcampus.com/courses/laravel.html)
 - 2024-09 中正大學 Laravel 系統安全開發
+
 ### 2025
+
 - 2025-04 [五倍學院 Laravel 12 入門](https://5xcampus.com/courses/laravel.html)
 - 2025-06 中正大學 Laravel SSDLC 實戰
 - 2025-07 [五倍學院 Laravel × ChatGPT 工作坊：AI 助攻的現代 PHP 開發術](https://5xcampus.com/courses/laravel-ai.html)
 - 2025-09 [五倍學院 不用寫太多code，也能做出漂亮後台 Laravel Filament 快速上手](https://www.accupass.com/event/2508220529366987129660)
 - 2025-12 [五倍學院 n8n 入門教學](https://ezbundle.cc/p/n8n-ai-asistant)
+
 ### 2026
+
 - 2026-05 企業內訓：Laravel 13 入門：核心概念與實作
 - 2026-05 [五倍學院 Laravel 13 AI 搭配實戰](https://5xcampus.com/courses/laravel-boost-ai)
 - 2026-07 訓練班：n8n 入門教學
