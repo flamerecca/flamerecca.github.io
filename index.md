@@ -67,6 +67,9 @@
 - 2026-05 企業內訓：Laravel 13 入門：核心概念與實作
 - 2026-05 [五倍學院 Laravel 13 AI 搭配實戰](https://5xcampus.com/courses/laravel-boost-ai)
 - 2026-07 訓練班：n8n 入門教學
+- 2026-08 企業內訓：Odoo ERP 入門教學
+- 2026-08 企業內訓：n8n Agentic Workflow 開發教學
+- 2026-09 企業內訓：Odoo MRP 包含 QC 流程教學
 
 ## 演講經歷
 ### 2019
