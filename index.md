@@ -136,6 +136,7 @@
 - 2026-05-19 [先有規格再開工：Laravel 的spec driven development 開發實戰](https://events.laravel-dojo.com/events/63)
 - 2026-07-19 [Google Cloud Next 2026 ＆ Kotlin Turns 15Yrs Party 活動：KotlinConf26 重磅摘要](https://gdg.community.dev/events/details/google-gdg-taoyuan-presents-google-cloud-next-2026-kotlin-turns-15yrs-party-huo-dong/)
 - 2026-07-21 [Laravel 新手小聚：Kotlin & Laravel 大亂鬥](https://www.accupass.com/event/2607140711316005009360)
+- 2026-09-11 [JCConf 2026：當 Kotlin 遇上三大後端框架：Spring Boot、Quarkus 與 Ktor 的生態系決戰與架構實踐](https://jcconf.tw/2026/)
 
 ## 舉辦活動
 ### 2021
